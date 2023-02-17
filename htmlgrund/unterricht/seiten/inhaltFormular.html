@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulare im HTML</title>
+    <style>
+        body{
+            border: 3px solid rgb(236, 216, 255);
+            padding: 20px;
+            width: 920px;
+            margin: auto;
+            background-color: #f9f9f9;
+            color: rgb(59, 59, 59);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+        }
+        h1,h2,h3{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        h1{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2{
+            color: #08ffef;
+        }
+        h3{
+            color: #04a9be;
+        }
+        header{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 150px;
+        }
+        nav{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            /* height: 30px; */
+        }
+        main{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #fbfbfb;
+        }
+        footer{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="inhaltMedienHTML5.html">Medien im HTML</a></li>
+            <li><a href="inhaltStrukturierung.html">Strukturierung mit Div</a></li>
+            <li><a href="inhaltStrukturierungHTML5.html">Strukturierung mit HTML5</a></li>
+            <li><a href="textimhtml.html">Text im HTML</a></li>
+            <li><a href="verlinkungen.html">Verlinkungen im HTML</a></li>
+            <li><a href="inhaltTabellen.html">Tabellen im HTML</a></li>
+            <li><a href="inhaltFormular.html">Formulare im HTML</a></li>
+        </ul>
+    </nav>
+    <h1>Formulare im HTML</h1>
+    <!-- <form action="bestaetigung.html" method="GET" style="width:500px;"> -->
+    <form action="demoFormDataRetriever.php" method="POST" style="width:500px; /*margin: 0 auto;*/">
+        <h3>Personalinformationen</h3>
+        <label for="famname">Name:</label> 
+        <input type="text" name="famname" id="famname" placeholder="Schreibt hier..." required> 
+        <hr>
+        <label for="kennwort">Emailadresse:</label>
+        <input type="email" name="email" id="email" required> 
+        <hr>
+        <label for="kennwort">Kennwort:</label>
+        <input type="password" name="kennwort" id="kennwort" required> 
+        <hr>
+        <label for="kennwort">Geburtsdatum:</label>
+        <input type="date" name="gebdat" id="gebdat"> 
+        <hr>
+        <label for="nachricht">Nachricht:</label>
+        <textarea name="nachricht" id="nachricht" cols="30" rows="10">Schreibt hier... </textarea>
+        <hr>
+        <h3>Kenntnisse Betriebssysteme</h3>
+        <input type="checkbox" name="win" id="win" checked> Windows <br>
+        <input type="checkbox" name="mac" id="mac"> MacOS <br>
+        <input type="checkbox" name="lin" id="lin"> Linux <br>
+        
+        <hr>
+        <h3>Geschlecht</h3>
+        <input type="radio" name="gesch" id="mann" value="m" checked> männlich <br>
+        <input type="radio" name="gesch" id="frau" value="w"> weiblich <br>
+        <input type="radio" name="gesch" id="divers" value="d"> divers <br>
+        <input type="radio" name="gesch" id="ohne" value="k"> keine Angaben <br>
+        
+        <hr>
+        <h3>Wohnort Bundesland</h3>
+        <select name="wo_buland"> 
+            <option value="0" disabled selected>Bitte wählen...</option>
+            <option value="Baden-Württemberg">Baden-Württemberg</option>
+            <option value="Bayern" >Bayern</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Brandenburg">Brandenburg</option>
+            <option value="Bremen">Bremen</option>
+            <option value="Hamburg">Hamburg</option>
+            <option value="Hessen">Hessen</option>
+            <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+            <option value="Niedersachsen">Niedersachsen</option>
+            <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
+            <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
+            <option value="Saarland">Saarland</option>
+            <option value="Sachsen">Sachsen</option>
+            <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+            <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+            <option value="Thüringen">Thüringen</option>
+        </select>
+        <hr>
+        <h3>Hier kann ein Avatarbild ausgewählt werden</h3>
+        <input type="file" name="foto" id="foto">
+        <hr>
+        <br>
+        <input type="submit" name="senden" id="senden" value="Bescriftung des Button">
+        <input type="reset" name="reset" id="reset" value="Inhalt zurücksetzen">
+        <input type="button" name="individuell" id="individuell" value="für JS">
+    </form>
+
+</body>
+</html>

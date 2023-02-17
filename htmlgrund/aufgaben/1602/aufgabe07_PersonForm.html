@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inhalt mit DIV Strukturierung</title>
+
+    <style>
+        
+        body{
+            border-left: 3px double blueviolet;
+            padding: 20px;
+            width: 720px;
+            margin: auto;
+            background-color: #f9f9f9;
+            color: rgb(59, 59, 59);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+        }
+
+        h1,h2,h3{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        h1{
+            color: blueviolet;
+            text-align: center;
+        }
+        h2{
+            color: #08ffef;
+        }
+        h3{
+            color: #04a9be;
+        }
+        header{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 150px;
+        }
+        nav{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #04a9be;
+        }
+        nav a{
+            color: blueviolet;
+        }
+        main{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f9f9f9;
+        }
+        footer{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        table span{
+            color: blueviolet;
+        }
+        section{
+            border: 1px solid rgb(238, 238, 238);
+        }
+        td{
+            padding-bottom: 5px;
+        }
+        td:first-child{
+            padding-right: 10px;
+            text-align: right
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header><img src="medien/header.jpg" width="700" height="150" alt="Admont Abbey Library in Admont, Austria"></header>
+        
+        <main>   
+            <h1>Persönliche Informationen</h1>
+            <section>
+                    
+                <form action="#">
+                    <table border="0" cellspacing="5" width="600">
+                        <tr>
+                            <td> <label for="anrede">Anrede</label></td>
+                            <td>        
+                                <input type="radio" name="anrede" id="anrede" value="f"> Frau &nbsp;  
+                                <input type="radio" name="anrede" id="anrede" value="h"> Herr &nbsp;
+                                <input type="radio" name="anrede" id="anrede" value="a"> Divers                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="vorname">Vorname</label></td>
+                            <td>
+                                <input type="text" name="vorname" id="vorname"  required> 
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td> <label for="nachname">Nachname</label></td>
+                            <td>
+                                <input type="text" name="nachname" id="nachname"  required> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="gebdat">Geburtsdatum</label></td>
+                            <td>
+                                <input type="date" name="gebdat" id="gebdat"  required> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="gesch">Geschlecht</label></td>
+                            <td>
+                                <input type="radio" name="gesch" id="gesch" value="m"> männlich <br>
+                                <input type="radio" name="gesch" id="gesch" value="w"> weiblich <br>
+                                <input type="radio" name="gesch" id="gesch" value="d"> divers <br>
+                                <input type="radio" name="gesch" id="gesch" value="k"> keine Angaben <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="Famstand">Familienstand</label></td>
+                            <td>
+                                <input type="text" name="Famstand" id="Famstand"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="untKinder">Unterhaltspflichtigen Kinder</label></td>
+                            <td>
+                                <input type="number" name="untKinder" id="untKinder" min="0" max="99" value="0"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="telefon">Telefon</label></td>
+                            <td>
+                                <input type="tel" name="telefon" id="telefon"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="email">E-Mail</label></td>
+                            <td>
+                                <input type="email" name="email" id="email"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="wo_buland">Bundesland</label></td>
+                            <td>
+                                <select name="wo_buland"> 
+                                    <option value="0" disabled selected>Bitte wählen...</option>
+                                    <option value="Baden-Württemberg">Baden-Württemberg</option>
+                                    <option value="Bayern">Bayern</option>
+                                    <option value="Berlin">Berlin</option>
+                                    <option value="Brandenburg">Brandenburg</option>
+                                    <option value="Bremen">Bremen</option>
+                                    <option value="Hamburg">Hamburg</option>
+                                    <option value="Hessen">Hessen</option>
+                                    <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+                                    <option value="Niedersachsen">Niedersachsen</option>
+                                    <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
+                                    <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
+                                    <option value="Saarland">Saarland</option>
+                                    <option value="Sachsen">Sachsen</option>
+                                    <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+                                    <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+                                    <option value="Thüringen">Thüringen</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="anschrift">Anschrift</label></td>
+                            <td>
+                                <textarea name="anschrift" id="anschrift" cols="30" rows="4"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td ><button>Senden</button></td>
+                        </tr>
+                    </table>
+                </form>
+                <br>
+            </section>    
+        </main>
+        <footer>&copy; 2023 Olivier Ishimwe</footer>
+
+    </div>
+</body>
+</html>
+

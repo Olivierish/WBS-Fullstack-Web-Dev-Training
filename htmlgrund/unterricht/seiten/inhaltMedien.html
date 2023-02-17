@@ -1,0 +1,108 @@
+<html>
+
+	<head>
+		<title>Medien im HTML einbinden</title>
+		<meta charset="UTF-8">
+		
+		<style>
+			#wrapper {
+				border: 1px solid blue;
+				width: 1500px;
+				margin: auto;
+				background-color: grey;
+			}
+		
+			header {
+				border: 1px solid white;
+				margin: 10px;
+				background-color: yellow;
+				height: 150px;
+			}
+			
+			nav {
+				border: 1px solid white;
+				margin: 10px;
+				background-color: green;
+				height: 30px;
+			}			
+			
+			main {
+				border: 1px solid grey;
+				margin: 10px;
+				background-color: white;
+			}	
+		
+			footer {
+				border: 1px solid red;
+				margin: 10px;
+				background-color: yellow;
+				height: 20px;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<div id="wrapper">
+		
+			<header>Im Dokeumengt werden Medien eingebunden</header>
+			<nav>
+				<ul>
+					<li><a href="inhaltMedienHTML5.html">Medien im HTML</a></li>
+					<li><a href="inhaltStrukturierung.html">Strukturierung mit Div</a></li>
+					<li><a href="inhaltStrukturierungHTML5.html">Strukturierung mit HTML5</a></li>
+					<li><a href="textimhtml.html">Text im HTML</a></li>
+					<li><a href="verlinkungen.html">Verlinkungen im HTML</a></li>
+					<li><a href="inhaltTabellen.html">Tabellen im HTML</a></li>
+					<li><a href="inhaltFormular.html">Formulare im HTML</a></li>
+				</ul>
+			</nav>
+		
+			<main>
+			
+				<h1>Nach dem Vulkanausbruch auf La Palma</h1>
+				<h2>Bilder vom Januar 2023</h2>
+			
+				<figure>
+					<img src="../medien/elPaso01.jpg" width="600" alt="Ein Blick auf El Paso - Lava" title="Blick auf El Paso"> <br>
+					<figcaption>Ausblick von El Paso in Richtung Tazacorte</figcaption>
+				</figure>
+				
+				<img src="../medien/elPaso02.jpg" width="600" alt="ein weiterer Blick auf El Paso"><br>
+				<img src="../medien/tajogite.jpg" width="600" alt="Ein Blick uf den Tajogite"><br>
+				
+				<hr>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/La_Palma_LANDSAT-Canary_Islands.png/330px-La_Palma_LANDSAT-Canary_Islands.png">
+				
+				<hr>
+				
+				<h2>Animiertes Gif einsetzen</h2>
+				<img src="../medien/200w.gif" alt="Beispiel für animiertes Gif">
+			
+				<hr>
+			
+				<h2>Audio-File</h2>
+				<audio src="../medien/chichi.mp3" controls autoplay loop>
+				  In dem Browser nicht abspielbar
+				</audio>
+				
+				<hr>
+			
+				<h2>Video-File</h2>
+				<video src="../medien/laPalma.mp4" width="400"controls>
+				  In dem Browser nicht abspielbar
+				</video>
+				
+				<hr>
+				
+				<iframe width="600" src="https://www.youtube.com/embed/kmhf8JZ9G7w" title="La Palma - Küstenstraße durch den Lavastrom - der Brückenbau nimmt Form an" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</main>
+			
+			<footer>&copy; 2023 Gerald Reinhardt</footer>
+		
+		</div>
+	
+	</body>
+
+</html>

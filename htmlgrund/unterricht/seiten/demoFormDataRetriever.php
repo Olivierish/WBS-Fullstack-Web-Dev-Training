@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulare im HTML</title>
+    <style>
+        body{
+            border: 3px solid rgb(236, 216, 255);
+            padding: 20px;
+            width: 920px;
+            margin: auto;
+            background-color: #f9f9f9;
+            color: rgb(59, 59, 59);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+        }
+        h1,h2,h3{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        h1{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2{
+            color: #08ffef;
+        }
+        h3{
+            color: #04a9be;
+        }
+        header{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 150px;
+        }
+        nav{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            /* height: 30px; */
+        }
+        main{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #fbfbfb;
+        }
+        footer{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="inhaltMedienHTML5.html">Medien im HTML</a></li>
+            <li><a href="inhaltStrukturierung.html">Strukturierung mit Div</a></li>
+            <li><a href="inhaltStrukturierungHTML5.html">Strukturierung mit HTML5</a></li>
+            <li><a href="textimhtml.html">Text im HTML</a></li>
+            <li><a href="verlinkungen.html">Verlinkungen im HTML</a></li>
+            <li><a href="inhaltTabellen.html">Tabellen im HTML</a></li>
+            <li><a href="inhaltFormular.html">Formulare im HTML</a></li>
+        </ul>
+    </nav>
+    <h1>Formulare Datei</h1>
+    <?php
+        echo $_POST['famname'];
+        echo "<br>";
+        echo $_POST['email'];
+        echo "<br>";
+        echo $_POST['kennwort'];
+        echo "<br>";
+        echo $_POST['gebdat'];
+        echo "<br>";
+        echo $_POST['nachricht'];
+        echo "<br>";
+        echo $_POST['win'];
+        echo "<br>";
+        echo $_POST['mac'];
+        echo "<br>";
+        echo $_POST['lin'];
+        echo "<br>";
+        echo $_POST['gesch'];
+        echo "<br>";
+        echo $_POST['wo_buland'];
+        echo "<br>";
+        echo $_POST['foto'];
+        echo "<br>";
+        echo $_POST['gesch'];
+        echo "<br>";
+?>
+
+</body>
+</html>

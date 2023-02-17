@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabellen im HTML</title>
+    <style>
+        body{
+            border: 1px solid blueviolet;
+            padding: 20px;
+            width: 1500px;
+            margin: auto;
+            background-color: #f9f9f9;
+            color: rgb(59, 59, 59);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+        }
+        h1,h2,h3{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        h1{
+            color: blueviolet;
+        }
+        h2{
+            color: #08ffef;
+        }
+        h3{
+            color: #04a9be;
+        }
+        header{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 150px;
+        }
+        nav{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            /* height: 30px; */
+        }
+        main{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #fbfbfb;
+        }
+        footer{
+            border: 1px solid white;
+            margin: 10px;
+            background-color: #f3f3f3;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="inhaltMedienHTML5.html">Medien im HTML</a></li>
+            <li><a href="inhaltStrukturierung.html">Strukturierung mit Div</a></li>
+            <li><a href="inhaltStrukturierungHTML5.html">Strukturierung mit HTML5</a></li>
+            <li><a href="textimhtml.html">Text im HTML</a></li>
+            <li><a href="verlinkungen.html">Verlinkungen im HTML</a></li>
+            <li><a href="inhaltTabellen.html">Tabellen im HTML</a></li>
+            <li><a href="inhaltFormular.html">Formulare im HTML</a></li>
+        </ul>
+    </nav>
+    <h1>Tabellen im HTML</h1>
+    <h3>Standard-Tabelle im HTML</h3>
+
+    <table>
+        <tr>
+            <td>New York</td>
+            <td>Berlin</td>
+            <td>Madrid</td>
+            <td>Paris</td>
+        </tr>
+        <tr>
+            <td>Amtsprache : Englisch</td>
+            <td>Deutsch</td>
+            <td>Spanisch</td>
+        </tr>
+    </table>
+    <br>
+    <h3>Standard-Tabelle mit HTML-Formatierungen</h3>
+
+    <table border="1" cellspacing="1" cellpadding="5" width="820">
+        <tr>
+            <td width="200">New York</td>
+            <td width="200">Berlin</td>
+            <td width="200">Madrid</td>
+            <td width="200">Paris</td>
+        </tr>
+        <tr>
+            <td width="200">Amtsprache : Englisch</td>
+            <td width="200">Deutsch</td>
+            <td width="200">Spanisch</td>
+        </tr>
+    </table>
+
+    <br>
+    <h3>Standard-Tabelle mit HTML-Formatierungen und Inhaltsausrichtungt</h3>
+
+    <table border="1" cellspacing="0" cellpadding="5" width="820">
+        <tr>
+            <td width="200">Stadt: </td>
+            <td width="200">New York</td>
+            <td width="200">Berlin</td>
+            <td width="200">Madrid</td>
+            
+        </tr>
+        <tr>
+            <td ><p>Sprache:</p> </td>
+            <td valign="top" align="center">Englisch</td>
+            <td >Deutsch</td>
+            <td >Spanisch</td>
+        </tr>
+    </table>
+    <br>
+    <h3>Standard-Tabelle mit HTML-Formatierungen Kopfzellen</h3>
+
+    <table border="1" cellspacing="0" cellpadding="5" width="820">
+        <tr bgcolor="#befff">
+            <th bgcolor="#f9f9f9">&nbsp;</th>
+            <th>USA</th>
+            <th>Deutschland</th>
+            <th>Madrid</th>
+        </tr>
+        <tr>
+            <th width="200" bgcolor="#ffd5f1">Stadt: </th>
+            <td width="200">New York</td>
+            <td width="200">Berlin</td>
+            <td width="200">Madrid</td>
+            
+        </tr>
+        <tr>
+            <th bgcolor="#ffd5f1"><p>Sprache:</p></th>
+            <td valign="top" align="center">Englisch</td>
+            <td >Deutsch</td>
+            <td >Spanisch</td>
+        </tr>
+    </table>
+    <br>
+    <h3>Standard-Tabelle mit Organisation</h3>
+
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr bgcolor="#befff">
+                <th bgcolor="#f9f9f9">&nbsp;</th>
+                <th>USA</th>
+                <th>Deutschland</th>
+                <th>Madrid</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th width="200" bgcolor="#ffd5f1">Stadt: </th>
+                <td width="200">New York</td>
+                <td width="200">Berlin</td>
+                <td width="200">Madrid</td>
+                
+            </tr>
+            <tr>
+                <th bgcolor="#ffd5f1"><p>Sprache:</p></th>
+                <td valign="top" align="center">Englisch</td>
+                <td >Deutsch</td>
+                <td >Spanisch</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Tabelle zum Anordnen von Inhalten nutzen(früher komplette Seiten layoutet)</h3>
+    <p>in der Tqbelle werden die Inhalte platziert und formatiert - Rahmen auf NULL</p>
+    <table border="1" cellspacing="0">
+        <tr>
+            <td align="center" width="350">
+                <img src="../medien/elPaso01.jpg" width="300" alt="Foto von El Paso" >
+            </td>
+            <td width="300" valign="top">
+                <p>Die Abbildung zeigt den Lavastrom vom Tajogaite bis zum Meer</p> 
+                <p>Links neben dem linken Berg lag die Finca der WBS.</p>
+            </td>
+            <td width="300" valign="bottom" align="right">
+                erstellt am: 12.01.2023<br>
+                erstellt von: Gerald <br>
+                erstellt mit: GoPro 11 <br>
+                Lizenzgebühr: <b>5,- &euro;</b>
+            </td>
+        </tr>
+    </table>
+<br>
+<h3>Rowspan</h3>
+        <table border="1" cellspacing="0" width="500">
+        <tr>
+           <td rowspan="2">1</td><td>2</td><td>3</td>
+        </tr>
+        <tr>
+           <td>4</td><td>5</td>
+        </tr>
+        <tr>
+           <td>7</td><td>8</td><td>9</td>
+        </tr>
+    </table>
+    <br>
+
+<h3>Colspan</h3>
+        <table border="1" cellspacing="0" width="500">
+        <tr>
+           <td colspan="2">1</td><td>2</td>
+        </tr>
+        <tr>
+           <td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr>
+           <td>7</td><td>8</td><td>9</td>
+        </tr>
+    </table>
+</body>
+</html>
