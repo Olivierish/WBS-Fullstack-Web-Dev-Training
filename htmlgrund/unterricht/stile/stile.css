@@ -1,0 +1,49 @@
+body{
+    border: 3px solid rgb(236, 216, 255);
+    padding: 20px;
+    width: 920px;
+    margin: auto;
+    background-color: #f9f9f9;
+    color: rgb(59, 59, 59);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+h1,h2,h3{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h1{
+    text-align: center;
+    color: blueviolet;
+}
+h2{
+    color: rgb(69, 163, 119);
+}
+h3{
+    color: #04a9be;
+}
+header{
+    border: 1px solid white;
+    margin: 10px;
+    background-color: #f3f3f3;
+    height: 150px;
+}
+nav{
+    border: 1px solid white;
+    margin: 10px;
+    background-color: #f3f3f3;
+    /* height: 30px; */
+}
+main{
+    border: 1px solid white;
+    margin: 10px;
+    background-color: #fbfbfb;
+}
+footer{
+    border: 1px solid white;
+    margin: 10px;
+    background-color: #f3f3f3;
+    height: 30px;
+}
+
+
+

@@ -1,0 +1,35 @@
+/*Von Lehrer*/
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.altTitle{
+    color: rgb(69, 163, 119);
+}
+
+.altP{
+    padding: 10px;
+    font-size: 18px;
+    color: rgb(117, 117, 117);
+}
+
+.white{
+    background-color: white;
+}
+
+.gelb{
+    background-color: yellow;
+}
+
+.cyan{
+    background-color: cyan;
+}
+
+.schriftblau{
+    color: blue;
+}
+
+#hinweis{
+    border: 2px solid rgb(35, 222, 255);
+}
+

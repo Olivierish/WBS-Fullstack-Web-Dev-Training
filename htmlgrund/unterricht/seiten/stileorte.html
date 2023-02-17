@@ -1,13 +1,15 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulare im HTML</title>
+    <title>Speicherorte von CSS stile Definitionen</title>
+    
     <style>
         body{
-            border: 1px solid blueviolet;
+            border: 3px solid rgb(236, 216, 255);
             padding: 20px;
             width: 920px;
             margin: auto;
@@ -20,6 +22,7 @@
             font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         h1{
+            text-align: center;
             color: blueviolet;
         }
         h2{
@@ -51,7 +54,13 @@
             background-color: #f3f3f3;
             height: 30px;
         }
+        /*Von Lehrer*/
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
+
+    <link rel="stylesheet" href="../stile/stile.css">
 </head>
 <body>
     <nav>
@@ -64,17 +73,18 @@
             <li><a href="verlinkungen.html">Verlinkungen im HTML</a></li>
             <li><a href="inhaltTabellen.html">Tabellen im HTML</a></li>
             <li><a href="inhaltFormular.html">Formulare im HTML</a></li>
+            <li><a href="stileorte.html">Stile definieren</a></li>
+            <li><a href="selektoren.html">Selektoren</a></li>
         </ul>
     </nav>
-    <h1>Bestätigung</h1>    
-    <p>Der Inhalt des Formulares wurde versendet.</p>
+    <h1>Stile definieren, aber wo?</h1>
+    <p>Das ist der Standardabsatz ohne inline Stile</p>
+    <p>Definitionen im Kopf gelten in diesem Dokument, nicht in anderen Dokument.</p>
+    <p>Definitionen in externer Datei gelten in den verknüpfen Dateien.</p>
 
-    Die Daten :
-    <ul>
-        <li>Daten prüfen</li>
-        <li>Daten in Datenbank eintragen</li>
-        <li>Email generieren</li>
-        <li>...</li>
-    </ul>
+    <p style="color:#04a9be; font-size: 80px;">In diesem Absatz ist die Schriftfarbe per Inline-Stil definiert.</p>
+
+    
+
 </body>
 </html>

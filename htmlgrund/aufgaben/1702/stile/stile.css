@@ -1,0 +1,54 @@
+
+body{
+    background-color: #04030F;
+    border: 3px solid rgb(194, 110, 0);
+    padding: 40px 40px;
+    width: 920px;
+    margin: auto;
+    color: #e7e393;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+
+header{
+    font-weight: bolder;
+    font-size: xx-large;
+    color: #f4c95d;
+    color: #dd7230;
+
+}
+h1{
+    text-align: center;
+    color: #f4c95d;
+    margin-top: 100px;
+}
+h2{
+    color: #854d27;
+    text-shadow: #f3aa22 0px 1px 4px;
+}
+h3,p,li{
+    color: #5c2704;
+}
+p,li{
+  font-weight: 500;  
+  text-shadow: #ffbd42 1px 1px 5px;
+}
+
+section{
+    background-color: #f4c95d;
+    border-left: #705308b9 5px solid;
+    padding: 20px 100px;
+    margin: 40px 0;
+}
+
+.img{
+    text-align: left;
+}
+
+.preise{
+    font-weight: 700;
+}
+
+footer{
+    text-align: center;
+}

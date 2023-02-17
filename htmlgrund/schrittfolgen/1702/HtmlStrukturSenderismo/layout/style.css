@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+    font-family: Verdana, Geneva, sans-serif;
+    width:1200px;
+    background: #EEE;
+    border: 2px solid #666;
+    margin: 20px auto;
+}
+h1 {
+    font-size: 1.5em;
+    color: #F00;
+}
+    h2 {
+    font-size: 1.3em;
+    color: #FF887A;
+}
+    h3 {
+    font-size: 1.1em;
+}
+hr {
+    color: #5C6D80;
+}
+.oben {
+    background: #CCC;
+}
+img {
+        vertical-align: bottom;
+}
+section {
+    padding: 20px;
+}
+h1 {
+    font-size: 1.5em;
+    color: #F00;
+    margin-bottom: 15px;
+    }
+    hr {
+    color: #5C6D80;
+    margin-bottom: 15px;
+    }
+    footer {
+        background: #333;
+        color: #F5BF6E;
+    }
