@@ -1,0 +1,48 @@
+body{
+    border: 3px solid rgb(236, 216, 255);
+     background-color: #f9f9f9;
+    width: 920px;
+    height: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    color: rgb(59, 59, 59);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+header{
+    border: 1px solid white;
+    background-color: #feffa9;
+    margin: 10px;
+    height: 150px;
+}
+main{
+    border: 1px solid white;
+    background-color: #fbfbfb;
+    /* height: 500px; */
+    margin: 10px;
+}
+article{
+    background-color: #c8fbff;
+    margin: 5px;
+    width: 65%;
+    float: left;
+    
+}
+aside{
+background-color: #ffc2f7;
+margin: 5px;
+width: 30%;
+float: left;
+}
+section{
+background-color: #db81ff;
+margin: 5px;
+height: 50px;
+}
+footer{
+    border: 1px solid white;
+    margin: 10px;
+    background-color: #f3f3f3;
+    height: 30px;
+    clear: both;
+}

@@ -1,0 +1,67 @@
+*{
+    color: gray;
+}
+body{
+    background-image: url(../medien/motion-tween-example.gif);
+}
+::selection{
+    background: green;
+    color: yellow;
+}
+
+/* #demo p{
+    font-style: 20px;
+} */
+/* 
+[id]{
+    color: rgb(54, 124, 255);
+} */
+[id*=ei]{
+    color: rgb(54, 124, 255);
+}
+
+li:first-letter{
+    font-style: 20px;
+    font-weight: bold;
+}
+
+li:first-child{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li:nth-child(4){
+    font-weight: bolder;
+}
+
+li:nth-child(odd){
+    font-style: italic;
+}
+
+
+.demo{
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+}
+.demo p {
+    color: whitesmoke;
+}
+
+#demo1{ 
+    background-image: linear-gradient(rgb(247, 12, 255),rgb(57, 143, 241));
+}
+#demo2{ 
+    background-image: linear-gradient(to right bottom, rgb(247, 12, 255) 60%,rgb(57, 143, 241));
+}
+#demo3{ 
+    background-image: conic-gradient(rgb(247, 12, 255),rgb(57, 143, 241));
+}
+#demo4{ 
+    background-image: conic-gradient(rgb(247, 12, 255),rgb(57, 143, 241),rgb(255, 12, 12),rgb(31, 240, 255));
+}
+
+
+
+
+

@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+    font-family: Verdana, Geneva, sans-serif;
+    width:1200px;
+    background: #EEE;
+    border: 2px solid #666;
+    margin: 20px auto;
+}
+h1 {
+    font-size: 1.5em;
+    color: #F00;
+}
+    h2 {
+    font-size: 1.3em;
+    color: #FF887A;
+}
+    h3 {
+    font-size: 1.1em;
+}
+hr {
+    color: #5C6D80;
+}
+
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline;
+}
+
+
+.oben {
+    background: #CCC;
+}
+
+.oben a{
+    color: #ff0b4f;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.oben a:hover {
+    background: #FF0B4F;
+    color: #FFF;
+}
+
+img {
+        vertical-align: bottom;
+}
+section {
+    padding: 20px;
+}
+section p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+section ul,
+section ol {
+    margin-left: 20px;
+}
+
+section figure img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /*My adjustments*/
+    /* width: 250px;
+    height: 200px; */
+    }
+
+h1 {
+    font-size: 1.5em;
+    color: #F00;
+    margin-bottom: 15px;
+}
+hr {
+    color: #5C6D80;
+    margin-bottom: 15px;
+}
+footer {
+    background: #333;
+    color: #F5BF6E;
+    height: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    clear:both;
+}
+footer p {
+    float: left;
+    padding-top: 5px;
+    font-size: 0.9em;
+}
+.fuss {
+    float: right;
+    padding-top: 5px;
+}
+
+.fuss a {
+    color: #FF0B4F;
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.fuss a:hover {
+    text-decoration: underline;
+}
+
+article{
+    padding: 10px;
+    min-height: 320px;
+    clear: both;
+    background: #FFF;
+    border: 1px solid #DDD;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.3em;
+}
+
+/* Next . übung 16 . Wanderungen-Seite */
