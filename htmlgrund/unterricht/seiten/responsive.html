@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verschiedene Selektoren</title>
+    <link rel="stylesheet" href="../stile/stile.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /*Defined in stile.css*/
+            width: 100%;
+        }
+        header{
+            text-align: center;
+            line-height: 100px;
+            background-color: rgb(182, 255, 231);
+        }
+        nav{
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid white;
+            background-color: bisque;
+            height: 100px;
+            margin: 10px;
+        }
+        article{
+            text-align: center;
+            line-height: 100px;
+            background-color: rgb(219, 141, 255);
+            height: 200px;
+            margin: 10px;
+        }
+        aside{
+            text-align: center;
+            line-height: 100px;
+            background-color: rgb(255, 155, 233);
+            height: 200px;
+            margin: 10px;
+        }
+        footer{
+            text-align: center;
+            line-height: 100px;
+            background-color: rgb(255, 228, 155);
+            height: 200px;
+            margin: 10px;
+        }
+        @media only screen and (min-width : 1024px){
+            nav{
+                float: left;
+                width: 20%;
+            }
+            article{
+                float: left;
+                width: 40%;
+            }
+            aside{
+                float: left;
+                width: 30%;
+            }
+            footer{
+                clear: both;
+            }
+        }
+        @media only screen and (min-width : 840px) and (max-width : 1023px){
+            nav{
+                float: left;
+                width: 45%;
+            }
+            article{
+                float: left;
+                width: 50%;
+            }
+            aside{
+                clear: both;
+            }
+            header{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>Nav</nav>
+    <article>Article</article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+</body>
+</html>

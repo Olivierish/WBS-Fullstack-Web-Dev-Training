@@ -2,7 +2,7 @@ body{
     border: 3px solid rgb(236, 216, 255);
     padding: 20px;
     width: 920px;
-    margin: auto;
+    margin: 0;
     background-color: #f9f9f9;
     color: rgb(59, 59, 59);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -33,6 +33,7 @@ header nav{
     background-color: #f3f3f3;
     /* height: 30px; */
 }
+
 main{
     border: 1px solid white;
     margin: 10px;
