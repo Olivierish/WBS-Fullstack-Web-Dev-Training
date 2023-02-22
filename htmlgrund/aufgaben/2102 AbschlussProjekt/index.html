@@ -9,89 +9,126 @@
 </head>
 
 <body>
+<a id="oben"></a>
 <header>
     <div class="logo">
-        <a href="index.html">OLIVIERIS</a>
+        <img src="bilder/logoo.png" width="100" alt="logo">
+        <a href="index.html">Olivieris</a>
     </div>
     <nav>
         <ul>
-            <li><a href="index.html">Startseite</a></li>
+            <li class="aktive"><a href="index.html">Startseite</a></li>
             <li><a href="seiten/ueberuns.html">Über uns</a></li>
             <li><a href="seiten/portfolio.html">Portfolio</a></li>
             <li><a href="seiten/bewaertung.html">Bewärtung</a></li>
             <li><a href="seiten/kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
+    <div class="scroll">
+        <img src="bilder/scroll.gif" alt="Scrollen">
+    </div>
 </header>
 
 <main>
     <article id="hero">
-        <h1>YOUR DIGITAL FUTURE WELL BUILT</h1>
+        <video playsinline autoplay muted loop poster="cake.jpg">
+            <source src="bilder/world-1992.mp4" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero">
+            <h1>YOUR DIGITAL FUTURE WELL BUILT</h1>
         <h2>We are Websol</h2>
         <blockquote>
             We design and develop digital products and online experiences that help our clients grow, innovate, and transform. We listen, learn and understand before we build. We identify your goals together, then use our expertise to find that sweet spot of realistic and impactful.
         </blockquote> 
-        <p>▷▶◀◁</p>
+        <div class="kontaktButton">
+            <a href="seiten/kontakt.html">Kontakt</a>
+        </div>
+        <div class="scroll">
+            <img src="bilder/scroll.gif" alt="Scrollen">
+        </div>
+        </div>
+        
     </article>
     
     <section>
         <h2>Unsere Dienstleistungen</h2>
-        <article>
-            <h3>WE WILL THINK WITH YOU</h3>
-            <figure>
-                <img src="https://picsum.photos/200" alt="think">
-            </figure>
-            <ul>
-                <li>Innovation Strategy</li>
-                <li>Digital Product Strategy</li>
-                <li>Technology Architecture</li>
-                <li>Information Architecture</li>
-            </ul>
-        </article>
-
-        <article>
-            <h3>WE WILL ENVISION WITH YOU</h3>
-            <figure>
-                <img src="https://picsum.photos/200" alt="think">
-            </figure>
-            <ul>
-                <li>Digital Product Design</li>
-                <li>UX Research & Design</li>
-                <li>Website Design</li>
-                <li>Design the brand Identity</li>
-            </ul>
-        </article>
-        <article>
-            <h3>WE WILL BUILD WITH YOU</h3>
-            <figure>
-                <img src="https://picsum.photos/200" alt="think">
-            </figure>
-            <ul>
-                <li>Web Apps Development</li>
-                <li>Magento Development</li>
-                <li>Wordpress Development</li>
-                <li>Mobile App Development</li>
-            </ul> 
-        </article>
+        <div class="dienst">
+            <article>
+                <h3>WE WILL THINK WITH YOU</h3>
+                <figure>
+                    <img src="https://picsum.photos/200" alt="think">
+                </figure>
+                <ul>
+                    <li>Innovation Strategy</li>
+                    <li>Digital Product Strategy</li>
+                    <li>Technology Architecture</li>
+                    <li>Information Architecture</li>
+                </ul>
+            </article>
+    
+            <article>
+                <h3>WE WILL ENVISION WITH YOU</h3>
+                <figure>
+                    <img src="https://picsum.photos/200" alt="think">
+                </figure>
+                <ul>
+                    <li>Digital Product Design</li>
+                    <li>UX Research & Design</li>
+                    <li>Website Design</li>
+                    <li>Design the brand Identity</li>
+                </ul>
+            </article>
+            <article>
+                <h3>WE WILL BUILD WITH YOU</h3>
+                <figure>
+                    <img src="https://picsum.photos/200" alt="think">
+                </figure>
+                <ul>
+                    <li>Web Apps Development</li>
+                    <li>Magento Development</li>
+                    <li>Wordpress Development</li>
+                    <li>Mobile App Development</li>
+                </ul> 
+            </article>
+            <div class="clear"></div>
+        </div>
     </section>
 
-    <section>
-        <h2>Unsere Kunden</h2>
-        <div class="kunden">
+    <section class="kunden">
+        <h2>Sie vertrauen uns</h2>
+        <div>
             <figure>
-                <img src="https://picsum.photos/250" alt="Ulli Bau">
+                <img src="bilder/kunden/wbs.png" alt="WBS Training">
             </figure>
             <figure>
-                <img src="https://picsum.photos/250" alt="Ulli Bau">
+                <img src="bilder/kunden/db3.png" alt="Deutschbahn">
+            </figure>
+
+            <figure>
+                <img src="bilder/kunden/nuernberg.png" alt="Stadt Nürnberg">
             </figure>
             <figure>
-                <img src="https://picsum.photos/250" alt="Ulli Bau">
+                <img src="bilder/kunden/juliusspital.jpg" alt="Juliusspital">
             </figure>
+            <div class="clear"></div>
         </div>
     </section>
 </main>
 <footer>
-    <p>&copy;2023 Olivieris Gmbh</p>
+    <div>
+        
+        <nav>
+            <ul>
+                <li><a href="seiten/kontakt.html">Kontakt</a></li>
+                <li><a href="seiten/impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <p>&copy;2023 Olivieris Gmbh</p>
+    </div>   
 </footer>
+<div class="oben">
+    <a href="#oben"><img src="bilder/top.jpg" alt="oben"></a>
+</div>
 </body>
 </html>
