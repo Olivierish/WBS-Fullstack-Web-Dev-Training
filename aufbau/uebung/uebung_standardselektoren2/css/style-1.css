@@ -1,24 +1,46 @@
 /* Weisen sie den Elementen die geforderten Eigenschaften zu! */  
- 
-/* Alle Inhalte sollen in der Schriftart Arial dargestellt werden*/  
 
+/* Alle Inhalte sollen in der Schriftart Arial dargestellt werden*/  
+body{
+    font-family: Arial, Helvetica, sans-serif;
+ }
   
 /* Alle Überschriften sollen in der Schriftart Verdana dargestellt werden und einen umlaufenden Innenabstand von 20px besitzen */
-
+h1,h2,h3,h4,h5,h6{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+}
 
 /*Überschriften der 1. Ordnung sollen horizontal zentriert sein */
-
+h1{
+    text-align: center;
+}
 
 /* Überschriften der 2. Ordnung erhalten eine grüne Hintergrundfarbe und eine weiße Schriftfarbe */
-
+h2{
+    color: white;
+    background-color: green;
+    background-size: contain;
+}
 
 /* Alle Textabsätze  sollen maximal 800px breit sein, dürfen aber kleiner werden. Die Textfarbe soll nicht schwarz (frei wählbar) sein!*/
-
-
+p{
+    max-width: 800px;
+    color: #5f5f5f;
+    font-size: 1em;
+}
 /* Alle Listenpunkte von ungeordneten Listen sollen mit einem Rechteck als Aufzählungszeichen dargestellt werden */
-
+ul{
+    list-style-type:square;
+}
 
 /* Alle header-, nav-,section- und footer - Elemente sollen eine doppelte Rahmenlinie in der Farbe Rot bekommen */
-
+header,nav,section,footer{
+    /* border: 2px red solid; */
+    border: 3px red double;
+}
 
 /* Die id=main soll keinen Rahmen besitzen */ 
+#main{
+    border: none;
+}

@@ -6,10 +6,16 @@
 */
 
 /* Überschriften der 3. Ordnung die Nachfahren von Footer sind sollen nur so breit sein wie ihr Inhalt und in der Hintergrundfarbe rot dargestellt werden */
-
+footer h3{
+    /* width: fit-content;
+    background-color: red; */
+}
 
 /*Listenpunkte die Nachfahren der id="nav" sind sollen ohne Aufzählungszeichen dargestellt werden */
 
+#nav li{
+    /* list-style-type: none; */
+}
 
 /* Textabsätze die sich in einem article befinden bekommen einen Außenabstand von 50px rechts und links , sowie einen Rahmen links, 10px stark durchgezogene Linie und blauer Farbe*/
 
