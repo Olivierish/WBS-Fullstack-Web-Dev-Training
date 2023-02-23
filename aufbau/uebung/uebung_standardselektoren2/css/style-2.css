@@ -1,0 +1,27 @@
+/* Weisen sie den Elementen die geforderten Eigenschaften zu! */   
+/* Schauen Sie sich den Markupaufbau genau an */ 
+ 
+/* Nachfahrenselektor: 
+ Startselektor  Zielselektor {} 
+*/
+
+/* Überschriften der 3. Ordnung die Nachfahren von Footer sind sollen nur so breit sein wie ihr Inhalt und in der Hintergrundfarbe rot dargestellt werden */
+
+
+/*Listenpunkte die Nachfahren der id="nav" sind sollen ohne Aufzählungszeichen dargestellt werden */
+
+
+/* Textabsätze die sich in einem article befinden bekommen einen Außenabstand von 50px rechts und links , sowie einen Rahmen links, 10px stark durchgezogene Linie und blauer Farbe*/
+
+
+
+/*#######################*/
+/*       schwierig       */
+/*#######################*/
+
+/* nav-,header- und footer-Elemente die Nachfahren von semantischen Strukturcontainern sind dürfen keinen Rahmen besitzen und erhalten dafür aber eine Hintergrundfarbe in #f5f5f5 */ 
+
+
+/* Alle Nachfahren der class="article" sollen einen Rahmen unten , 5px stark  mit gepunkteter Linie besitzen  */
+
+

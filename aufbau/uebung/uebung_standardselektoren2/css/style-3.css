@@ -1,0 +1,28 @@
+/* Weisen sie den Elementen die geforderten Eigenschaften zu! */  
+/* Schauen Sie sich den Markupaufbau genau an */
+/* geforderte Selektoren beziehen sich nur auf das gelieferte Markup */  
+ 
+/* Nachbarselektor:
+ Startselektor + Zielselektor {}  
+*/
+
+/*Überschriften der 2. Ordnung die direkt auf eine Überschrift der 1. Ordnung folgen  sollen eine gelbe Textfarbe besitzen*/
+
+
+/* Alle Textabsätze die Nachbarn einer Überschrift der 2.Ordnung sind sollen  eine blaue Textfarbe zugewiesen bekommen*/
+
+
+
+/* Alle Textabsätze die Nachbarn einer Überschrift sind (direkt auf einen Überschrift folgen) sollen einen beigen Hintergrund besitzen und eine blaue Textfarbe */
+
+
+
+/*#######################*/
+/*       schwierig       */
+/*#######################*/
+/* Listenpunkte die innerhalb eines Footer-Elementes aufeinander folgen sollen einen ungefüllten Kreis als Aufzählungszeichen besitzen */
+
+
+
+/* Wenn sich in einer Section eine Liste befindet soll nach dem 3. Listenpunkt (ab dem 4.) jeder darauf folgende Listenpunkt einen gelben Hintergrund besitzen*/
+
