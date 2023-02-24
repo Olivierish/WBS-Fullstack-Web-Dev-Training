@@ -7,27 +7,54 @@
 
 /* Überschriften der 3. Ordnung die Nachfahren von Footer sind sollen nur so breit sein wie ihr Inhalt und in der Hintergrundfarbe rot dargestellt werden */
 footer h3{
-    /* width: fit-content;
-    background-color: red; */
+    width: fit-content;
+    display: inline-block;
+    background-color: rgb(255, 23, 178);
 }
 
 /*Listenpunkte die Nachfahren der id="nav" sind sollen ohne Aufzählungszeichen dargestellt werden */
 
 #nav li{
-    /* list-style-type: none; */
+    list-style-type: none;
 }
 
 /* Textabsätze die sich in einem article befinden bekommen einen Außenabstand von 50px rechts und links , sowie einen Rahmen links, 10px stark durchgezogene Linie und blauer Farbe*/
 
-
+article p{
+    margin: auto 50px;
+    border-left: 10px rgb(48, 145, 255) solid;
+    /* background-color: #db28ff; */
+}
 
 /*#######################*/
 /*       schwierig       */
 /*#######################*/
 
-/* nav-,header- und footer-Elemente die Nachfahren von semantischen Strukturcontainern sind dürfen keinen Rahmen besitzen und erhalten dafür aber eine Hintergrundfarbe in #f5f5f5 */ 
+/* nav-,header- und footer-Elemente die Nachfahren von 
+semantischen Strukturcontainern sind dürfen keinen Rahmen 
+besitzen und erhalten dafür aber eine Hintergrundfarbe 
+in #f5f5f5 */ 
 
+
+section footer,
+section header,
+/* section nav,
+header footer,
+header header,
+header nav,
+article footer,
+article header,
+article nav,
+footer footer,
+footer header, */
+footer nav{
+    background-color: #f5f5f5;
+    border: none;
+}
 
 /* Alle Nachfahren der class="article" sollen einen Rahmen unten , 5px stark  mit gepunkteter Linie besitzen  */
+article *{
+    border-bottom: 5px dotted gray;
+}
 
 

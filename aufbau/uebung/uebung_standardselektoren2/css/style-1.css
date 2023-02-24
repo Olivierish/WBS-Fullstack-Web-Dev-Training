@@ -37,7 +37,7 @@ ul{
 /* Alle header-, nav-,section- und footer - Elemente sollen eine doppelte Rahmenlinie in der Farbe Rot bekommen */
 header,nav,section,footer{
     /* border: 2px red solid; */
-    border: 3px red double;
+    border: 3px rgb(236, 32, 145) double;
 }
 
 /* Die id=main soll keinen Rahmen besitzen */ 

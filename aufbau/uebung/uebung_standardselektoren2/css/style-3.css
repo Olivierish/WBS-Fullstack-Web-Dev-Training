@@ -6,23 +6,39 @@
  Startselektor + Zielselektor {}  
 */
 
-/*Überschriften der 2. Ordnung die direkt auf eine Überschrift der 1. Ordnung folgen  sollen eine gelbe Textfarbe besitzen*/
-
+/*Überschriften der 2. Ordnung die direkt auf eine Überschrift der 1. Ordnung 
+folgen  sollen eine gelbe Textfarbe besitzen*/
+h1 + h2 {
+    color: yellow;
+}
 
 /* Alle Textabsätze die Nachbarn einer Überschrift der 2.Ordnung sind sollen  eine blaue Textfarbe zugewiesen bekommen*/
-
+h2 + p {
+    color: rgb(64, 75, 235);
+}
 
 
 /* Alle Textabsätze die Nachbarn einer Überschrift sind (direkt auf einen Überschrift folgen) sollen einen beigen Hintergrund besitzen und eine blaue Textfarbe */
-
+h1 + p, h2 + p, h3 + p {
+    background-color: beige;
+    color: rgb(64, 75, 235);
+}
 
 
 /*#######################*/
 /*       schwierig       */
 /*#######################*/
 /* Listenpunkte die innerhalb eines Footer-Elementes aufeinander folgen sollen einen ungefüllten Kreis als Aufzählungszeichen besitzen */
-
-
+footer li+li {
+    list-style-type: circle;
+}
 
 /* Wenn sich in einer Section eine Liste befindet soll nach dem 3. Listenpunkt (ab dem 4.) jeder darauf folgende Listenpunkt einen gelben Hintergrund besitzen*/
+/* Korrekt */
+/* section li:nth-child(n+4){
+    background-color: yellow;
+} */
+section li+li+li+li{
+    background-color: yellow;
+}
 
