@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">   
+<head>
+  <meta charset="UTF-8"> 
+  <title>Vergleich Boxmodelle</title>             
+  <style> 
+  /* Boxmodell für alle Elemente festlegen */
+ /* *,*:before,*:after{box-sizing:border-box;} */
+ 
+  /* Wie zuvor jedoch performanter im Rendering des Browsers: */
+  /* 
+   html{box-sizing:border-box;}
+    *,*:before,*:after{
+    box-sizing:inherit;
+    }
+  */
+
+  /* 
+	Im Alternativen Boxmodell (border-box) sind Innenabstände und Rahmen Teil der angegebenen Breite.
+	Das Alternative Boxmodell ( Ursprung IE3 - 6) wird mit der Eigenschaft box-sizing:border-box; erzwungen!
+	Wird die Eigenschaft box-sizing nicht angegeben gilt das Standard/klassische Boxmodell content-box
+	*/
+		
+/* Container mit Border-box - alternatives Boxmodell für alle DIV festlegen*/
+  div{
+  box-sizing:border-box;
+  overflow:hidden;/* einfangen gefloateter Elemente*/
+  }
+  
+  div div{
+  border:2px solid #000;
+  background:#ccc;
+  width:300px;
+  height:300px;
+  padding:20px;
+  margin:20px;
+  text-align:center;
+	float:left;/* Das Element schwebt links nachfolgender Inhalt steht rechts */
+  }
+  
+ div div:first-child{
+ box-sizing:content-box;
+ } 
+ 
+ /* Ab hier empfiehlt sich ein externes Stylesheet da nachfolgende angaben für mehreren Dokumenten wirken */
+ /* Navi */
+	h1,h2{text-align:center;margin: 1em;}
+	h1{margin-top:3em;}
+	.menu{position:fixed;top:0;left:0;right:0;margin:0;padding:1em;list-style:none;background:#333;overflow:hidden;}
+	.menu li{float:left;width:50%;text-align:center;color:#fff;font-size:2em;}
+	.menu li,.menu a{transition:all .6s ease-in-out;}
+	.menu a{display:block;color:inherit;text-decoration:none;}
+	.menu li:hover{background:#ccc;color:#000;}
+	.menua a:hover{color:inherit;}
+
+	#vergleich .vergleich,
+	#vergleich .vergleich:hover,
+	#boxmodell .boxmodell,
+	#boxmodell .boxmodell:hover{background:#fc0;color:#000;} 
+  </style>
+</head>
+<body  id="vergleich">  
+  	<h1>alternatives und klassisches Boxmodell im Vergleich</h1>
+	<p>Im alternativen Boxmodell (border-box) sind Innenabstände und Rahmen Teil der angegebenen Breite.<br>Bei dem klassischen Boxmodell (content-box) addieren sich Innenabstände und Rahmen auf die  angegebene Breite.</p>
+	<h3> Unterschiedliche Boxmodelle innerhalb eines Dokumentes sind zu vermeiden</h3>
+	<p>Zum direkten Vergleich beider Boxmodelle werden in dieser Datei beide Boxmodelle vermischt. In Produktivseiten ist davon zwingend abzuraten.</p>
+  <div>
+    <div>klassisches Boxmodell</div>
+    <div>alternatives Boxmodell</div>
+  </div>
+  	<ol class="menu">
+		<li class="boxmodell"><a href="boxmodell.html" title=" klassisches Boxmodell">Klassisches Boxmodell</a></li>
+		<li class="vergleich"><a href="vergleich_boxmodelle.html" title="Unterschied zwischen klassischem und aLternativen Boxmodell">Vergleich Boxmodelle</a></li>
+	</ol> 
+</body>
+</html>

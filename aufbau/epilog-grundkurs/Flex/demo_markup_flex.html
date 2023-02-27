@@ -10,81 +10,44 @@
    body>*{background:#ccc;padding:1%;} 
    body>*>*{background:#fdfdfd;}
 
-   /* navi */
+   nav ul{
+    display: flex;
+    flex-direction: row-reverse;
+   }
    nav li{
-    float:left;
-    /* display:inline-block; */
-    background:orange;
+    background-color: orange;
+    width: 500px;
+    /* flex-grow: 0;*/
+    /*flex-shrink: 1;
+    flex-basis:500px; */
+    /* flex: 0 1 500px; short hand for : fglow, fschrink, fbasis */
+    margin: 5px;
    }
- 
-   nav ul{
-    /* float:left; */
-    /* width:90%;
-    padding-left:10%; */
-    /* width:calc(100% - 40px); */
-    /* padding-left:40px; */
-   }
-
-   nav ul{
-    /* overflow:auto; */
-   }
-   /* header,nav{
-    float:left;
+   /* nav li:nth-child(3){
+    flex-grow: 3;
    } */
 
-   .green{background:yellow;}
-   .col-33{ width:33.3333%}
-   .col-66{width:66.6666667%;}
-   .float-l{float:left;}
-   .float-r{float:right;}
 
-   
-
-   .col-50{width:50%;}
-
-   p.col-50{
-   float:left;
-   margin:1%;
-   border:1px solid red;
-   width:calc(50% - 4 * 1% - 2px);
+   .col-25{
+    width: calc(25% - 2% - 20px);
+    min-width: 160px;
+    margin: 10px;
+    padding: 1%;
+    flex-grow: 1; /*chaque element utilise toute la place disponible*/
    }
-   /* p+p.col-50{
-    float:none;
-    margin-left:50%;
-   } */
-   a:hover{
-    background:red;
+   .float-l{
+    float : left;
    }
-
-   p:first-line{
-    background:orange;
-   }
-
-  
-   h2:first-letter{
-    font-size:3em;
-    float:left;
-   }
-
-   header:before{
-    content:"";
-    background:red;
-    display:block;
-    height:20px;
-   }
-
-   header:after{
-    content:":after";
-    background:red;
-   }
-
-  /* stell dich unter einen float */
-   .clear{clear:both;}
-   /* clearen am Ende der Zeile - vor dem schließenden Tag */
    .clearfix:after{
-    content:"";
-    display:table;
-    clear:both;
+    content: "";
+    display: table;
+    clear: both;
+   }
+   .flex{
+    display: flex;
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+    flex-flow: wrap row;
    }
   </style> 
 </head>
@@ -95,41 +58,35 @@
   </header>
   
   <nav>
-    <ul class="clearfix">
+    <ul>
       <li><a href="">link 1</a></li>
       <li><a href="">link 2</a></li>
       <li><a href="">link 3</a></li>
       <li><a href="">link 4</a></li>
-      <!-- <li style="clear:both;float:none;">semantisch falsch</li> -->
-      <!-- clear -->
-      <!-- <span style="display:block;clear:both;"></span> -->
     </ul>
-    <!-- <span style="display:block;clear:both;"></span> -->
   </nav>
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo assumenda nulla at, officia debitis corporis voluptatum. Necessitatibus ipsum porro earum sit a excepturi pariatur deleniti nisi, libero laborum aliquam sed?</p>
+  <p>Deserunt tenetur optio quis repellendus doloribus, rem modi nihil ut quae magnam perferendis cumque dolores quidem quia ad accusamus neque enim architecto harum natus sapiente. Iure quam similique cumque consectetur.</p>
 
-  <p class="col-50 green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo assumenda nulla at, officia debitis corporis voluptatum. Necessitatibus ipsum porro earum sit a excepturi pariatur deleniti nisi, libero laborum aliquam sed?</p>
-  <p class="col-50">Deserunt tenetur optio quis repellendus doloribus, rem modi nihil ut quae magnam perferendis cumque dolores quidem quia ad accusamus neque enim architecto harum natus sapiente. Iure quam similique cumque consectetur.</p>
-
-  <div class="clear clearfix">
-
-   <section class="col-33 float-r">
-     <h2 class="clearfix">Überschrift section 1</h2>
+  <div class="clearfix flex">
+   <section class="col-25 float-l">
+     <h2>Überschrift section 1</h2>
      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio magni ipsam, incidunt modi sequi autem, odit sed nihil consequuntur magnam provident blanditiis labore? Consequuntur expedita, dolorem adipisci quidem quam beatae!</p>
    </section>
-   <section class="col-33 float-l">
-     <h2 class="clearfix">Überschrift section 2</h2>
+   <section class="col-25 float-l">
+     <h2>Überschrift section 2</h2>
      <p>Voluptas fugiat asperiores temporibus laboriosam optio omnis soluta, reprehenderit necessitatibus sit culpa distinctio dolore. Quisquam laudantium velit laboriosam quis inventore ducimus totam hic, illo nulla numquam minus? Neque, odit facere!</p>
    </section>
-   <section class="clear col-33 float-r">
+   <section class="col-25 float-l">
      <h2>Überschrift section 3</h2>
      <p>Perspiciatis iste deserunt maxime rem tempora at eum molestiae minus laborum nostrum impedit accusamus eius doloribus vitae a sapiente cumque natus magnam perferendis saepe, cum assumenda illo sequi culpa. Quasi?</p>
    </section>
-   <section class="col-33 float-l">
+   <section class="col-25 float-l">
      <h2>Überschrift section 4</h2>
      <p>Minima adipisci, quasi eos quibusdam delectus impedit iure voluptatibus. Enim ipsa tempore veniam maxime excepturi temporibus similique nam minus adipisci eligendi minima at iure, obcaecati fugit atque cum neque quibusdam?</p>
    </section>
-   <!--clear-->
-   <!-- :after-->
+   <!-- <div style="clear: both;"></div> -->
   </div> 
 
   <div>

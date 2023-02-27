@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Modelle</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: #f7f7f7;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.col-33{
+    width: 32.3333%;
+}
+.col-66{
+    width: 62.6666667%;
+}
+.float-l{
+    float:left;
+}
+.float-r{
+    float:right;
+}
+
+
+section{
+    background-color: #ffface;
+    padding: 10px;
+    margin: 20px 0;
+    border: #b624f0 3px solid;
+    overflow: hidden;
+}
+section div{
+    height: 200px;
+    background-color: rgb(10, 126, 146);
+    line-height: 200px;
+    margin: 0.5% 0.5%;
+    
+}
+
+p{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.clear{
+    clear: both;
+}
+
+.double-height{
+    min-height: 410px;
+}
+
+@media screen and (max-width : 450px){
+*{
+    background-color: #fff;
+}
+
+}
+
+    </style>
+</head>
+<body>
+    <section>
+            <div class="col-33 float-l"><p>Spatle 1</p></div>
+            <div class="col-33 float-l"><p>Spatle 2</p></div>
+            <div class="col-33 float-l"><p>Spatle 3</p></div>
+    </section>
+    
+    <section>
+            <div class="col-33 float-l"><p>Spatle 1</p></div>
+            <div class="col-33 float-r"><p>Spatle 2</p></div>
+            <div class="col-33 float-l"><p>Spatle 3</p></div>
+    </section>
+    
+    <section>
+            <div class="col-33 float-l double-height"><p>Spatle 1</p></div>
+            <div class="col-66 float-r"><p>Spatle 2</p></div>
+            <div class="col-66 float-r"><p>Spatle 3</p></div>            
+    </section>
+
+    <section>
+            <div class="col-66 float-r"><p>spatle 1</p></div>
+            <div class="col-66 float-r"><p>spatle 2</p></div>
+            <div class="col-33 double-height"><p>spatle 3</p></div>
+    </section>
+
+</body>
+</html>

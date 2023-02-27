@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="de"> 
+	<head>
+		<meta charset="utf-8">
+		<title>Das Boxmodell</title>           
+		<style>
+		/* Der Standardwert für die Eigenschaften width und height ist auto*/
+		/* Ja nach Element-seitiger Darstellungseigenschaft verhält sich dieser jedoch unterschiedlich.*/
+		 
+		/* Solang keine weiteren Angaben getätigt werden gilt für:
+			Blockelemente:
+			width:auto; - nutze den zur Verfügung stehenden Platz
+			height:auto; - so hoch wie der Inhalt
+			
+				Relative Maßeinheiten:
+				width:100%; - bezieht sich auf den zur Verfügung stehenden Platz im Elternelement
+				height:100%; - Inhaltshöhe/ gleiches Verhalten wie auto-Wert
+				
+				
+				absolute Maßeinheiten:
+				width:100px; - begrenzt die Inhaltsbreite 
+				height:100px; - begrenzt die Inhaltshöhe
+			Inline/Inline-block;
+			width:auto; - so Breit wie der Inhalt
+			height:auto; - So hoch wie der Inhalt
+			
+				Inline:
+				width:100%; - Inhaltsbreite 
+				height:100%; - Inhaltshöhe - abhängig von der Zeilenhöhe!
+				Inline-Elemente sind nicht in der Lage Breiten und Höhen aufzunehmen
+			
+				Inline-block
+					Relative Maßeinheiten:
+					width:100%; - bezieht sich auf den zur Verfügung stehenden Platz im Elternelement
+					height:100%; - Inhaltshöhe/ gleiches Verhalten wie auto-Wert
+					Elemente können nicht mehr nebeneinander stehen.
+					
+					absolute Maßeinheiten:
+					width:100px; - begrenzt die Inhaltsbreite 
+					height:100px; - begrenzt die Inhaltshöhe
+					Elemente können nebeneinander stehen sofern genug Platz vorhanden ist.
+			
+			Für Inline-Block und Blockelemente gilt:
+			Angaben in EM beziehen sich immer auf die am Element angegebene/wirkende Schriftgröße.
+			Angaben in der Maßeinheit Rem beziehen sich immer auf die im Wurzelelement(HTML) angegebene Schriftgröße.
+			Beide Maßeinheiten verhalten sich wie absolute Angeben, erlauben es aber sich mit der Schriftgrößenänderung anzupassen.
+			
+			Ausnahmen sind Tabellen und Flex-Elemente Breiten und Höhenangaben Verhalten sich wie mindest- Breiten und Höhen.
+			Ist der Inhalt größer als die angegebene Breite / Höhe so passen sich die Element immer dem Inhalt an. 
+      
+				
+		*/
+		
+		.box{
+		width:200px;
+		height:200px;
+		
+		}
+		
+		#klassisch{
+		
+			background:#ccc;
+
+			/* Außenabstand */
+			/* Wichtig bei Verwendung der Kurznotation erfolgt die Angabe der einzelnen Werte im Uhrzeigersinn (oben (12UHr) beginnend */
+			/*margin:50px 40px 30px 20px;*/
+			/*margin:50px 40px 30px;*/ /* Oben rechts/links unten*/
+			/*margin:50px 40px;*/ /* oben/unten links/rechts */
+			margin:20px;
+			
+			/* Innenabstand */
+			/*padding-top:50px;
+			padding-right:40px;
+			padding-bottom:30px;
+			padding-left:20px;*/
+			
+			/* Wichtig bei Verwendung der Kurznotation erfolgt die Angabe der einzelnen Werte im Uhrzeigersinn (oben (12UHr) beginnend */
+			
+			/*padding: 50px 40px 30px 20px;*/
+			/*padding:50px 40px 30px;*/ /* Oben rechts/links unten*/
+			/*padding:50px 40px;*/ /* oben/unten links/rechts */
+			padding:20px;
+		
+		}
+		
+		/* Hohe in Prozent */
+		.aussen{width:100%;height:500px;
+		background:#ffc;
+		}
+		.box.prozent{
+		width:50%;
+		height:50%;
+		background:#ccc;
+		}
+	
+		/* Zentrieren von Blockelementen*/
+		.center{
+		background:#f3f3f3;
+		width:70%;
+		margin-left:auto;
+		margin-right:auto;
+		padding:1em;
+		text-align:center;/* wirkt nur auf inline-inhalte*/
+		}
+		
+		em.box,
+		p.box{
+		display:inline-block;
+		/*text-align:center;*/
+		}
+		
+		/* zusammenfallende Außenabstände */
+		ul li{
+		margin-bottom:20px;
+		/*border-bottom:20px solid transparent;*/
+		}
+		
+		ul{background:#ccc;
+		/*padding-top:1px;
+		padding-bottom:1px;*/
+		border:1px solid red;
+		}
+		
+		ul li:last-child{
+		margin-top:40px;
+		/*border-top:40px solid transparent;*/
+		/* Alternative um Margin-drop vorzubeugen */
+		/*margin-bottom:0px;
+		padding-bottom:60px;*/
+		margin-bottom:60px;
+		}
+		
+		/* Margin drop*/
+		.margin-drop,ul{
+		/*border-top:1px solid transparent;
+		border-bottom:1px solid transparent;*/
+		padding-top:1px;
+		padding-bottom:1px;
+		/*display:table;*/
+		}
+		.margin-drop h3{
+		margin:60px 0;
+		}
+	
+		/* Hinweise und zusätzliche Darstellung	*/
+		.hinweis{margin:1em auto;width:90%;background:#fefefe;padding:0.5em;}
+		.hinweis>*{margin:1em 0;}
+		.abstand{display:table; background:#fefefe;border:3px double #333;margin: 0.5em auto; text-align:left;}
+		
+    
+   /* Ab hier empfiehlt sich ein externes Stylesheet da nachfolgende angaben für mehreren Dokumenten wirken */
+		/* Anpassungen wegen Navi */
+		h1,h2{text-align:center;margin: 1em;}
+		h1{margin-top:3em;}	
+	
+    
+		/* Navi */
+		.menu{position:fixed;top:0;left:0;right:0;margin:0;padding:1em;list-style:none;background:#333;overflow:hidden;}
+		.menu li{float:left;width:50%;text-align:center;color:#fff;font-size:2em;}
+		.menu li,.menu a{transition:all .6s ease-in-out;}
+		.menu a{display:block;color:inherit;text-decoration:none;}
+		.menu li:hover{background:#ccc;color:#000;}
+		.menua a:hover{color:inherit;}
+		
+		#vergleich .vergleich,
+		#vergleich .vergleich:hover,
+		#boxmodell .boxmodell,
+		#boxmodell .boxmodell:hover{background:#fc0;color:#000;}
+			
+		</style>
+	</head>
+	<body  id="boxmodell">
+	<h1>Boxmodelle und Besonderheiten </h1>
+	<h2>klassisches Boxmodell</h2>
+	<div class="hinweis">
+	<p>Im visuellen Boxmodell erfolgt die Darstellung durch das zeichnen von Rechtecken. Die Bestandteile dieser Rechtecke beschreibt das Boxmodell</p>
+	<p>Die Container bestehen aus:</p>
+	<ol>
+		<li>Dem Inhaltsbereich, also der Fläche die durch Texte und oder Eigenschaften wie Breite und Höhe angegeben wird</li>
+		<li>einem Innenabstand (padding)</li>
+		<li>einem Rahmen (border)</li>
+		<li>einem Außenabstand (margin)</li>
+	</ol>
+	<p>Bei Blockelementen können Höhe und Breite beliebig festgelegt werden, bei Inlineelementen werden die Maße durch den Inhalt vorgegeben.<br>Innen- und Außenabstände können für jede der 4 Seiten einer Box einzeln festgelegt werden.<br>
+	Wird eine Box positioniert, beginnt die linke Außenkante bei left, die obere Außenkante bei top, die rechte Außenkante bei right und untere Außenkante bei bottom.
+	</p>
+	</div>
+	<img src="../boxmodell.gif" alt="das klassische Boxmodell">
+	<div class="box" id="klassisch">
+		Beispiel klassisches Boxmodell
+	</div>
+	<div class="hinweis">
+	<h4>Gesamthöhe und Gesamtbreite einer Box</h4>
+	<p>Angegebene Höhen und Breiten sind nur dann die Gesamtbreite und Höhe wenn keine weiteren Angaben zu Innenabstand, Rahmen und Außenabstand notiert wurden.</p>
+	
+	<ol>
+		<li>margin-top</li>
+		<li>border-top</li>
+		<li>padding-top</li>
+		<li>height</li>
+		<li>padding-bottom</li>
+		<li>border-bottom</li>
+		<li>margin-bottom</li>
+		<li>margin-left</li>
+		<li>border-left</li>
+		<li>padding-left</li>
+		<li>width</li>
+		<li>padding-right</li>
+		<li>border-right</li>
+		<li>margin-right</li>
+	</ol>
+	<p><strong>Wichtig!</strong> Das Browserstylesheet fügt an einigen Elementen <strong>Außen- oder Innenabstände</strong> hinzu. <em>Diese müssen mit berechnet oder überschrieben werden!</em></p>
+	</div>
+	<h3>Höhe in Prozent</h3>
+	<p>mit nicht inhaltsabhängiger Höhe am Eleternelement</p>
+	<div class="aussen">
+		<div class="box prozent">
+		<h4>Umschließender Container</h4>
+		<code>.aussen{width:100%;height:400px;background:#ffc;}
+		</code>
+		
+		<h4>Innencontainer</h4>
+		<code>
+		.box.prozent{width:50%;height:50%;background:#ccc;}
+		</code>
+		</div>
+	</div>
+	<p class="hinweis">Höhenangaben in Prozent beziehen sich standarmäßig auf den Inhalt sofern es <b>kein Elternelement</b> gibt welches selbst <b>keine inhaltsabhängige Höhenangabe</b> besitzt!</p>
+	<hr>
+	<h3>Margin , Padding und Border am inline-Element</h3>
+	<div class="hinweis">
+	<p>Inlineelemente können standardmäßig keine Höhen , Breiten und vertikale Margins aufnehmen. Vertikale Innenabstände (padding) und Rahmen dehnen ein Inlineelement lediglich visuell (Hintergrund ebene vergrößert sich) aus die Elementhöhe selbst wird damit nicht verändert.</p>
+	</div>
+	<strong style="margin:50px;padding:20px;border:5px solid;">strong - stark hervorgehoben</strong>
+	<hr>
+	<h3>Sonderverhalten von Außenabständen</h3>
+	<div class="hinweis">
+	<h4>Zusammenfallende Außenabstände (collapsing margins)</h4>
+	<p>
+	Zwei oder mehr benachbarte Außenabstände (margins) können sich miteinander verbinden und so einen einzigen Abstand bilden. Dieser Vorgang wird zusammenfallen genannt und der so entstandene Abstand wird zusammengefallener Außenabstand (collapsed margin) genannt. 
+	<strong>Horziontale Außenabstände fallen nicht zusammen.</strong>
+	</p>
+	</div>
+	<ul>
+		<li>Außenabstand unten <code>ul li{margin-bottom:20px;}</code></li>
+		<li>Außenabstand oben <code>ul li:last-child{margin-top:40px;margin-bottom:60px;}</code></li>
+	</ul>
+	
+	<hr>
+	<div class="hinweis">
+	<p>Margins von Kinderelementen können sich über Ihr Elternelement ausdehnen. Dies kann verhindert werden wenn dem Elternelement in der vertikalen Rahmen oder Innenabstände zugewiesen werden.<br> Alternativ verwenden Sie an dem jeweiligen Kinderelement in der vertikalen padding statt margin. Das verwenden alternativer Darstellungseigenschaften wie table oder flex kann dieses Verhalten ebenso unterbinden - ist jedoch oft mit dem Verlust weiterer Standardeigenschaften verbunden.</p>
+	</div>
+	<div class="box margin-drop">
+		<h3>überlappende Außenabstände</h3>
+	</div> 
+	<code>
+		.margin-drop,ul{<br>
+		/*border-top:1px solid transparent;<br>
+		border-bottom:1px solid transparent;*/<br>
+		padding-top:1px;<br>
+		padding-bottom:1px;<br>
+		/* display:table; */
+		<br>
+		}
+	</code>
+	<hr>
+	
+	<div class="hinweis">
+	<h3>Horizontales Zentrieren von Blockelementen;</h3>
+	<p> Zum horizontalen zentrieren von Blockelementen selbst muss eine Breite festgelegt werden.
+	Die Zentrierung selbst findet dann mit dem Außenabstand rechts und links 	sowie dem Wert = auto statt.
+	Der Wert auto sorgt in diesem Fall dafür das der übrige zur Verfügung stehende Platz berechnet und als halbierter Wert der rechten und linken Seite hinzugefügt wird. </p>
+	</div>
+	<div class="center">
+		<em class="box">
+			inlineelement
+			<code class="abstand">
+			em.box, p.box{<br>
+		display:inline-block;<br>		 
+		}
+			</code>
+		</em>
+		<p class="box">
+			Textabsatz
+			<code class="abstand">
+			em.box, p.box{<br>
+		display:inline-block;<br>		
+		}
+			</code>
+		</p>
+		<code class="abstand">
+		/* Zentrieren von Blockelementen*/<br>
+		.center{<br>
+		width:70%;<br>
+		margin-left:auto;<br>
+		margin-right:auto;<br>
+		text-align:center;/* wirkt nur auf inline-inhalte*/<br>
+		}
+		</code>
+	</div>
+<ol class="menu">
+		<li class="boxmodell"><a href="boxmodell.html" title=" klassisches Boxmodell">Klassisches Boxmodell</a></li>
+		<li class="vergleich"><a href="vergleich_boxmodelle.html" title="Unterschied zwischen klassischem und aLternativen Boxmodell">Vergleich Boxmodelle</a></li>
+	</ol>
+	</body> 
+</html>
