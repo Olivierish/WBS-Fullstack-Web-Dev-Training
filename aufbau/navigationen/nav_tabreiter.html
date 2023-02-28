@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+  <title>Tabreiternavigation</title>
+  <style>
+
+    /* allgemeine vorgeben*/
+    html{
+      /*seitenhintergrund*/
+      /* textfarbe*/
+      /*Schriftart*/
+
+      /* line-height bedingt inline-block am anker falls für ausdehnung genutzt */
+      line-height:1.3;
+    }
+
+    /* einfacher Graustufen Kontrast-Test */
+    /* 
+    body{filter:grayscale(1);} 
+    */
+
+    /* usability*/
+    /* Standardformatierung Verweise + Zustände */
+    /* Mindestgröße anklickbare Flächen für Touchevents:
+      https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
+      Für Touchevents müssen interaktive Elemente mindestens 44x44px(icons) groß sein (Halbierung bei retina beachten 22x22px) -  Die kürzeste Kante selbst darf 20px bei interaktiven Elementen nicht unterstreiten 
+      Ergänzungen mit WCAG 2.2:
+      https://w3c.github.io/wcag/understanding/pointer-target-spacing
+    */ 
+
+    /* alle Text Links */
+    a{color:red;
+      display:inline-block;
+      /* padding-top: 2px; *//* dehnt den Anker aus - nur im Zusammenspiel mit geänderte Darstellungseigenschaft */
+      /* font-size:1.1em; */
+    }
+
+    /* Zustaände für alle Textlinks */
+    a:hover,
+    a:focus{
+    text-decoration:none;
+    /* outline:none; */
+    }
+
+    ul{list-style:none;}
+
+    /* Individuelle Bereiche*/
+    nav{
+      padding:0;
+      margin-bottom:0;
+      border:0;
+    }
+    section{margin-top:0;}
+
+    nav ul{
+      display:flex;
+      padding-left:0;
+      margin-bottom:0;
+    }
+    nav li{float:left;}
+    nav ul:after{
+      content:"";
+      display:table;
+      clear:both;
+    }
+
+
+
+
+    /* Visuelle Darstellung -  usabillity/accessibility */
+    nav li{
+      /* 
+      Zwischen interaktiven Elementen die aufeinander folgen sind lt. WCAG2.1 Abstände von 4px einzuhalten um eine gute Benutzbarkeit sicherzustellen - https://w3c.github.io/wcag/understanding/pointer-target-spacing
+      */
+      margin:0 4px 0 0;
+      background: #ccc;
+      color:#000;
+      /* min-width:150px; */
+      border: 1px solid gray;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    nav a{
+      color:inherit;
+     display:block;
+     padding:0.5em 1.5em;
+    }
+
+    /* berühren mit der Maus, gerade Ausgewählt (Tab) */
+    nav li:hover,
+    nav li:focus-within{
+      background:coral;
+      transform:scale(1.1);
+    
+    }
+
+    /* Aktiven Menüpunkt kennzeichnen - klasse en den entsprechenden Listenpunkt setzen*/
+    .active,.current,
+    .active:hover,.current:hover,
+    .active:focus-within,.current:focus-within
+    {
+      background:#fff;
+      border-bottom-color: #fff;
+      transform:scale(1);
+    }
+
+    section{
+      /* margin-top: -1px; */
+      
+    }
+
+    nav ul{
+      position: relative;
+      top: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header><!-- semantisches div - Kopfbereich - kopfzeile role=banner-->
+    <h1>Tabreiternavigation</h1>
+  </header>
+
+  <nav><!--semantisches div- Navigationsbreich - role="navigation"-->
+    <ul>
+      <li><a href="">link 1</a></li>
+      <li class="active"><a href="">link 2</a></li>
+      <li><a href="">link 3</a></li>
+      <li><a href="">link 4</a></li>
+    </ul>
+  </nav> 
+
+  <section><!-- semantisches Div - Seitentenbereich/Seitenabschnitt role=region-->
+    <!-- <h2>Überschrift für section</h2>   -->
+    <h2><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> - Farbkontraste</h2>
+    <p>Weitere Informationen zur Lesbarkeit von Texten und Visualisierung von Ereigniszuständen <a
+        href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" target="_blank"
+        hreflang="en">WCAG - Kontrastverhältnisse</a>
+    </p>
+    <a href="https://contrast-ratio.com" hreflang="en" target="_blank">Farbkontraste überprüfen auf contrast-ratio.com</a>
+    <div style="color:#fff;">
+      <span style="background:red;display:inline-block;min-width:100px;min-height:30px;">red</span>
+      <span style="background:green;display:inline-block;min-width:100px;min-height:30px;">green</span>
+      <span style="background:blue;display:inline-block;min-width:100px;min-height:30px;">blue</span>
+    </div>
+    <h3>Graustufenkontrast - Test</h3>
+    <div style="filter:grayscale(1);color:#fff;">
+      <span style="background:red;display:inline-block;min-width:100px;min-height:30px;">red</span>
+      <span style="background:green;display:inline-block;min-width:100px;min-height:30px;">green</span>
+      <span style="background:blue;display:inline-block;min-width:100px;min-height:30px;">blue</span>
+    </div>
+    <section style="display:flex; flex-wrap:wrap;">
+      <h3 style="width:100%;">verwendetes Farbschema</h3>
+      <div style="color:#000;">
+        <span style="background:#ccc;display:inline-block;min-width:100px;min-height:30px;">lightgray</span>
+        <span style="background:coral;display:inline-block;min-width:100px;min-height:30px;color:#000">coral</span>
+        <span
+          style="background:#fff;color:#000;display:inline-block;min-width:100px;min-height:30px;">white</span>
+      </div>
+      <div style="filter:grayscale(1);color:#000;">
+        <span style="background:#ccc;display:inline-block;min-width:100px;min-height:30px;">lightgray</span>
+        <span style="background:coral;display:inline-block;min-width:100px;min-height:30px;color:#000">black</span>
+        <span
+          style="background:#fff;color:#000;display:inline-block;min-width:100px;min-height:30px;">white</span>
+      </div>
+
+      <p style="font-weight:bold;color:red;">Das in diesem Beispiel verwendete Farbschema entstand aus Teilnehmervorschlägen
+        und erfüllt nicht alle Erfordernisse der <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>.
+      </p>
+
+      <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" hreflang="en" lang="en" target="_blank">Web Content Accessibility Guidelines</a>
+
+      </p>  
+        Suchmaschinen bewerten Kontrastverhältnisse und gute Zugänglichkeit. Unzureichende Kontraste zwischen Vorder- und Hintergrund ebenso zwischen Ereigniszuständen werden abgewertet. Dies gilt auch für das nicht einhalten von Mindestgrößen und Abständen für interaktive Elemente bzw. zwischen interaktiven Elementen.
+      </p>
+
+      <p>Einen einfachen Graustufen Kontrast-Test, zur schnellen visuellen Kontrolle, können Sie mit der Eigenschaft
+        <code>filter:grayscale(1);</code> in den Entwicklerwerkzeugen am Body-Element vornehmen.
+      </p>
+    </section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="" title="title setzen wenn Linktext nicht aussagekräftig">Ipsa</a>, minima neque provident nemo cupiditate, architecto quas expedita veniam laudantium corrupti vero praesentium. Labore nesciunt ab corporis veniam at, sunt deserunt?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere quis architecto aspernatur. Facere sunt molestias mollitia dolor nam numquam corrupti atque totam ab maxime a, libero accusantium laudantium facilis <a href="">recusandae!</a></p>
+    
+    <details><!--Zusammenfassung / Nachtrag / Zusatzinformation-->
+      <summary aria-haspopup="true">Aria Landmark Roles</summary><!--Überschrift für details-->
+        <p>Landmark-Roles sind Informationen, für Screenreeder und andere sinnstiftende Mechnismen, über Inhaltliche Aufteilung der Seitenbereiche. Eine Übersicht zu den Aria-Landmark-Roles die den HTML5-Outline-Elementen zugewiesen sind finden sie unter: <a href="https://www.w3.org/WAI/ARIA/apg/example-index/landmarks/HTML5.html" title="Landmarkroles an html5 elementen und fortführende Informationen" hreflang="en" target="_blank">Aria-Landmark-Role</a></p>
+    </details>
+
+  </section>
+
+  <footer ><!-- semantisches div - Fußbereich role="contentinfo"-->
+    Tabreiternavigation
+  </footer>
+
+</body>
+</html>

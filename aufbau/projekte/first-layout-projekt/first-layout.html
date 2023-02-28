@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Layout</title>
+    <title>3BigCats - First Layout</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
@@ -15,16 +15,18 @@
         html{
             background-color: #18191b;
         }
+
         body{
             color: azure;
             font-size: 1em;
-            font-family: Poppins,Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
         }
         h2{
             color:aquamarine;
-            margin: 20px;
+            margin: 10px 20px;
             font-size: 1.3em;
         }
+        
         h3{
             color: rgb(165, 89, 236);
             margin: 10px;
@@ -32,11 +34,11 @@
             text-align: center;
         }
 
-        
         header{
             height: 50px;
             background-color:rgb(37, 37, 37);
         }
+
         #logo{
             text-align: center;
             color: azure;
@@ -44,32 +46,40 @@
             font-size: 1.3em;
             line-height: 50px;
         }
+
         nav{
             margin: 0 2rem;
             height: 40px;
             margin: 1rem 2rem;
         }
-        ul{
+        nav ul{
             display: flex;
             justify-content: center;
             list-style: none;
-            
-
         }
-        ul li{
+        nav ul li{
             width: 150px;
             text-align: center;
             margin-left: 20px;
             background-color: black;
             padding: 5px 10px;
+            float: left;
         }
-        ul li:hover{
+        ul li:hover,
+        ul li:focus-within{
             background: #464646;
         }
         ul li a {
+            display: block;
             text-decoration: none;
             color:aquamarine;
 
+        }
+        nav li{float: left;}
+        nav ul:after{
+            content: "";
+            display: table;
+            clear: both;
         }
         main{
             width: 100%;
@@ -80,14 +90,14 @@
             margin: 0 auto;
             /* border: 1px solid yellow; */
         }
-        section:first-child{
+        #container div:first-child{
             /* border: 1px solid red; */
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
 
         }
-        section:first-child .card{
+        #container div:first-child .card{
             /* border: 1px solid rgb(0, 204, 255); */
             width: 300px;
             padding: 20px 0; 
@@ -96,27 +106,27 @@
             box-shadow: 1px 1px 8px #535353;
             border-radius: 5px;
         }
-        section:first-child .card p{
+        #container div:first-child .card p{
             text-align: center;
         }
-        section:first-child .card figure{
+        #container div:first-child .card figure{
             width: calc(100% - 20px);
             padding: 20px 10px 10px 10px; 
         }
-        section:first-child .card figure img{
+        #container div:first-child .card figure img{
             display: block;
             margin: 0 auto;
             width: 200px;
             box-shadow: 1px 1px 8px #2b2b2b;
         }
 
-        section:last-child{
+        #container div:last-child{
             /* border: 1px solid rgb(0, 255, 13); */
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
         }
-        section:last-child article{
+        #container div:last-child article{
             /* border: 1px solid rgb(38, 48, 192); */
             width: 40%;
             min-width: 300px;   
@@ -126,7 +136,7 @@
             box-shadow: 1px 1px 8px #535353;
             border-radius: 5px;
         }
-        section:last-child article p{
+        #container div:last-child article p{
             padding: 0 20px;
         }
         footer{
@@ -139,8 +149,8 @@
             margin: 0 auto;
             margin-top: 20px;
             color: #8d8d8d;
-            padding: 20px 0; 
-            
+            padding: 0 10px; 
+            line-height: 50px;
         }
 
     </style>
@@ -159,7 +169,7 @@
             </ul>
         </nav>
     <div id="container">
-        <section>
+        <div>
             <div class="card">
                 <figure>
                     <img src="images/lion.png" alt="lion" width="300">
@@ -184,8 +194,8 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ipsam.
                 </p>
             </div>
-        </section>
-        <section>
+        </div>
+        <div>
             <article>
                 <h2>Überschrift</h2>
                 <p>
@@ -198,7 +208,7 @@
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium modi nulla, sunt perferendis dolore illum voluptatum magnam mollitia rem, sequi est non, tempore architecto molestiae numquam aspernatur dolor saepe expedita.
                 </p>
             </article>
-        </section>
+        </div>
     </div>
     </main>
     <footer>

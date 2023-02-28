@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantik und Outline</title>
+</head>
+<body>
+  <!-- <h1>Überschrift der ersten Ordnung</h1> -->
+  <!-- Seitenthema / Seitenüberschrift -->
+  <!-- H1 ist SEO seitig momentan nur einmal pro Dokument verwendbar, sofern sich die Überschrift in keinem semantischen Strukturcontainer (article, section, aside) befindet   -->
+  <!-- <h2>Überschrift der zweiten Ordnung</h2> -->
+  <!-- Kapitel / Kategorieüberschrift -->
+  <!-- H2 ist SEO seitig momentan, ohne weitere semantische Strukturelemente maximal 5 mal pro Seite, innerhalb von semantischen Strukturbereichen (article,section) je 5 pro Bereich, verwendbar --> 
+  <!-- <h3>Überschrift der dritten Ordnung</h3> -->
+  <!-- Inhalts- / Artikel / Themenüberschrift-->
+  <!-- H3 und untergeordnete Überschriften sind SEO seitig beliebig oft einsetzbar -->
+  <!-- <h4>Überschrift der vierten Ordnung</h4>
+  <h5>Überschrift der fünften Ordnung</h5>
+  <h6>Überschrift der sechsten Ordnung</h6> -->
+ 
+  <!--Beispiel Inhaltsgliederung mit Überschriften-->
+<!--   
+  <h1>Webentwicklung - Seitenthema/ Seitenüberschrift</h1>
+  text text text
+  <h2>Markupsprachen</h2>
+  <h3>HTML .- Hypertext Markup Language</h3>
+  <h3>XML - Extensible Markup Language</h3>
+  <h2>Programmiersprachen - Kategorie / Kapitelüberschrift</h2>
+  Erklärung zu den Programiersprachen
+  <h3>PHP - Themenüberschrift</h3>
+  Hypertextpreprozessor
+  <h3>Javascript - Themenüberschrift</h3>
+  -->
+  <!--
+    HTML5 Content Modelle
+    https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content
+  -->
+    
+    <!-- semantisches Div, seitenabschnitt/seitenbereich , role="region"--> 
+    <!-- WAI und Aria Rollen teilen sinnstiftenden Mechanismen (besonders Screenreadern) mit um was für Inhalt/Inhaltsbereich es sich handelt -->  
+    
+<!--     
+    <section>
+      <h1>Inhaltsbereich -  Überschrift für diese Section</h1>
+      <section>
+        <h1>Inhaltsbereich -  Überschrift für diese Section</h1>
+        <section>
+          <h1>Inhaltsbereich -  Überschrift für diese Section</h1>
+           <section>
+            <h1>Inhaltsbereich -  Überschrift für diese Section</h1>
+           </section>
+        </section>
+      </section>
+      <section>
+        <h1>Inhaltsbereich -  Überschrift für diese Section</h1>
+      </section>
+      <section>
+        <h1>Inhaltsbereich -  Überschrift für diese Section</h1>
+      </section>
+    </section>  -->
+   
+    <!--Beispiel Inhaltsgliederung mit Strukturcontainern -->
+    
+    <!-- <article>
+      <h1>Webentwicklung</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, tempore, tempora repellendus ad possimus autem nisi voluptate debitis tenetur et amet magnam pariatur impedit eius temporibus error laboriosam dicta facilis.</p>
+      <article>
+        <h1>Html und CSS</h1>
+        <section>
+          <h1>HTML</h1>
+        </section>
+        <section>
+          <h1>CSS</h1>
+        </section>
+      </article>
+      <article>
+        <h1>Programmiersprachen im Web</h1>
+        <section>
+          <h1>PHP</h1>
+        </section>
+        <section>
+          <h1>Javascript</h1>
+        </section>
+      </article>
+    </article>  -->
+    
+    <article>
+      <h1>Webentwicklung</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, tempore, tempora repellendus ad possimus autem nisi voluptate debitis tenetur et amet magnam pariatur impedit eius temporibus error laboriosam dicta facilis.</p>
+      <article>
+        <h2>Html und CSS</h2>
+        <section>
+          <h3>HTML</h3>
+        </section>
+        <section>
+          <h3>CSS</h3>
+        </section>
+      </article>
+      <article>
+        <h2>Programmiersprachen im Web</h2>
+        <section>
+          <h3>PHP</h3>
+        </section>
+        <section>
+          <h3>Javascript</h3>
+        </section>
+      </article>
+    </article> 
+</body>
+</html>
