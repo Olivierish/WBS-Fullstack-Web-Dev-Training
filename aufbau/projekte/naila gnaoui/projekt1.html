@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projekt1</title>
+<style>
+  *{
+      margin: 0px;
+      padding: 0px;
+  }  
+html{ background-color: #18191b;}
+
+body {
+    color:blanchedalmond;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+} 
+
+h2{
+    color: aquamarine;
+    font-size: 1.3em;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+h3{
+    color: rgb(165,89,236);
+    font-size: 1.2em;
+    margin: 10px;
+    text-align: center;
+}
+header{
+    height: 200px;
+    margin: 10px 20px;
+    background: rgb(59, 54, 55);
+}
+#logo{
+    margin-top: 10px;
+    margin-left: 500px ;
+    width: 800px;
+    height: 140px;  
+}
+nav{
+    margin: 0 2rem;
+    height: 40px;
+    margin: 1rem 2rem;  
+   }
+nav ul{
+   display: flex;
+   justify-content: center;
+   list-style: none;
+}
+
+nav ul li{
+    width: 150px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 20px;
+    background-color: black;
+    float: left;
+}
+
+ul li:hover,
+ul li:focus-within{
+    background: rgb(59, 54, 55);
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    color: aquamarine;
+}
+
+nav li{ float:left;}
+nav li:after{
+    content:"";
+    display:table;
+    clear: both;
+}
+main{
+    width: 100%;
+}
+
+        #container{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* border: 1px solid yellow; */
+        }
+        /*#container div:first-child{*/
+            /* border: 1px solid red; */
+            /*.test{*/
+            #container div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+        }
+        #container div:first-child .card{
+            /* border: 1px solid rgb(0, 204, 255); */
+            width: 300px;
+            padding: 20px 0; 
+            margin-top: 20px;    
+            border: 1px solid rgb(20, 20, 20);
+            box-shadow: 1px 1px 8px #535353;
+            border-radius: 5px;
+        }
+
+        #container div:first-child .card p{
+            text-align: center;
+        }
+        #container div:first-child .card figure{
+            width: calc(100%-20%);
+            padding:20px 10px 10px 10px;
+
+        }
+        #container div:first-child .card figure img{
+            display: block;
+            margin: 0 auto;
+            width: 200px;  
+        box-shadow: 1px 1px 8px #2b2b2b; 
+       }
+
+       #container div:last-child{
+           display:flex;
+           flex-wrap: wrap;
+           justify-content: space-around;
+       }
+       #container div:last-child article{
+           width: 40%;
+           min-width: 300px;
+           padding: 20px 0 ;
+           margin-top: 20px;
+           border: 1px solid rgb(12, 12, 12);
+           box-shadow: 1px 1px 8px #535353;
+           border-radius: 5px;
+       }
+       #container div:last-child article p {
+           padding:0 20px;
+           
+       }
+
+
+        footer {
+            width: 100%;
+            height: 50px;
+            background: gray;
+        }
+        footer p {
+            width:fit-content;
+            margin:0 auto;
+            margin-top: 20px;
+            color:black;
+            padding: 0 10px;
+            line-height: 50px;
+
+        }
+
+
+</style>
+
+<body>
+
+<main>
+    <header> <img id="logo"  src="medien/merveille.jpg" alt="merveil" > </header>
+    <nav>
+        <ul>
+            <li><a href="#">Startseite</a></li>
+            <li> <a href="#">Öffnungszeiten</a></li>
+            <li><a href="#">Infos</a></li>
+            <li><a href="#">kontakt</a></li>
+        </ul>
+    </nav> 
+   
+
+     <div id="container">
+        <div class="test"> 
+            <div class=card>
+                <figure>
+                <img src="medien/pyramid.jpg" alt="pyramide">
+                </figure>
+                
+              <h3>Pyramide</h3>
+              <p>Die Pyramiden von Gizeh in Ägypten gehören zu den bekanntesten und ältesten 
+                  erhaltenen Bauwerken der Menschheit. Sie stehen am westlichen Rand des Niltals, 
+                  etwa acht Kilometer südwestlich der Stadt Gizeh (Gîza). 
+                  </p>
+            </div>
+            <div class="card">
+             
+              <figure>
+              <img src="medien/liberte.jpg" alt="liberte"  >
+            </figure>
+            <h3>Freiheitsstatue</h3>
+              <p>Die Freiheitsstatue (englisch Statue of Liberty, offiziell Liberty Enlightening the World, auch Lady Liberty;
+                   französisch La Liberté éclairant le monde) ist
+                   eine von Frédéric-Auguste Bartholdi geschaffene neoklassizistische Kolossalstatue bei New York.</p>
+
+            </div>
+            <div class="card">
+            
+            <figure>
+              <img src="medien/tour.jpg" alt="tour">
+            </figure>
+            <h3>Eiffelturm</h3>
+              <p>Der Eiffelturm (französisch Tour Eiffel, [tuʁ‿ɛˈfɛl] Audiodatei abspielen) 
+                  ist ein 330 Meter hoher Eisenfachwerkturm in Paris. Er steht im 7.
+                   Arrondissement am nordwestlichen Ende des Champ de Mars (Marsfeld),
+                    nahe dem Ufer der Seine. </p>
+
+            </div>
+        </div>
+
+
+
+            <div>
+               <article>
+                  <h3>Überschrift</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                       Quos dolor consequatur veniam corporis, possimus quisquam!</p>  
+                  
+                </article>
+                <article>
+                <h3>Überschrift</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    . Quos dolor consequatur veniam corporis, possimus quisquam!</p>   
+                </article>
+            </div>
+    </div>
+</main>  
+
+<footer>
+    <p>&copy;2023 Naila G. </p>
+</footer>
+
+</body>
+</html>

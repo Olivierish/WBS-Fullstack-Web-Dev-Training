@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
         }
+
         html{
             background-color: #18191b;
         }
@@ -65,40 +66,44 @@
             padding: 5px 10px;
             float: left;
         }
+
         ul li:hover,
         ul li:focus-within{
             background: #464646;
         }
+
         ul li a {
             display: block;
             text-decoration: none;
             color:aquamarine;
-
         }
+        
         nav li{float: left;}
+
         nav ul:after{
             content: "";
             display: table;
             clear: both;
         }
+
         main{
             width: 100%;
         }
+
         #container{
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            /* border: 1px solid yellow; */
         }
-        #container div:first-child{
-            /* border: 1px solid red; */
+
+        #container > div{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-
+            justify-content: space-evenly;
+            margin-bottom: 40px;
         }
-        #container div:first-child .card{
-            /* border: 1px solid rgb(0, 204, 255); */
+
+        #container > div:first-child .card{
             width: 300px;
             padding: 20px 0; 
             margin-top: 20px;    
@@ -106,28 +111,26 @@
             box-shadow: 1px 1px 8px #535353;
             border-radius: 5px;
         }
-        #container div:first-child .card p{
+
+        #container > div:first-child .card p{
             text-align: center;
+            width: calc(100% - 20px);
+            padding: 0 5px;
         }
-        #container div:first-child .card figure{
+
+        #container > div:first-child .card figure{
             width: calc(100% - 20px);
             padding: 20px 10px 10px 10px; 
         }
-        #container div:first-child .card figure img{
+
+        #container > div:first-child .card figure img{
             display: block;
             margin: 0 auto;
             width: 200px;
             box-shadow: 1px 1px 8px #2b2b2b;
         }
 
-        #container div:last-child{
-            /* border: 1px solid rgb(0, 255, 13); */
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        #container div:last-child article{
-            /* border: 1px solid rgb(38, 48, 192); */
+        #container > div:last-child article{
             width: 40%;
             min-width: 300px;   
             padding: 20px 0; 
@@ -136,14 +139,17 @@
             box-shadow: 1px 1px 8px #535353;
             border-radius: 5px;
         }
-        #container div:last-child article p{
+
+        #container > div:last-child article p{
             padding: 0 20px;
         }
+
         footer{
             width: 100%;
             height: 50px;
             background-color:rgb(37, 37, 37);
         }
+
         footer p{
             width: fit-content;
             margin: 0 auto;
@@ -152,7 +158,6 @@
             padding: 0 10px; 
             line-height: 50px;
         }
-
     </style>
 </head>
 <body>
@@ -174,16 +179,18 @@
                 <figure>
                     <img src="images/lion.png" alt="lion" width="300">
                 </figure>
-                <h3>Lion</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ipsam.
-                </p>
+                <h3>Löwe</h3>
+                <p>
+Der Löwe (Panthera leo) ist eine in Afrika und Indien beheimatete Großkatze der Gattung Panthera.                
+</p>
             </div>
             <div class="card">
                 <figure>
                     <img src="images/tiger.webp" alt="tiger" width="300">
                 </figure>
                 <h3>Tiger</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ipsam.
+                <p>
+                    Der Tiger (Panthera tigris) ist die größte lebende Katzenart und ein Mitglied der Gattung Panthera.                
                 </p>
             </div>
             <div class="card">
@@ -191,21 +198,22 @@
                     <img src="images/jaguar.jpg" alt="jaguar" width="300">
                 </figure>
                 <h3>Jaguar</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ipsam.
+                <p>
+                    Der Jaguar (Panthera onca) ist eine große Katzenart und das einzige lebende Mitglied der Gattung Panthera, das auf dem amerikanischen Kontinent heimisch ist.                
                 </p>
             </div>
         </div>
         <div>
             <article>
-                <h2>Überschrift</h2>
+                <h2>Savanna Habitat</h2>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium modi nulla, sunt perferendis dolore illum voluptatum magnam mollitia rem, sequi est non, tempore architecto molestiae numquam aspernatur dolor saepe expedita.
+                    Eine Savanne ist ein gemischtes Wald-Grasland-Ökosystem (d. h. ein grasbewachsener Wald), das dadurch gekennzeichnet ist, dass die Bäume weit genug auseinander stehen, so dass das Kronendach nicht geschlossen ist.                
                 </p>
             </article>
             <article>
-                <h2>Überschrift</h2>
+                <h2>Wälder</h2>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium modi nulla, sunt perferendis dolore illum voluptatum magnam mollitia rem, sequi est non, tempore architecto molestiae numquam aspernatur dolor saepe expedita.
+                    Ein Wald ist ein Gebiet, das von Bäumen beherrscht wird. Weltweit werden Hunderte von Definitionen des Begriffs "Wald" verwendet, die Faktoren wie Baumdichte, Baumhöhe, Landnutzung, Rechtsstatus und ökologische Funktion berücksichtigen.                
                 </p>
             </article>
         </div>

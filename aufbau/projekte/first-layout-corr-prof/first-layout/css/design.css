@@ -1,0 +1,207 @@
+/*********************************************/
+/* allgemeine Angaben
+/*********************************************/
+/* generelle Anweisungen - Schriftart , Seitenhintergrund und Textfarbe meist aus Stylguide oder grafischer Vorlage kommend*/
+html {
+  /* schriftfamilie, hintergrundfarbe,textfarbe */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: rgb(230, 224, 224);
+  color: #212121;
+  line-height: 1.4;
+  letter-spacing: .2px;
+}
+
+body{margin:0;}
+
+/* generelle basics */
+a {
+  color: inherit;
+  display:inline-block;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+img{
+  background: lightblue; 
+  display: inline-block;
+}
+
+/*********************************************/
+/* allgemeine Design - Klassen 
+/* Farben,Buttons [Call to Action Elemente] etc.
+/*********************************************/
+/* Farben */
+.color1 {
+  background: #7b034d;
+  color: #fff;
+}
+
+.color2 {
+  background: #212121;
+  color: #fff;
+}
+
+.color3 {
+  background: #333;
+  color: rgb(230, 224, 224);
+}
+
+/*********************************************/
+/* Bereiche - erst Klassen dann ID´s
+/*********************************************/
+
+.header {}
+.header header {
+  padding: 1px 0;
+  /* collapsing margins verhindern */
+}
+
+
+.header header h3 {
+  width: 150px;
+  height: 200px;
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+  border: 2em solid transparent;
+  border-top-color: #212121;
+  border-radius: 0 0 1em 1em;
+  overflow: hidden;
+}
+
+.header header a {
+  display: block;
+  line-height: 350px;
+  text-decoration: none;
+}
+
+/* -------------------- */
+.mainnav {position:sticky;top:0;}
+.mainnav nav {
+  padding: 1px 0;/* collapsing margins verhindern */
+}
+
+.mainnav ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+  position: relative;
+  top: 1px; 
+}
+
+.mainnav li {
+  margin: 0.5% 0.5% 0;
+  background: #f3f3f3;
+  color: #7b034d;
+  min-width: 160px;
+  flex-grow:1;
+}
+
+.mainnav a {
+  display: block; 
+  text-align: center;
+  padding: 0.75em;
+  text-decoration: none;
+}
+
+.mainnav li:hover,
+.mainnav li:focus-within {
+  background: #7b034d;
+  color: #fff;
+}
+
+.mainnav .active,
+.mainnav .active:hover,
+.mainnav .active:focus-within {
+  background: rgb(230, 224, 224);
+  color: #212121;
+}
+
+
+/* -------------------- */
+.content {
+  /* background: #ccc; */
+  padding: 1em;
+  margin-top: 8em;
+  margin-bottom: 3em;
+}
+
+.content.flex > * {
+  flex-grow: 1
+}
+
+/* Standard Abstände bei figure entfernen*/
+.col-33 figure {
+  margin: 0;
+}
+
+.col-33 figcaption {
+  text-align: right;
+  margin: 0.5em;
+}
+
+.content .col-33 {
+  min-width: 240px;
+  /* Mindestbreite für Umbruchverhalten*/
+  margin-bottom: 8em;
+  width: 32%;
+}
+
+.middle {
+  margin: 0 1%;
+}
+
+/* texteinrücken*/
+/*.col-33>**/
+.content .col-33>div,
+.content .col-33>h2,
+.content .col-33>p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.content .col-50 {
+  margin: 1em 0;
+  padding: 2%;
+  width: 45.5%;
+  min-width: 380px;
+  /*Mindestbreite für Umbruchverhalten*/
+}
+
+.content .col-50+.col-50 {
+  margin-left: 1%;
+}
+
+/* Anker auf neue Zeile */
+.content p a {
+  display: table;
+  margin-left: auto;/* nach rechts drücken */
+  margin-top:1em;
+
+}
+
+/* -------------------- */
+.footer {
+  padding: 1em 0;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+}
+
+/* -------------------- */
+.test [class] {
+  position: relative;
+}
+
+.test [class]:before {
+  content: attr(class);
+  display: inline-block;
+  background: lime;
+  color: #000;
+  position: absolute;
+  top: 1em;
+  z-index: 2;
+}

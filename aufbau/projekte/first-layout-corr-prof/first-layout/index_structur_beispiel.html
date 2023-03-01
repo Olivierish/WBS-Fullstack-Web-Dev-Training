@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>from Scratch</title>
+  <style>
+    /*********************************************/
+    /* allgemeine Angaben
+    /*********************************************/
+    /* generelle Anweisungen - Schriftart , Seitenhintergrund und Textfarbe meist aus Stylguide oder grafischer Vorlage kommend*/
+    html{
+      background:#f3f3f3;
+      color:#212121;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /*********************************************/
+    /* allgemeine Klassen / Hilfsklassen 
+    /*********************************************/
+
+    /* zentrieren */
+   .wrap{
+      margin-left:auto;
+      margin-right:auto;
+      max-width:1200px;
+    } 
+
+    /**/
+    /*Spalten, float/ flex /Position etc.*/
+    .col-33{ width:33.3333%;
+    outline:1px solid red;
+    }
+    .col-50{width:50%;
+    outline:1px solid blue;
+    }
+  
+
+      /* floats */
+    .fl-l{float:left;} 
+    .fl-r{float:right;}
+
+    /* Clears */
+    .clear{clear:both;}  
+
+    .clearfix:after{
+      content:"";
+      display:table;
+      clear:both;
+    }
+
+    .flex{
+      display:flex;
+      flex-wrap:wrap;/* Umbruch erlauben */
+    }
+
+
+    /*********************************************/
+    /* Bereiche - erst Klassen dann ID´s
+    /*********************************************/
+   
+    .header{}
+
+    /* -------------------- */
+    .mainnav{}
+
+    .mainnav ul{
+      /* display:flex; */
+      /*overflow:hidden;*/
+    }
+    .mainnav li{
+      /* float:left; */
+
+    }
+
+    .mainnav a{
+      background:red;
+      display:block;
+    }
+
+    /* -------------------- */
+    .content{
+      background:#ccc;
+    }
+
+    /* -------------------- */
+    .footer{}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+
+  <div class="header">
+    <header>
+      <h3><a href="index.html">überschrift logo</a></h3> 
+    </header>
+  </div> 
+
+  <!-- Mainnav -->
+  <div class="mainnav">
+    <nav>
+      <ul class="flex">
+        <li><a href="">link 1</a></li>
+        <li><a href="">link 2</a></li>
+        <li><a href="">link 3</a></li>
+        <li><a href="">link 4</a></li>
+      </ul>
+    </nav>
+  </div>
+
+    <!-- content -->
+    <div class="wrap content clearfix flex">
+  
+    <!-- 3-Spalter -->
+    <!-- später ggf. div, section oder Article je nach Inhalt , dient hier  nur als Beispiel für verschiedene Inhalte-->
+    <article class="col-33 fl-l">
+     Thema 1
+    </article>
+  
+    <section class="col-33 fl-l">
+      Thema 2
+    </section>
+  
+    <div class="col-33 fl-l">
+      Thema 3
+    </div>
+
+    <!-- Zweispalter -->
+    <!-- später ggf. section oder Article je nach Inhalt-->
+    <div class="col-50 fl-l">
+      Thema 5
+    </div>
+
+    <div class="col-50 fl-l">
+      Thema 6
+    </div>
+  </div>
+
+  <footer class="footer wrap">created with love</footer>
+  
+
+  <!-- 
+    Platzhalter Grafiken
+    http://placeimg.com
+    https://placekitten.com
+    https://via.placeholder.com
+    https://picsum.photos/ 
+
+    Farbschemen Generatoren:
+    https://color.adobe.com/de/create/color-wheel
+    https://paletton.com/ 
+    https://coolors.co/
+    https://material.io/resources/color/
+    
+    Farbsehschwächen simulator:
+   https://www.color-blindness.com/coblis-color-blindness-simulator/    
+  -->  
+</body>
+</html>

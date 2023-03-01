@@ -1,0 +1,44 @@
+html
+    - Seitenintergrund Farbe : ebebe9
+    - Textfarbe : #222
+
+    Font-family : times, "times new roman", serif
+    Font-family : arial, verdana, sans-serif
+    Font-family : monospace 
+
+    div - #wrapper 
+        margin-left : auto;
+        margin-right : auto;
+        width: 
+    zeil 1 :
+        header 
+            h2 → a → img
+            width : 960px
+            height : 156px 158px 
+        
+        
+        
+    zeil 2
+        main 
+            3 Spatle : 25% 37% 37% 
+            Spatle 1 :
+                nav → ul → li * 4 
+            Spatle 2 : 
+                article → h1
+                        → p
+                        → p + img(float)
+                section → h2 + p * 2
+            Spatle 3 : 
+                article → h1
+                        → p + img(under)
+                section → h2 
+                        -> p * 3
+                
+
+        zeil 3
+            footer 
+                → h3
+    
+
+
+
