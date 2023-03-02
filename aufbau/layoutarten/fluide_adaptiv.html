@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://snuffis-web.de/kurs-webfull/aufbau/layoutarten/fluide_adaptiv.html -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>fluide adaptiv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+
+  <style>
+    html{
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
+    }
+    .col-25{
+      width : calc(25% - 10px - 20px - 2px);
+      /* width: 250px; */
+      min-width: 160px;
+    }
+    .fl-l{
+      float: left;
+    }
+    /* .fl-r{
+      float: right;
+    } */
+    /* .clear{
+      clear: both;
+    } */
+    .clearfix::after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>fluides adaptives Layout</h1>
+  </header>
+
+  <section class="clearfix">
+    <h2>Seitenbereich</h2> 
+
+    <article id="a1" class="col-25 fl-l">
+      <h2>Inhalt 1 Loremipsumdolorsitameterter.</h2>
+      <p> Das <strong>&lt;article&gt;</strong> Element <a href="https://snuffis-web.de/kurs-webfull/aufbau/layoutarten/fluide_adaptiv.html">dient</a> zur Einteilung von Inhalten in
+        Sinnabschnitte, unter anderem in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element
+        <br>ist der, dass die Inhalte für sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in
+        Blog-Posts oder Inhalte in Websites. Dies bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong>
+        Elemente in themenbezogenen <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a2" class="col-25 fl-l">
+      <h2>Inhalt 2</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+    <article id="a3" class="col-25 fl-l">
+      <h2>Inhalt 3</h2>
+      <p>Das <strong>&lt;article&gt;</strong> Element dient zur Einteilung von Inhalten in Sinnabschnitte, unter anderem
+        in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element ist der, dass die Inhalte für
+        sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in Blog-Posts oder Inhalte in Websites. Dies
+        bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong> Elemente in themenbezogenen
+        <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a4" class="col-25 fl-l">
+      <h2>Inhalt 4</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+  </section>
+
+  <footer>fluides adaptives Layout</footer>
+
+
+<div id="forest-ext-shadow-host"></div></body></html>

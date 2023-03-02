@@ -40,5 +40,11 @@ html
                 → h3
     
 
+/// KLJ
 
-
+body → container → <header>
+body → container → <main> → <div class="spa1"> nav Inhalte(h2+nav) </div>
+                 → <main> → <div class="spa2"> mitte </div>
+                 → <main> → <div class="spa3"> recht </div>
+body → container → <footer>
+                

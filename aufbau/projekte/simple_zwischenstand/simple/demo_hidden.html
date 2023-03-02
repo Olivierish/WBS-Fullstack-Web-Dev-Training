@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>content verstecken</title>
+  <style>
+    #header {
+      height:157px; 
+    }
+      
+    #header a{
+      display:block;
+      height:157px;
+      width:960px; 
+      background:url("img/header_bg.jpg") no-repeat top left;
+    }
+
+    #header2{
+      width:960px;
+    }
+
+    #header2{
+      height:157px; 
+    } 
+
+    #header{
+      position: relative;
+      z-index: 1;
+    } 
+
+    #header span{
+      background-color: yellowgreen;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #header2 img{
+      position: absolute;
+    }
+
+    /* #header span{
+      height: 1px;
+      width: 1px;
+      background-color: red;
+      display: block;
+      overflow: hidden;
+    } */
+
+    #header a{
+      text-indent: -9999px;
+      /* text-indent: 1px; */
+    }
+
+  </style>
+</head>
+<body>
+  <h1 id="header">
+    <a href="index.html" title="falls ein logo vorhanden link zur startseite">
+      <span>Simple HTML Layout</span> 
+    </a>
+  </h1>	
+
+<!-- Bonne solution -->
+  <h1 id="header2">
+    <a href="index.html" title="falls ein logo vorhanden link zur startseite">
+      <img src="img/header_bg.jpg" alt="headergrafik/logo">
+      Simple HTML Layout
+    </a>
+  </h1>	
+	
+
+</body>
+</html>

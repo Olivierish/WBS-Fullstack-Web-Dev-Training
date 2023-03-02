@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>fluide adaptiv flex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+  <style>
+    html{
+      /* Automatische silbentrennung - abhängig von der angegeben Sprache*/
+      /* -webkit-hyphens:auto;
+      -moz-hyphens:auto;
+      hyphens:auto; */
+      /* Webseiten immer ohen hyphens testen und erst am ende der Projektfertigstellung setzen --> Browserkompatibilität beachten!
+      https://caniuse.com/?search=hyphens
+      */
+    }
+
+    /*#######################
+    /* Variante Float 
+    /**/
+
+    article{
+      /* float:left; */
+      /* width:calc(25% - 32px); */
+      /* min-width:160px; */
+    }
+
+ 
+    /* Clearfix */
+    /* section:after,ul:after{
+      content:"";
+      display:table;
+      clear:both;
+    } */
+
+    /*#######################
+    /* Variante mit flexbox
+    /**/
+    section{
+      display:flex;
+      flex-wrap:wrap; 
+      /* adaptives Verhalten (umbrechen für  Flex-items) erlauben*/
+      /* für  Alternative Variante statt breite an der h2 - bezugspunkt für position absolute setzen und Platz für Positionierung schaffen*/
+      /* padding-top:50px;
+      position:relative; */
+    }
+
+    section>h2{
+      width:100%; 
+      /* Breite zuweisen damit die article nicht neben der Überschrift stehen (Flex-items fallen auf ihren inhalt zusammen)*/
+      /* Alternativ statt breite an der h2 */
+      /* position:absolute;
+      top:0; */
+    }
+
+    article{
+      width:calc(25% -  32px);
+      min-width:160px;
+      flex-grow:1;
+      /* Wenn platz vorhanden ist darf das Element größer werden / wachsen */
+    }
+
+    /* Beispiel Umbruchverhalten bei Float steuern */
+    /* @media screen and (max-width:1200px){
+      article{
+        width:calc(50% - 32px);
+      }
+      #a3{clear:both;}
+    } */
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>fluides adaptives flex-Layout</h1>
+  </header>
+
+
+  <section>
+    <h2>Seitenbereich</h2> 
+
+    <article id="a1">
+      <h2>Inhalt 1</h2>
+      <!--
+        &shy - weicher umbruch , erfolgt nur wenn der zur Verfügung stehende Platz für den Inhalt nicht ausreicht.
+      -->
+      <!-- <h3>Donau&shy;dampf&shy;schiff&shy;fahrtsgesellschaft</h3> -->
+      <!-- <h3>Donaudampfschifffahrtsgesellschaft</h3> -->
+      <p> Das <strong>&lt;article&gt;</strong> Element <a href="">dient</a> zur Einteilung von Inhalten in
+        Sinnabschnitte, unter anderem in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element
+        <br>ist der, dass die Inhalte für sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in
+        Blog-Posts oder Inhalte in Websites. Dies bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong>
+        Elemente in themenbezogenen <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a2">
+      <h2>Inhalt 2</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+    <article id="a3">
+      <h2>Inhalt 3</h2>
+      <p>Das <strong>&lt;article&gt;</strong> Element dient zur Einteilung von Inhalten in Sinnabschnitte, unter anderem
+        in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element ist der, dass die Inhalte für
+        sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in Blog-Posts oder Inhalte in Websites. Dies
+        bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong> Elemente in themenbezogenen
+        <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a4">
+      <h2>Inhalt 4</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+<!--:after-->
+  </section>
+
+  <footer>fluides adaptives Flex-Layout</footer>
+</body>
+
+</html>

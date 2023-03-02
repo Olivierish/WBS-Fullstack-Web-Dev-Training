@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Layout</title>
+    <link rel="stylesheet" href="css/style.css">  
+<!--
+    html 
+        text #000 serifen
+        hintergrund #ebebe9
+        
+    Überschriften
+        text #ff0066;
+
+        wrapper
+        horizontal zentriert
+        hintergrundgrafik 
+        
+    #header
+    - Bannerlogo (überschrift verlinkt , nur grafik dargestellt "background oder img", linktext versteckt) 
+    alterntiv als Navigation (ul li a) Grafik im Hintergrund Texte versteckt oder via image-sprite-technik
+
+    3 Spalten 
+    ------------- 
+    Hauptnavigation
+        Links #fff
+
+    Content (ggf. 2 spaltig)
+      -  linke Spalte
+      -- Überschrift, Textabsatz, umflossenes Bild
+      -  rechte Spalte
+      -- Überschrift, Textabsatz, umflossenes Bild
+
+
+
+--> 
+  </head> 
+  <body>
+  <!--wrapper-->
+    <div id="wrapper">  
+    
+    <!--header --> 
+      <!-- verlinktes Bild -->
+      <!-- verlinkte Überschrift mit Hintergrundgrafik, text ausgeblendet/versteckt-->
+      <!--alternativ mehrteiliger navigationsbereich mit versteckten texten oder anker und hintergrundgrafik als imagemap genutzt-->
+      <!-- H1 wäre nur auf Startseite möglich , sie sollte immer das Thema der Seite beschreiben -->
+      
+      <!-- Aufbau mit Hintergrundgrafik -->
+      <!-- 
+      <h1 id="header">
+        <a href="index.html" title="falls ein logo vorhanden link zur startseite">Simple HTML Layout</a>
+      </h1> 
+      -->
+      <!-- Aufbau mit Image und Überschrift -->
+      <!--bei diesem Aufbau wäre Header semantisch korrekt-->
+      <div id="header">
+        <h1>
+          <a href="index.html" title="falls ein logo vorhanden link zur startseite">
+            <img src="img/header_bg.jpg" alt="headergrafik/logo">
+          </a>
+        </h1>
+      </div>
+     
+      <!-- Aufbau mit Image ohne Überschrift-->
+            
+      <!-- <div id="header">
+        <a href="index.html" title="falls ein logo vorhanden link zur startseite">
+          <img src="img/header_bg.jpg" alt="headergrafik/logo">
+        </a>
+      </div>	 	   -->
+
+      <!-- navi -->
+      <!--liste mit anker-->
+      <div id="navigation">
+          <h2>#navigation</h2> 
+          <ul>
+            <li><a href="#" title="Seite 1">Seite1</a></li>
+            <li><a href="#" title="Seite 2">Seite2</a></li>
+            <li><a href="#" title="Seite 3">Seite3</a></li>
+            <li><a href="#" title="Seite 4">Seite4</a></li>
+          </ul>
+      </div>
+  
+    <!--mitte -->
+      <!-- Überschriften /Textabsätze img -->
+      <div id="mitte">
+      linke spalte
+      </div>
+
+    <!--rechts-->
+      <!-- Überschriften /Textabsätze img -->
+      <div id="rechts">
+        rechte spalte  
+      </div>
+        
+    <!--footer -->
+      <!-- überschrift od. link bzw beides-->
+      <div id="footer">
+        <h4>#footer - Hier kommt der Link zum Impressum usw.</h4>
+      </div>	
+    </div>
+  </body>
+</html>
