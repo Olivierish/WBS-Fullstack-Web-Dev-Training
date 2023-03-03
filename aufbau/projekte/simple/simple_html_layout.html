@@ -13,12 +13,9 @@
         /* Zentrielen */
         .wrap{
             margin: 0 auto;
-            max-width: 960px;
+            width: 960px;
         }
-        /* header{
-            margin: 0 auto;
-            max-width: 960px;
-        } */
+
         .imgScale{
             width: 100%;
             height: auto;
@@ -27,7 +24,7 @@
         Spalten float/flex/position */
         .col-20{
             width: calc(20% - 20px*2);
-            min-width: 160px;
+            /* min-width: 160px; */
         }
         .col-40{
             width: calc(40% - 20px*2);
@@ -64,41 +61,72 @@
         body{
             margin: 0;
         }
-        a{
-            color: inherit;
-            display: inline-block;
+        #header{
+            margin: 0;
+            height: 157px;
         }
-        img{
-            background-color: rgb(34, 34, 34);
+        #navigation li > a{
+            color: #ebebe9;
             display: inline-block;
+            padding: 0px 0;
+        }
+        #navigation li > a:hover,
+        a:focus {
+            text-decoration: none;
         }
         .color1 {
-            background: #2a2927;
-            color: #fff;
+            background-color: #2a2927;
         }
         .color2{
             background-color: #fff;
-            /* color: #222; */
         }
 
-        h1,h2,h3{
+        h1,h2,h3,h4{
             color: #e50f67;
             font-size: 1.5em;
+            margin: 20px 0 10px 0;
+        }
+
+        p{
+            margin-top: 0;
+            margin-bottom: 15px;
         }
 
         #navigation,#mitte,#rechts{
-            padding: 0 20px; 
+            padding: 0px 20px; 
         }
-        #navigation{}
-        #mitte{
 
+        #mitte img{
+            display: inline-block;
+            width: 196px;
+            height: 196px;
+            margin: 10px 10px 10px 0;
+            background-color: rgb(34, 34, 34);
         }
+        #rechts img{
+            display: inline-block;
+            background-color: rgb(34, 34, 34);
+        }
+        footer{
+        height: 103px;
+        background-color: #272624;
+      }
+      footer > h4{
+        width: fit-content;
+        line-height: 103px;
+        margin: 0 auto;
+      }
     </style>
 </head>
 <body>
     <div id="wrapper" class="wrap">
         <!-- Zeile 1 -->
-        <header><a href="#"><img src="img/header_bg.jpg" class="imgScale" alt="header image"></a></header>
+        <h1 id="header">
+            <a href="index.html" title="header for logo">
+              <img src="img/header_bg.jpg" alt="logo">
+              Simple HTML Layout
+        </a>
+          </h1>	
         <!-- Zeile 2 -->
         <main  class="clearfix flex">
             <!-- Spatle 1 -->
@@ -115,13 +143,13 @@
             </div>
             
             <!-- Spatle 2 -->
-            <div id="mitte" class="col-40 fl-l color2">
+            <div id="mitte" class="col-40 fl-l color2 clearfix">
                 <article>
                     <h1>#mitte - Headline</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore debitis minima nam quae repellendus expedita earum reiciendis quas quidem facilis perspiciatis sint nihil sit repudiandae temporibus, modi recusandae soluta non tempora accusantium architecto dolorum. Dolorem sit explicabo aperiam reiciendis minima!
                     </p>
-                    <img src="img/nicht_lustig.jpg"  class="imgScale" alt="nicht lustig">
+                    <img src="img/nicht_lustig.jpg"  class="imgScale fl-l" alt="nicht lustig">
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dicta illo voluptatum harum dolorum praesentium sed temporibus assumenda labore sint fugit quas at maiores, necessitatibus optio ipsam expedita non delectus nisi excepturi! Quos a sit doloremque quidem laboriosam obcaecati quaerat?
                     </p>
@@ -143,7 +171,7 @@
                     <h2>#recht - Headline</h2>
                     <img src="img/android-vs-apple.jpg" c class="imgScale" alt="nicht lustig">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore debitis minima nam quae repellendus expedita earum reiciendis quas quidem facilis perspiciatis sint nihil sit repudiandae temporibus, modi recusandae soluta non tempora accusantium architecto dolorum. Dolorem sit explicabo aperiam reiciendis minima!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore debitis minima nam quae repellendus expedita earum reiciendis quas quidem facilis perspiciatis sint nihil.
                     </p>
                 </aside>
                 <section>
@@ -163,7 +191,7 @@
         </main>
         <!-- Zeile 3 -->
         <footer>
-            <p>#footer - Hier kommt der Link zum Impressum usw. </p>
+            <h4>#footer - Hier kommt der Link zum Impressum usw. </h4>
         </footer>
     </div>
 </body>

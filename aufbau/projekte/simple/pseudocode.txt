@@ -9,18 +9,16 @@ html
     div - #wrapper 
         margin-left : auto;
         margin-right : auto;
-        width: 
+        width : 960px
     zeil 1 :
         header 
             h2 → a → img
-            width : 960px
-            height : 156px 158px 
+            height : 157px
         
-        
-        
+            
     zeil 2
         main 
-            3 Spatle : 25% 37% 37% 
+            3 Spatle : 20% 40% 40% 
             Spatle 1 :
                 nav → ul → li * 4 
             Spatle 2 : 
@@ -37,14 +35,8 @@ html
 
         zeil 3
             footer 
-                → h3
+                → h4
     
 
-/// KLJ
 
-body → container → <header>
-body → container → <main> → <div class="spa1"> nav Inhalte(h2+nav) </div>
-                 → <main> → <div class="spa2"> mitte </div>
-                 → <main> → <div class="spa3"> recht </div>
-body → container → <footer>
                 

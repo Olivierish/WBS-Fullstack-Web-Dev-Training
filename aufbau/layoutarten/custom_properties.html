@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>custom properties - (CSS-Variablen)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+  <style>
+    :root{
+        /* background-color: greenyellow; */
+        --beliebig: greenyellow;
+        --col: 4;
+        --margin: 5px; 
+        --padding:10px;
+        --border-width:1px;
+        --border: 3px solid var(--beliebig);
+    }
+    html{
+        /* background-color: var(--beliebig); */
+        background-color: var(--bg);
+    }
+
+    header{
+        border: var(--border);
+    }
+
+    h1{
+        color: var(--bg , var(--beliebig));
+    }
+
+    section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    section h2{width: 100%;}
+    article{
+        width: calc(100% / var(--col) - 2 * var(--padding) - 2 * var(--margin) - 2 * var(--border-width));
+        margin: var(--margin);
+        padding: var(--padding);
+        border-width: var(--border-width);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CSS - custom properties</h1>
+  </header>
+
+
+  <section>
+    <h2>Seitenbereich</h2> 
+
+    <article id="a1">
+      <h2>Inhalt 1</h2>
+     
+      <p> Das <strong>&lt;article&gt;</strong> Element <a href="">dient</a> zur Einteilung von Inhalten in
+        Sinnabschnitte, unter anderem in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element
+        <br>ist der, dass die Inhalte für sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in
+        Blog-Posts oder Inhalte in Websites. Dies bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong>
+        Elemente in themenbezogenen <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a2">
+      <h2>Inhalt 2</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+    <article id="a3">
+      <h2>Inhalt 3</h2>
+      <p>Das <strong>&lt;article&gt;</strong> Element dient zur Einteilung von Inhalten in Sinnabschnitte, unter anderem
+        in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element ist der, dass die Inhalte für
+        sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in Blog-Posts oder Inhalte in Websites. Dies
+        bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong> Elemente in themenbezogenen
+        <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a4">
+      <h2>Inhalt 4</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+  </section>
+
+  <footer>Custom Properties - CSS Variablen</footer>
+</body>
+
+</html>
