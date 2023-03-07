@@ -1,0 +1,123 @@
+@media print {
+
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/@page  */
+/* druckerrand alle Seiten  sofern unterstützt,
+der User kann immernoch selbst entscheiden */ 
+@page {
+  margin: 1.5cm;
+}
+/* Druckrand erste Seite - browsersupport!*/
+/* @page :first {
+  margin:3cm;
+} */
+
+/* Standards für druck */
+html{
+  color:#000;
+  /* gut lesbare schriften für den druck ab ca. 12pt */
+  font-size:14pt;
+  background:#fff; /* hintergrundbilder entfernen */
+  line-height:1.4;
+  /* ggf. Schriftfamilien anpassen - serifen lassen sich im Druck meist besser lesen*/
+}
+
+/* individuelle formatierungen Überschriften anker etc*/
+
+/* header :is(h1,h2,h3){
+  color:#000;
+} */
+
+[href]{font-size:12pt;
+text-decoration:underline;
+}
+
+/* Unnötige druckbare inhalte ggf. verstecken z.B nicht inhaltsrelevante Grafiken, Werbung etc  */
+nav{display:none;}
+/* Verhindern das inhalte auf 2 Seiten gedruckt/umgebrochen werden */
+/* page-break-inside: avoid;*/
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside */
+img,table,figure,picture{
+  page-break-inside: avoid;
+}
+
+/* Inhalt darf auf nächste Seite umbrechen */
+/* p{
+  page-break-after: always;
+} */
+
+/* display:flex,und  grid auflösen wenn nicht benötigt*/
+/* .fl-l,.flex{display:block;} */
+#content{display:block;}
+
+/* ggf. urls von verweisen anzeigen und/oder title*/
+[href]:after{content:"https://snuffis-web.de/kurs-material/" attr(href);padding-left:10px;
+font-size:10pt;font-style:italic;
+display:block;
+margin-bottom:2mm;
+}
+
+/* beispiel radikales überschreiben mit important .. quick und dirty :) */
+:where(*){
+  color:#000 !important;
+  background:none!important;
+}
+
+
+/* Individuelle Layout und content Anpassungen */
+/*
+
+...
+regeln
+.....
+
+...
+
+*/
+section[class*="box"]{
+  page-break-inside: avoid;
+
+  width:auto;
+  max-width:calc(100% - 2cm);
+  border:0;
+  margin:0 0 1cm 0;
+  border-bottom:1pt solid #333;
+}
+
+header, [class*="box"] header{
+  background:#fff;
+  border-bottom:1px solid #ccc;
+  padding-bottom:0;
+}
+
+[class*="box"] .description{
+  padding:0 1em;
+}
+
+[class*="box"] ul{
+  padding: 1em 1em 1em;
+}
+
+/*
+PS: es spielt keine Rolle wenn die Zeilenhöhe oder Schriftfamilie am html angegeben wird.. sofern für die Zeilenhöhe keine Absoluten Maßeinheiten verwendet werden bzw rem nicht verwendet wird. Die Schriftfamilie wurde bereits in der base-style.css am html-Element definiert zum verdeutlich wird nachfolgend nochmals die Schriftfamilie geändert :) */
+
+:where(h2,h3){
+  font-family:times,serif;
+}
+
+
+/* 
+Wie man sieht kein Problem mit der bereits festgelegten Zeilenhöhe :)
+Immer an die Vererbung denken! Bezugspunkte von Maßeinheiten beachten. 
+*/
+
+
+/*  Wenn ihr horizontale Abstände an elementen in em gesetzt habt so empfiehlt es sich diese auf rem oder druckspezifisch auf mm/cm,pt oder pica zu ändern um einheitliche Einrückungen Zu erzielen */
+
+/* 
+[class*="box"] :is(h3,.description){
+  padding-left:1rem;
+} 
+*/
+
+
+}

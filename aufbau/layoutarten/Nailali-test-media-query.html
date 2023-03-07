@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{ 
+        margin: 0;
+        padding: 0;
+        }
+        body{
+            background-color: rgb(191, 221, 255);
+        }
+            section{
+                    background-color: green;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 20px;
+                    width: calc(100% - 20px * 2);
+            }
+            article{
+                background-color: yellow;
+                margin: 10px;
+                padding: 15px;
+                width: calc(100% / 3 - 10px * 2 - 15px * 2);
+            }
+
+            @media screen and (max-width:500px){
+                section{
+                    padding: 5px;
+                    width: calc(100% - 5px * 2);
+                }
+                article{
+                    width: calc(100% - 10px * 2 - 15px * 2);
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <section>
+          <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione asperiores ipsam deleniti, veniam ipsa iusto voluptatibus eius doloribus, sit et repellendus explicabo tenetur ipsum eos blanditiis neque quod impedit debitis. Animi alias, odio nesciunt eius assumenda non. Velit ea corrupti vitae eligendi, et unde culpa adipisci maxime ipsam! Magnam, repudiandae.</article>
+          <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quod unde sed repellendus magni nesciunt aut amet eos? Quos voluptates exercitationem ab voluptatem repudiandae odit repellat est fuga nesciunt corrupti facilis dolor eum atque pariatur ipsum sequi, dicta explicabo similique. Sed, distinctio voluptatibus rem atque hic laboriosam dignissimos perferendis consequatur.</article>
+          <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quod unde sed repellendus magni nesciunt aut amet eos? Quos voluptates exercitationem ab voluptatem repudiandae odit repellat est fuga nesciunt corrupti facilis dolor eum atque pariatur ipsum sequi, dicta explicabo similique. Sed, distinctio voluptatibus rem atque hic laboriosam dignissimos perferendis consequatur.</article>
+    </section>
+</body>
+</html>

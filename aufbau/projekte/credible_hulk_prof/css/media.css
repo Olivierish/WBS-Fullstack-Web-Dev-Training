@@ -1,0 +1,66 @@
+/* Beispiel Responsive Anpassungen */ 
+@media screen and (max-width:900px) {
+
+  /* header und headline anpassung*/ 
+  #header {
+    background-image: none;
+  }
+
+  #header h2 {
+    margin-left: 20px;
+  }
+
+  #header h2 span {
+    text-indent: 0;
+  }
+
+  #header h2 span+span {
+    text-indent: 2em;
+  }
+
+  /* teaser container */
+  #teaser .fl-l {
+    float: none;
+    width: calc(100% - 40px);
+    height: auto;
+  }
+
+  #article {
+    margin-left: 20px;
+  }
+
+}
+
+@media screen and (max-width:670px) {
+
+  /* logo /link verkleinern */
+  #header::after,
+  #header a {
+    width: 102.5px;
+    height: 152px;
+  }
+  
+}
+
+@media screen and (max-width:550px) {
+
+  #header {
+    height: auto;
+    padding: 1px;
+  }
+
+  #header h2 span>span {
+    display: block;
+  }
+
+  #header h2 span+span {
+    text-indent: 0;
+  }
+
+  /* zweispalter unten */
+  #content .fl-l,
+  #content .fl-r {
+    float: none;
+    width: auto;
+  }
+}

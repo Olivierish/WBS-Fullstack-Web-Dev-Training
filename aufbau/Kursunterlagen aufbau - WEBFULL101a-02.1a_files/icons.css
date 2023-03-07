@@ -1,0 +1,39 @@
+[class*="box"] [href]:before{
+  padding-right:4px;
+}
+[class*="box"] [href$=".html"]:before{
+  content:url(../icons/html.png);
+}
+[class*="box"] [href$=".css"]:before{
+  content:url(../icons/CSS.png);
+}
+[class*="box"] [href$=".jpg"]:before{
+  content:url(../icons/jpg.gif);
+}
+[class*="box"] [href$=".pdf"]:before{
+  content:url(../icons/pdf.gif);
+}  
+[class*="box"] :is([href$=".mp4"],[href$=".mpeg"]):before{
+  content:url(../icons/video.gif); 
+}  
+
+[class*="box"] [href$=".txt"]:before{
+  content:url(../icons/text.png); 
+}
+
+[class*="box"] [href$=".php"]:before{
+  content:url(../icons/php.jpg); 
+}
+[class*="box"] :is([href$=".zip"],[href$=".rar"]):before{
+  content:url(../icons/archive.png); 
+} 
+[class*="box"] [href]:not(:is([href^="https://"],[href^="http://"],[href*="."])):before{
+  content:url(../icons/folder.png); 
+}
+[aria-hidden="true"]{padding-left:25px;position:relative;}
+[aria-hidden="true"]:not([href]):before{
+  padding-right:4px;
+  content:url(../icons/ear.png);
+  position:absolute;
+  left:0;
+}

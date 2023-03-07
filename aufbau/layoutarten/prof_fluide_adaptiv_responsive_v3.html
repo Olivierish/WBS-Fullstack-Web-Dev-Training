@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>fluide adaptive responsive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css" media="all">
+  <!-- 
+    Es ist auch möglich den querie direkt beim Styleaufruf festzusetzen somit erübrigt es sich dann den Mediaquerrie nochmals im externen CSS aufzurufen
+  -->
+  
+  <!--<link rel="stylesheet" href="start.css" media="screen and (min-width:860px)">-->
+
+  <!-- Verschiedene Medientypen 
+  all - alle Medientypen - Standard muss nicht angegeben werden
+  print - Druckstylesheets
+  screen - Bildschirmdarstellung
+  aural,speech - Sprachausgabe
+  braille - Braillezeile , Brailletastaturen
+  embossed - brailledrucker
+  
+  deprecated!!!
+  tv,projektion - Bildschirmgeräte ohne Scrollfunktion
+  handheld - Smartphones und kleine Bildschirme
+  -->
+
+  <style media="all">
+    /* nav li{display:inline-block;} */
+
+    /* Anweisung nur für Screenreader */
+    /* 
+    @media speech{
+      nav li{display:list-item;}
+    } 
+    */
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content:space-evenly; */
+    }
+
+    nav li {
+      /* flex-grow:1; */
+      background: lightgrey;
+      margin: 0 2px;
+      width: 160px;
+    }
+
+    nav a {
+      display: block;
+      /* min-width:200px; */
+    }
+
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      /* adaptives Verhalten (umbrechen für  Flex-items) erlauben*/
+    }
+
+    section>h2 {
+      width: 100%;
+    }
+
+    /* 
+    Progressive Enhancement - wenn der Browser flex-box nicht unterstützt wird float verwendet,. Browser die die Flexbox unterstützen verwenden die Flexbox und ignorieren den Float am Article
+    */
+    article {
+      float: left;
+      width: calc(25% - 32px);
+      min-width: 160px;
+    }
+
+    section:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    /* Hilfsregeln zur Visualisierung der Mediquerries - Breakpoints */
+    nav:before,
+    section:before,
+    article:before {
+      display: block;
+      background: red;
+      padding: 1em;
+      color: #fff;
+      /* display:none; */
+    }
+
+    /* ------------------------------------------------------*/
+    /* 
+  In nachfolgenden Beispielen wurde nur mit dem Merkmalen max-width, min-width  und Orientation gearbeitet. Es ist ebenso möglich mit Geräte abhängigen Größen zu arbeiten zb. device-width, device-height, der Lage eines Gerätes(Viewporthöhe/-Breite) sowie den nativen Auflösungen selbst mit dem Merkmal resolution.
+
+  Weitere Informationen finden Sie in der w3c Spezifikation:
+  http://www.w3.org/TR/css3-mediaqueries/
+
+  */
+
+    /* 
+
+    komlexere Beispiele zu Mediaquerries sowie Feature- und Containerqueries :(Browsersupport beachten!!) 
+
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries
+    https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+
+    Browsersupport:
+    https://caniuse.com/?search=%40container
+    https://caniuse.com/?search=%40supports
+
+  */
+
+
+    /* ------------------------------------------------------*/
+    /* 
+    @media screen and (orientation:landscape){
+      html{background:red;}
+    } 
+  */
+
+    /*
+   Regelsätze innerhalb des Mediaquerries werden nur ausgeführt wenn der Viewport größer als 1199px ist 
+  */
+    /* Navigation und Section zweispaltig darstellen wenn der Viewport Breit genug ist */
+    @media screen and (min-width:1200px) {
+
+      nav {
+        float: left;
+        width: calc(20% - 32px);
+        min-width: 160px;
+      }
+
+      section {
+        float: left;
+        width: calc(80% - 32px);
+        /* Alternativ statt Breite an section und float*/
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/max */
+        /* margin-left:max(20%,195px);  */
+      }
+
+      footer {
+        clear: both;
+      }
+
+      /* Hilfsregel zur Visualisierung der Mediquerries - Breakpoints */
+      section:before,
+      nav:before {
+        content: "@media screen and (min-width:1200px)";
+      }
+
+
+    }
+
+    /* Regelesätze innerhalb des Mediaquerries wirken nur wenn der Viewport zwischen 799px und 1401px groß ist */
+    @media screen and (min-width:800px) and (max-width:1400px) {
+      #a2 {
+        background: orange;
+      }
+
+      #a2:before {
+        content: "@media screen and (min-width:800px) and (max-width:1400px)";
+        background: rgb(80, 48, 9);
+      }
+
+    }
+
+
+    /*
+      Regelsätze innerhalb des Mediaquerries werden nur ausgeführt wenn der Viewport kleiner als 851px ist 
+ */
+    @media screen and (max-width:850px) {
+      #a1 {
+        width: calc(100% - 32px);
+        /* width:auto;
+      float:none; */
+      }
+
+      article {
+        width: calc(100% / 3 - 32px);
+      }
+
+      /* Hilfsregel zur Visualisierung der Mediquerries - Breakpoints */
+      section:before {
+        content: " @media screen and (max-width:850px)";
+      }
+    }
+
+    /*
+      Regelsätze innerhalb des Mediaquerries werden nur ausgeführt wenn der Viewport kleiner als 651px ist 
+ */
+    @media screen and (max-width:650px) {
+      article {
+        width: calc(50% - 32px);
+      }
+
+      #a4 {
+        width: calc(100% - 32px);
+      }
+
+      /* Hilfsregel zur Visualisierung der Mediquerries - Breakpoints */
+      section:before {
+        content: "  @media screen and (max-width:650px)";
+      }
+    }
+
+    /*
+      Regelsätze innerhalb des Mediaquerries werden nur ausgeführt wenn der Viewport kleiner als 481px ist 
+  */
+    /* schmalste Darstellung spätestens bei 480px  (30em) in der Praxis oft schon eher je nach Inhalt und Darstellung*/
+    @media screen and (max-width:480px) {
+      article {
+        width: calc(100% - 32px);
+        /* float:none;width:auto; */
+      }
+
+      /* Hilfsregel zur Visualisierung der Mediquerries - Breakpoints */
+      section:before {
+        content: "  @media screen and (max-width:480px)";
+      }
+    }
+
+
+
+    /* ------------------------------------------------------*/
+    /* 
+      Die Mediaquerries wurden in vorangegangen Beispielen der Einfachheit halber in CSS-Pixeln angegeben es empfiehlt sich mediaqueries in Schriftgrößen abhängigen Maßeinheiten(em/ rem - Browserstylsheet Angaben für Schriftgrößen und margins z.B an Überschriften --> müssen ggf.überschrieben werden) oder Viewport abhängigen Maßeinheiten (vh,vw) anzugeben.
+
+      Browsersupport VH und VW:
+      https://caniuse.com/?search=vh 
+      https://caniuse.com/?search=vw
+      Wichtig: tab "known issues" beachten!
+
+      Endgeräte mit aktivierten Lesehilfen (Schriftgröße,Schriftarten) , Retina-Technik (Bildpunkthalbierung/Viertelung) oder reduzierter PPI-Einstellung (Pixeldichte/Linienpaarauflösung) landen sonst immer in kleineren Darstellungen. Dies kann ggf. die Benutztbarkeit einschränken.
+  */
+    /* ------------------------------------------------------*/
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>fluides adaptives responsives Layout</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="">link 1</a></li>
+      <li><a href="">link 2</a></li>
+      <li><a href="">link 3</a></li>
+      <li><a href="">link 4</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Seitenbereich</h2>
+
+    <article id="a1">
+      <h2>Inhalt 1</h2>
+      <p> Das <strong>&lt;article&gt;</strong> Element <a href="">dient</a> zur Einteilung von Inhalten in
+        Sinnabschnitte, unter anderem in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element
+        <br>ist der, dass die Inhalte für sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in
+        Blog-Posts oder Inhalte in Websites. Dies bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong>
+        Elemente in themenbezogenen <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.
+      </p>
+    </article>
+
+    <article id="a2">
+      <h2>Inhalt 2</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+    <article id="a3">
+      <h2>Inhalt 3</h2>
+      <p>Das <strong>&lt;article&gt;</strong> Element dient zur Einteilung von Inhalten in Sinnabschnitte, unter anderem
+        in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element ist der, dass die Inhalte für
+        sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in Blog-Posts oder Inhalte in Websites. Dies
+        bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong> Elemente in themenbezogenen
+        <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.
+      </p>
+    </article>
+
+    <article id="a4">
+      <h2>Inhalt 4</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+  </section>
+
+  <footer>fluides adaptives responsives Layout</footer>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>fluide adaptive responsive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css" media="all">
+  <!-- Es ist auch möglich den querie direkt beim Styleaufruf festzusetzen somit erübrigt es sich dann den Mediaquerrie nochmals im externen CSS aufzurufen-->
+  <!--<link rel="stylesheet" href="start.css" media="screen and (min-width:860px)">-->
+ 
+  <!-- Verschiedene Medientypen 
+  all - alle Medientypen - Standard muss nicht angegeben werden
+  print - Druckstylesheets
+  screen - Bildschirmdarstellung
+  aural,speech - Sprachausgabe
+  braille - Braillezeile , Brailletastaturen
+  embossed - brailledrucker
+  
+  deprecated!!!
+  tv,projektion - Bildschirmgeräte ohne Scrollfunktion
+  handheld - Smartphones und kleine Bildschirme
+  -->
+ 
+  <style media="all">
+  /* @media print{ */
+      article{
+        float:left;
+        width:calc(25% - 32px);
+        min-width:160px;
+      }
+      section:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+  /* } */
+
+
+  /* @media screen and (orientation:landscape){
+    html{background:red;}
+  } */
+
+
+ @media screen and (max-width:850px){
+    #a1{
+      width:calc(100% - 32px);
+      /* width:auto;
+      float:none; */
+   }
+  article{
+      width:calc(100% / 3 - 32px);
+    }
+  }
+/**/
+  @media screen and (max-width:650px){
+    article{width:calc(50% - 32px);}
+    #a4{width:calc(100% - 32px);}
+  } 
+
+  @media screen and (max-width:480px){
+    article{
+      width:calc(100% - 32px) ;
+      /* float:none;width:auto; */
+    }
+  }
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>fluides adaptives responsives Layout</h1>
+  </header>
+
+  <nav>
+    <ul>     
+      <li><a href="">link 1</a></li>
+      <li><a href="">link 2</a></li>
+      <li><a href="">link 3</a></li>
+      <li><a href="">link 4</a></li>
+    </ul>
+  </nav>
+  
+  <section>
+    <h2>Seitenbereich</h2> 
+
+    <article id="a1">
+      <h2>Inhalt 1</h2>
+      <p> Das <strong>&lt;article&gt;</strong> Element <a href="">dient</a> zur Einteilung von Inhalten in
+        Sinnabschnitte, unter anderem in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element
+        <br>ist der, dass die Inhalte für sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in
+        Blog-Posts oder Inhalte in Websites. Dies bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong>
+        Elemente in themenbezogenen <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a2">
+      <h2>Inhalt 2</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+    <article id="a3">
+      <h2>Inhalt 3</h2>
+      <p>Das <strong>&lt;article&gt;</strong> Element dient zur Einteilung von Inhalten in Sinnabschnitte, unter anderem
+        in Blogbeiträgen. Der Unterschied zum <strong>&lt;section&gt; </strong> Element ist der, dass die Inhalte für
+        sich alleine stehen. Es sind sozusagen isolierte Beiträge wie eben in Blog-Posts oder Inhalte in Websites. Dies
+        bedeutet das ein oder mehrere <strong>&lt;article&gt;</strong> Elemente in themenbezogenen
+        <strong>&lt;section&gt;</strong> Elementen optimal platziert sind.</p>
+    </article>
+
+    <article id="a4">
+      <h2>Inhalt 4</h2>
+      <p>Das <strong>&lt;section&gt;</strong> Element dient zur Unterteilung von Inhalten nach wirklich inhaltlichen
+        Gesichtspunkten. Dieses Element stellt eine klare Trennung zwischen Abschnitten dar die inhaltlich gegeben ist.
+        Elemente die Designzwecken dienen, werden in ein <strong>&lt;div&gt; </strong> Tag gesetzt, da sie kein
+        inhaltliches Kriterium darstellen. Das <strong>&lt;section&gt;</strong> Element wird nur dort eingesetzt wo ein
+        inhaltlicher Umbruch besteht.</p>
+    </article>
+
+  </section>
+
+  <footer>fluides adaptives responsives Layout</footer>
+</body>
+
+</html>
