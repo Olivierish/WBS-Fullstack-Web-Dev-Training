@@ -216,7 +216,7 @@ article .container .arrow{
     /* border: 1px solid green; */
     flex-shrink: 1;
     flex-grow: 1;
-    font-size: 40px;
+    font-size: 2em;
     vertical-align: middle;
     align-self: center;
 }
@@ -242,8 +242,9 @@ article .container .teas-container .cards{
 
 .teas-container .cards .card{
     box-shadow: 1px 1px 3px rgb(235, 235, 235);
-    width: calc(100% / 3 - 2px - 10px);
+    width: calc(100% / 3 - 2px - 10px - 10px);
     padding: 5px 5px;
+    margin: 5px;
 }
 .teas-container .cards .card:hover{
     transform: scale(1.1);
@@ -257,8 +258,9 @@ article .container .teas-container .cards{
 }
 .teas-container .cards .card img{
     width: 100%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 .teas-container .cards .card h3{
     text-align: center;
+    padding-top: 10px;
 }
