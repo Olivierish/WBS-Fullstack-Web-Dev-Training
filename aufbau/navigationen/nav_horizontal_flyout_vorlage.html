@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>horizontales Menü mit Ausklappfunktion</title>
+  <link rel="stylesheet" href="start.css"> 
+  <style>
+    
+    /** 
+    * TODO
+    * [ ] Listenpunkte horizontal nebeneinander stellen
+    *     ! - Flex, float , (inline-block)
+    * [ ] verschachtelte Ebenen verstecken
+    *     ! - display:none / visibility:hidden werden von Screenreadern / sinnstiftenden Mechanismen nicht wiedergegeben
+    * [ ] wenn Listenpunkt mit der Maus berührt wird soll versteckte Ebene erscheinen
+    *     ! - selected-element:hover target-element{}
+    * [ ] Funktionalität des einblendens für Tastatur/Touchscreennutzer prüfen
+    *     ! - Test mit Tab-Key :focus / :focus-within
+   
+    ** [ ] Standardformatierung Navigation (Hintergründe/Schriftfarben)
+    **    ! - Anker ausdehnen nicht vergessen - display:block
+    ** 
+
+    *** - Accessibillity / Usabillity (WCAG)
+    *** [ ] visuelle Zustandsänderung beim berühren mit der Maus / Auswahl des Elementes
+    ***     ! - z.B. Hintergrund/Textfarbe , Rahmen, Symbole/Icons, Kontraste beachten
+    *** [ ] Abstände zwischen anklickbaren Flächen / Interaktiven Elementen  
+    ***     ! - 4px horizontal/vertikal je nach Anordnung, Mindestgröße Touchevent (44x44) - bei retina / 2 , kürzeste Seite > 20px
+   
+    **** [ ] Ausklappbarkeit visualisieren
+    ****     ! -  Rahmen, Symbole/Icons
+    **** [ ] Aktiven Menüpunkt / Unterpunkt kennzeichnen
+    ****     ! - z.B. Hintergrund/Textfarbe , Rahmen, Symbole/Icons
+    **
+    *
+    /**/
+    /* Step1 - (*) */
+   
+   
+    /* Step2 - (**) */
+
+
+    /* Step3 - (***) */
+
+
+    /* Step4 - (****) */
+
+
+    /*
+    ****************************************************************
+    ***
+    ***     regelmäßig Markup und CSS validieren
+    ***     Semantik beachten
+    ***     testen, testen, testen
+    ***     finales validieren
+    ***
+    ****************************************************************
+    /**/
+
+  
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>horizontale Navigation mit Flyout-Menü</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="" title="Aussagekräftige Linkbeschreibung">link 1</a></li>
+      <li>
+        <a href="" title="Link 2 - title-texte dienen in diesem Beispiel nur der Visualisierung im Browser! ">link 2</a>
+        <ul>
+          <li><a href="" title="Link 2.1">link 2.1</a></li>
+          <li><a href="" title="Link 2.2">link 2.2</a>
+            <!-- 
+            <ul>
+              <li><a href="" title="Link 2.2.1">Link 2.2.1</a></li>
+              <li><a href="" title="Link 2.2.2">Link 2.2.2</a></li>
+            </ul> 
+            -->
+          </li>
+          <li><a href="" title="Link 2.3">link 2.3</a></li>
+          <li><a href="" title="Link 2.4">link 2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="" title="Link 3">link 3</a></li>
+      <li>
+        <a href="" title="Link 4">link 4</a>
+        <ul>
+          <li><a href="" title="Link 4.1">link 4.1</a></li>
+          <li><a href="" title="Link 4.2">link 4.2</a>
+            <!-- 
+            <ul>
+              <li><a href="#" title="4.2.1">Link 4.2.1</a></li>
+              <li><a href="#" title="4.2.2">Link 4.2.2</a></li>
+            </ul> 
+            -->
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Grundprinzip horizontale Ausklappnavigation</h2>
+    <p>Lesen Sie die Kommentare in der Datei aufmerksam durch und betrachten diese als Checkliste! Nachfolgend noch ein Beispiel für das verstecken von Inhalten.</p>
+    <details>
+      <summary>Tips</summary>
+      <h2>Inhalte Seo&mdash; und Screenreaderfreundllich verstecken</h2>
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide_markup.png" alt="demomarkup" style="max-width:80%;height:auto;">
+      <figcaption>Markup Beispiel</figcaption>
+    </figure> 
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide.png" alt="demo css-regeln verstecken" style="max-width:80%;height:auto;">
+      <figcaption>einfache CSS-Regeln zum verstecken</figcaption>
+    </figure>
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide_show.png" alt="demo css-regeln einblenden" style="max-width:80%;height:auto;">
+      <figcaption>CSS-Regel zum einblenden</figcaption>
+    </figure>
+    <p>Es handelt sich hierbei lediglich um allgemeine und vereinfachte Beispiel-Regeln. Individuelle bzw. layoutspezifische Anpassungen sind ggf. zusätzlich notwendig.</p>
+    </details>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+    provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+    provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+  </section>
+
+  <footer>
+    horizontales Menü mit Ausklappfunktion
+  </footer>
+</body>
+
+</html>
