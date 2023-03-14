@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+  <title>transition</title>
+  <style>
+    html{
+      line-height: 1.4em;
+    }
+    a{
+      display: inline-block; 
+    }
+    a:hover,
+    a:focus{
+      text-decoration: none;
+    }
+    nav li{
+      background-color: rgb(84, 255, 198);
+      list-style: none;
+      color: #000;
+      margin: 2px 0;
+      width: 200px;
+      box-shadow: 0 0 3px black, inset 3px 3px 4px black;
+      transition: width 1s ease, background-color 3s, all 2s;
+      /* transition-property: all;
+      transition-duration: 1s; 
+      transition-delay: 5s;
+      transition-timing-function: ease;
+      */
+    }
+    nav li:hover{
+      background-color: rgb(222, 255, 244);
+      width: 400px;
+      transition: width 1.5s ease,background-color 3s;
+    }
+
+    nav li:nth-child(2n):hover{
+      transform: rotate(5deg) scale(0.5);
+    }
+
+    nav a {
+      color: inherit;
+      padding: 5px;
+      display: block; /*Pour que a occupe tt la place*/
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Transition - Übergänge</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="">link 1</a></li>
+      <li><a href="">link 2</a></li>
+      <li><a href="">link 3</a></li>
+      <li><a href="">link 4</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>überschrift</h2>
+    <p>Lorem <a href="">ipsum</a>, dolor sit amet consectetur adipisicing elit. Tempore doloremque, eveniet numquam
+      illum consequuntur beatae, quidem assumenda ipsa voluptatum nisi sit. Quas quo quod consequatur corrupti nobis
+      voluptatum beatae fugit.</p>
+    <p>Omnis nam, mollitia corporis perspiciatis minima dolore. Qui dolorum quaerat minus necessitatibus placeat
+      excepturi recusandae eaque vel nostrum, harum ipsum dolore fugit quibusdam quae obcaecati atque modi incidunt
+      exercitationem sequi?</p>
+  </section>
+
+  <footer>Transition - Übergänge</footer>
+  
+</body>
+
+</html>

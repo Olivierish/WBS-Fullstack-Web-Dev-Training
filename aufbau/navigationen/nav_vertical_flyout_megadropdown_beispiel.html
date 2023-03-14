@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+  <title>vertikales Flyout-Menü Supersize/Megadropdown</title>   
+  <style>    
+  nav{ 
+  float:left;
+  width:10em;
+  margin:0;
+  padding:0;
+  border:0;
+  }
+  section{margin-left:11em;} 
+  
+  footer{clear:both;}
+
+   /* Anker allgemein - Standard Textlinks*/
+    a {
+      display: inline-block;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+
+
+  /* Ausklappnavi */
+  nav ul{
+    padding:0;
+    list-style:none;
+    width:10em; 
+   }
+
+  nav li{
+    background:rgb(103, 161, 248);
+    padding:1px 0 2px;
+    border-bottom:blue 1px solid;
+    color:#000;
+  }
+
+  nav li:last-child{
+    border-bottom:none;
+  }
+
+  nav a{
+
+    display:block;
+    padding:0.5em;
+    width:10em;
+    height:1em;
+    color:inherit;
+  }
+
+  nav li ul{
+   position:absolute;
+    left:-9999em;
+    z-index:1;
+  }
+
+  nav li:hover>ul, nav li:focus>ul,nav li:focus-within>ul
+  {
+    left:auto;
+   margin-left:11em;
+   margin-top:-2em;
+
+  }
+
+  /* Optik und usability*/
+  /* Zustände */
+  nav li:hover, nav li:focus, nav li:focus-within{
+    background:blue;
+    color:#fff;
+  }
+
+  .active, .active:hover{
+    background:orangered;
+    color:#fff;
+  }
+ 
+   /* Ausklappbarkeit visualisieren */
+  .sub{position:relative;}
+
+  .sub:after{
+      content:"";
+      border:6px solid transparent;
+      border-left:orangered 6px solid;
+      border-right:none;
+      position:absolute;
+      right:1.5em; 
+      top:.75em;
+      transition:all 0.8s;
+    }
+
+  .sub:hover:after{
+    border-left-color:blue;
+    border-width:1em;
+    top:0px;right:0em;  
+  }
+
+/* Optisches Scheusal*/
+nav li{
+-ms-transition:all 1s ease;
+-webkit-transition:all 1s ease;
+-moz-transition:all 1s ease;
+transition:all 1s ease;
+
+/*transition-property:all;
+transition-duration:1s;
+transition-timing-function:ease;*/
+}
+/*Css3 Selektoren können helfen bestimmte Regeln für alte Browser auszuschließen */
+/* NTH-Pseudoklassen funktionieren nur in modernen Browsern somit ist sichergestellt das es zu keinen Problemen in alten Browsern kommt wenn einige Eigenschaften nicht unterstützt werden */
+nav li ul:nth-child(n){
+transition:opacity 2s,margin-left 1s ease,transform 1s;
+
+/* Die Dauer des Übergangs zwischen Anfangs- und Endzustand wird festgelegt. Die Werte ease-in-out besagen das der Übergang langsam beginnen soll und ebenso langsam vom Endzustand in den Originalzustand gewechselt werden soll. Die Dauer wird in Millisekunden angegeben. */
+	
+/*Der erste Wert bestimmt die zu animierende CSS-Eigenschaft. Der Wert all steht einfach für alle möglichen Werte. Ihr könnt weitestgehend alle CSS-Eigenschaften animieren, die mit absoluten Werten wie Pixel definiert werden.
+	
+Der Zweite Wert, die Animationskurve bestimmt wie eine Animation abläuft. Ein Stein fällt erst langsam und wird immer schneller – das entspricht der Animationskurve ease-in.
+
+	Es gibt folgende Werte:
+	ease-in: langsamer Start und schnelles Ende
+	ease-out: schneller Start und langsames Ende
+	ease-in-out: langsamer Start, schneller Mittelteil und langsames Ende
+	ease: ähnlich ease-in-out, startet etwas schneller
+	linear: gleichmäßige Animation
+	cubic-bezier: benutzerdefinierte Kurve
+	
+Der dritte Wert gibt die Zeit für den Ablauf der Animation in Sekunden an.*/
+opacity:0;/* Ebenendeckraft - Wenn ein Elternelement die Eigenschaft opacity mit einem wert kleiner 1 besitzt so wird die ganze Ebene inklusive aller Kinder transparant. Die Kinder selbst sind dann nicht mehr in der Lage eine 100% Deckkraft anzunehmen */
+margin-left:5em;
+transform:scale(0.8);
+}
+
+nav li:hover>ul:nth-child(n),
+nav li:focus-within>ul:nth-child(n){
+opacity:1;
+margin-left:11em;
+transform:scale(1);
+}
+
+
+/* Supersize Dropdown */
+nav .ssize{
+  background:rgb(103, 161, 248);
+  width:auto;
+  margin-right:8px;
+  top:0;
+  
+}
+nav li:hover .ssize,
+nav li:focus-within .ssize{
+ margin-top:8px; 
+}
+
+.ssize h3{
+  border-bottom:5px solid #fff;
+  min-height:40px;
+  }
+
+.ssize h3 a{ 
+  height:auto;
+  padding:0;
+  text-decoration:none;
+ }  
+
+nav .ssize>li {
+  float:left;
+  width:31%;
+  padding-left:1%;
+  padding-right:1%;
+  border-bottom:0;
+  background:none;
+  color:#000;
+}
+nav .ssize>li:hover,
+nav .ssize>li:focus-within{
+  background:rgba(0,0,0,0.2);
+}
+
+nav .ssize ul li{
+  float:none;
+  margin-left:0 !important;
+  border-bottom:0;
+  width:auto; 
+  margin-bottom:4px;
+}
+
+nav .ssize li ul {
+  position:static;
+  opacity:1;
+  transform:scale(1);
+  margin:0;
+}
+nav .ssize li:hover ul,
+nav .ssize li:focus-within ul{
+  margin-left:0;
+}
+
+/* skalierbare bilder */
+.imgscale{
+width:100%;
+height:auto; 
+}
+html{overflow:hidden;}  
+  </style>
+ </head>
+<body>
+<header>
+    <h1>vertikales Supersize Dropdown/Megadropdown</h1>
+</header>
+<nav>
+    <ul> 
+      <li tabindex="0" class="active"><a href="" title="Link 1">link 1</a></li>
+      <li tabindex="0">
+        <a href="" title="Link 2" class="sub">Big</a>
+        <ul class="ssize">
+          <li><h3><a href="https://www.w3.org/standards/webdesign/htmlcss.html" title="zum thema" target="_blank" hreflang="en">HTML</a></h3>
+            <img src="https://snuffis-web.de/rules/?h" alt="Html Regeln" class="imgscale"> 
+            <p>Der Begriff "HTML" steht für "Hypertext Markup Language", auf deutsch "Hypertext-Auszeichnungssprache".</p>
+            <ul>
+                <li><a href="http://validator.w3.org" title="validator" target="_blank" hreflang="en">Validator</a></li>
+                <li><a href="http://caniuse.com" title="can i Use" target="_blank" hreflang="en">Can I Use</a></li>
+            </ul> 
+          </li>
+          <li>
+            <h3>Einfach so</h3>
+            <img src="https://snuffis-web.de/rules/?zitat" alt="Zitate aus dem Film: &quot;Lord of War &quot;"  class="imgscale"> 
+            <ul>
+                <li><a href="#" title="2.2.1">Link 2.2.1</a></li>
+                <li><a href="#" title="2.2.2">Link 2.2.2</a></li>
+                <li><a href="#" title="2.2.3">Link 2.2.3</a></li>
+                <li><a href="#" title="2.2.4">Link 2.2.4</a></li>
+                <li><a href="#" title="2.2.5">Link 2.2.5</a></li>
+                <li><a href="#" title="2.2.6">Link 2.2.6</a></li>
+            </ul>
+          </li>
+          <li><h3><a href="https://www.w3.org/standards/webdesign/script" title="zum thema" target="_blank" hreflang="en">Javascript</a></h3>
+            <img src="https://snuffis-web.de/rules/?js" alt="Javascript Regeln" class="imgscale"> 
+            <p>JavaScript wurde entwickelt, um dynamische HTML-Seiten per Webbrowser anzuzeigen. Die Verarbeitung von JavaScript erfolgt meist clientseitig direkt durch den Webbrowser</p>
+            <ul>
+                <li><a href="#" title="bla">bla</a></li>
+                <li><a href="#" title="blubb">blubb</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li tabindex="0"><a href="" title="Link 3">link 3</a></li>
+      <li tabindex="0" ><a href="" title="Link 4" class="sub">link 4</a>
+        <ul>
+          <li><a href="" title="Link 4.1">link 4.1</a></li>
+          <li><a href="" title="Link 4.2">link 4.2</a></li>
+          </ul>
+      </li>
+    </ul>
+  </nav>
+
+<section> 
+  <h2 style="color:hotpink" title="das verwendete Farbschema dient lediglich der Visualisierung">Farbschema nur bedingt Barrierefrei!!</h2>
+  <p>Weitere Informationen zu Lesbarkeit von Texten und Visualisierung von Ereigniszuständen <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" title="Kontrastverhältnisse WCAG2.0" target="_blank" hreflang="en">WCAG2.0 - Kontrastverhältnisse</a></p>
+  
+  <p>Standard Textlinks sind ebenso mit Zuständen zu versehen <br><code>a:hover,a:focus{}</code></br>
+    Dies wurde zur Vermeidung von weiteren Überschreibungen in dieser Datei weggelassen!
+  </p> 
+  <p style="color:red;font-weight:bold"> Zur Vermeidung von weiteren Überschreibungungen <i>(Übersichtlichkeit CSS und nachvolziehbarkeit der Regelsätze)</i> für die unterschiedlichen Darstellungen und Verhaltensweisen, wurden in diesem Beispiel WCAG-relavate Formatierungen bzw. Usabillity-Regeln nur zum Teil umgesetzt.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+</section>
+
+<footer>
+  vertikales Flyout-Menü
+</footer>
+</body>
+</html>

@@ -72,14 +72,14 @@
     /* nav li li:hover ul, */
     nav li:hover>ul,
     nav li:focus-within>ul{
-     
       left:auto;
       /* Verschiebungswerte nur nutzen wenn position relative am Elternelement gesetzt ist -  Megadropdown nicht mehr ohne JS möglich */
       left:10em;
       top:0;
       /* margin-left:10em;
       margin-top:-19px; */
-
+      /* Stapelreihenfolge beachten ggf. z-index setzen */
+      /* z-index:1; */
       width:10em;
       border-left:4px solid transparent;
     }
@@ -101,8 +101,8 @@
     nav li{
       background:darkblue;
       color:#fff;
+      /* abstand zwischen interaktiven Elementen */
       border-bottom:#fff 1px solid;
-      /*margin-bottom: 15px;*/ /*c'est pour ne pas voir ce qui est caché derrière le menu*/
       padding:2px 0 1px;
     }
     nav a{
@@ -117,13 +117,15 @@
     nav li:hover,
     nav li:focus-within{
       background:lightblue;
-      color:darkblue;
+          color:darkblue;
     }
+
     /* .active
     {
       background:orange;
       color:#000;
     } */
+    
     .active,
     [aria-current].active,
     [aria-current].active:hover,
@@ -140,13 +142,30 @@
     .sub:hover:before{
       content:"-";
     }
+
+
+    /* Beispiel Hilfselemente für Screenreader verstecken*/ 
+    /*     
+    @media speech{
+      nav li span{display:none;}
+    } 
+    */
+
+
+    /* 
+    Beispiel - mit javascript manipulierte Elemente (geänderte oder neue Funktionalitäten zugewiesen)- span ist jetzt anklickbar- wie interaktives Element für sehende und Tastatur nutzer formatieren -> Benutzbarkeit 
+    */
+
+    /* nav li span{display:inline-block;width:44px;height:44px;
+    cursor:pointer;
+    } */
   </style>
 
 </head>
 
 <body>
   <header>
-    <h1>vertikale Navigation mit Flyout-Menü</h1>
+    <h1>Seite 2</h1>
     <nav>
 
     </nav>
@@ -156,7 +175,19 @@
     <ul>
       <li><a href="" title="Link 1">link 1</a></li>
       <!-- tabindex="0" -->
-      <li  class="active sub">
+      <li  class="sub" >
+
+        <!-- aria-hidden="true"
+          - Inhalt wird von Screenreadern nicht wiedergegeben
+        -->
+        <!-- 
+          role="link" / role="button" - Teilt Screenreadern mit das diese Element wie eine anker / oder button behandelt werden soll
+          https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role
+
+        -->
+        <!-- <span onclick="alert('guten morgen')" aria-hidden="true">^</span> -->
+
+        <!-- Weiter Aria-Attribute für Navigationen https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menu_role -->
         <a href="nav_horizontal_flyout_vorlage.html" title="Link 2">link 2</a>
         <ul>
           <li><a href="../layoutarten/custom_properties.html" title="Link 2.1">link 2.1</a>
@@ -165,10 +196,18 @@
             <li><a href="">link 2.1.2</a></li>
           </ul>
           </li>
-          <li class="active" aria-current="true"><a href="" title="Link 2.2">link 2.2</a></li>
+          <li class="" aria-current="true">
+              <!--
+              mit dem Attribut aria-current kann Sinnstiftenden Mechanismen mitgeteilt werden an welcher Stelle einer Setenstruktur oder innerhalb einer navigation man sich befindet.
+              Der Wert true signalisiert dabei den Aktiven Menüpunkt. Es sollte immer nur ein Element mit dem Attribut versehen werden.
+              https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current
+            -->
+            <a href="" title="Link 2.2">link 2.2</a>
+          </li>
         </ul>
       </li>
-      <li><a href="//www.whatwg.org" title="Link 3">link 3</a>
+      <li class="active">
+        <a href="//www.whatwg.org" title="Link 3">link 3</a>
         <!-- 
         <ul>
           <li><a href="" title="Link 3.1">link 3.1</a></li>
@@ -194,12 +233,20 @@
   </ul> -->
 
   <section>
-    <h2>Überschrift für section</h2>
+    <h2 style="color:hotpink" title="das verwendete Farbschema dient lediglich der Visualisierung">Farbschema nur bedingt Barrierefrei!!</h2>
+    <p>Weitere Informationen zu Lesbarkeit von Texten und Visualisierung von Ereigniszuständen <a
+      href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html"
+      title="Kontrastverhältnisse WCAG2.0" target="_blank" hreflang="en">WCAG2.0 - Kontrastverhältnisse</a></p>
+    <p>Standard Textlinks sind ebenso mit Zuständen zu versehen <br><code>a:hover,a:focus{}</code></br>
+  </p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
       provident <a href="">tenetur</a> velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam
       vitae!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+      <details>
+        <summary>Überschrift für details</summary>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
       provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+      </details>
   </section>
 
   <footer>
