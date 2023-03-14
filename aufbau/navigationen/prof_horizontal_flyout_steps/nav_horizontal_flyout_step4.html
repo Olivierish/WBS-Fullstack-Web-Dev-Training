@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>horizontales Menü mit Ausklappfunktion</title>
+  <link rel="stylesheet" href="start.css"> 
+  <style>
+    
+    /** 
+    * TODO
+    * [x] Listenpunkte horizontal nebeneinander stellen
+    *     ! - Flex, float , (inline-block)
+    * [x] verschachtelte Ebenen verstecken
+    *     ! - display:none / visibility:hidden werden von Screenreadern / sinnstiftenden Mechanismen nicht wiedergegeben
+    * [ ] wenn Listenpunkt mit der Maus berührt wird soll versteckte Ebene erscheinen
+    *     ! - selected-element:hover target-element{}
+    * [x] Funktionalität des einblendens für Tastatur/Touchscreennutzer prüfen
+    *     ! - Test mit Tab-Key :focus / :focus-within
+   
+    ** [x] Standardformatierung Navigation (Hintergründe/Schriftfarben)
+    **    ! - Anker ausdehnen nicht vergessen - display:block
+    ** 
+
+    *** - Accessibillity / Usabillity (WCAG)
+    *** [x] visuelle Zustandsänderung beim berühren mit der Maus / Auswahl des Elementes
+    ***     ! - z.B. Hintergrund/Textfarbe , Rahmen, Symbole/Icons, Kontraste beachten
+    *** [x] Abstände zwischen anklickbaren Flächen / Interaktiven Elementen  
+    ***     ! - 4px horizontal/vertikal je nach Anordnung, Mindestgröße Touchevent (44x44) - bei retina / 2 , kürzeste Seite > 20px
+   
+    **** [x] Ausklappbarkeit visualisieren
+    ****     ! -  Rahmen, Symbole/Icons
+    **** [x] Aktiven Menüpunkt / Unterpunkt kennzeichnen
+    ****     ! - z.B. Hintergrund/Textfarbe , Rahmen, Symbole/Icons
+    **
+    *
+    /**/
+    /* Step1 - (*) */
+    /* Gehört gestalterisch zu step2*/
+    /* nav ul{
+      padding:0;
+      margin:0;
+      list-style:none; 
+    } */
+
+    nav>ul{
+      display:flex;
+      padding:0;
+    }
+
+    nav li{
+      /* float:left; */
+    }
+
+    /* Untere ebene Zeilenweise*/
+    nav li li{
+      /* float:none; */
+       /* clear:both;  */
+      /* display:block; */
+    }
+   
+    nav li ul{
+      flex-direction:column;
+    }
+    
+    /* verstecken*/
+    nav li ul{
+       position:absolute;
+      left:-9999em;
+    } 
+
+    /* einblenden */
+    /* wird bei step 3 unterschiedlich gesetzt um context-menü oder einfaches ausklappen zu ermöglichen */
+    /* nav li:hover ul,
+    nav li:focus-within ul{
+      left:auto;
+    } */
+
+    /* clear bei float*/
+    nav ul:after{
+      content:"";
+      display:table;
+      clear:both;
+    } 
+   
+    /* Step2 - (**) */
+    nav{
+      margin-top:0;
+      padding:0;
+      border: 0;
+      background:#ccc;
+    }
+
+    nav ul{
+      padding:0;
+      margin:0;
+      list-style:none; 
+    }
+
+    nav li{
+      background:#333;
+      /* flex-grow:1; */
+    }
+    
+    nav ul li{
+      background: #333;
+      width:10em;
+    }
+
+    nav a{
+      color: #fff;
+      display:block;
+      line-height:1.2em;
+      padding:0.5em; 
+      text-decoration:none;
+    }
+
+    /* 3. ebene Dauerhaft anzeigen falls simple Version und 3. ebene nicht auskommentiert */
+    /* nav li:hover li ul{
+      position:static;
+    } */
+
+    /* Step3 - (***) */
+    nav>ul>li>a{margin:0 2px;}
+
+    /* Abstände für vertikale Anordnung*/
+    nav li li{
+    padding-right:0;
+    /* abstände vertikal */
+    padding-top:2px;
+    padding-bottom:1px;
+    border-bottom:1px solid #000;
+    }
+
+    nav li li:last-child{
+    border-bottom:none;
+    }
+
+    /* vertikaler Abstand zwischen Hauptebene und auszuklappender Ebene */
+    /* Rahmenfarbe Transparent setzen oder mit Padding-top am Auszuklappenden Element arbeiten sofern kein Hintergrund gesetzt ist*/
+    nav>ul>li>ul{
+    border-top:1em solid transparent;
+    }
+
+    /* nav li:focus, */
+    nav li:hover,
+    nav li:focus-within {
+    background: teal;
+    }
+
+    /* einblenden einfaches Dropdown*/
+     /* nav li:hover>ul,nav li:focus-within> ul{
+      left:auto;
+    }  */
+
+    /* Wenn 3. ebene nicht gesondert ausklappen soll (simple Variante - wenn 3. Ebene nicht auskommentiert ist)*/
+    /* nav li:hover ul ul,nav li:focus-within ul ul{
+    position:static;
+    } */
+
+    /* 3. Ebene als Kontextmenü */
+    /* rechenbare breite*/
+    nav li ul{
+      width:10em;
+    } 
+
+    /* Ausklappen der dritten Ebene wie nav vertikal flyout */
+    nav li:hover>ul,  nav li:focus-within>ul{
+    left:auto; 
+    } 
+
+    /* 3. Ebene als Kontextmenü nach links einblenden *&
+    /* Browserkompatibilität für calc() beachten */
+    nav li li:hover>ul, nav li li:focus-within>ul {
+    margin-left: 10em;
+    margin-top:calc(-2.2em - 2px);
+    border-left:1em solid transparent;
+    }
+
+
+    /* Step4 - (****) */
+    /* Ausklappparkeit und Aktive Menüpunktkennzeichnung*/
+    /* aktiver Menüpunkt/seite*/
+    .active,
+    .active:hover,
+    .active:focus,
+    [aria-current="true"].active.sub:hover,
+    [aria-current="true"].active.sub:focus-within {
+      background: #e64a19
+    }
+
+    .active.sub:hover,    
+    .active.sub:focus-within
+    /* :is() - reduziert selektorenaufzählungen - nur moderne Browser*/
+    /* .active.sub:is(:hover,:focus-within)*/
+    {
+      background:#84270b;
+    } 
+
+    /* Überschreiben der Visualisierung der ausklappbarkeit am aktiven menüpunkt*/
+    .active.sub:before {
+      border-top-color: #333;
+    }
+   
+    .active.sub .sub:before {
+      border-left-color: #333;
+    }
+
+    .active.sub:hover:before,
+    .active.sub .sub:hover:before ,
+    .active.sub .active.sub:hover:before {
+      border-color: transparent;
+    }
+
+    /* Ausklappbare Bereiche kennzeichnen */
+    .sub {
+      position: relative;
+    }
+
+    .sub:before {
+      content: "";
+      border: 7px solid transparent;
+      border-top-color: teal;
+      border-bottom: none;
+      display: table;
+      position: absolute;
+      right: 5px;
+      top: 12.5px;
+    }
+
+    /* Für zusätzliche Ebene */
+    .sub .sub:before {
+      border: 7px solid transparent;
+      border-left-color: teal;
+      border-right: none;
+      top: 10.5px;
+    }
+
+    /*
+    ****************************************************************
+    ***
+    ***     regelmäßig Markup und CSS validieren
+    ***     Semantik beachten
+    ***     testen, testen, testen
+    ***     finales validieren
+    ***
+    ****************************************************************
+    /**/
+
+    /* Überschreibung bei unzureichender Breite - Richtung am letzen Element ändern*/
+    /* Wenn Flex grow Zeile 101 nicht auskommentiert ist */
+    /* @media screen and (max-width:1200px) */
+    @media screen and (max-width:960px){
+
+      nav li:last-child li:hover>ul:nth-child(n) {
+      margin-left: -11em;
+      border-left:0;
+      border-right:1em solid transparent;
+      }
+
+      .active.sub:last-child .sub:before {
+      border-right-color: #333;
+      }
+
+      .sub:last-child .sub:before {
+      border: 7px solid transparent;
+      border-right-color: teal;
+      border-left: none;
+      top: 10.5px;
+      }
+    }
+
+    /* Optisches Scheusal - Mehraufwand für transition */
+    nav li {
+      -ms-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+
+    /* Alle verschachtelten UL*/
+    nav li ul:nth-child(n) {
+      opacity: 0;
+    }
+
+    nav li:hover>ul:nth-child(n) {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* 2. ebene */
+    nav>ul>li>ul:nth-child(n) {
+      transition: margin-top 0.4s ease, transform .4s, opacity 1s;
+      margin-top: -1em;
+      transform: scale(0.8);
+    }
+
+    nav>ul>li:hover>ul:nth-child(n) {
+      margin-top: 0;
+    }
+
+    /* 3. ebene*/
+    nav li li ul:nth-child(n) {
+      transition: margin-left .8s ease, transform 1s, opacity 1s;
+      margin-left: 5em;
+    }
+
+    nav li li:hover>ul:nth-child(n) {
+      margin-left: 10em;
+    }
+
+
+
+    /*
+    ****************************************************************
+    ***
+    ***     regelmäßig Markup und CSS validieren
+    ***     Semantik beachten
+    ***     testen, testen, testen
+    ***     finales validieren
+    ***
+    ****************************************************************
+    /**/
+
+
+
+    /* Step4 - (****) */
+
+
+    /*
+    ****************************************************************
+    ***
+    ***     regelmäßig Markup und CSS validieren
+    ***     Semantik beachten
+    ***     testen, testen, testen
+    ***     finales validieren
+    ***
+    ****************************************************************
+    /**/
+
+  
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>horizontale Navigation mit Flyout-Menü</h1>
+  </header>
+
+  <nav>
+    <ul class="level-1">
+      <!--ggf Tabindex für alte browser setzen die :focus-within nicht unterstützen-->
+      <li><a href="" title="Link 1">link 1</a></li>
+      <li class="sub">
+        <a href="" title="Link 2">link 2</a>
+        <ul class="level-2">
+          <li><a href="" title="Link 2.1">link 2.1</a></li>
+          <li class="sub"><a href="" title="Link 2.2">link 2.2</a>
+            <ul class="level-3">
+              <li><a href="" title="Link 2.2.1">link 2.2.1</a></li>
+              <li><a href="" title="Link 2.2.2">link 2.2.2</a></li>
+            </ul>
+          </li>
+          <li><a href="" title="Link 2.1">link 2.1</a></li>
+          <li><a href="" title="Link 2.1">link 2.1</a></li>
+        </ul>
+      </li>
+      <li><a href="" title="Link 3">link 3</a></li>
+      <li class="sub active">
+        <a href="" title="Link 4">link 4</a>
+        <ul class="level-2">
+          <li><a href="" title="Link 4.1">link 4.1</a></li>
+          <li class="sub active" ><a href="" title="Link 4.2">link 4.2</a>
+            <ul class="level-3">
+              <li class="active" aria-current="true"><a href="#" title="4.2.1">Link4.2.1</a></li>
+              <li><a href="#" title="4.2.2">Link4.2.2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Grundprinzip horizontale Ausklappnavigation</h2>
+    <p>Lesen Sie die Kommentare in der Datei aufmerksam durch und betrachten diese als Checkliste! Nachfolgend noch ein Beispiel für das verstecken von Inhalten.</p>
+    <details>
+      <summary>Tips</summary>
+      <h2>Inhalte Seo&mdash; und Screenreaderfreundllich verstecken</h2>
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide_markup.png" alt="demomarkup" style="max-width:80%;height:auto;">
+      <figcaption>Markup Beispiel</figcaption>
+    </figure> 
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide.png" alt="demo css-regeln verstecken" style="max-width:80%;height:auto;">
+      <figcaption>einfache CSS-Regeln zum verstecken</figcaption>
+    </figure>
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide_show.png" alt="demo css-regeln einblenden" style="max-width:80%;height:auto;">
+      <figcaption>CSS-Regel zum einblenden</figcaption>
+    </figure>
+    <p>Es handelt sich hierbei lediglich um allgemeine und vereinfachte Beispiel-Regeln. Individuelle bzw. layoutspezifische Anpassungen sind ggf. zusätzlich notwendig.</p>
+    </details>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+    provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+    provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+  </section>
+
+  <footer>
+    horizontales Menü mit Ausklappfunktion
+  </footer>
+</body>
+
+</html>

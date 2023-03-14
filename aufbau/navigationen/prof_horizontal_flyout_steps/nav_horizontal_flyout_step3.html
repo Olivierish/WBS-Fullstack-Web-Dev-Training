@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>horizontales Menü mit Ausklappfunktion</title>
+  <link rel="stylesheet" href="start.css"> 
+  <style>
+    
+  /** 
+    * TODO
+    * [x] Listenpunkte horizontal nebeneinander stellen
+    *     ! - Flex, float , (inline-block)
+    * [x] verschachtelte Ebenen verstecken
+    *     ! - display:none / visibility:hidden werden von Screenreadern / sinnstiftenden Mechanismen nicht wiedergegeben
+    * [ ] wenn Listenpunkt mit der Maus berührt wird soll versteckte Ebene erscheinen
+    *     ! - selected-element:hover target-element{}
+    * [x] Funktionalität des einblendens für Tastatur/Touchscreennutzer prüfen
+    *     ! - Test mit Tab-Key :focus / :focus-within
+   
+    ** [x] Standardformatierung Navigation (Hintergründe/Schriftfarben)
+    **    ! - Anker ausdehnen nicht vergessen - display:block
+    ** 
+
+    *** - Accessibillity / Usabillity (WCAG)
+    *** [x] visuelle Zustandsänderung beim berühren mit der Maus / Auswahl des Elementes
+    ***     ! - z.B. Hintergrund/Textfarbe , Rahmen, Symbole/Icons, Kontraste beachten
+    *** [x] Abstände zwischen anklickbaren Flächen / Interaktiven Elementen  
+    ***     ! - 4px horizontal/vertikal je nach Anordnung, Mindestgröße Touchevent (44x44) - bei retina / 2 , kürzeste Seite > 20px
+   
+    **** [ ] Ausklappbarkeit visualisieren
+    ****     ! -  Rahmen, Symbole/Icons
+    **** [ ] Aktiven Menüpunkt / Unterpunkt kennzeichnen
+    ****     ! - z.B. Hintergrund/Textfarbe , Rahmen, Symbole/Icons
+    **
+    *
+    /**/
+    /* Step1 - (*) */
+    /* Gehört gestalterisch zu step2*/
+    /* nav ul{
+      padding:0;
+      margin:0;
+      list-style:none; 
+    } */
+
+    nav>ul{
+      display:flex;
+      padding:0;
+    }
+
+    nav li{
+      /* float:left; */
+    }
+
+    /* Untere ebene Zeilenweise*/
+    nav li li{
+      /* float:none; */
+       /* clear:both;  */
+      /* display:block; */
+    }
+   
+    nav li ul{
+      flex-direction:column;
+    }
+    
+    /* verstecken*/
+    nav li ul{
+       position:absolute;
+      left:-9999em;
+    } 
+
+    /* einblenden */
+    /* wird bei step 3 unterschiedlich gesetzt um context-menü oder einfaches ausklappen zu ermöglichen */
+    /* nav li:hover ul,
+    nav li:focus-within ul{
+      left:auto;
+    } */
+
+    /* clear bei float*/
+    nav ul:after{
+      content:"";
+      display:table;
+      clear:both;
+    } 
+   
+    /* Step2 - (**) */
+    nav{
+      margin-top:0;
+      padding:0;
+      border: 0;
+      background:#ccc;
+    }
+
+    nav ul{
+      padding:0;
+      margin:0;
+      list-style:none; 
+    }
+
+    nav li{
+      background:#333;
+      flex-grow:1;
+    }
+    
+    nav ul li{
+      background: #333;
+      width:10em;
+    }
+
+    nav a{
+      color: #fff;
+      display:block;
+      line-height:1.2em;
+      padding:0.5em; 
+      text-decoration:none;
+    }
+
+    /* 3. ebene Dauerhaft anzeigen falls simple Version und 3. ebene nicht auskommentiert */
+    /* nav li:hover li ul{
+      position:static;
+    } */
+
+    /* Step3 - (***) */
+    nav>ul>li>a{margin:0 2px;}
+
+    /* Abstände für vertikale Anordnung*/
+    nav li li{
+    padding-right:0;
+    /* abstände vertikal */
+    padding-top:2px;
+    padding-bottom:1px;
+    border-bottom:1px solid #000;
+    }
+
+    nav li li:last-child{
+    border-bottom:none;
+    }
+
+    /* vertikaler Abstand zwischen Hauptebene und auszuklappender Ebene */
+    /* Rahmenfarbe Transparent setzen oder mit Padding-top am Auszuklappenden Element arbeiten sofern kein Hintergrund gesetzt ist*/
+    nav>ul>li>ul{
+    border-top:1em solid transparent;
+    }
+
+    /* nav li:focus, */
+    nav li:hover,
+    nav li:focus-within {
+    background: teal;
+    }
+
+    /* einblenden einfaches Dropdown*/
+    nav li:hover>ul,nav li:focus-within>ul{
+      left:auto;
+    } 
+
+    /* Wenn 3. ebene nicht gesondert ausklappen soll (simple Variante - wenn 3. Ebene nicht auskommentiert ist)*/
+    /* nav li:hover ul ul,nav li:focus-within ul ul{
+    position:static;
+    } */
+
+    /* 3. Ebene als Kontextmenü */
+    /* rechenbare breite*/
+    nav li ul{
+      width:10em;
+    } 
+
+    /* Ausklappen der dritten Ebene wie nav vertikal flyout */
+    nav li:hover>ul,  nav li:focus-within>ul{
+    left:auto; 
+    } 
+
+    /* 3. Ebene als Kontextmenü nach links einblenden *&
+    /* Browserkompatibilität für calc() beachten */
+    nav li li:hover>ul, nav li li:focus-within>ul {
+    margin-left: 10em;
+    margin-top:calc(-2.2em - 2px);
+    border-left:1em solid transparent;
+    }
+
+
+
+
+    /* Step4 - (****) */
+
+
+    /*
+    ****************************************************************
+    ***
+    ***     regelmäßig Markup und CSS validieren
+    ***     Semantik beachten
+    ***     testen, testen, testen
+    ***     finales validieren
+    ***
+    ****************************************************************
+    /**/
+
+
+
+    /* Step4 - (****) */
+
+
+    /*
+    ****************************************************************
+    ***
+    ***     regelmäßig Markup und CSS validieren
+    ***     Semantik beachten
+    ***     testen, testen, testen
+    ***     finales validieren
+    ***
+    ****************************************************************
+    /**/
+
+  
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>horizontale Navigation mit Flyout-Menü</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="" title="Aussagekräftige Linkbeschreibung">link 1</a></li>
+      <li>
+        <a href="" title="Link 2 - title-texte dienen in diesem Beispiel nur der Visualisierung im Browser! ">link 2</a>
+        <ul>
+          <li><a href="" title="Link 2.1">link 2.1</a></li>
+          <li><a href="" title="Link 2.2">link 2.2</a>
+            
+            <ul>
+              <li><a href="" title="Link 2.2.1">Link 2.2.1</a></li>
+              <li><a href="" title="Link 2.2.2">Link 2.2.2</a></li>
+            </ul> 
+           
+          </li>
+          <li><a href="" title="Link 2.3">link 2.3</a></li>
+          <li><a href="" title="Link 2.4">link 2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="" title="Link 3">link 3</a></li>
+      <li>
+        <a href="" title="Link 4">link 4</a>
+        <ul>
+          <li><a href="" title="Link 4.1">link 4.1</a></li>
+          <li><a href="" title="Link 4.2">link 4.2</a>
+            
+            <ul>
+              <li><a href="#" title="4.2.1">Link 4.2.1</a></li>
+              <li><a href="#" title="4.2.2">Link 4.2.2</a></li>
+            </ul> 
+           
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Grundprinzip horizontale Ausklappnavigation</h2>
+    <p>Lesen Sie die Kommentare in der Datei aufmerksam durch und betrachten diese als Checkliste! Nachfolgend noch ein Beispiel für das verstecken von Inhalten.</p>
+    <details>
+      <summary>Tips</summary>
+      <h2>Inhalte Seo&mdash; und Screenreaderfreundllich verstecken</h2>
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide_markup.png" alt="demomarkup" style="max-width:80%;height:auto;">
+      <figcaption>Markup Beispiel</figcaption>
+    </figure> 
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide.png" alt="demo css-regeln verstecken" style="max-width:80%;height:auto;">
+      <figcaption>einfache CSS-Regeln zum verstecken</figcaption>
+    </figure>
+    <figure>
+      <img src="https://snuffis-web.de/code/img/code_hide_show.png" alt="demo css-regeln einblenden" style="max-width:80%;height:auto;">
+      <figcaption>CSS-Regel zum einblenden</figcaption>
+    </figure>
+    <p>Es handelt sich hierbei lediglich um allgemeine und vereinfachte Beispiel-Regeln. Individuelle bzw. layoutspezifische Anpassungen sind ggf. zusätzlich notwendig.</p>
+    </details>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+    provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dignissimos, dolores, nemo, quas facere illo
+    provident tenetur velit fugiat earum distinctio enim ipsa delectus omnis quis officiis nostrum quam vitae!</p>
+  </section>
+
+  <footer>
+    horizontales Menü mit Ausklappfunktion
+  </footer>
+</body>
+
+</html>

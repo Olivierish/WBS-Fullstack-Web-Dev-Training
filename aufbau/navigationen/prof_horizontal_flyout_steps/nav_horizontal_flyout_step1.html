@@ -9,16 +9,15 @@
     
     /** 
     * TODO
-    * [ ] Listenpunkte horizontal nebeneinander stellen
+    * [x] Listenpunkte horizontal nebeneinander stellen
     *     ! - Flex, float , (inline-block)
-    * [ ] verschachtelte Ebenen verstecken
+    * [x] verschachtelte Ebenen verstecken
     *     ! - display:none / visibility:hidden werden von Screenreadern / sinnstiftenden Mechanismen nicht wiedergegeben
-    * [ ] wenn Listenpunkt mit der Maus berührt wird soll versteckte Ebene erscheinen
+    * [x] wenn Listenpunkt mit der Maus berührt wird soll versteckte Ebene erscheinen
     *     ! - selected-element:hover target-element{}
-    * [ ] Funktionalität des einblendens für Tastatur/Touchscreennutzer prüfen
+    * [x] Funktionalität des einblendens für Tastatur/Touchscreennutzer prüfen
     *     ! - Test mit Tab-Key :focus / :focus-within
-
-
+   
     ** [ ] Standardformatierung Navigation (Hintergründe/Schriftfarben)
     **    ! - Anker ausdehnen nicht vergessen - display:block
     ** 
@@ -36,8 +35,51 @@
     **
     *
     /**/
+
     /* Step1 - (*) */
+    nav ul{
+      padding:0;
+      margin:0;
+      list-style:none; 
+    }
+
+    nav>ul{
+      display:flex;
+      padding:0;
+    }
+
+    nav li{
+      /* float:left; */
+    }
+
+    /* Untere ebene Zeilenweise*/
+    nav li li{
+      /* float:none; */
+       /* clear:both;  */
+      /* display:block; */
+    }
    
+    nav li ul{
+      /* flex-direction:column; */
+    }
+    
+    /* verstecken*/
+    nav li ul{
+       position:absolute;
+      left:-9999em;
+    } 
+    /* einblenden */
+    nav li:hover ul,
+    nav li:focus-within ul{
+      left:auto;
+    }
+
+    /* clear bei float*/
+    nav ul:after{
+      content:"";
+      display:table;
+      clear:both;
+    } 
    
     /* Step2 - (**) */
 
@@ -58,162 +100,8 @@
     ***
     ****************************************************************
     /**/
-    /*
-    * TODO
-    * [ ] Listenpunkte horizontal nebeneinander stellen
-    *     ! - Flex, float , (inline-block)
-    * [ ] verschachtelte Ebenen verstecken
-    *     ! - display:none / visibility:hidden werden von Screenreadern / sinnstiftenden Mechanismen nicht wiedergegeben
-    * [ ] wenn Listenpunkt mit der Maus berührt wird soll versteckte Ebene erscheinen
-    *     ! - selected-element:hover target-element{}
-    * [ ] Funktionalität des einblendens für Tastatur/Touchscreennutzer prüfen
-    *     ! - Test mit Tab-Key :focus / :focus-within
-    */
 
-    /* Step1 - (*) */
-    :root{
-      --width-nav-element : 8em;
-    }
-    nav{
-      /* background-color: #E1F4CB; */
-      border: 0;
-      padding: 5px 0;
-      margin: 0;
-
-    }
-
-    nav>ul{
-      width: fit-content;
-      margin: 0 auto;
-    }
-
-    /* section{
-      clear: both;
-    } */
-   
-    /*Navigation*/
-    nav ul{
-      list-style: none;
-    }
-
-    nav li{
-      position: relative;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      padding: 0 1em;
-      padding-right: 1em;
-      
-    }
-
-    nav > ul li{
-      float: left;
-      border-radius: 2px;
-    }
-
-    nav ul ul{
-      position: absolute;
-      top: -9999em;
-
-      /* For animation */
-      opacity: 0;
-      left: 0;
-    }
-
-
-    nav li:hover>ul,
-    nav li:focus-within>ul{
-      top: 2em;
-      left: -2.5em;
-      /* width: 10em; */
-      width: var(--width-nav-element);
-      border-top: 4px solid transparent;
-      /* margin-top: 4px; */
-      opacity: 1;
-      transition: opacity 1.5s ease;
-    }
-
-    nav li li:hover > ul,
-    nav li li:focus-within > ul{
-      top: -0.3em;
-      /* bottom: -3em; */
-      /* bottom: 0em; */
-      /* left:3.0em; */
-      left: calc(var(--width-nav-element) - 5px);
-      width: var(--width-nav-element);
-      transition: opacity 1s ease-out, left 1s ease;
-    }
-
-
-    /* html{
-
-    } */
-
-    a{
-      color: inherit;
-      display: inline-block;
-    }
-
-    a:hover,
-    a:focus{
-      text-decoration: none;
-    }
-
-    nav li{
-      background-color: #114b5f;
-      color: white;
-      border-bottom:#fff 1px solid; 
-      margin-right: 4px; 
-      width: var(--width-nav-element);
-
-    }
-
-    nav a{
-      display: block;
-      width: 100%;
-      padding: 0.5em 0em;
-      text-align: center;
-    }
-
-    nav li:hover,
-    nav li:focus-within{
-      background-color: #D4C5E2;
-      color: #114b5f;
-      transition: all 0.5s ease-out;
-    }
-
-    nav::after{
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    .active,
-    [aria-current].active,
-    [aria-current].active:hover,
-    [aria-current].active:focus-within{
-      background-color: #D4C5E2;
-      color: #114b5f;
-    }
-
-    .sub:after{
-      content:"▼";  
-      align-self: center;
-    }
-    .sub:hover:after{
-      content:"";
-    }
-
-    @media screen and (max-width:820px) {
-      nav li:last-child li:hover > ul,
-      nav li:last-child li:focus-within > ul{
-      top:0;
-      left:calc(-1 * var(--width-nav-element) - 4.6em);
-      width: var(--width-nav-element);
-      transition: opacity 1s ease-out, left 1s ease;
-    }
-    }
-
+  
   </style>
 </head>
 
@@ -225,34 +113,34 @@
   <nav>
     <ul>
       <li><a href="" title="Aussagekräftige Linkbeschreibung">link 1</a></li>
-      <li class="sub">
+      <li>
         <a href="" title="Link 2 - title-texte dienen in diesem Beispiel nur der Visualisierung im Browser! ">link 2</a>
         <ul>
           <li><a href="" title="Link 2.1">link 2.1</a></li>
-          <li class="sub"><a href="" title="Link 2.2">link 2.2</a>
-            <!--  -->
+          <li><a href="" title="Link 2.2">link 2.2</a>
+            <!-- 
             <ul>
               <li><a href="" title="Link 2.2.1">Link 2.2.1</a></li>
               <li><a href="" title="Link 2.2.2">Link 2.2.2</a></li>
             </ul> 
-            <!-- --> 
+            -->
           </li>
           <li><a href="" title="Link 2.3">link 2.3</a></li>
           <li><a href="" title="Link 2.4">link 2.4</a></li>
         </ul>
       </li>
       <li><a href="" title="Link 3">link 3</a></li>
-      <li class="active sub">
+      <li>
         <a href="" title="Link 4">link 4</a>
         <ul>
           <li><a href="" title="Link 4.1">link 4.1</a></li>
-          <li class="active sub"><a href="" title="Link 4.2">link 4.2</a>
-            <!-- -->
+          <li><a href="" title="Link 4.2">link 4.2</a>
+            <!-- 
             <ul>
               <li><a href="#" title="4.2.1">Link 4.2.1</a></li>
-              <li class="active"><a href="#" title="4.2.2">Link 4.2.2</a></li>
+              <li><a href="#" title="4.2.2">Link 4.2.2</a></li>
             </ul> 
-            <!---->
+            -->
           </li>
         </ul>
       </li>
