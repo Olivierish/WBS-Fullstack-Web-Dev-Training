@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olivieris - Kontakt</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+
+  <body>
+    <a id="oben"></a>
+    <header>
+      <div class="logo">
+        <img src="../bilder/logoo.png" width="100" alt="logo" />
+        <a href="../index.html">Olivieris</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Startseite</a></li>
+          <li><a href="ueberuns.html">Über uns</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="bewertung.html">Bewertung</a></li>
+          <li class="aktive"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="scroll">
+        <img src="../bilder/scroll.gif" alt="Scrollen" />
+      </div>
+    </header>
+
+    <main>
+      <article id="inhalte">
+        <div class="hero">
+          <h1 class="pageTitle">Wir sind für Sie da!</h1>
+          <h2>Öffnungzeiten</h2>
+          <div class="tabelleInhalte">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tag</th>
+                  <th>Öffn.</th>
+                  <th>Geschl.</th>
+                  <th>Freie</th>
+                </tr>
+              </thead>
+              <tr>
+                <td>Montag</td>
+                <td>09:00uhr</td>
+                <td>18:30uhr</td>
+                <td>30%</td>
+              </tr>
+
+              <tr>
+                <td>Dienstag</td>
+                <td>09:00uhr</td>
+                <td>18:30uhr</td>
+                <td>65%</td>
+              </tr>
+
+              <tr>
+                <td>Mittwoch</td>
+                <td>09:00uhr</td>
+                <td>18:30uhr</td>
+                <td>45%</td>
+              </tr>
+
+              <tr>
+                <td>Donnerstag</td>
+                <td>09:00uhr</td>
+                <td>18:30uhr</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>Freitag</td>
+                <td>09:00uhr</td>
+                <td>18:30uhr</td>
+                <td>16%</td>
+              </tr>
+              <tr>
+                <td>Samstag</td>
+                <td>09:00uhr</td>
+                <td>12:30uhr</td>
+                <td>95%</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <br /><br /><br />
+
+          <h2>Kontaktieren Sie uns</h2>
+          <div class="formInhalte">
+            <form name="kontakt" method="POST" action="#">
+              <p>
+                <label for="name" class="kontakt">Name:</label>
+                <input type="text" name="name" required />
+              </p>
+              <p>
+                <label for="vorname" class="kontakt">Vorname:</label>
+                <input type="text" name="vorname" />
+              </p>
+              <p>
+                <label for="email" class="kontakt">Email:</label>
+                <input type="email" name="email" required />
+              </p>
+              <p>
+                <label for="datum" class="kontakt">Datum:</label>
+                <input type="date" name="datum" />
+                <br /><br />
+              </p>
+              <p>
+                <label for="nachricht" class="kontakt">Nachricht:</label>
+                <textarea name="nachricht"></textarea>
+              </p>
+              <p>
+                <span class="kontakt">Newsletter?</span>
+                <input type="checkbox" name="newsletter" value="ja" />
+                <label for="newsletter"> Ja</label>
+                <br /><br />
+              </p>
+              <p>Wie hast du uns gefunden? <br /><br /></p>
+              <p>
+                <span class="radio"></span
+                ><input type="radio" name="gefunden" value="1" />
+                <label for="wanderungen"> Internet</label>
+                <br />
+                <span class="radio"></span
+                ><input type="radio" name="gefunden" value="2" />
+                <label for="gefunden"> Werbung</label>
+                <br />
+                <span class="radio"></span
+                ><input type="radio" name="gefunden" value="3" />
+                <label for="gefunden"> Social Media</label>
+                <br />
+                <span class="radio"></span
+                ><input type="radio" name="gefunden" value="4" />
+                <label for="gefunden"> Mundpropaganda</label>
+                <br />
+                <span class="radio"></span
+                ><input type="radio" name="gefunden" value="5" />
+                <label for="gefunden">Messe</label>
+                <br />
+                <span class="radio"></span
+                ><input type="radio" name="gefunden" value="7" />
+                <label for="gefunden">Andere</label>
+                <br />
+                <br />
+              </p>
+              <p class="kontaktButton">
+                <input type="submit" name="senden" value="Abschicken" />
+              </p>
+            </form>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <div>
+        <nav>
+          <ul>
+            <li><a href="seiten/kontakt.html">Kontakt</a></li>
+            <li><a href="seiten/impressum.html">Impressum</a></li>
+          </ul>
+        </nav>
+        <p>&copy;2023 Olivieris Gmbh</p>
+      </div>
+    </footer>
+    <div class="oben">
+      <a href="#oben"><img src="../bilder/top.jpg" alt="oben" /></a>
+    </div>
+  </body>
+</html>

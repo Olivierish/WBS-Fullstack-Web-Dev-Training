@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="start.css">
+  <title>Tabreiternavigation im Einsatz als One-Pager</title> 
+  <style>
+    html{ 
+      /* Standardregeln für hintergrund und Texteigenschaften */
+    }
+    nav{
+      border:none;
+    }
+
+    nav,
+    nav ul{
+      padding-bottom:0;
+      margin-bottom:0;
+      list-style:none;
+    }
+    /* Verschiebung um optische Überlagerung zu erreichen , ebenso am nav-container möglich je nach formatierung*/
+    nav ul{
+      position:relative;
+      top:1px;
+    }
+    nav li{
+      float:left;
+      background:burlywood;
+      /* WCAG-Konforme Abstände zwischen interaktiven Flächen (anker,input usw.)*/
+      /* Für Touchevents müssen interaktive Elemente mindestens 44x44px(icons) groß sein (Halbierung bei retina beachten 24x24px) -  Die kürzeste Kante selbst darf 20px nicht unterstreiten */
+      /* Mindestabstand zwischen anklickbaren Flächen (interaktiven Elementen) 4px*/
+       margin:0 2px;
+       color:#000;
+       border:1px solid red;
+       border-bottom-color:#333;
+    }
+    nav a{
+      display:block;
+      padding:5px 10px;
+      text-decoration:none;
+      color:inherit;
+    }
+    section{
+      margin-top:0;
+    }
+    
+    /* Generelle Ankerformatierung*/
+    /* zustände*/
+    a{color:#000;}
+    a:hover,a:focus{
+      text-decoration:none;
+    }
+
+    nav li:hover,nav li:focus-within{
+      background:#222;
+      color:burlywood;
+    }
+    /* Aktive Menüpunktkennzeichnung */
+    .active,.active:hover,.active:focus,.active:focus-within{
+      background:#fff;
+      color:#222;
+      border-bottom-color: #fff;
+      }
+
+    /* Clear */
+    nav ul:after{
+      content:"";
+      display:table;
+      clear:both;
+    }
+  /* C2A - Call to Action */
+  .btn{display:block;margin:0.5em 0;padding:1em;background:#060;color:#fff;display:table;border-radius:5px;text-decoration:none;border:1px solid #360;transition:border-color .4s;
+    background: #bfd255; /* alte Browser ohne Gradient */
+    background: -moz-linear-gradient(top,#72aa00 0%,#360 50%,#72aa00 100%);/* Alte FF (->15)*/
+    background: -webkit-linear-gradient(top, #72aa00 0%,#360 50%,#72aa00 100%);/* Alte Chromium (->25) und Safari ( ->5) */
+    background: linear-gradient(to bottom,  #72aa00 0%,#360 50%,#72aa00 100%); /* Standard lt. w3.org*/
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72aa00', endColorstr='#360',GradientType=0 ); /* alte IE (-> 9)als svg Filter  */
+  }
+  .btn:hover{
+    background:#72aa00; color:#212121;border-color:transparent;
+    box-shadow:inset 0 0 2px #fff;
+    text-decoration:none;
+  }
+  summary{color:#360;
+    text-decoration:underline;
+  }
+  summary:hover{
+    text-decoration:none;
+  }
+
+
+  /* Hilfsspans Verstecken */
+  span[id]{
+    display:none;
+  }
+  /* wenn keine id übergeben wurde alle Section-elemente verstecken bis auf die section mit class="section1" */
+  :not(:target) ~ section:not(.section1){
+     display:none;
+  }
+  /* wenn id in der Aufrufadresse übergeben wurde dann soll das Geschwisterelement mit der jeweiligen Klasse eingeblendet werden */
+  #section1:target ~ .section1,
+  #section2:target ~ .section2,
+  #section3:target ~ .section3,
+  #section4:target ~ .section4{
+    display:block;
+  }
+
+  /* Das Element mit der klasse section1 nicht anzeigen wenn eine id als parameter übergeben wurde */
+  /* dieser selektor wurde einzeln aufgeführt zum auskommentieren */
+  :target:not(#section1) ~ .section1{
+    display:none;
+  }
+
+  /* beispiel aktive Menüpunktennzeichnung ohne klasse*/
+  #section1:target ~ nav li:nth-child(1),
+  #section1:target ~ nav li:nth-child(1):hover,
+  #section1:target ~ nav li:nth-child(1):focus-within,
+  #section2:target ~ nav li:nth-child(2),
+  #section2:target ~ nav li:nth-child(2):hover,
+  #section2:target ~ nav li:nth-child(2):focus-within,
+  #section3:target ~ nav li:nth-child(3),
+  #section3:target ~ nav li:nth-child(3):hover,
+  #section3:target ~ nav li:nth-child(3):focus-within,
+  #section4:target ~ nav li:nth-child(4),
+  #section4:target ~ nav li:nth-child(4):hover,
+  #section4:target ~ nav li:nth-child(4):focus-within{
+    background:#fff;
+    color:#222;
+    border-bottom-color: #fff;
+  } 
+  </style>
+</head>
+<body>
+ 
+  <header>
+    <h1>Tabreiternavigation</h1>
+  </header>
+  <!-- Hilfscontainer für Sprungmarken um von oben nach unten selektieren zu können -->
+  <span id="section1">1</span>
+  <span id="section2">2</span>
+  <span id="section3">3</span>
+  <span id="section4">4</span>
+  <nav>
+    <ul>
+      <li><a href="#section1">Zugänglichkeit</a></li>
+      <li><a href="#section2">Kontraste</a></li>
+      <li><a href="#section3">Miniformular</a></li>
+      <li><a href="#section4">Semantik</a></li>
+    </ul>
+  </nav>
+
+  <section class="section1" aria-labelledby="access">
+    <h2 id="access">Accessibility und Usability</h2>
+    <p>Usability ist der englische Begriff für Benutzbarkeit eines Internet Auftritts. <br>Accessibility ist die englische Formulierung für die Zugänglichkeit von Inhalten. <br>Die Empfehlungen für <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" hreflang="en" target="_blank">barrierefreie Webinhalte (WCAG)</a> machen Website Inhalte für eine größere Gruppe von Menschen mit Einschränkungen zugänglich. Dies beinhaltet Blindheit und Sehbehinderung, Gehörlosigkeit und nachlassendes Hörvermögen, Lernbehinderungen, kognitive Einschränkungen, eingeschränkte Bewegungsfähigkeit, Sprachbehinderungen, Photosensibilität und Kombinationen aus diesen Behinderungen. Webseiten und Webanwendungen sollten auf jedem Endgerät im gleichen Umfang gut bedienbar sein.<br> Die Empfehlungen machen Websites allgemein benutzbarer und werden seit Mai 2018 von den Suchmaschienen mit gewertet.</p>
+    
+    <h3>semantische Markupstruktur - Aria Rollen</h3>
+    <p>Eine logische und semantisch korrekte Markup-Struktur ermöglicht es Screenreadern Inhalte in korrekter und Inhaltlich zusammengehöriger Reihenfolge auszugeben. <br>Für Suchmaschienen wird die Webseite ebenso leichter zugänglich. Als Seitenbetreiber partizipiert man damit zusätzlich von einer besseren Platzierung im Index der Suchmaschiene.</p>
+    <details>
+      <summary>Aria Landmark Roles</summary>
+        <p>Landmark-Roles sind Informationen, für Screenreeder und andere sinnstiftende Mechnismen, über Inhaltliche Aufteilung der Seitenbereiche. Eine Übersicht zu den Aria-Landmark-Roles die den HTML5-Outline-Elementen zugewiesen sind finden sie unter: <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html" title="Landmarkroles an html5 elementen und fortführende Informationen" hreflang="en" target="_blank" class="btn">Aria-Landmark-Role</a></p>
+    </details>
+  </section>
+  <section  class="section2" aria-labelledby="contrast">
+    <h2 id="contrast">achten Sie auf Farbkontraste</h2>
+    <p>Warum? Wenn der Unterschied von Farbton und Helligkeit zwischen Vorder- und Hintergrundfarben nicht groß genug ist, können viele Besucher den Text nur schwer lesen. Dies kann an Farbfehlsichtigkeit oder einem Monochrom- oder Graustufenbildschirm liegen. Oder sie haben, ein perfektes Sehvermögen, einen wirklich guten Monitor, der 24-bit Farben darstellt, und trotzdem Probleme, da die Seite einen hellgrauen Text auf weißem Hintergrund benutzt.</p>
+    <h3>Farbschema Testen</h3>
+    <p>
+    Probleme die bei Farbsehschwächen auftreten können Sie am einfachsten durch einen Graustufenkonvertierung simulieren. 10% - 100% RGB Abstufung mit Graustufenvergleich Wenn sie sich unsicher sind ob die optischen Kontraste ausreichen verwenden Sie Tools um die Kontrastwerte zu prüfen.
+    </p>
+    <div style="filter:grayscale(1);display:inline-block;"> 
+      <h3 style="color:blue;">blau</h3>
+      <h3 style="color:green;">grün</h3>
+      <h3 style="color:red;">rot</h3>
+    </div>
+    <div style="display:inline-block;"> 
+      <h3 style="color:blue;">blau</h3>
+      <h3 style="color:green;">grün</h3>
+      <h3 style="color:red;">rot</h3>
+    </div>
+
+    <p>
+      Ein einfacher Weg, zu testen, ob der Unterschied von Farbton und Helligkeit zwischen Vorder- und Hintergrund groß genug ist sind Farb Kontrast Testtools wie <strong><a href="https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333" target="_blank">Jonathan Snooks Color Contrast Checker</a></strong>  oder <strong><a href="https://contrast-ratio.com/" target="_blank">Lea Verou - Contrast Ratio Test</a></strong>. <br>Entweder geben Sie den Hexidezimalwert für Vorder- und Hintergrundfarbe ein oder schieben die Regler, um eine direkte Rückmeldung über Kontrast und Farbdifferenz zu bekommen.
+    </p>
+
+    <p style="background:#ffc;font-weight:bold;">Weitere Informationen zu Lesbarkeit von Texten und Visualisierung von Ereigniszuständen <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" title="Kontrastverhältnisse WCAG2.0" target="_blank" hreflang="en">WCAG2.0 - Kontrastverhältnisse</a></p>
+    
+  </section>
+  <section  class="section3" aria-labelledby="formelements">
+    <h2 id="formelements">Bedienelemente und Kennzeichnung von Formularen</h2>
+    <p>Warum? Richtige Labels helfen jedem, da sie den anwählbaren Bereich vergrößern. Jedes sichtbare Formularfeld sollte deutlich mit einem Lebelelement verknüpft sein.</p>
+    <code>
+      &lt;label for="eingabe">text eingeben&lt;/label><br>
+      &lt;input id="eingabe" title="geben Sie irgend etwas ein">
+    </code>
+    <p>Das Label Element muss mit dem zugehörigen Eingabefeld/Auswahlfeld verknüpft werden sofern das Label das &input> - Element nicht umschließt.</p>
+    <p>Die strukturelle Verknüpfung erfolgt durch Zuweisung des attribute FOR am Label-Element. Der Attribut bezieht sich auf den Attributwert der ID am INPUT-Element.
+    Bei einigen Formularelementen wie LABEL und INPUT kann das Title-Attribut zur besseren Benutzbarkeit beitragen. </p>
+    <form>
+      <div><label for="eingabe1">eingabe 1</label><input type="text" id="eingabe1" name="eingabe1"></div>
+      <div><label for="eingabe2">eingabe 2</label><input type="text" id="eingabe2" name="eingabe2"></div>
+      <div><label for="eingabe3">eingabe 3</label><input type="text" id="eingabe3" name="eingabe3"></div>
+      <input type="submit" class="btn"> 
+    </form>
+  </section>
+  <section  class="section4" aria-labelledby="semantic"> 
+    <h2 id="semantic">setzen Sie Markup semantisch korrekt ein</h2>
+    <p>Warum? Semantisches Markup ist wichtig, da es dem Browser die Möglichkeit gibt, den Inhalt in einer Weise zu interpretieren, die der Bedeutung angemessen ist. Zusätzlich bevorzugen auch Suchmaschinen semantisches Markup.
+    </p>
+    <p>Durch die richtige Verwendung von Überschriften können Hilfsmittel eine Dokumentstruktur erstellen, die für Benutzer von Screenreadern sehr nützlich sein kann.<br>
+    Selbst wenn nicht alle verfügbaren semantischen Informationen von den Hilfsmitteln benutzt werden, ist es für einen Browser unmöglich, Bedeutung aus dem Text zu erhalten, wenn die Website kein semantisches Markup benutzt.</p>
+    <h3>HTML5 Semantik</h3>
+    <p>Sinnstiftende Mechanismenen z.B.:Suchmaschienen und Screenreader sind in der Lage Inhalte strukturiert zu indexieren bzw. wiederzugeben wenn semantisch gut strukturiertes Markup vorliegt. Dafür wurden die neuen Semantischen Strukturcontainer wie z.B. &lt;header>, &lt;footer> , &lt;nav> usw. mit vordefinierten <a href="#section1">Aria-Rollen</a> eingefügt.</p>
+  </section> 
+
+  <footer>
+  </footer>
+</body>
+</html>
