@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bereiche auf/zu - klappen - show and hide</title>
+<link rel="stylesheet" href="start.css">
+
+<style>
+
+ /* :checked selektiert ausgewählte Radio- oder Checkboxelemente */ 
+ :checked{
+  background:red;
+  width:200px;
+ }
+
+ .show{display:none;}
+  /* Einblenden */
+  /* #trigger:checked  ~ section .show */
+
+  .trigger:checked~.show
+  {display:block;}
+  /* Schließen verstecken */
+  /* span+span */
+  .close{display:none;}
+  /* Schließen anzeigen */
+  /* #trigger:checked ~section  label .close */
+ 
+  .trigger:checked ~ label .close
+  {display:inline-block;}
+  /* öffnen verstecken*/
+  /* #trigger:checked ~ section label .open */
+  .trigger:checked ~ label .open
+  {display:none;}
+
+ [type="checkbox"]
+ {display:none;} 
+/* Andere variante */
+</style>
+</head> 
+  <body>
+ 
+   <!-- <input type="checkbox" id="trigger"> -->
+   
+    <header id="test">
+      <h1>Bereiche auf/zu - klappen</h1> 
+    </header> 
+
+    <section>
+      <h2>Auf/zu - effekte</h2>
+      <p>
+        HTML bietet <a href="">mit</a> seinen eingeschränkten Möglichkeiten nur wenige Standard-Elemente um Inhalte ein- und auszublenden. <br>Gleichermaßen sind die vorhanden Elemente nicht für jede Form der Präsentation, dem vorhanden Inhalt oder der gewünschten Benutzbarkeit verwendbar.
+      </p>     
+      <p>Die geschickte Kombination von HTML-Elementen, CSS-Eigenschaften und Selektoren schafft den notwendigen Freiraum in Gestaltung, Benutzbarkeit und Zugänglichkeit für fast alle Elemente. Als letzte Möglichkeit steht noch die Kombination von Javascript und CSS zur Verfügung.</p>
+      
+      <div>
+
+        <h3>blubb</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum expedita harum quisquam officiis architecto. Sed voluptatem tempore at minima voluptatibus eligendi assumenda accusamus, eos provident non natus quaerat vero? Omnis.</p>
+        <input type="checkbox" id="trigger" class="trigger">
+        <label for="trigger">
+          <span class="open">öffnen</span>
+          <span class="close">schließen</span>
+        </label>
+
+        <div class="show">
+          <h3>Beispiel h3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae placeat magni assumenda earum et
+            tempora eveniet hic consectetur voluptatum laboriosam, obcaecati ducimus inventore nostrum sint reprehenderit enim
+            ratione aspernatur.</p>
+        </div>
+
+      </div>
+      <div>
+
+        <h3>blubb</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum expedita harum quisquam officiis architecto. Sed voluptatem tempore at minima voluptatibus eligendi assumenda accusamus, eos provident non natus quaerat vero? Omnis.</p>
+       
+        <input type="checkbox" id="trigger1" class="trigger">
+        <label for="trigger1">
+          <span class="open">öffnen</span>
+          <span class="close">schließen</span>
+        </label>
+
+        <div class="show">
+          <h3>Beispiel h3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae placeat magni assumenda earum et
+            tempora eveniet hic consectetur voluptatum laboriosam, obcaecati ducimus inventore nostrum sint reprehenderit enim
+            ratione aspernatur.</p>
+        </div>
+
+      </div>
+    </section>
+    <div>
+
+      <h3>blubb</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum expedita harum quisquam officiis architecto. Sed voluptatem tempore at minima voluptatibus eligendi assumenda accusamus, eos provident non natus quaerat vero? Omnis.</p>
+     
+      <input type="checkbox" id="trigger2" class="trigger">
+      <label for="trigger2">
+        <span class="open">öffnen</span>
+        <span class="close">schließen</span>
+      </label>
+
+      <div class="show">
+        <h3>Beispiel h3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae placeat magni assumenda earum et
+          tempora eveniet hic consectetur voluptatum laboriosam, obcaecati ducimus inventore nostrum sint reprehenderit enim
+          ratione aspernatur.</p>
+      </div>
+
+    </div>
+    
+    <aside>
+      <h2>Elemente mit Aufklapp-Funktionalität (toggle)</h2>
+      <section>
+        <h2>Das Details - Element</h2>
+        <code>
+        &lt;details>&lt;/details>
+        </code>
+        <p>Bei dem Element details handelt es sich um einen fortführenden bzw. ergänzenden Themenzugehörigen Inhalt.</p>
+        <h3>Beispiel Details-Element</h3>
+        <details>
+          <summary>Überschrift für details </summary>
+          <p>Das &lt;summary> - Element ist die Überschrift für das details-Element. </p>
+        </details>
+      </section>
+      
+      <section>
+        <h2>Das Select-Element</h2>
+        <code>&lt;select>&lt;/select></code>
+        <p>
+          Mit dem Element &lt;select> wird ein<i>(e)</i> Auswahlfeld/Auswahlliste in Formularen erstellt. In Programmiersprachen bezeichnet man die entstandene grafische Darstellung / Benutzeroberfläche <em>engl. <abbr title="Graphical User Interface">GUI</abbr></em> als Kombinationslistenfeld oder <strong>Combo-Box</strong>
+        </p>
+        
+        <h3>Beispiel &lt;select>-Element</h3>
+        <form action="#">
+
+          <select name="auswahlliste">
+            <option>Auswahl 1</option>
+            <option value="übermittelter Wert">Auswahl 2</option>
+            <option>Auswahl 3</option>
+          </select>
+        
+          <input type="submit">
+        </form>
+          <p>Auswahlmöglichkeiten werden hierbei mit dem Element &lt;option> erzeugt</p>
+      </section>
+    </aside>
+    
+    <footer>
+      Bereiche auf/zu - klappen
+    </footer>
+
+  </body>
+</html>
+
+

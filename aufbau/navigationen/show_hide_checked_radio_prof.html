@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bereiche auf/zu - klappen - show and hide</title>
+<link rel="stylesheet" href="start.css">
+<style>
+ /* :checked selektiert ausgewählte Radio- oder Checkboxelemente */ 
+ :checked{
+  /* background:red; */
+  width:200px;
+ }
+  /* die Eigenschaft apperance mit dem wert none entfernt die Standard-Darstellung und je nach Browser auch die Darstellungsfunktionalität des Formular-elementes */
+  /* Browserkompatibiltät beachten! https://caniuse.com/?search=appearance*/
+  /* Ist die Eigenschaft appearance mit dem Wert none gesetzt lasse sich die Pseudoelemente :before und :after auch an den Inputtypen vom type=radio nutzen. */
+  
+  /* nicht sausgewählt / Normalformatierung*/
+  /*    
+  [type="radio"]{
+    appearance: none; 
+    display:block;
+    width:22px;
+    height:22px;
+    border:1px solid #666;
+    border-radius:50%;
+    text-align:center;
+  }
+
+  [type="radio"]:before{
+    content:"";
+    font-size:1.05em;
+  } */
+  /* Beispiel after */
+  /* 
+  [type="radio"]:after{
+    content:"after";
+  } 
+  */
+  /* Wenn ausgewählt */
+  /* [type="radio"]:checked{
+    border-color:green;
+  }
+
+  [type="radio"]:checked:before{
+
+    content:"\2714";
+    color:green;
+  } 
+  */
+  
+
+
+ /* Container verstecken*/
+ .show{display:none;}
+
+ /* schließen verstecken*/
+ /* [for="close"] */
+ [for*="close"]{display:none;}
+
+ /* container einblenden */
+ /* #open:checked ~ section div div.show */
+ #open:checked ~ section .show,
+ #open1:checked ~ div .show
+ {
+  display:block;
+ }
+
+/* schließen anzeigen */
+#open:checked ~ section [for="close"],
+#open1:checked ~ div [for="close1"]{display:inline-block;}
+/* öffnen verstecken */
+#open:checked ~ section [for="open"],
+#open1:checked ~ div [for="open1"]{display:none;}
+/* radios verstecken */
+/* #open,#close */
+[type="radio"]{display:none;}
+
+</style>
+</head> 
+  <body>
+ 
+   <!-- <input type="checkbox">
+   <input type="checkbox"> -->
+   <input type="radio" name="test" id="open">
+   <input type="radio" name="test" id="close">
+   <input type="radio" name="test1" id="open1">
+   <input type="radio" name="test1" id="close1">
+   <!-- <form>
+    <div>
+      <label for="user">Name</label>
+      <input name="username" id="user">
+    </div>
+    <div>
+      <p>Welches Thema interessiert euch</p>
+      <input type="checkbox" value="html" id="html" name="websprachen"><label for="html">html</label>
+      <input type="checkbox" value="css" id="css" name="websprachen"><label for="css">css</label>
+      <input type="checkbox" value="javascript" id="javascript" name="websprachen"><label for="javascript">javascript</label>
+    </div>
+    <div>
+      <p id="comment">Bitte hinterlassen sie uns eine Nachricht.</p>
+      <textarea name="comment" aria-labelledby="comment"></textarea>
+    </div>
+    <input type="submit">
+   </form> -->
+    <header id="test">
+      <h1>Bereiche auf/zu - klappen</h1> 
+    </header> 
+
+    <section>
+      <h2>Auf/zu - effekte</h2>
+      <p>
+        HTML bietet <a href="">mit</a> seinen eingeschränkten Möglichkeiten nur wenige Standard-Elemente um Inhalte ein- und auszublenden. <br>Gleichermaßen sind die vorhanden Elemente nicht für jede Form der Präsentation, dem vorhanden Inhalt oder der gewünschten Benutzbarkeit verwendbar.
+      </p>     
+      <p>Die geschickte Kombination von HTML-Elementen, CSS-Eigenschaften und Selektoren schafft den notwendigen Freiraum in Gestaltung, Benutzbarkeit und Zugänglichkeit für fast alle Elemente. Als letzte Möglichkeit steht noch die Kombination von Javascript und CSS zur Verfügung.</p>
+      
+      <div>
+
+        <h3>blubb</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum expedita harum quisquam officiis architecto. Sed voluptatem tempore at minima voluptatibus eligendi assumenda accusamus, eos provident non natus quaerat vero? Omnis.</p>
+        <!-- <a href="#open" id="open" class="open">öffnen</a>
+        <a href="#" class="close">schließen</a> -->
+        <label for="open">öffnen</label>
+        <label for="close">schließen</label>
+        <div class="show">
+          <h3>Beispiel h3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae placeat magni assumenda earum et
+            tempora eveniet hic consectetur voluptatum laboriosam, obcaecati ducimus inventore nostrum sint reprehenderit enim
+            ratione aspernatur.</p>
+        </div>
+
+      </div>
+
+    </section>
+    <div>
+
+      <h3>blubb</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum expedita harum quisquam officiis architecto. Sed voluptatem tempore at minima voluptatibus eligendi assumenda accusamus, eos provident non natus quaerat vero? Omnis.</p>
+      <!-- <a href="#open" id="open" class="open">öffnen</a>
+      <a href="#" class="close">schließen</a> -->
+      <label for="open1">öffnen</label>
+      <label for="close1">schließen</label>
+      <div class="show">
+        <h3>Beispiel h3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae placeat magni assumenda earum et
+          tempora eveniet hic consectetur voluptatum laboriosam, obcaecati ducimus inventore nostrum sint reprehenderit enim
+          ratione aspernatur.</p>
+      </div>
+
+    </div>
+    
+    <aside>
+      <h2>Elemente mit Aufklapp-Funktionalität (toggle)</h2>
+      <section>
+        <h2>Das Details - Element</h2>
+        <code>
+        &lt;details>&lt;/details>
+        </code>
+        <p>Bei dem Element details handelt es sich um einen fortführenden bzw. ergänzenden Themenzugehörigen Inhalt.</p>
+        <h3>Beispiel Details-Element</h3>
+        <details>
+          <summary>Überschrift für details </summary>
+          <p>Das &lt;summary> - Element ist die Überschrift für das details-Element. </p>
+        </details>
+      </section>
+      
+      <section>
+        <h2>Das Select-Element</h2>
+        <code>&lt;select>&lt;/select></code>
+        <p>
+          Mit dem Element &lt;select> wird ein<i>(e)</i> Auswahlfeld/Auswahlliste in Formularen erstellt. In Programmiersprachen bezeichnet man die entstandene grafische Darstellung / Benutzeroberfläche <em>engl. <abbr title="Graphical User Interface">GUI</abbr></em> als Kombinationslistenfeld oder <strong>Combo-Box</strong>
+        </p>
+        
+        <h3>Beispiel &lt;select>-Element</h3>
+        <form action="#">
+
+          <select name="auswahlliste">
+            <option>Auswahl 1</option>
+            <option value="übermittelter Wert">Auswahl 2</option>
+            <option>Auswahl 3</option>
+          </select>
+        
+          <input type="submit">
+        </form>
+          <p>Auswahlmöglichkeiten werden hierbei mit dem Element &lt;option> erzeugt</p>
+      </section>
+    </aside>
+    
+    <footer>
+    	Bereiche auf/zu - klappen
+    </footer>
+
+  </body>
+</html>
+
