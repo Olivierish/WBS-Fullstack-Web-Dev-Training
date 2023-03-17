@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de"> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Menü</title>
+  <link rel="stylesheet" href="start.css">
+  <style>
+    nav {background:#212121;}
+    nav ul{margin:0;padding:0;list-style:none;} 
+    nav>ul{display:flex;}
+    nav li{
+      /* padding:0 2px; */
+      margin:0 2px;
+      /* Formatierung*/
+      background:#ccc;
+      flex:1 1 auto;
+      color:#000;
+     }
+    nav li li{padding:2px;}
+    
+    nav a{display:block;
+      padding:5px 1em;
+      margin: 0 10px;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    /* Zustände */
+    nav li:hover,nav li:focus-within {
+      background:#212121;
+      color:#fc0
+    }
+    /* Ausklappbare Bereiche kennzeichnen */
+    .sub{position:relative;}
+    nav .sub:hover ul,  nav .sub:focus-within ul{width:100%;}
+    .sub:before{
+      content:"";
+      border:7px solid transparent;
+      border-top-color:inherit;
+      border-bottom:none;
+      display:table;
+      position:absolute;
+      right:5px;
+      top:12.5px;
+    }
+
+    /*Aktive Menüpunkt kennzeichnung */
+    .active,.active:hover,.active:focus{background:#212121;color:#fc0;}
+    /* ggf alternative Formatierung wenn .sub und .active*/
+    .active.sub:before,.active.sub:hover:before,.active.sub:focus:before{border-top-color:inherit;}
+
+    /*verstecken*/
+    nav li ul{
+      position:absolute;
+      left:-9999em;
+    }
+    /* Einblenden */
+    nav li:hover ul,nav li:focus-within ul{
+      left:auto;
+    }
+    /* open /close  linksstandardmäßig verstecken*/
+    .open,.close{display:none;}
+    @media screen and (max-width:600px){
+      /* Spalten Auflösen */
+      nav ul{
+        display:block;
+      }
+      /* 2. ebene wieder anzeigen*/
+      nav li ul{
+        position:static;
+      }
+
+        /* Überschreibung Gestaltung */
+        nav li{margin:0;}
+
+        nav li li{
+          padding-left:30px;
+        
+        }
+        /* Zustände überschreiben */
+        /* Optisches visualisierung der Unterpunkte falls gewünscht*/
+        .sub:before{border:0;}
+        .sub li a:before{
+          content:">>" " ";
+          font-size:50%;
+          float:left;
+          padding-top:2%;
+          padding-right:5px;
+          padding-left:7px;
+          position:relative;
+          left:-26px;
+        }
+
+
+      /* Liste ausblenden*/
+      nav>ul{
+        display:none;
+         /* wenn später einfahren animiert werden soll andere Technik verwenden*/}
+      /* Basistechnik show/hide*/
+      /* öffnen Link anzeigen*/
+      .open{display:block;}
+      /* Navigationsliste wieder anzeigen wenn open angeklickt wurde*/
+      .open:target ~ ul{display:block;}
+      /* Offnen verstecken wenn navi ausgeklappt */
+      .open:target{display:none;}
+      /* schließen link anzeigen*/
+      .open:target~.close{display:block;}
+
+    }
+  </style>
+</head>
+<body>
+
+  <header >
+    <h1>Hamburger Menü</h1>
+  </header>
+
+  <nav>
+    <!-- Trigger zum öffnen und schließen -->
+    <a href="#open" class="open" id="open">open</a>
+    <a href="#" class="close">close</a>
+    <ul>
+      <li class="active"><a href="" title="link 1">link 1</a></li>
+      <li class="sub"><a href="" title="link 2">link 2</a>
+        <ul>
+          <li><a href="" title="link 2.1">link 2.1</a></li>
+          <li><a href="" title="link 2.2">link 2.2</a></li>
+        </ul>
+      </li>
+      <li><a href="" title="link 3">link 3</a></li>
+      <li><a href="" title="link 4">link 4</a></li>
+    </ul>
+  </nav>
+   <section>
+    <h2>Hamburger Navigation</h2>
+    <p>Die drei Balken als Symbol haben sich als alternative Navigation bei umfangreichen Menüs durchgesetzt.<br>
+    Das Symbol selbst ist bekannt durch unterschiedliche Softwareprodukte und Betriebssysteme.<br>
+    Der Vorteil der Hamburgernavigation liegt klar auf der Hand. Sie benötigt in der Grunddarstellung wenig Platz.</p>
+    <p>Von der der <strong>Verwendung des Hamburgermenüs als generelle Standardnavigation ist</strong> mit der Ausnahme von nativen Apps und Webwidgets <strong>abzusehen</strong>. </p>
+    <p><i>Wenn Nutzer keine Sprechenden Menüpukte beim betreten der Seite erkennen können gelingt es Ihnen nicht sich einen Überblick über die Themen der Seite zu verschaffen.</i></p>
+    <p>
+    Auf Seiten mit einem geringen Inhaltsumfang (z.B. Künstler - Portfolios) stellt dies hingegen kein Problem dar. Die Wahl dieser Navigationsform ermöglich mehr gestalterische Möglichkeiten.
+    </p>
+   </section>
+  <article>
+     <h2>Anforderungen für eine Hamburger Navigation</h2>
+     <h3>Standarddarstellung</h3>
+     <ul>
+       <li>Hamburger nicht sichtbar, nur klassische horizontale Navi</li>
+       <li>Untermenüs sollen bei Hover/focus dargestellt werden</li>
+     </ul>
+     <h3>schmalste Darstellung</h3>
+     <h4> (Portrait bzw. sobald Platz nicht ausreicht)</h4>
+     <ul>
+       <li>Das Hamburgermenü-icon (Grafik oder CSS-Formatierung) sollte dauerhaft erreichbar sein und nicht mitscrollen</li>
+       <li>klick auf das Hamburger-icon soll die eigentliche Navigation einblenden(Vertikal angeordnet)</li>
+       <li>wenn der Hamburger ausgeklappt ist soll ein schließen Symbol dargestellt werden was es ermöglich das Menü wieder einzuklappen</li>
+      </ul>
+   </article>
+   <footer>
+    Hamburger Menü
+   </footer>
+</body>
+</html>

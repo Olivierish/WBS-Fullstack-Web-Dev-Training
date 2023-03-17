@@ -3,128 +3,63 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hamburger Menü</title> 
+  <title>Hamburger Menü</title>
   <link rel="stylesheet" href="start.css">
   <style>
-    nav{
-      margin-top: 0;
-      padding: 0;
-      border: 0;
-    }
-
     nav ul{
-      display: flex;
-      padding: 0;
-      justify-content: center;
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
     }
 
-    nav > ul li{
-      border-right: 2px solid white;
+    nav li{padding:0 2px;
     }
     nav li li{
-      border-top: 2px solid transparent;
+      padding:2px;
     }
+    nav a{display:block;}
 
+    /*verstecken*/
     nav li ul{
-      position: absolute;
-      left: -9999em;
+      position:absolute;
+      left:-9999em;
     }
-
-    nav ul{
-      padding: 0;
-      margin: 0;
-      list-style: none;
+    /* Einblenden */
+    nav li:hover ul,nav li:focus-within ul{
+      left:auto;
     }
-
-    nav>ul>li, li>ul>li{
-      background-color: orange;
-      width: 10em;
-    }
-    li>ul>li{
-      border-top: 2px solid white;
-    }
-
-    nav li{
-      color: #fff;
-    }
-    nav a{
-      color: inherit;
-      display:block;
-      line-height:1.2em;
-      padding:0.5em; 
-      text-decoration:none;
-    }
-    /* nav>ul>li>a{
-      margin: 0 2px;
-    } */
-
-
-    nav li:hover{
-      background-color: #ffda96;
-      color: rgb(61, 61, 61);
-      transition: background-color 0.5s, color 0.5s;
-    }
-
-    nav li ul li{
-      width: 10em;
-    }
-
-    nav li:hover>ul, nav li:focus-within>ul{
-      left: auto;
-    }
-    nav label{
-      width: fit-content;
-    }
-    nav label img{
-        width: 40px;
-        height: auto;
-      }
-    nav input, nav label{
-      display: none;
-    }
-
-    @media screen and (max-width: 480px) {
-      .show{
-        display: none;
-      }
-
-      nav label{
-      display: block;
-      margin: 0 auto;
-    }
-      
+    /* open /close  links standardmäßig verstecken*/
+    .open,.close{display:none;}
+   
+    @media screen and (max-width:600px){
+      /* Spalten Auflösen */
       nav ul{
-        flex-direction: column;
+        display:block;
       }
-
+      /* 2. ebene wieder anzeigen*/
       nav li ul{
-        position: relative;
-        left: auto;
-        border-left: 10px solid white;
+        position:static;
       }
 
-      nav ul li
-      {
-      margin: 0 auto;
-      border-top: 2px solid white;
-  
-      }
-      /* Trigger the nav */
-      
-
-
-      #trigger:checked~.show{
-        /* background-color: rgb(255, 168, 152); */
-        display: block;
+      /* Liste ausblenden*/
+      nav>ul{
+        display:none;
+        /* wenn später einfahren animiert werden soll andere Technik verwenden*/
       }
 
-      [type="checkbox"]
-        {
-          display:none;
-        } 
+      /* Basistechnik show/hide*/
+      /* öffnen Link anzeigen*/
+      .open{display:block;}
+      /* Navigationsliste wieder anzeigen wenn open angeklickt wurde*/
+      .open:target ~ ul{display:block;}
+
+      /* öffnen verstecken wenn navi ausgeklappt */
+      .open:target{display:none;}
+      /* schließen link anzeigen*/
+      .open:target~.close{display:block;} 
 
     }
-
   </style>
 </head>
 <body>
@@ -134,12 +69,9 @@
   </header>
 
   <nav>
-    <!-- <div class="hamburger"> -->
-      <input type="checkbox" id="trigger">
-      <label for="trigger" class="btn">
-        <img src="icons/icons/hamburger-icon.png" alt="hamburger icon">
-      </label>
-    <!-- </div> -->
+    <!-- Trigger zum öffnen und schließen -->
+    <a href="#open" class="open"  id="open">open</a>
+    <a href="#" class="close">close</a>
     <ul class="show">
       <li><a href="" title="link 1">link 1</a></li>
       <li><a href="" title="link 2">link 2</a>
@@ -152,7 +84,7 @@
       <li><a href="" title="link 4">link 4</a></li>
     </ul>
   </nav>
-  <section>
+   <section>
     <h2>Hamburger Navigation</h2>
     <p>Die drei Balken als Symbol haben sich als alternative Navigation bei umfangreichen Menüs durchgesetzt.<br>
     Das Symbol selbst ist bekannt durch unterschiedliche Softwareprodukte und Betriebssysteme.<br>

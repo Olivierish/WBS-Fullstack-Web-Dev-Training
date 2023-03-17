@@ -1,0 +1,184 @@
+/* CSS-Styleguide  */
+
+
+body{  
+	font: 100%/1.5 Helvetica, Arial, sans-serif;
+	background: #eee;
+	color: #222;
+}
+
+.wrapper {
+	margin: 2em auto;
+	max-width: 900px; 
+	overflow: hidden;
+}
+
+
+/* Header  */
+
+header{
+	background: #222;
+	padding: 20px 0;
+	text-align: center;
+}
+
+header intro{
+	margin: 0 auto; 
+	max-width: 900px;
+}
+
+header a{
+	color: #fff;
+	font-size: 32px;
+	font-size: 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+/* FARBEN  */
+
+#colours{
+	width: 20%;
+	float: left;
+}
+
+#colours ul{
+	margin: 0;
+	padding: 0;
+}
+
+#colours li{
+	margin-bottom: 2em;
+	padding: 32% 0;
+	width: 100%;
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	color: #fff;
+}
+
+
+#colours li.first{
+	background-color: #009ee0;
+}
+
+#colours li.second{
+	background-color: #f0085f;
+}
+
+#colours li.third{
+	background-color: #444;
+}
+
+
+
+/* TYPOGRAFIE  */
+
+#typo{
+	width: 60%;
+	float: left;
+	margin-left: 10%;
+	background: #fff;
+	padding: 1em 2em;
+}
+
+hr{
+	margin: 40px 0;	
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 3em 0;
+	padding: 0; 
+}
+
+
+/* Links */
+
+
+a:hover{
+	color: #f0085f;
+}
+
+a, a:visited{
+	color: #009ee0;
+	transition: color 0.2s ease;
+}
+
+
+/* Buttons */
+
+a.btn-1{
+	background: #009ee0;
+	color: #fff;
+	padding: 7px 20px 5px;
+	border-radius: 20px;
+	text-decoration: none;
+	transition: background 0.2s ease;
+	margin-right: 20px;
+}
+a.btn-1:hover{
+	background: #444;
+}
+
+a.btn-2{
+	background: #f0085f;
+	color: #fff;
+	padding: 7px 20px 5px;
+	border-radius: 20px;
+	text-decoration: none;
+	transition: background 0.2s ease;
+	margin-right: 20px;
+}
+a.btn-2:hover{
+	background: #444;
+}
+
+blockquote {
+	margin: 1em 40px; 
+	font-style: italic;
+}
+
+
+/* Tabellen */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0; 
+}
+
+th {
+	border-bottom: 3px solid #ccc;
+}
+  
+td {
+	border-bottom: 1px solid #eee;
+}
+  
+th, td {
+	vertical-align: top; 
+	padding: 5px 10px 5px 0;
+	text-align: left;
+}
+  
+
+  
+@media screen and (max-width: 940px) {
+      
+.wrapper, #colours, #typo {
+	width: 92%; 
+	margin: 4%;
+}
+
+#colours li{
+	margin: 2em 1%;
+	padding: 13% 0;
+	width: 30%;
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	color: #fff;
+}
+
+}

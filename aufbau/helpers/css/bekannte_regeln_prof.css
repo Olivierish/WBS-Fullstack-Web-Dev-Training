@@ -1,0 +1,101 @@
+:root{}
+
+*{margin:0;padding:0;}
+
+html{
+  background: #000;
+  font-family: 'Courier New', Courier, monospace ;
+  color:;
+  font-size:100.01%;
+  line-height:1.4;
+}
+
+body{
+  margin:0;
+}
+
+/* Inhalte */
+h1,h2,h3{
+  font-family:;
+  color:;
+}
+h1{
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+h2{
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+h3{  
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+
+/* interaktive Elemente */
+a{
+  /* text-decoration:none; */
+  color:inherit;
+  display:inline-block;
+}
+a:hover,
+a:focus{text-decoration:none;}
+
+.btn{display:inline-block;}
+.btn:hover,.btn:focus{}
+
+input,textarea,select{}
+input:hover,textarea:hover,select:hover{}
+input:focus,textarea:focus,select:focus{}
+
+img{
+  display:inline-block;
+}
+
+
+
+/* spalten */
+.wrap{
+  margin-left: auto;
+  margin-right: auto;
+  max-width:1200px;
+}
+.flex{display:flex;}
+.float-l,.fl-l{float:left;}
+.float-r,.fl-r{float:right;}
+.clear{clear:both;}
+.clearfix:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+/* Hilfsklassen*/
+.img-scale,.scale{
+  width:100%;
+  height:auto;
+}
+
+@media screen and (max-width:30em){
+
+}
+
+/* Layoutspezifisch */
+nav ul{}
+nav li{list-style:none;}
+nav a{
+  display:block;
+  text-decoration:none;
+}
+
+nav li:hover,nav li:focus-within{}
+
+.active,
+.active:hover,
+.active:focus-within{}

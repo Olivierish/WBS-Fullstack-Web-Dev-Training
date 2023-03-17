@@ -1,0 +1,106 @@
+:root{}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background: #1f1f1f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #dfdfdf;
+    font-size: 100.01%;
+    /* line-height: 1.4; */
+}
+
+body{
+/* Ne jamais essayer de centrer le body, vaut mieux utiliser un wrapper */
+}
+
+#wrapper, body>div{
+    max-width: 920px;
+    width: 80%;
+    /* margin: auto; */
+    /* margin-left, margin-right sont meilleurs, puisqu'il n'annulent 
+    pas les margin top et bottom  */
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: tomato;
+}
+
+h1{
+    /* font-family: ; */
+    /* color: ; */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h2{
+    /* font-family: ; */
+    /* color: ; */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h3{
+    /* font-family: ; */
+    /* color: ; */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/*Interactive Elemente*/
+a{
+    /* text-decoration: none; */
+    color: inherit;
+    display: inline-block;
+}
+a:hover, a:focus{
+    text-decoration: none;
+}
+
+.btn{display: inline-block;}
+.btn:hover, .btn:focus{}
+
+input,textarea,select{}
+input:hover, textarea:hover,select:hover{}
+input:focus, textarea:focus,select:focus{}
+
+img{
+    /* Platz reservieren */
+    display: inline-block;
+    background-color: red;
+}
+
+/*Spalten*/
+.flex{
+    display: block;
+}
+.float-l,.fl-l{
+    float: left;
+}
+
+.float-r,.fl-r{
+    float: right;
+}
+
+/* Hilfsklasse */
+.img-scale,.imgScale{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 30em) {
+    
+}
+nav ul{}
+nav li{list-style: none;}
+nav a{
+    /* On ne donne pas à cet "a" un width, pck avec
+   a→display:block ce "a" prendra le width de son parent */
+}
+

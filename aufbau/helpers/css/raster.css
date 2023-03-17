@@ -1,0 +1,25 @@
+/* spalten */
+.wrap{
+  margin-left: auto;
+  margin-right: auto;
+  max-width:1200px;
+}
+.flex{display:flex;}
+.float-l,.fl-l{float:left;}
+.float-r,.fl-r{float:right;}
+.clear{clear:both;}
+.clearfix:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+/* Hilfsklassen*/
+.img-scale,.scale{
+  width:100%;
+  height:auto;
+}
+/* Schmalste darstellung für spalten */
+@media screen and (max-width:30em){
+
+}

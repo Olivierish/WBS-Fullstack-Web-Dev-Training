@@ -1,0 +1,88 @@
+/**
+/* Standardregelsätze */
+/***************************   
+/*   
+/* 
+Die hier angegeben Regelsätze ermöglichen es die wichtigsten Vorgaben aus einem Stylguide zu übernehmen und müssen mit jedem Projekt nur angepasst werden
+Layout spezifische Angaben (das spätere Design) wird in einem weiteren Stylesheet aufgebaut. 
+Ein späteres zusammenfassen der CSS-Dateien oder generelles einzelnes einbinden von mehreren CSS-Dateien ist jederzeit möglich.
+
+Das Zusammenführen von mehreren CSS-Dateien via:
+ @import url("dateiname.css");
+ @import url("dateiname-2.css");
+ usw. ist aus Performancegründen zu vermeiden.
+
+ Führen Sie bei kleineren Stylesheets (gesamt bis ca. 1500 Zeilen) alle Anweisungen in einer Datei zusammen. Bei größen Styleysheets rufen sie einfach alle benötigten Dateien im Kopf auf.
+/*  
+/*
+/**/
+
+
+/** Resetten*/ 
+/* 
+*{margin:0;padding:0;} 
+*/
+
+/**
+* Alternativen zum hardereset
+* http://meyerweb.com/eric/tools/css/reset/ - resetstylesheet 
+* http://necolas.github.io/normalize.css/ - normalisieren
+*/ 
+:root{}
+
+
+html{
+  background: #000;
+  font-family: 'Courier New', Courier, monospace ;
+  color:;
+  font-size:100.01%;
+  line-height:1.4;
+}
+
+body{
+  margin:0;
+}
+
+/* Inhalte */
+h1,h2,h3{
+  font-family:;
+  color:;
+}
+h1{
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+h2{
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+h3{  
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+
+/* interaktive Elemente */
+a{
+  /* text-decoration:none; */
+  color:inherit;
+  display:inline-block;
+}
+a:hover,
+a:focus{text-decoration:none;}
+
+.btn{display:inline-block;}
+.btn:hover,.btn:focus{}
+
+input,textarea,select{}
+input:hover,textarea:hover,select:hover{}
+input:focus,textarea:focus,select:focus{}
+
+img{
+  display:inline-block;
+}
