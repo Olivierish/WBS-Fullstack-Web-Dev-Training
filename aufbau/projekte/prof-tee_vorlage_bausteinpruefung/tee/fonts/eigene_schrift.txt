@@ -1,6 +1,0 @@
-Es ist möglich eigene Schriftarten einzubinden. 
-Erste Recherchen ergaben das dies mit @font-face möglich sein soll. 
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
-
-Beachten Sie das nicht jeder Browser jede Schriftform unterstützt. Verwenden sie alle mitgelieferten Schriften.

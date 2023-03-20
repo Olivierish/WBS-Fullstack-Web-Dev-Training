@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Markup</title>
+  <!-- <link rel="stylesheet" href="bekannte_regeln.css"> -->
+  <style>
+/**
+/* Standardregelsätze */
+/***************************   
+/*   
+/* 
+Die hier angegeben Regelsätze ermöglichen es die wichtigsten Vorgaben aus einem Stylguide zu übernehmen und müssen mit jedem Projekt nur angepasst werden
+Layout spezifische Angaben (das spätere Design) wird in einem weiteren Stylesheet aufgebaut. 
+Ein späteres zusammenfassen der CSS-Dateien oder generelles einzelnes einbinden von mehreren CSS-Dateien ist jederzeit möglich.
+
+Das Zusammenführen von mehreren CSS-Dateien via:
+ @import url("dateiname.css");
+ @import url("dateiname-2.css");
+ usw. ist aus Performancegründen zu vermeiden.
+
+ Führen Sie bei kleineren Stylesheets (gesamt bis ca. 1500 Zeilen) alle Anweisungen in einer Datei zusammen. Bei größen Styleysheets rufen sie einfach alle benötigten Dateien im Kopf auf.
+/*  
+/*
+/**/
+
+
+/** Resetten*/ 
+/* 
+*{margin:0;padding:0;} 
+*/
+
+/**
+* Alternativen zum hardereset
+* http://meyerweb.com/eric/tools/css/reset/ - resetstylesheet 
+* http://necolas.github.io/normalize.css/ - normalisieren
+*/ 
+:root{
+/* Allgemeine Vorgaben und Einsatz Dokumentieren*/
+/*
+ ggf. für bessere Verständlichkeit noch sprechendere Variablen verwenden und diesen dann die allgemeinen Vorgaben zuweisen.*/
+/* Nicht alle css-Variablen wurden verwendet und dienen lediglich als Beispiel 
+*/
+/* --bg-color:var(--color2);
+--font-color:;
+--primaray-color:;
+--secondary-color:; */
+
+/* Farben / Farbschemen ggf. auch gleich als klasse mit anlegen*/
+/*Farbschemen / Paletten*/ 
+/* 
+--red-100:;
+--red-200:;
+--red-900:; */
+
+/* Allgemein Styleguide Vorgaben sammeln */
+--color1:#272727;
+--color2:whitesmoke;
+--color3:orange;
+--color4:#ff0066;
+--color5:rgb(3,187,147);
+
+--font1:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+--font2:Courier;
+
+/*individuelle Bereiche zur Zuweisung */
+/* HTML */
+--page-bg:var(--color2,#f3f3f3);
+--page-text:var(--color1, #333);
+--page-font:var(--font1, sans-serif);
+--page-text-size:120%;
+--page-line:1.4;
+
+/* Alle Überschriften */
+--heading-font:var(--font2, monospace);
+--heading-color:var(--color4);
+
+/*Überschriften Individuell*/
+/* h1*/
+/***********************/
+--heading1-font:times;
+/* --heading1-text-size:50px; */
+--heading1-color:green;
+/* Standardwert Browserstylsheet - Werte wurden als default gesetzt */
+/* vertikale margins nur ändern wenn der Wert laut Stylguidevorgabe festegelegt ist -  dann kommentar entfernen */
+/* 
+--heading1-mar-top:0.67em;
+--heading1-mar-bot:0.67em; 
+*/
+
+/* h2*/
+/***********************/
+/* --heading2-font:Verdana; */
+/* --heading2-color:blue; */
+/* --heading2-text-size:50px; */
+/* 
+--heading2-mar-top:0.83em;
+--heading2-mar-bot:0.83em; 
+*/
+
+/* h3*/
+/***********************/
+/* --heading3-font:Verdana; */
+/* --heading3-color:lime; */
+/* --heading3-text-size:50px; */
+/* 
+--heading3-mar-top:1em;
+--heading3-mar-bot:1em; 
+*/
+
+/* h4*/
+/***********************/
+/* --heading4-font:Verdana; */
+/* --heading4-color:goldenrod; */
+/* --heading4-text-size:50px; */
+/* 
+--heading4-mar-top:1.33em;
+--heading4-mar-bot:1.33em; 
+*/
+}
+
+
+html{
+  background:var(--page-bg);
+  font-family:var(--page-font);
+  color: var(--page-text, initial);
+  font-size:var(--page-text-size,100.01%);
+  line-height:var(--page-line,auto);
+}
+
+body{
+  margin:0;
+}
+
+/* Inhalte */
+h1,h2,h3,h4{
+  font-family:var(--heading-font,inherit);
+  color:var(--heading-color);
+}
+h1{
+  font-family:var(--heading1-font,var(--heading-font));
+  font-size:var(--heading1-text-size, 2em);
+  color:var(--heading1-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading1-mar-top, 0.67em);
+  margin-bottom:var(--heading1-mar-bot, 0.67em);
+}
+h2{
+  font-family:var(--heading2-font,var(--heading-font));
+  font-size:var(--heading2-text-size, 1.5em);
+  color:var(--heading2-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading2-mar-top, 0.83em);
+  margin-bottom:var(--heading2-mar-bot, 0.83em);
+}
+
+h3{  
+  font-family:var(--heading3-font,var(--heading-font));
+  font-size:var(--heading3-text-size, 1em);
+  color:var(--heading3-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading3-mar-top, 1em);
+  margin-bottom:var(--heading3-mar-bot, 1em);
+}
+h4{
+  font-family:var(--heading4-font,var(--heading-font));
+  font-size:var(--heading4-text-size, 0.83em);
+  color:var(--heading4-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading4-mar-top, 1.33em);
+  margin-bottom:var(--heading4-mar-bot, 1.33em);
+}
+/* interaktive Elemente */
+a{
+  /* text-decoration:none; */
+  color:inherit;
+  display:inline-block;
+}
+a:hover,
+a:focus{text-decoration:none;}
+
+.btn{display:inline-block;}
+.btn:hover,.btn:focus{}
+
+input,textarea,select{}
+input:hover,textarea:hover,select:hover{}
+input:focus,textarea:focus,select:focus{}
+
+img{
+  display:inline-block;
+}
+  </style>
+</head>
+
+<body dir="ltr">
+  <div>
+    <header>
+      <div>
+        <h3><a href="">Firmenname / Logo</a></h3>
+        <h4>Claim / Slogan</h4>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="" title="home">Home</a></li>
+        <li><a href="" title="about">About</a></li>
+        <li><a href="" title="blog">Blog</a>
+          <!--immer Flyout planen !-->
+          <!-- <ul>
+            <li><a href="" title="about">Topic 1</a></li>
+            <li><a href="" title="about">Topic 2</a></li>
+            <li><a href="" title="about">Topic 3</a></li>
+          </ul> -->
+        </li>
+        <li><a href="" title="Updates">Updates</a></li>
+        <li><a href="" title="Kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div>
+    <article>
+        <h1>Satisficing</h1>
+        <h2>Nutzer treffen keine optimalen Entscheidungen.</h2><p> Seitenbesucher suchen nicht nach dem schnellsten Weg zum Ziel; sie analysieren Seiten nicht linear, indem etwa schrittweise von einer Rubrik zu der anderen navigiert wird. Stattdessen verwenden sie eine Methode, die in der Wissenschaft als „satisficing“ bezeichnet wird: Nutzer wählen die erste vernünftig aussehende Option, begnügen sich also quasi mit ihrer ersten Wahl.Wenn die Aufmerksamkeit der Nutzer auf einen Verweis fällt, der intuitiv gesehen zum Ziel führen könnte, ist es höchst wahrscheinlich, dass er sofort angeklickt wird. Optimierung, also die gezielte Suche nach der besten Option, ist schwer und zeitaufwendig, da etwa sämtliche Möglichkeiten in Erwägung gezogen werden müssen. Deshalb ist Optimierung mit zusätzlicher kognitiver Belastung verbunden, die keiner freiwillig mitbringen möchte. In diesem Sinne ist „Satisficing“ einfacher und effizienter und wird deshalb so gut wie immer bevorzugt</p>
+        <img src="https://picsum.photos/1200/300?image=744" width="1200" height="300" alt="">
+        <p>Das schwierige ist nicht die Website an gewissen Breakpoints gut aussehen zulassen sondern in den Bereichen dazwischen. Dort trennt sich die Spreu vom Weizen. Eine responsive Website sollte lückenlos sauber funktionieren. </p>
+    </article>
+  </div>
+
+  <div>
+    <section>
+      <a href="" title="">
+        <img src="https://picsum.photos/300/150" width="300" height="150" alt="">
+      </a>
+      <h2>Nutzer schätzen Qualität und Glaubwürdigkeit.</h2>
+      <p>Bietet eine Seite Ihren Besuchern hochwertige Informationen an, so sind die Besucher bereit, einen Kompromiss zwischen dem Inhalt und seiner Präsentation anzugehen. Im Klartext heißt es: eine hochwertige Seite darf durchaus zu viel Werbung haben. Dies ist auch der Grund, warum visuell eher langweilige Web-Seiten über Jahre hinweg viel Traffic bekommen. Inhalte sind wichtiger als Design. </p>
+    </section>
+
+    <section>
+      <figure>
+        <figcaption>Ein Bild</figcaption>
+        <img src="https://picsum.photos/300/150" width="300" height="150" alt="">
+      </figure>
+      <h2>Nutzer lesen nicht, sie suchen nach Schlüsselwörtern.</h2>
+      <p>Nutzer analysieren eine Web-Seite und suchen nach Fixpunkten oder Ankern, die sie durch Inhalte der Seite leiten würden. Eine Seite, die aus reinem Text besteht und weder eine Hierarchie (Gliederung) noch jegliche Art der Markierung (Kursive, fett) aufweist, wirkt strukturlos und unbrauchbar.</p>
+    </section>
+
+    <section>
+      <img src="/300/150" width="300" height="150" alt="falscher pfad" >
+      <h2>Nutzer sind ungeduldig und wollen gesuchte Inhalte sofort erhalten.</h2>
+      <p> Ein sehr einfaches Prinzip: Erfüllt eine Seite nicht die Erwartungen der Nutzer, so hat der Designer seine Aufgabe verfehlt und das Unternemhen verliert Geld. Mit zunehmender kognitiver Belastung und unintuitiver Navigation verlieren Nutzer die Bereitschaft, ihre Suche auf einer Seite fortzusetzen. Das Ergebnis: Die Seite wird verlassen und es wird nach alternativen Seiten gesucht. </p>
+    </section>
+  </div>
+
+  <div>
+    <article>
+      <img src="https://picsum.photos/1200/300?image=522" width="1200" height="300" alt="">
+
+      <h2>klickbare Design-Elemente</h2>
+      <p>Die meisten Besucher suchen nach interessanten oder nützlichen klickbaren Design-Elementen. Wird auf der Seite ein potenzieller Kandidat gefunden, so wird der entsprechende Link direkt angeklickt. Konnte die Seite dem Besucher nicht weiterhelfen, so kehrt der Suchende über die „Zurück“-Schaltfläche der Seite den Rücken. </p>
+
+      <p>Effektives Webdesign muss weder bunt noch abwechslungsreich sein. Um Besucher zu Kunden zu machen und Produkte erfolgreich zu verkaufen, müssen Sie als Designer mehr leisten können. Die visuelle Präsentation ist dabei nicht so wichtig wie die Benutzerfreundlichkeit der Seite. </p>
+      <p>Seitenbesucher betrachten eine Web-Seite, überfliegen zufällig ausgewählte Textblöcke, suchen nach Schlüsselwörtern und klicken auf den ersten Link, der annäherend an das erinnert, wonach gesucht wird. Die meisten Teile des Layouts werden übersehen oder ignoriert. Bunte Werbung kann zwar attraktiv wirken, erscheint aber störend, da die Seitenbesucher meistens mit einem gewissen Ziel auf eine Seite kommen und auf ihrem Suchweg nicht gestört werden wollen. Alles was uninteressant erscheint, wird schlicht und einfach außer Acht gelassen.</p>
+    </article>
+  </div>
+  <!--<hr>--> <!--Themenwechsel-->
+  <div>
+    <section>
+      <h2>Themengebiete der WCAG</h2>
+
+      <p>Die Richtlinien für barrierefreie Webinhalte sind ein Webstandard des W3C und sollen die Zugänglichkeit und Nutzbarkeit von Webseiten für Menschen mit Behinderungen sicherstellen. Die Richtlinien sind Grundlage für gesetzliche Vorgaben in vielen Ländern der Welt.</p>
+      <article>
+        <h2>Wahrnehmbarkeit</h2>
+        <p>Textalternativen und alternative Beschreibungen für alle zeitbestimmten oder sonstigen Inhalte.</p>
+      </article>
+      <article>
+        <h2>Bedienbarkeit</h2>
+        <p>Klare übersichtliche selbsterklärende und eindeutige Navigation in allen üblichen Browswern mit Klarer Anzeige über den momentanen Standort bzgl. den Unterseiten der website.</p>
+      </article>
+      <article>
+        <h2>Verständlichkeit</h2>
+        <p>Lesbarkeit und Verständlichkeit von Textinhalten sowie Vorhersehbarkeit der Website Funktionalität.</p>
+      </article>
+      <article>
+        <h2>Kompatibilität</h2>
+        <p>Funktionieren der Inhaltszugänglichkeit mit den gängigsten Browsern und speziellen Hilfsmitteln für behinderte Personen.</p>
+      </article>
+    </section>
+  </div>
+
+   <div>
+    <aside>
+      <h2>Info´s</h2>
+      <article>
+        <h3>Einfach für Alle</h3>
+        <p>Die Webseite <a href="https://www.einfach-fuer-alle.de" title="Das Angebot der Aktion Mensch für ein barrierefreies Internet" target="_blank">www.einfach-fuer-alle.de</a> beschäftigt sich allgemein mit dem Thema Barrierefreiheit. Detaillierte Informationen zum Thema Barrierefreiheit für Print und Web finden Sie unter der Rubrik <a href="https://www.einfach-fuer-alle.de/umsetzen" title="Artikel zu Konzeption, Gestaltung & Technik barrierefreier Web-Angebote" target="_blank">Umsetzen</a>
+        </p>
+      </article>
+      <article>
+        <h3>Barrierefreies Webdesign</h3>
+        <p>Unter dem Motto: <em>"Ein zugängliches und nutzbares Internet gestalten"</em> zeigt und erklärt die Webseite<a href="http://www.barrierefreies-webdesign.de" title="Die Kunst, Webseiten so zu gestalten, dass jeder sie nutzen und lesen kann." target="_blank"> www.barrierefreies-webdesign.de</a> von Jan Hellbusch Grundregeln und Techniken</p>
+      </article>
+      <article>
+        <h3>WCAG - w3.org</h3>
+        <p>Das <a href="http://www.w3.org" title="Webstandards" target="_blank">W3-Consortium</a> ist die erste Anlaufstelle für alle Webstandards.
+        Die deutsche Übersetzung der <a href="https://www.w3.org/Translations/WCAG20-de/" title="deutsche Übersetzung der Web Content Accessibility Guidelines" target="_blank">WCAG 2.0 bei w3.org</a></p>
+      </article>
+    </aside>
+  </div>
+
+  <div>
+    <aside>
+      <h2>Kontakt</h2>
+      <dl>
+        <dt>Name</dt>
+        <dd>
+          Anschrift:
+          <ul>
+            <li>Str.: </li>
+            <li>PLZ.: </li>
+            <li>Ort: </li>
+          </ul>
+        </dd>
+        <dd>
+          <ul>
+            <li>Tel.:</li>
+            <li>Fax:</li>
+            <li>Voice:</li>
+          </ul>
+        </dd>
+        <dd>
+          <a href="mailto:" title="">email</a>
+        </dd>
+      </dl>
+
+      <form>
+        <div>
+          <label for="select">Auswahlliste</label>
+          <select name="select" id="select">
+            <option>Auswahl 1</option>
+            <option>Auswahl 2</option>
+            <option>Auswahl 3</option>
+          </select>
+        </div>
+        <div>
+          <label for="textarea">textarea</label>
+          <textarea id="textarea" name="textarea"></textarea>
+        </div>
+        <div>
+          <label for="text">Inputtype-Text</label>
+          <input type="text" id="text" name="text">
+        </div>
+        <input type="submit" value="type-submit">
+        <button>Buttonelement</button>
+      </form>
+    </aside>
+  </div>
+
+
+</body>
+</html>

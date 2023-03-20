@@ -1,10 +1,61 @@
 /* spalten */
+:root{
+  --wrap: 1200px;
+  /* --inner-wrap :; */
+  /* --outer-wrap :; */
+}
 .wrap{
   margin-left: auto;
   margin-right: auto;
-  max-width:1200px;
+  max-width: var(--wrap);
 }
+
+/* Spalten */
+/* 50/50 25/75 33/66 100 */
+
+.col-16{
+  width: 16.6666667%;
+}
+.col-33{
+  width: 33.3333%;
+}
+
+.col-50,
+.col-1_2,
+.col-3_6{
+  width: 50%;
+}
+.col-66{
+  width: 66.6666667%;
+}
+
+.col-83{
+  width: 83.3333%;
+}
+
+.col-100,
+.col-6_6{
+  /* 6/6 six sur six */
+  width: 100%;
+}
+
+.col-25{
+  width: 75%;
+}
+.col-75{
+  width: 75%;
+}
+
+
+/* Abstandklassen */
+/* Abstand oben / unten */
+/* Abstand rechts / links */
+
+/* Spalten Flex */
+/* Justify, Align */
 .flex{display:flex;}
+
+/* Spalten float */
 .float-l,.fl-l{float:left;}
 .float-r,.fl-r{float:right;}
 .clear{clear:both;}
@@ -13,6 +64,8 @@
   display:table;
   clear:both;
 }
+
+
 
 /* Hilfsklassen*/
 .img-scale,.scale{

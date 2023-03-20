@@ -5,6 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo Markup</title>
   <link rel="stylesheet" href="bekannte_regeln.css">
+  <style>
+    :root{
+      /* --bg-color: var(--color2); */
+      /* --font-color: #dfdfdf; */
+      /* --primary-color:; */
+      /* --secondary-color:; */
+
+      --color1:#fff;
+      --color2: #f1820e;
+      --color3:#fcd7b5; 
+      --color4:#343434; 
+      --color5:#4d4d4d; 
+
+      --font1:Verdana, Geneva, Tahoma, sans-serif;
+      --font2:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+      /* 
+      --red-100:;
+      --red-200:;
+      --red-900:; */
+
+      /*Bereiche zur Zusweisung*/
+      /*HTML*/
+      --page-bg: var(--color1,#fff);
+      --page-text:var(--color4,#eeeeee);
+      --page-font: var(--font1, sans-serif);
+      --page-text-size: 105%;
+      --page-line-height:1.4;
+
+      /* Alle Übeerschriften */
+      --heading-font:var(--heading-font);
+      --heading-color:var(--color2);
+
+      /* Übeerschriften Individuell */
+      /* h1 */
+      --heading1-font:var(--heading-font);
+      --heading1-color:var(--color2);
+      --heading1-mar-top:50px;
+      
+      /* h2 */
+      --heading2-font:var(--heading-font);
+      --heading2-color:var(--color2);
+      --heading2-mar-top:50px;
+      
+      /* h3 */
+      --heading3-font:var(--heading-font);
+      --heading3-color:var(--color4);
+      --heading3-mar-top:50px;
+      
+      /* h4 */
+      --heading4-font:var(--heading-font);
+      --heading4-color:var(--color4);
+      --heading4-mar-top:50px;
+
+      
+    /* Links und Formulare */
+    /* --link-decoration:; */
+    --link-color:var(--color2);
+    /* --link-bg:; */
+
+    /* --link-hov-decoration:; */
+    /* --link-hov-color:; */
+    /* --link-hov-bg:; */
+    }
+
+    html{
+      background: var(--page-bg);
+      font-family: var(--page-font);
+      color: var(--page-text);
+      font-size: var(--page-text-size);
+      line-height: var(--page-line-height);
+    }
+
+    body{
+      margin: 0;
+    }
+
+    h1,h2,h3,h4{
+      font-family: var(--heading-font);
+      color: var(--heading-color);
+    }
+
+    h1{
+      font-family: var(--heading1-font);
+      color:var(--heading1-color);
+      margin-top: var(--heading1-mar-top, auto);
+    }
+    h2{
+      font-family: var(--heading2-font);
+      color:var(--heading2-color);
+      margin-top: var(--heading2-mar-top, auto);
+    }
+    h3{
+      font-family: var(--heading3-font);
+      color:var(--heading3-color);
+      margin-top: var(green,--heading3-mar-top, auto);
+    }
+    h4{
+      font-family: var(yellow,--heading3-font);
+      color:var(--heading3-color);
+      margin-top: var(--heading3-mar-top, auto);
+    }
+
+    /* Interaktive Elemente */
+    a{
+      text-decoration: var(--link-decoration);
+      color: var(--link-color);
+      background-color: var(--link-bg);
+      display: inline-block;
+    }
+
+    img{
+    /* Platz reservieren */
+    display: inline-block;
+    background-color: var(--color3);
+    }
+
+    #wrapper, body>div{
+    max-width: 920px;
+    width: 80%;
+    /* margin: auto; */
+    /* margin-left, margin-right sont meilleurs, puisqu'il n'annulent 
+    pas les margin top et bottom  */
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  </style>
 </head>
 
 <body dir="ltr">
@@ -32,7 +159,7 @@
         <li><a href="" title="Kontakt">Kontakt</a></li>
       </ul>
     </nav>
-    
+
   </div>
 
   <div>
@@ -49,7 +176,7 @@
       <a href="" title="">
         <img src="https://picsum.photos/300/150" width="300" height="150" alt="">
       </a>
-      <h2>Nutzer schätzen Qualität und Glaubwürdigkeit.</h2> 
+      <h2>Nutzer schätzen Qualität und Glaubwürdigkeit.</h2>
       <p>Bietet eine Seite Ihren Besuchern hochwertige Informationen an, so sind die Besucher bereit, einen Kompromiss zwischen dem Inhalt und seiner Präsentation anzugehen. Im Klartext heißt es: eine hochwertige Seite darf durchaus zu viel Werbung haben. Dies ist auch der Grund, warum visuell eher langweilige Web-Seiten über Jahre hinweg viel Traffic bekommen. Inhalte sind wichtiger als Design. </p>
     </section>
 
@@ -58,10 +185,10 @@
         <figcaption>Ein Bild</figcaption>
         <img src="https://picsum.photos/300/150" width="300" height="150" alt="">
       </figure>
-      <h2>Nutzer lesen nicht, sie suchen nach Schlüsselwörtern.</h2> 
+      <h2>Nutzer lesen nicht, sie suchen nach Schlüsselwörtern.</h2>
       <p>Nutzer analysieren eine Web-Seite und suchen nach Fixpunkten oder Ankern, die sie durch Inhalte der Seite leiten würden. Eine Seite, die aus reinem Text besteht und weder eine Hierarchie (Gliederung) noch jegliche Art der Markierung (Kursive, fett) aufweist, wirkt strukturlos und unbrauchbar.</p>
     </section>
-    
+
     <section>
       <img src="/300/150" width="300" height="150" alt="falscher pfad" >
       <h2>Nutzer sind ungeduldig und wollen gesuchte Inhalte sofort erhalten.</h2>
@@ -69,27 +196,27 @@
     </section>
   </div>
 
-  <div> 
+  <div>
     <article>
-      <img src="https://picsum.photos/1200/300?image=522" width="1200" height="300" alt=""> 
-    
+      <img src="https://picsum.photos/1200/300?image=522" width="1200" height="300" alt="">
+
       <h2>klickbare Design-Elemente</h2>
-      <p>Die meisten Besucher suchen nach interessanten oder nützlichen klickbaren Design-Elementen. Wird auf der Seite ein potenzieller Kandidat gefunden, so wird der entsprechende Link direkt angeklickt. Konnte die Seite dem Besucher nicht weiterhelfen, so kehrt der Suchende über die „Zurück“-Schaltfläche der Seite den Rücken. </p> 
+      <p>Die meisten Besucher suchen nach interessanten oder nützlichen klickbaren Design-Elementen. Wird auf der Seite ein potenzieller Kandidat gefunden, so wird der entsprechende Link direkt angeklickt. Konnte die Seite dem Besucher nicht weiterhelfen, so kehrt der Suchende über die „Zurück“-Schaltfläche der Seite den Rücken. </p>
 
       <p>Effektives Webdesign muss weder bunt noch abwechslungsreich sein. Um Besucher zu Kunden zu machen und Produkte erfolgreich zu verkaufen, müssen Sie als Designer mehr leisten können. Die visuelle Präsentation ist dabei nicht so wichtig wie die Benutzerfreundlichkeit der Seite. </p>
       <p>Seitenbesucher betrachten eine Web-Seite, überfliegen zufällig ausgewählte Textblöcke, suchen nach Schlüsselwörtern und klicken auf den ersten Link, der annäherend an das erinnert, wonach gesucht wird. Die meisten Teile des Layouts werden übersehen oder ignoriert. Bunte Werbung kann zwar attraktiv wirken, erscheint aber störend, da die Seitenbesucher meistens mit einem gewissen Ziel auf eine Seite kommen und auf ihrem Suchweg nicht gestört werden wollen. Alles was uninteressant erscheint, wird schlicht und einfach außer Acht gelassen.</p>
     </article>
-  </div> 
+  </div>
   <!--<hr>--> <!--Themenwechsel-->
   <div>
     <section>
       <h2>Themengebiete der WCAG</h2>
-     
+
       <p>Die Richtlinien für barrierefreie Webinhalte sind ein Webstandard des W3C und sollen die Zugänglichkeit und Nutzbarkeit von Webseiten für Menschen mit Behinderungen sicherstellen. Die Richtlinien sind Grundlage für gesetzliche Vorgaben in vielen Ländern der Welt.</p>
       <article>
         <h2>Wahrnehmbarkeit</h2>
         <p>Textalternativen und alternative Beschreibungen für alle zeitbestimmten oder sonstigen Inhalte.</p>
-      </article> 
+      </article>
       <article>
         <h2>Bedienbarkeit</h2>
         <p>Klare übersichtliche selbsterklärende und eindeutige Navigation in allen üblichen Browswern mit Klarer Anzeige über den momentanen Standort bzgl. den Unterseiten der website.</p>
@@ -149,7 +276,7 @@
           <a href="mailto:" title="">email</a>
         </dd>
       </dl>
- 
+
       <form>
         <div>
           <label for="select">Auswahlliste</label>
@@ -158,7 +285,7 @@
             <option>Auswahl 2</option>
             <option>Auswahl 3</option>
           </select>
-        </div> 
+        </div>
         <div>
           <label for="textarea">textarea</label>
           <textarea id="textarea" name="textarea"></textarea>
@@ -169,9 +296,9 @@
         </div>
         <input type="submit" value="type-submit">
         <button>Buttonelement</button>
-      </form> 
+      </form>
     </aside>
-  </div> 
+  </div>
 
 
 </body>

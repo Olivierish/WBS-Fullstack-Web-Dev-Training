@@ -18,8 +18,8 @@ body{
 }
 
 #wrapper, body>div{
-    max-width: 920px;
     width: 80%;
+    max-width: 920px;
     /* margin: auto; */
     /* margin-left, margin-right sont meilleurs, puisqu'il n'annulent 
     pas les margin top et bottom  */

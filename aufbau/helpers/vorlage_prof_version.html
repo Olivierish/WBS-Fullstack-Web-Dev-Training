@@ -1,0 +1,125 @@
+/**
+/* Standardregelsätze */
+/***************************   
+/*   
+/* 
+Die hier angegeben Regelsätze ermöglichen es die wichtigsten Vorgaben aus einem Stylguide zu übernehmen und müssen mit jedem Projekt nur angepasst werden
+Layout spezifische Angaben (das spätere Design) wird in einem weiteren Stylesheet aufgebaut. 
+Ein späteres zusammenfassen der CSS-Dateien oder generelles einzelnes einbinden von mehreren CSS-Dateien ist jederzeit möglich.
+
+Das Zusammenführen von mehreren CSS-Dateien via:
+ @import url("dateiname.css");
+ @import url("dateiname-2.css");
+ usw. ist aus Performancegründen zu vermeiden.
+
+ Führen Sie bei kleineren Stylesheets (gesamt bis ca. 1500 Zeilen) alle Anweisungen in einer Datei zusammen. Bei größen Styleysheets rufen sie einfach alle benötigten Dateien im Kopf auf.
+/*  
+/*
+/**/
+
+
+/** Resetten*/ 
+/* 
+*{margin:0;padding:0;} 
+*/
+
+/**
+* Alternativen zum hardereset
+* http://meyerweb.com/eric/tools/css/reset/ - resetstylesheet 
+* http://necolas.github.io/normalize.css/ - normalisieren
+*/ 
+:root{
+/* --bg-color:var(--color2);
+--font-color:;
+--primaray-color:;
+--secondary-color:; */
+
+/* 
+--red-100:;
+--red-200:;
+--red-900:; */
+
+--color1:#272727;
+--color2:whitesmoke;
+--color3:orange;
+--color4:#ff0066;
+--color5:rgb(3,187,147);
+
+--font1:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+--font2:Courier;
+
+/* Bereiche zur Zuweisung */
+/* HTML */
+--page-bg:var(--color2,#f3f3f3);
+--page-text:var(--color1, #333);
+--page-font:var(--font1, sans-serif);
+--page-text-size:120%;
+--page-line:1.4;
+
+/* Alle Überschriften */
+--heading-font:var(--font2, monospace);
+--heading-color:var(--color4);
+
+/*Überschriften Individuell*/
+/* h1*/
+--heading1-font:times;
+--heading1-color:green;
+}
+
+
+html{
+  background:var(--page-bg);
+  font-family:var(--page-font);
+  color: var(--page-text, initial);
+  font-size:var(--page-text-size,100.01%);
+  line-height:var(--page-line,auto);
+}
+
+body{
+  margin:0;
+}
+
+/* Inhalte */
+h1,h2,h3,h4{
+  font-family:var(--heading-font,inherit);
+  color:var(--heading-color);
+}
+h1{
+  font-family:var(--heading1-font,var(--heading-font));
+  color:var(--heading1-color , var(--heading-color));
+  margin-top:;
+  margin-bottom:;
+}
+h2{
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+
+h3{  
+  font-family:;
+  color:;
+  margin-top:;
+  margin-bottom:;
+}
+
+/* interaktive Elemente */
+a{
+  /* text-decoration:none; */
+  color:inherit;
+  display:inline-block;
+}
+a:hover,
+a:focus{text-decoration:none;}
+
+.btn{display:inline-block;}
+.btn:hover,.btn:focus{}
+
+input,textarea,select{}
+input:hover,textarea:hover,select:hover{}
+input:focus,textarea:focus,select:focus{}
+
+img{
+  display:inline-block;
+}
