@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spalten - raster.css</title>
+  <link rel="stylesheet" href="css/raster.css">
+  <style>
+            body{
+            color: #3d3d3d;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        [class*="col-"]{
+            outline: aquamarine solid 1px;
+            /* height: 100px;
+            line-height: 100px;
+            text-align: center; */
+            background-color: #ffc3fc;
+        }
+     .flex-w{
+      flex-wrap:wrap;
+      display:flex;
+    }
+    /* flex{} */
+    /* .flex-wrap{
+      flex-wrap:wrap
+    } */
+
+    /* .pad-lr{
+      padding-left:1em;
+      padding-right:1em;
+    }
+    .mar-lr{
+      margin-left:10px;
+      margin-right:10px;
+    }
+
+    .col-33.pad-lr{width:calc(33.3333% - 2em);}
+    .col-66.pad-lr{width:calc(66.6666667% - 2em);}
+
+    .col-33.mar-lr{
+      width:calc(33.3333% - 20px);
+    }
+
+    .col-33.mar-lr.pad-lr{
+      width:calc(33.3333% - 20px - 2em);
+    } */
+    :root{
+      --pad-l:0px;
+      --pad-r:0px;
+      --mar-r:0px;
+      --mar-l:0px;
+    }
+    .pad-l{
+      --pad-l:1em;
+      padding-left:var(--pad-l);
+    }
+
+    .pad-r{
+      --pad-r:10px;
+      padding-right:var(--pad-r);
+    }
+
+    .mar-r{
+      --mar-r:5px;
+      margin-right:var(--mar-r);
+    }
+
+    .mar-l{
+      --mar-l:0.5em;
+      margin-left:var(--mar-l);
+    }
+
+
+    /* .col-33.mar-r {width: calc(33.3333% - var(--mar-r));}
+    .col-33.mar-l {width: calc(33.3333% - var(--mar-l));}
+    .col-33.pad-r {width: calc(33.3333% - var(--pad-r));}
+    .col-33.pad-l {width: calc(33.3333% - var(--pad-l));}
+
+    .col-33.mar-r.mar-l{width: calc(33.3333% - var(--mar-l) - var(--mar-r) );}
+    .col-33.pad-r.pad-l{width: calc(33.3333% - var(--pad-l) - var(--pad-r) );}
+
+    .col-33.mar-r.pad-r{width: calc(33.3333% - var(--mar-r) - var(--pad-r) );}
+    .col-33.mar-l.pad-l{width: calc(33.3333% - var(--mar-l) - var(--pad-l) );}
+    .col-33.mar-l.pad-r{width: calc(33.3333% - var(--mar-l) - var(--pad-r) );}
+    .col-33.mar-r.pad-l{width: calc(33.3333% - var(--mar-r) - var(--pad-l) );}
+
+    .col-33.mar-r.pad-l.pad-r{width: calc(33.3333% - var(--mar-r) - var(--pad-r) - var(--pad-l));}
+    .col-33.mar-l.pad-l.pad-r{width: calc(33.3333% - var(--mar-l) - var(--pad-l) - var(--pad-r));}
+    .col-33.mar-l.mar-r.pad-r{width: calc(33.3333% - var(--mar-l) - var(--mar-r) - var(--pad-r) );}
+    .col-33.mar-l.mar-r.pad-l{width: calc(33.3333% - var(--mar-l) - var(--mar-r) - var(--pad-l) );}
+    
+    .col-33.pad-l.pad-r.mar-l.mar-r {width: calc(33.3333% - var(--mar-l) - var(--mar-r)  - var(--pad-l) - var(--pad-r));} */
+
+    /* Il faut initialiser les variables à 0 dans :root */
+    .col-33{width: calc(33.3333% - var(--mar-l) - var(--mar-r)  - var(--pad-l) - var(--pad-r));}  
+   
+   
+    .test .pad-l{
+      /* --pad-l:100px; */
+    }
+  </style>
+</head>
+<body>
+  <!-- div.col-*8>{col-} -->
+  <div class="col-16">col-16</div>
+  <div class="col-33">col-33</div>
+  <div class="col-50">col-50</div>
+  <div class="col-66">col-66</div>
+  <div class="col-83">col-83</div>
+  <div class="col-100">col-100</div>
+  <div class="col-25">col-25</div>
+  <div class="col-75">col-75</div>
+
+  <h2>3 col float</h2>
+  <h3>pad-r pad-l</h3>
+  <!-- div.clearfix>div.col-33.fl-l*3>{col-33} -->
+  <div class="clearfix test" >
+    <div class="col-33 fl-l pad-r">col-33</div>
+    <div class="col-33 fl-l pad-l">col-33</div>
+    <div class="col-33 fl-l pad-l pad-r">col-33</div>
+  </div>
+
+  <h3>mar-r mar-l</h3>
+  <div class="clearfix " >
+    <div class="col-33 fl-l mar-r">col-33</div>
+    <div class="col-33 fl-l mar-l">col-33</div>
+    <div class="col-33 fl-l mar-l mar-r">col-33</div>
+  </div>
+
+  <h3>In the Mix :) - (mar-r) (mar-l) (pad-r) (pad-l)</h3>
+  <div class="clearfix " >
+    <div class="col-33 fl-l mar-l mar-r pad-l">col-33</div>
+    <div class="col-33 fl-l pad-l pad-r">col-33</div>
+    <div class="col-33 fl-l mar-l pad-l">col-33</div>
+  </div>
+
+  <h2>3 col flex</h2>
+  <!-- div.flex>div.col-33*3>{col-33} -->
+  <div class="flex-w">
+    <div class="col-33">col-33</div>
+    <div class="col-33 pad-lr">col-33</div>
+    <div class="col-33">col-33</div>
+  </div>
+
+  <h2>1 + asymetrisch goldener schnitt float</h2>
+  <!--div.clearfix>div.col-100{col-100}+div.col-33>{col-33}^div.col-66>{col-66} -->
+  <div class="clearfix">
+    <div class="col-100">col-100</div>
+    <div class="col-33 fl-l">col-33</div>
+    <div class="col-66 fl-l pad-lr">col-66</div>
+  </div>
+
+  <h2>1 + asymetrisch goldener schnitt flex</h2>
+  <!-- div.flex>div.col-100{col-100}+div.col-33>{col-33}^div.col-66>{col-66} -->
+  <div class="flex flex-wrap">
+    <div class="col-100">col-100</div>
+    <div class="col-33">col-33</div>
+    <div class="col-66">col-66</div>
+  </div>
+
+</body>
+</html>

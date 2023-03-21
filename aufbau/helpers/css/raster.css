@@ -3,6 +3,10 @@
   --wrap: 1200px;
   /* --inner-wrap :; */
   /* --outer-wrap :; */
+  --pad-l:0px; 
+  --pad-r:0px;
+  --mar-r:0px;
+  --mar-l:0px;
 }
 .wrap{
   margin-left: auto;
@@ -12,48 +16,119 @@
 
 /* Spalten */
 /* 50/50 25/75 33/66 100 */
+/* 
+1024 - 960px  
+  960 / 8  = 120
+  960 /10 = 96
+  960 / 12 = 80
+*/
+
+/* Rasteraufbau ohne Abstände*/
+/*****************************************
+/* 1/2 , 2/4, 3/6 = 50% 
+/* 1/4 = 25% 
+/* 1/3, 2/6 = 33,3%
+/* 100% = 6/6 
+/**/
 
 .col-16{
-  width: 16.6666667%;
+  --col:16.6666667%;
+  width: var(--col);
 }
 .col-33{
-  width: 33.3333%;
+  --col:33.3333%;
+  width: var(--col);
 }
 
 .col-50,
 .col-1_2,
 .col-3_6{
-  width: 50%;
+  --col:50%;
+  width: var(--col);
 }
 .col-66{
-  width: 66.6666667%;
+  --col:66.6666667%;
+  width: var(--col);
 }
 
 .col-83{
-  width: 83.3333%;
+  --col:83.3333%;
+  width: var(--col);
 }
 
 .col-100,
 .col-6_6{
   /* 6/6 six sur six */
-  width: 100%;
+  --col:100%;
+  width: var(--col);
 }
 
 .col-25{
-  width: 75%;
+  --col:25%;
+  width: var(--col);
+
 }
 .col-75{
-  width: 75%;
+  --col:75%;
+  width: var(--col);
 }
 
 
 /* Abstandklassen */
+
 /* Abstand oben / unten */
 /* Abstand rechts / links */
+.pad-l{
+  /* --pad-l:1em;  */
+  padding-left:var(--pad-l);
+}
+
+.pad-r{
+   /* --pad-r:10px;  */
+  padding-right:var(--pad-r);
+}
+
+.mar-r{
+  /* --mar-r:5px;  */
+  margin-right:var(--mar-r);
+}
+
+.mar-l{
+  /* --mar-l:0.5em; */
+  margin-left:var(--mar-l);
+}
+
+
+
+[class*="col-"].mar-r {width: calc(var(--col) - var(--mar-r));}
+[class*="col-"].mar-l {width: calc(var(--col) - var(--mar-l));}
+[class*="col-"].pad-r {width: calc(var(--col) - var(--pad-r));}
+[class*="col-"].pad-l {width: calc(var(--col) - var(--pad-l));}
+
+[class*="col-"].mar-r.mar-l{width: calc(var(--col) - var(--mar-l) - var(--mar-r) );}
+[class*="col-"].pad-r.pad-l{width: calc(var(--col) - var(--pad-l) - var(--pad-r) );}
+
+[class*="col-"].mar-r.pad-r{width: calc(var(--col) - var(--mar-r) - var(--pad-r) );}
+[class*="col-"].mar-l.pad-l{width: calc(var(--col) - var(--mar-l) - var(--pad-l) );}
+[class*="col-"].mar-l.pad-r{width: calc(var(--col) - var(--mar-l) - var(--pad-r) );}
+[class*="col-"].mar-r.pad-l{width: calc(var(--col) - var(--mar-r) - var(--pad-l) );}
+
+[class*="col-"].mar-r.pad-l.pad-r{width: calc(var(--col) - var(--mar-r) - var(--pad-r) - var(--pad-l));}
+[class*="col-"].mar-l.pad-l.pad-r{width: calc(var(--col) - var(--mar-l) - var(--pad-l) - var(--pad-r));}
+[class*="col-"].mar-l.mar-r.pad-r{width: calc(var(--col) - var(--mar-l) - var(--mar-r) - var(--pad-r) );}
+[class*="col-"].mar-l.mar-r.pad-l{width: calc(var(--col) - var(--mar-l) - var(--mar-r) - var(--pad-l) );}
+
+[class*="col-"].pad-l.pad-r.mar-l.mar-r {width: calc(var(--col) - var(--mar-l) - var(--mar-r)  - var(--pad-l) - var(--pad-r));}
+
+/* .col-33{width: calc(33.3333% - var(--mar-l) - var(--mar-r)  - var(--pad-l) - var(--pad-r));}   */
 
 /* Spalten Flex */
 /* Justify, Align */
 .flex{display:flex;}
+
+.flex-wrapp{
+  flex-wrap: wrap;
+}
 
 /* Spalten float */
 .float-l,.fl-l{float:left;}

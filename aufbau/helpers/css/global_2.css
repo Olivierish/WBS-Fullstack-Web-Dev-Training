@@ -1,0 +1,232 @@
+/**
+/* Standardregelsätze */
+/***************************   
+/*   
+/* 
+Die hier angegeben Regelsätze ermöglichen es die wichtigsten Vorgaben aus einem Stylguide zu übernehmen und müssen mit jedem Projekt nur angepasst werden
+Layout spezifische Angaben (das spätere Design) wird in einem weiteren Stylesheet aufgebaut. 
+Ein späteres zusammenfassen der CSS-Dateien oder generelles einzelnes einbinden von mehreren CSS-Dateien ist jederzeit möglich.
+
+Das Zusammenführen von mehreren CSS-Dateien via:
+ @import url("dateiname.css");
+ @import url("dateiname-2.css");
+ usw. ist aus Performancegründen zu vermeiden.
+
+ Führen Sie bei kleineren Stylesheets (gesamt bis ca. 1500 Zeilen) alle Anweisungen in einer Datei zusammen. Bei größen Styleysheets rufen sie einfach alle benötigten Dateien im Kopf auf.
+/*  
+/*
+/**/
+
+
+/** Resetten*/ 
+/* 
+*{margin:0;padding:0;} 
+*/
+
+/**
+* Alternativen zum hardereset
+* http://meyerweb.com/eric/tools/css/reset/ - resetstylesheet 
+* http://necolas.github.io/normalize.css/ - normalisieren
+*/ 
+
+/* boxmodell festlegen */
+html{
+  /* box-sizing:border-box; */
+  box-sizing:content-box;/* Standard */
+}
+*,*:before,*:after{
+  box-sizing:inherit;
+}
+
+
+:root{
+/* Allgemeine Vorgaben und Einsatz Dokumentieren*/
+/*
+ ggf. für bessere Verständlichkeit noch sprechendere Variablen verwenden und diesen dann die allgemeinen Vorgaben zuweisen.*/
+/* Nicht alle css-Variablen wurden verwendet und dienen lediglich als Beispiel 
+*/
+/* --bg-color:var(--color2);
+--font-color:;
+--primaray-color:;
+--secondary-color:; */
+
+/* Farben / Farbschemen ggf. auch gleich als klasse mit anlegen*/
+/*Farbschemen / Paletten*/ 
+/* 
+--red-100:;
+--red-200:;
+--red-900:; */
+
+/* Allgemein Styleguide Vorgaben sammeln */
+--color1:#272727;
+--color2:whitesmoke;
+--color3:orange;
+--color4:#ff0066;
+--color5:rgb(3,187,147);
+
+--font1:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+--font2:Courier;
+
+/*individuelle Bereiche zur Zuweisung */
+/* HTML */
+--page-bg:var(--color2,#f3f3f3);
+--page-text:var(--color1, #333);
+--page-font:var(--font1, sans-serif);
+--page-text-size:120%;
+--page-line:1.4;
+
+/* Alle Überschriften */
+--heading-font:var(--font2, monospace);
+--heading-color:var(--color4);
+
+/*Überschriften Individuell*/
+/* h1*/
+/***********************/
+--heading1-font:times;
+/* --heading1-text-size:50px; */
+--heading1-color:green;
+/* Standardwert Browserstylsheet - Werte wurden als default gesetzt */
+/* vertikale margins nur ändern wenn der Wert laut Stylguidevorgabe festegelegt ist -  dann kommentar entfernen */
+/* 
+--heading1-mar-top:0.67em;
+--heading1-mar-bot:0.67em; 
+*/
+
+/* h2*/
+/***********************/
+/* --heading2-font:Verdana; */
+/* --heading2-color:blue; */
+/* --heading2-text-size:50px; */
+/* 
+--heading2-mar-top:0.83em;
+--heading2-mar-bot:0.83em; 
+*/
+
+/* h3*/
+/***********************/
+/* --heading3-font:Verdana; */
+/* --heading3-color:lime; */
+/* --heading3-text-size:50px; */
+/* 
+--heading3-mar-top:1em;
+--heading3-mar-bot:1em; 
+*/
+
+/* h4*/
+/***********************/
+/* --heading4-font:Verdana; */
+/* --heading4-color:goldenrod; */
+/* --heading4-text-size:50px; */
+/* 
+--heading4-mar-top:1.33em;
+--heading4-mar-bot:1.33em; 
+*/
+
+/* Links und Formulare*/
+/* anker*/
+--link-decoration:underline;
+--link-color:inherit;
+--link-bg:none;
+
+--link-hov-decoration:none;
+--link-hov-color:inherit;
+--link-hov-bg:none;
+}
+
+
+html{
+  background:var(--page-bg);
+  font-family:var(--page-font);
+  color: var(--page-text, initial);
+  font-size:var(--page-text-size,100.01%);
+  line-height:var(--page-line,auto);
+}
+
+body{
+  margin:0;
+}
+
+/* Inhalte */
+h1,h2,h3,h4{
+  font-family:var(--heading-font,inherit);
+  color:var(--heading-color);
+}
+h1{
+  font-family:var(--heading1-font,var(--heading-font));
+  font-size:var(--heading1-text-size, 2em);
+  color:var(--heading1-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading1-mar-top, 0.67em);
+  margin-bottom:var(--heading1-mar-bot, 0.67em);
+}
+h2{
+  font-family:var(--heading2-font,var(--heading-font));
+  font-size:var(--heading2-text-size, 1.5em);
+  color:var(--heading2-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading2-mar-top, 0.83em);
+  margin-bottom:var(--heading2-mar-bot, 0.83em);
+}
+
+h3{  
+  font-family:var(--heading3-font,var(--heading-font));
+  font-size:var(--heading3-text-size, 1em);
+  color:var(--heading3-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading3-mar-top, 1em);
+  margin-bottom:var(--heading3-mar-bot, 1em);
+}
+h4{
+  font-family:var(--heading4-font,var(--heading-font));
+  font-size:var(--heading4-text-size, 0.83em);
+  color:var(--heading4-color , var(--heading-color));
+  /* Standardwert Browserstylsheet - werte wurden als default gesetzt */
+  margin-top:var(--heading4-mar-top, 1.33em);
+  margin-bottom:var(--heading4-mar-bot, 1.33em);
+}
+
+/* interaktive Elemente */
+a{
+    /* ggf. Schriftfamilie und  Schriftgröße*/
+  text-decoration:var(--link-decoration);
+  color:var(--link-color);
+  background:var(--link-bg);
+  display:inline-block;
+}
+a:hover,
+a:focus{
+  text-decoration:var(--link-hov-decoration);
+  color:var(--link-hov-color);
+  background:var(--link-hov-bg);
+}  
+
+.btn{
+  display:inline-block;
+  /* ggf. hintergrundfarbe, textfarbe */
+}
+.btn:hover,.btn:focus{}
+
+input,select,textarea{
+  /* hintergrund,ggf.rahmen,ggf. textfarbe */
+}
+input:focus,select:focus,textarea:focus{}
+
+input:hover,select:hover,textarea:hover{}
+
+
+/* Probleme mit Bildern lösen*/
+img{
+  display:inline-block;
+  /* ggf hintergrundfarbe wenn bild nicht geladen werden kann */
+}
+
+/* Hintergrundfarbe entfernen wenn transparentes grafikformat genutzt wird */
+img[src$=".png"],img[src$=".gif"]{
+  background:none;
+}
+
+/* Mindestgröße für verlinkte Bilder auf Touchscreens */
+a img{
+  min-width:44px;
+  min-height:44px;
+}

@@ -7,13 +7,67 @@
     <title>Spalten - raster.css</title>
     <link rel="stylesheet" href="css/raster.css">
     <style>
+        body{
+            color: #3d3d3d;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+
         [class*="col-"]{
             outline: aquamarine solid 1px;
+            /* height: 100px;
+            line-height: 100px;
+            text-align: center; */
+            background-color: #ffc3fc;
         }
+
+        .pad-lr{
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        .mar-lr{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        /* [class*="col-33"][class*="pad-lr"]
+        {
+            width: calc(33.33336% - 2 * 1em);
+            background-color: #9ba5fd;
+        } */
+        /* Better solution */
+
+        
+        .col-33.pad-lr
+        {
+            width: calc(33.3333% - 2 * 1em);
+            background-color: #9ba5fd;
+        }
+        .col-33.pad-lr.mar-lr{
+            width: calc(33.3333% - 2 * 1em - 2 * 10px);
+            background-color: #d32be9;
+        }
+
+        .col-33.mar-lr{
+            width: calc(33.3333% - 2 * 10px);
+            background-color: #ffcb87;
+        }
+
+
+        .col-66.pad-lr
+        {
+            width: calc(66.6666667% - 2 * 1em);
+            background-color: #9ba5fd;
+        }
+
+
     </style>
 </head>
 <body>
-    <!-- .col-*8>{col-} -->
+    <!-- .col-*8>{col-} 
+    // TODO: 
+
+-->
     <div class="col-16">col-16</div>
     <div class="col-33">col-33</div>
     <div class="col-50">col-50</div>
@@ -22,5 +76,42 @@
     <div class="col-100">col-100</div>
     <div class="col-25">col-25</div>
     <div class="col-75">col-75</div>
+
+    <div class="float">
+        <h2>3 col float</h2>
+        <div class="clearfix">
+            <div class="col-33 float-l pad-lr">col-33</div>
+            <div class="col-33 float-l mar-lr">col-33</div>
+            <div class="col-33 float-l mar-lr pad-lr">col-33</div>
+        </div>
+    </div>
+
+    <div class="flexbox">
+        <h2>3 col flex</h2>
+        <div class="flex">
+            <div class="col-33">col-33</div>
+            <div class="col-33 pad-lr">col-33</div>
+            <div class="col-33">col-33</div>
+        </div>
+    </div>
+
+    <div class="float">
+        <h2>Float : 1 col + 2 col</h2>
+        <div class="clearfix">
+            <div class="col-100">col-33</div>
+            <div class="col-33 float-l">col-33</div>
+            <div class="col-66 float-l">col-66</div>
+        </div>
+    </div>
+
+    <div class="flexbox">
+        <h2>Flexbox : 1 col + 2 col</h2>
+        <div class="flex flex-wrapp">
+            <div class="col-100">col-100</div>
+            <div class="col-33">col-33</div>
+            <div class="col-66">col-66</div>
+        </div>
+    </div>
 </body>
 </html>
+ 
