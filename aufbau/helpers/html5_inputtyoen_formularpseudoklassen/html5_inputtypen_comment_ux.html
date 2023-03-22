@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Inputtypen und Pseudoklassen</title>
+
+  <style>
+    /* neue CSS3 Formularpseudoklassen
+
+:enabled
+Selektiert ein Formularfeld, in welches der Benutzer Eingaben machen darf. Das Element darf auf Elemente angewendet werden, die den Status enabled besitzen können.
+
+:disabled
+Selektiert ein Formularfeld, in welches der Benutzer keine Eingaben machen darf. Das Element darf auf Elemente angewendet werden, die den Status disabled besitzen können.
+
+
+:checked
+Selektiert eine Checkbox, einen Radio-Button oder ein Select-Element in dem der Nutzer eine Auswahl vorgenommen hat.
+
+:indeterminate
+Wählt indeterminated Checkboxen aus. Hat also eine Checkbox mehrere Unterelemente, von denen einige ausgewählt wurden, so ist die darüber liegende Checkbox indeterminated, sie ist nur teilweise gewählt.
+
+:valid
+Selektiert alle gültigen Eingaben
+
+:invalid
+Selektiert alle nicht gültigen Eingaben
+
+:required
+Selektiert alle benötigen Felder
+
+:optional
+Selektiert alle freiwilligen Felder
+
+:in-range
+Selektiert Felder in denen erlaubte Werte befinden
+
+:out-of-range
+Selektiert Felder in denen sich nicht erlaubte Werte befinden
+
+:read-only
+Selektiert Felder, in die der Nutzer nichts eintragen darf.
+
+:read-write
+Selektiert Felder, in die der Nutzer etwas eintragen darf.
+
+*/
+
+
+
+    /***********************************/
+    /* Beispiel Themewechsler */
+      /* #rot:checked~.blubb{
+        background:red;
+      }
+      #gruen:checked~.blubb{
+        background:green;
+      }
+      #blue:checked~.blubb{
+        background:blue;
+      } */
+    /**********************************/
+
+    /* Boxmodell festlegen, andernfalls verwenden einige neue Inputtypen das alternative Boxmodell (bsp. search, range u. a.). 
+    Alle anderen Inputtypen, Select und Textareas jedoch das klassische Boxmodell. */
+    html {
+      box-sizing: content-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+
+    div {
+      margin: 1em 0;
+    }
+
+    a {
+      color: aqua;
+    }
+
+    a:hover {
+      color: teal;
+    }
+
+    /* Standardformatierung label */
+    label {
+      min-width: 10em;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Basics */
+    input,
+    textarea,
+    select {
+      width: 10em;
+      width: 48%;
+      padding: 8px;
+      border: 1px solid aquamarine;
+    }
+
+    #dateinput select {
+      width: 30%;
+    }
+
+    /* Visualisierung Zustände Formularelemente (input,select,textarea) */
+    /*  mit der maus berührt*/
+    input:hover,
+    textarea:hover,
+    select:hover {
+      border-color: rgb(105, 211, 172);
+    }
+
+    /* gerade ausgewählt - tastatur,touchscreen , in das Feld geklickt */
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 0;
+      background: rgb(243, 255, 242);
+    }
+
+    /* Wenn gestalterisch die focus-outline des Browsers entfernt wurde Focus-visible verwenden damit Tastaurnutzer diese wieder sehen können, Haben sie sichtbare Rahmen für die zustände :hover und :focus gesetzt oder visuell gut sichtbar Hintergründe geändert ist dies nicht notwendig.*/
+
+    /* input:focus-visible,textarea:focus-visible,select:focus-visible{
+      outline:3px solid teal;
+    } */
+
+   /* Breite Überschreiben für Radio und Checkbox */
+    [type="radio"],
+    [type="checkbox"] {
+      width: auto;
+    }
+
+    /* Spezielle Angaben für reset,button,submit */
+    [type=submit],
+    button,
+    .btn {
+      width: 9em;
+      background: none;
+      padding: 1em;
+      border: 1px solid aqua
+    }
+
+    /* Visualisierung Zustände spezielle Formularbereiche (button,submit,reset)*/
+    [type=submit]:hover,
+    button:hover,
+    .btn:hover,
+    [type=submit]:focus,
+    button:focus,
+    .btn:focus {
+      background: aqua;
+      color: #000;
+    }
+
+    [type=submit]:active,
+    button:active,
+    .btn:active {
+      border: inset 3px blue;
+    }
+
+    /* einfache Pflichtfeld-kennzeichnung */
+    .required label:after {
+      content: " " "*";
+    }
+
+  
+  /* Falls Pflichtfelkennzeichnung mit Extra-Element, dieses für Screenreader verstecken, alternativ aria-hidden="true" am Extra-Element setzen */
+    @media speech {
+      label span {
+        display: none;
+      }
+    }
+
+    /* Farbe Markierter Text */
+    ::-moz-selection {
+      background: #ffc
+    }
+
+    ::selection {
+      background: #ffc
+    }
+
+    /*neue Pseudoklassen */
+    /* :optional{background:#ffc;} */
+    /* input:hover:required{background:orange}
+  input:focus:invalid{background:red;}
+  input:focus:valid{background:green;} */
+    /*
+    .required:focus-within label:after,
+    .required label:hover:after{
+      content:" " "pflichtfeld muss ausgefüllt werden";
+    }
+    */
+
+    /* Wenn das feld korrekt ausgefüllt wurde bei hover - Pflichtmeldung ausblenden*/
+    /*.required :hover:valid~.require{display:none;}*/
+
+    /* Wenn das feld korrekt ausgefüllt wurde bei focus - Pflichtmeldung ausblenden*/
+    /*.required :focus:required:valid~.require{display:none;}*/
+
+    /* Pflichtmeldung bei focus ausblenden um Fehlermeldung oder Erfolgsmeldung anzuzeigen*/
+    /*.required :focus:required~.require{display:none;}*/
+    /* Pflichtmeldung bei :focus :hover ausblenden um Fehlermeldung oder Erfolgsmeldung anzuzeigen*/
+
+    .required :hover:focus:required~.require {
+      display: none;
+    }
+
+    /* Wie vorangegangen jedoch zusammengefasst -> Redundanz vermeiden*/
+    .required p,
+    .required :hover:valid~.require,
+    .required :focus:required:valid~.require,
+    .required :focus:required~.require,
+    .required :hover:focus:required~.require {
+      display: none;
+    }
+
+    /* Pflichfeldmeldung bei Hover */
+    /*.required :hover:required~.require{display:block;}*/
+
+    /* Meldung für ungültige Eingabe */
+    /*.required :focus:required:invalid~.invalid{display:block;}*/
+
+    /* Eingabe Korrekt (während der Eingabe) */
+    /* .required :focus:required:valid~.valid{
+  display:block;
+  } */
+    /* Wie zuvor jedoch zusammengefasst -> Redundanz vermeiden*/
+    .required :hover:required~.require,
+    .required :focus:required:invalid~.invalid,
+    .required :focus:required:valid~.valid {
+      display: block;
+    }
+
+    /* Formatierung der Textabsätze für Fehlerausgabe */
+
+    .invalid,
+    .valid,
+    .require {
+      position: absolute;
+      margin-top: -3.5em;
+      margin-left: 60%;
+      background: rgb(142, 212, 195);
+      color: #333;
+      max-width: 10em;
+      padding: 1em;
+      box-shadow: 2px 2px 4px #555;
+      border-radius: 0.3em;
+      z-index: 2;
+      font-size: 90%;
+    }
+
+    /* Sprechblasen- bzw. Pfeilspitzendarstellung mit Pseudoelement und Border */
+    .invalid:before,
+    .valid:before,
+    .require:before {
+      content: "";
+      border-left: 40px solid transparent;
+      border-bottom: 20px solid rgb(142, 212, 195);
+      position: absolute;
+      left: -30px;
+    }
+
+
+    /*  Validationsvisualisierung mit Image-sprite */
+    .validate input {
+      background-image: url(icon.png);
+      background-position: 290px 44px;
+      background-repeat: no-repeat;
+    }
+
+    .validate input:valid {
+      background-position: 98% -54px;
+    }
+
+    .validate input:required {
+      background-position: 98% -22px;
+    }
+
+    .validate input:required:valid {
+      background-position: 98% -54px;
+    }
+
+    .validate input:focus:required:invalid {
+      background-position: 5px 10px;
+      padding-left: 30px
+    }
+
+    /* Pseudoelementklasse placeholder */
+    /*input:-webkit-input-placeholder{color:blue;}
+  input:-ms-input-placeholder{color:blue;}
+  input:-ms-placeholder{color:blue;}
+  input:-moz-placeholder{color:blue;}
+  input::-moz-placeholder{color:blue;}
+  input:placeholder{color:blue;}*/
+
+    /* type="color" standardformatierung des Browsers entfernen, kann so auch für Button-Element angewendet werden*/
+    #color {
+      border: none;
+      background: none;
+    }
+
+    /* Radiobuttons formatieren weiteres Beispiel */
+    /* alternative Radiobutton Darstellung am Label */
+    [type="radio"] {
+      width: auto;
+    }
+
+    [for="color1"] {
+      background: red;
+    }
+
+    [for="color2"] {
+      background: orange;
+    }
+
+    /* Input-radio in modernen Browsern-verstecken*/
+    [type="radio"][name*="color"]:nth-of-type(n) {
+      display: none;
+    }
+
+    /* Label wie input-radio formatieren*/
+    [for^="color"]:nth-of-type(n):before {
+      content: "";
+      display: inline-block;
+      padding: 6px;
+      background: #ffc;
+      margin-left: 6px;
+      margin-right: 6px;
+      border-radius: 50%;
+    }
+
+    /* Wenn Label angeklickt wird erhält das input seine Auswahl durch die strukturelle Verkettung zwischen for und id - Attributwert. :checked selektiert ein Element wenn es ausgewählt ist*/
+    /* Zustände bei hover und Auswahl*/
+    [for^="color"]:hover:before,
+    [type="radio"]:checked+label:before {
+      background: #000;
+      border: 2px solid #ffc;
+      padding: 4px;
+    }
+
+    /* Überschreibung für das Label des Eigentlichen Inputtype color*/
+    [for="color"]:nth-of-type(1):before,
+    [for="color"]:nth-of-type(1):hover:before {
+      content: none;
+    }
+
+    /* Details*/
+    details {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: aqua;
+      padding: 1em;
+      min-width: 150px;
+    }
+
+    details,
+    details * {
+      transition: all .6s;
+    }
+
+    details:hover {
+      min-width: 300px;
+    }
+
+    details summary {
+      padding-bottom: 0.5em;
+    }
+
+    details a {
+      color: #222;
+      display: block;
+      background: #fefefe;
+      padding: 0.5em;
+    }
+
+    @media screen and (max-width:600px) {
+
+      div {
+        border-bottom: 2px solid #f3f3f3;
+        padding-bottom: 1em;
+      }
+
+      fieldset div:last-child {
+        border-bottom: none;
+      }
+
+      select {
+        width: 22%;
+        padding: 2px
+      }
+
+      label {
+        display: block;
+        padding-bottom: 0.5em;
+      }
+
+      input,
+      textarea {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      details {
+        left: 0;
+      }
+
+      body {
+        padding-top: 2.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Beispiel Themewechsler-->
+  <!-- <input type="radio" id="rot" name="farbe">
+  <input type="radio" name="farbe" id="gruen">
+  <input type="radio" name="farbe" id="blue"> -->
+  <h1>HTML5-Inputtypen und Formular-Pseudoklassen </h1>
+  <h2 style="color:red;">Das verwendete Farbschema entspricht nicht den WCAG-Vorgaben!<br>
+    Notwendige Regeln für Interaktive Elemente wurden gesetzt und beachtet!
+  </h2>
+  <article>
+    <h2>Neue HTML5 Inputtypen</h2>
+    <section>
+      <h3>type="email"</h3>
+      <p>Zur Eingabe einer E-Mail-Adresse oder einer Liste von E-Mail-Adressen.Bei Verwendung des Attributs multiple
+        können mehrere, durch Komma getrennte E-Mail-Adressen eingegeben werden.</p>
+    </section>
+    <section>
+      <h3>type="url"</h3>
+      <p>Zur Eingabe einer einzelnen , <span title="(Protokoll-basierenden)">absoluten URL</span> bestimmt, die einen
+        sehr großen <span title="Protokolle wie http://,https://,ftp:// uvm.">Wertebereich</span> abdeckt.</p>
+    </section>
+    <section>
+      <h3>type="tel"</h3>
+      <p>Zur Eingabe einer Telefonnummer tel setzt keine bestimmte Syntax voraus, wenn also ein bestimmtes Format
+        eingehalten werden soll, können Sie zusätzlich pattern oder setCustomValidity() verwenden.</p>
+    </section>
+    <section>
+      <h3>type="search"</h3>
+      <p>Fordert Nutzer zur Eingabe von Text auf, nach dem gesucht werden soll - Der Unterschied zwischen search und
+        text ist in erster Linie stilistischer Natur. Durch Verwendung des Eingabetyps search wird der Stil des
+        Eingabefelds möglicherweise an die Suchfelder dieser Plattform angeglichen.</p>
+    </section>
+    <section>
+      <h3>type="number"</h3>
+      <p>Für numerische Anzahl-Eingaben gültige Werte sind Gleitkommazahlen.</p>
+    </section>
+    <section>
+      <h3>type="color"</h3>
+      <p>Zur Auswahl einer Farbe über ein entsprechendes Steuerungselement. Der Wert muss eine gültige einfache Farbe in
+        Kleinbuchstaben sein, zum Beispiel #ffffff</p>
+    </section>
+    <section>
+      <h3>type="range"</h3>
+      <p>Für numerische Eingaben, bei denen, im Gegensatz zu number, der tatsächliche Wert nicht von Bedeutung ist In
+        den meisten Browsern, die diesen Eingabetyp unterstützen, erfolgt die Implementierung in Form eines
+        Schiebereglers.</p>
+    </section>
+    <section>
+      <h3>Date-inputtypen</h3>
+      <p><a href="#dateinput" title="zu den Dateinputtypen">Erklärungen zu den möglichen Datums- und
+          Zeitangabefeldern</a> finden Sie weiter <a href="#dateinput" title="zu den Dateinputtypen">unten</a> im
+        Dokument. </p>
+    </section>
+  </article>
+  <form method="GET" action="#">
+    <fieldset>
+      <legend>Beispiel Standardinputtypen</legend>
+      <div>
+        <label for="vorname">Vorname</label>
+        <input name="vorname" id="vorname">
+      </div>
+
+      <div>
+        <label for="nachname">Nachname</label>
+        <input name="nachname" id="nachname" title="erweiterte Beschreibung">
+      </div>
+      <div>
+        <label for="plz">PLZ</label>
+        <input name="plz" id="plz" pattern="[\d]{5}">
+      </div>
+
+      <div>
+        <h3>Radio</h3>
+        <input type="radio" name="radiogroup" value="radio 1" id="radio1">
+        <label for="radio1">Radio 1</label>
+
+        <input type="radio" name="radiogroup" value="radio 2" id="radio2">
+        <label for="radio2">Radio 2</label>
+      </div>
+
+      <div>
+        <h3>Checkbox</h3>
+        <input type="checkbox" name="checkboxgroup" value="auswahl 1" id="auswahl1">
+        <label for="auswahl1">Auswahl 1</label>
+        <input type="checkbox" name="checkboxgroup" value="auswahl 2" id="auswahl2" checked>
+        <label for="auswahl2">Auswahl 2</label>
+      </div>
+
+      <div>
+        <label for="kommentar">Hinterlassen Sie einen Kommentar</label>
+        <textarea name="kommentar" cols="25" rows="5" id="kommentar"></textarea>
+      </div>
+
+    </fieldset>
+    <fieldset id="dateinput">
+      <legend>HTML5 Inputtypen</legend>
+      <div class="required validate">
+        <label for="email">Email
+          <!-- Pflichtfeldkennzeichnung mit Extra-Element -->
+          <!-- <span aria-hidden="true">*</span> -->
+        </label>
+        <input type="email" name="email" id="email" placeholder="name@domainname.tld" required
+          aria-describedby="description">
+        <!-- title="pflichtfeld bitte ausfüllen" -->
+        <p class="require">Pflichtfeld - bitte ausfüllen</p>
+        <p class="invalid" id="description"> Bitte Email in folgendem Format angeben: name@domainname</p>
+        <p class="valid">alles Toll</p>
+      </div>
+
+      <div>
+        <label for="number">Number(anzahl)</label>
+        <input type="number" id="number" name="number" step="1" min="1" max="10">
+        <!--inputmode="numeric"-->
+      </div>
+
+      <div class="required validate">
+        <label for="tel">Tel</label>
+        <!-- inputmode="tel" -->
+        <input type="tel" id="tel" name="tel" placeholder="+49 1234 567890"
+          pattern="((^\+[\d]{2}|^\+[\d]{2}\(0\)|^\(\+[\d]{2}\)\(0\)|^00[\d]{2}|^0)([\d]{9}$|[\d\-\.\s]{7,}$)|(^[1-9]{1}[\d]{5,}$))"
+          required>
+        <!--
+      +49
+      0049
+      +49 30 rufnummer
+      +49(0)30 rufnummer
+      030 rufnummer
+      (030) rufnummer
+      030/rufnummer-durchwahl
+      12 34 56 7
+      310-234-23
+      310.234.23
+      12345-(0)
+      -->
+        <p class="require">Pflichtfeld , muss ausgefüllt werden!</p>
+        <p class="invalid">Rufnummer im gültigen internationalen Format angeben</p>
+        <p class="valid">alles Toll</p>
+      </div>
+
+      <div class="required validate">
+        <label for="url">Url</label>
+
+        <!-- In diesem Beispiel wird Javascript verwendet für eine Bessere Usabillity -->
+        <input type="url" name="url" id="url" placeholder="https://domainname.tld" value=""
+          onfocus="if(this.value=='')this.value='https://'" onblur="if(this.value=='https://')this.value=''" required>
+          <!--
+            onfocus - Eventlistener Attribut - wenn das Element ausgewählt ist
+            onBlur - Eventlistener Attribut - wenn das Element verlassen wird
+
+            Eventlistener Attribute können nur mit Javascript befüllt werden!
+            In diesem Beispiel wird das zu erwartende Protokoll bei dem auswählen des Feldes eingefügt. 
+
+            Hat der Nutzer nichts eingegeben wird das Feld wieder geleert.
+            
+            if(this.value=='')this.value='https://'
+            (Wenn das value Attribut leer ist weise diesem den Wert "https://") zu.
+
+            if(this.value=='https://')this.value=''
+            (wenn nur https:// im value steht -  der Nutzer hat die Url nicht ergänzt bzw. nichts eingegeben dann leere das Feld. )
+
+            this - ist in Javascript ein Zeiger auf das gerade aktive Objekt. Es ist ist immer an Kontexte des Ausführunszeitpunktes gebunden
+          -->
+          
+        <p class="require">Pflichtfeld , muss ausgefüllt werden!</p>
+        <p class="invalid">Webaddresse mit gültigem Protokoll (http:// od. Https://) angeben!</p>
+        <p class="valid">alles Toll</p>
+      </div>
+
+      <div>
+        <label for="color">Farbe</label>
+        <input type="color" name="color" id="color">
+        <div>
+          <input type="radio" name="color1" value="#FF0000" id="color1"><label for="color1">Farbe #ff0000</label>
+          <input type="radio" name="color1" value="#FFCC00" id="color2"><label for="color2">Farbe #ffcc00</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="search">search</label>
+        <input type="search" name="search" id="search" list="vorschlaege">
+        <!-- 
+          Das attribut list bezieht sich auf die ID am Element Datalist.
+          Stimmt ein Zeichen bei der Eingabe mit einem Wert aus den <option>-Elementen in Datalist überein so werden die entsprechenden
+          Inhalte als Vorschlag angezeigt und sind auswählbar.
+          Datalist selbst ist nur eine Ergänzung und kann an allen Texteingabefeldern verwendet werden.
+          Es ist jedoch kein Ersatz für Auswahllisten/Comboboxen (select+option)
+        -->
+        <datalist id="vorschlaege">
+          <option>Maria</option>
+          <option>Dennis</option>
+          <otion>Ina</otion>
+          <option>Masoud</option>
+          <option>Christin</option>
+          <option>Reinhard</option>
+          <option>Dina</option>
+          <option>Ali</option>
+        </datalist>
+      </div>
+
+      <div>
+        <label for="range">Range</label>
+        0<input type="range" name="range" id="range" step="10" onchange="output.value=range.value">100
+        <output for="range" id="output"></output>
+      </div>
+
+    </fieldset>
+    <fieldset id="dateinput">
+      <legend>Date-Inputtypen</legend>
+      <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date">
+      </div>
+
+      <div>
+        <label for="date_lc">Datetime-Local</label>
+        <input name="date_lc" type="datetime-local" id="date_lc">
+      </div>
+
+      <div>
+        <label for="month">Month</label>
+        <input type="month" name="month" id="month">
+      </div>
+
+      <div>
+        <label for="week">Week</label>
+        <input type="week" name="week" id="week">
+      </div>
+
+      <div>
+        <label for="time">Time</label>
+        <input type="time" name="time" id="time">
+      </div>
+      <h2>alternative zu Date -inputtypen </h2>
+      <p>Zum jetzigen Zeitpunkt bieten nur moderne Webkit-basierende Browser eine Standardfunktionalität zur
+        Datumsauswahl. Eine alterntive dazu sind Auswahllisten. Diese ermöglichen ebenso eine einfache Datumsauswahl. Es
+        gibt auch eine vielzahl von fertigen Javascripten mit denen eine Datumsauswahl über ein Kalenderblatt möglich
+        ist.</p>
+        <!-- auch  hier solten Label gesetzt werden -->
+      <select name="tag" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        <option value="">6</option>
+        <option value="">7</option>
+        <option value="">8</option>
+        <option value="">9</option>
+        <option value="">10</option>
+        <option value="">11</option>
+        <option value="">12</option>
+        <option value="">13</option>
+        <option value="">14</option>
+        <option value="">15</option>
+        <option value="">16</option>
+        <option value="">17</option>
+        <option value="">18</option>
+        <option value="">19</option>
+        <option value="">20</option>
+        <option value="">21</option>
+        <option value="" selected>22</option>
+        <option value="">23</option>
+        <option value="">24</option>
+        <option value="">25</option>
+        <option value="">26</option>
+        <option value="">27</option>
+        <option value="">28</option>
+        <option value="">29</option>
+        <option value="">30</option>
+        <option value="">31</option>
+      </select>
+
+      <select name="monat" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="" selected>3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        <option value="">6</option>
+        <option value="">7</option>
+        <option value="">8</option>
+        <option value="">9</option>
+        <option value="">10</option>
+        <option value="">11</option>
+        <option value="">12</option>
+      </select>
+
+      <select name="jahr" id="">
+        <option value="">2022</option>
+        <option value="" selected>2023</option>
+        <option value="">2024</option>
+        <option value="">2025</option>
+        <option value="">2026</option>
+        <option value="">2027</option>
+      </select>
+    </fieldset>
+    <input type="submit" value="absenden">
+    <button> Button-Element</button>
+  </form>
+  <!-- neue HTML5-Attribute für Formularelemente:
+autofocus
+Richtet den Fokus der Eingabe auf das Element, sobald die Seite geladen wurde 	autofocus kann auf Eingabe, Auswahl, Textbereich oder Schaltfläche angewendet werden.
+
+placeholder
+Gibt dem Nutzer einen Hinweis darauf, welche Art von Daten eingegeben werden sollen Der Wert für "placeholder" wird als heller Text dargestellt, bis das Element fokussiert wird und der Nutzer Daten eingibt. Mögliche Anwendungsgebiete: Eingabe und Textbereich.
+
+form
+Gibt ein oder mehrere Formulare an, auf das bzw. die sich das Eingabeelement bezieht Bei Verwendung des Attributs form können die Eingabeelemente überall auf der Seite platziert werden, nicht nur innerhalb des Formularelements. Darüber hinaus kann ein einzelnes Eingabeelement mit mehreren Formularen verknüpft werden.
+
+required
+Ein boolesches Attribut (Wahrheitswert Attribut, hat der Nutzer etwas ausgefüllt wird true geliefert andernfalls false), das angibt, dass das Element erforderlich ist Das Attribut required ist hilfreich, wenn Sie eine browserbasierte Validierung ohne Verwendung von benutzerdefiniertem JavaScript durchführen möchten.
+
+autocomplete
+Legt fest, dass ein Feld nicht auf der Grundlage der vorherigen Eingaben des Nutzers vom Browser automatisch vervollständigt oder vorausgefüllt werden soll 	Das Attribut autocomplete eignet sich für Felder, in die zum Beispiel eine Kreditkartennummer oder eine Einmalpasswort eingegeben werden und die nicht automatisch vervollständigt werden sollen. Standardmäßig ist für das Attribut autocomplete der Wert on festgelegt, Sie müssen also off auswählen, um es zu deaktivieren.
+
+pattern
+Gleicht den Wert eines Elements mit einem regulären Ausdruck ab.Bei Verwendung von pattern sollten Sie auch einen Wert für title eingeben, damit der Nutzer weiß, welches Muster erwartet wird.
+Beispiel:pattern="^[0-9]{5}$"
+     title="Dies Ist ein Pflichfeld(required) nur Zahlen erlaubt es müssen 5 Zahlen sein"
+
+dirname
+Sendet die Ausrichtung des Steuerungselements zusammen mit dem Formular Wenn der Nutzer zum Beispiel Textdaten von rechts nach links eingegeben hat und das Eingabeelement das Attribut dirname enthält, wird zusammen mit dem Eingabewert ein entsprechender Hinweis gesendet.
+
+novalidate
+Verhindert eine Validierung der Formulareingaben, sofern dies für ein Formularelement angegeben ist
+
+formaction 	Überschreibt das für das Formularelement angegebene Attribut "action" Dieses Attribut wird für die Elemente input und button unterstützt.
+
+formenctype
+Überschreibt das für das Formularelement angegebene Attribut "enctype" 	Dieses Attribut wird für die Elemente input und button unterstützt.
+
+formmethod
+Überschreibt das für das Formularelement angegebene Attribut "method" 	Dieses Attribut wird für die Elemente input und button unterstützt.
+
+formnovalidate
+Überschreibt das für das Formularelement angegebene Attribut "novalidate" 	Dieses Attribut wird für die Elemente input und button unterstützt.
+
+formtarget
+Überschreibt das für das Formularelement angegebene Attribut "target" 	Dieses Attribut wird für die Elemente input und button unterstützt.
+
+inputmode
+Erlaubt steuert die Darstellung der Bildschirmtastatur auf Touchscreengeräten. Einige Inputtypen (tel,number,search) besitzen bereits spezielle Darstellungen.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode
+https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode
+-->
+  <article>
+    <h2>Reguläre Ausdrücke</h2>
+    <p>An einigen Pflichtfeldern kommt das pattern Attribut zum Einsatz. Bei den eingesetzten Attributwerten handelt es
+      sich um reguläre Ausdrücke(RegXP). Ihr Ursprung ist in der Programmiersprache Perl zu finden. Abhängig von der
+      jeweiligen Programmiersprache (zb. PHP)ist eine fast einhundert prozentige Unterstützung des Syntaxes gegeben.
+    </p>
+
+    <p>Reguläre Ausdrücke ermöglichen es uns in modernen Browsern auch ohne den Einsatz von Programmiersprachen eine
+      Formularfeldvalidierung vorzunehmen. HTML5 selbst bietet eine teilweise Unterstützung für RegXP.<br>
+      <strong>Generell empfiehlt sich eine Zwei - Stufen Validierung durch Scriptsprachen und serverseitige
+        Sprachen</strong>
+       <br> 
+      Ältere Browser unterstützen dieses Attribut (pattern) nicht!
+    </p>
+    <details>
+      <summary>
+        Nützliche Links
+      </summary>
+      <a href="http://regenechsen.de/wp/regulaere-ausdruecke/01-regex-allgemein/"
+        title="Einführung und Tutorial Reguläre Ausdrücke" target="_blank"> Tutorial Reguläre Ausdrücke</a>
+      <a href="http://html5pattern.com/" title="RegXP für pattern" target="_blank">Fertige RegXP für pattern
+        attribut</a> 
+    </details>
+  </article> 
+</body>
+
+</html>

@@ -194,7 +194,16 @@
   ..
 </div>
 */
-
+/*flex-klasse*/
+    .justify-content{
+      justify-content: center;
+  }
+  .flex-grow,.grow,.f-grow{
+      flex-grow: 1;
+  }
+  .flex-grow-2,.grow-2,.f-grow-2{
+      flex-grow: 2;
+  }
 /*###################################################*/
 /* Floats*/
 /*###################################################*/
@@ -214,6 +223,29 @@
   height:auto;
 }
 /* Schmalste darstellung für spalten */
-@media screen and (max-width:30em){
 
+/* Mindestbreite für adaptives Seitenverhalten */
+[class*="col-"]{
+  min-width:160px;
+}
+@media screen and (max-width:60em){
+    body{
+        background-color: #ffe1be;
+    }
+  .col-16{
+    --col:33%;
+  }
+
+  .col-25{
+    --col:50%;
+  }
+}
+
+@media screen and (max-width:30em){
+[class*="col-"]{
+  --col:100%;
+  background: #fff784;
+}
+/* .flex{display:block} */
+.flex{flex-direction:column;}
 }

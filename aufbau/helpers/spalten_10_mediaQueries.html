@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spalten - raster.css</title>
+  <link rel="stylesheet" href="css/raster_2.css">
+  <style>
+    /* Einfache grundvisualisierung */
+    body{
+            color: #3d3d3d;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        [class*="col-"]{
+            outline: aquamarine solid 1px;
+            /* height: 100px;
+            line-height: 100px;
+            text-align: center; */
+            background-color: #ffc3fc;
+        }
+        div[class*="col-"]{margin-top:1em;margin-bottom:1em;padding-top:0.5em;padding-bottom:0.5em;}
+
+     /* .flex-w{
+      flex-wrap:wrap;
+      display:flex;
+    } */
+    /* flex{} */
+    /* .flex-wrap{
+      flex-wrap:wrap
+    } */
+
+    /* .pad-lr{
+      padding-left:1em;
+      padding-right:1em;
+    }
+    .mar-lr{
+      margin-left:10px;
+      margin-right:10px;
+    }
+
+    .col-33.pad-lr{width:calc(33.3333% - 2em);}
+    .col-66.pad-lr{width:calc(66.6666667% - 2em);}
+
+    .col-33.mar-lr{
+      width:calc(33.3333% - 20px);
+    }
+
+    .col-33.mar-lr.pad-lr{
+      width:calc(33.3333% - 20px - 2em);
+    } */
+    :root{
+      /* --pad-l:0px; 
+      --pad-r:0px;
+      --mar-r:0px;
+      --mar-l:0px; */
+    }
+    .pad-l{
+      /* --pad-l:1em;  */
+      /* padding-left:var(--pad-l); */
+    }
+
+    .pad-r{
+       /* --pad-r:10px;  */
+      /* padding-right:var(--pad-r); */
+    }
+
+    .mar-r{
+      /* --mar-r:5px;  */
+      /* margin-right:var(--mar-r); */
+    }
+
+    .mar-l{
+      /* --mar-l:0.5em; */
+      /* margin-left:var(--mar-l); */
+    }
+
+    .col-33{
+      /* --col:33.3333%;
+      width:var(--col); */
+    }
+    /* [class*="col-"].mar-r {width: calc(var(--col) - var(--mar-r));}
+    [class*="col-"].mar-l {width: calc(var(--col) - var(--mar-l));}
+    [class*="col-"].pad-r {width: calc(var(--col) - var(--pad-r));}
+    [class*="col-"].pad-l {width: calc(var(--col) - var(--pad-l));}
+
+    [class*="col-"].mar-r.mar-l{width: calc(var(--col) - var(--mar-l) - var(--mar-r) );}
+    [class*="col-"].pad-r.pad-l{width: calc(var(--col) - var(--pad-l) - var(--pad-r) );}
+
+    [class*="col-"].mar-r.pad-r{width: calc(var(--col) - var(--mar-r) - var(--pad-r) );}
+    [class*="col-"].mar-l.pad-l{width: calc(var(--col) - var(--mar-l) - var(--pad-l) );}
+    [class*="col-"].mar-l.pad-r{width: calc(var(--col) - var(--mar-l) - var(--pad-r) );}
+    [class*="col-"].mar-r.pad-l{width: calc(var(--col) - var(--mar-r) - var(--pad-l) );}
+
+    [class*="col-"].mar-r.pad-l.pad-r{width: calc(var(--col) - var(--mar-r) - var(--pad-r) - var(--pad-l));}
+    [class*="col-"].mar-l.pad-l.pad-r{width: calc(var(--col) - var(--mar-l) - var(--pad-l) - var(--pad-r));}
+    [class*="col-"].mar-l.mar-r.pad-r{width: calc(var(--col) - var(--mar-l) - var(--mar-r) - var(--pad-r) );}
+    [class*="col-"].mar-l.mar-r.pad-l{width: calc(var(--col) - var(--mar-l) - var(--mar-r) - var(--pad-l) );}
+
+    [class*="col-"].pad-l.pad-r.mar-l.mar-r {width: calc(var(--col) - var(--mar-l) - var(--mar-r)  - var(--pad-l) - var(--pad-r));} */
+
+    /* .col-33{width: calc(33.3333% - var(--mar-l) - var(--mar-r)  - var(--pad-l) - var(--pad-r));}   */
+    
+    #ali div{
+      /* width:33%; */
+      /* padding-left:20px; */
+      /* --mar-r:50px;
+      --mar-l:70px; */
+    }
+   
+    .test .pad-l{
+      /* --pad-l:100px; */
+    }
+
+
+    /* Beispiel festdefinierte Werte*/
+    :root{
+      --mar-r:10px;
+      --mar-l:10px;
+      --pad-l:2%;
+      --pad-r:2%;
+    }
+
+    /* Beispiel individuelle Werte */
+    .test{
+      --pad-l:1em;
+      --pad-r:2em;
+    }
+  
+    /* Beispiel individuelle Abstandsklasse */
+    .mar-15{
+      --mar-r:15px;
+      --mar-l:15px;
+    } 
+
+    /* flex-klasse */
+    /* .justify-center{
+      justify-content:center;
+    }
+
+    .flex-grow,.grow,.f-grow{
+      flex-grow:1;
+    }
+    .grow-2{
+      flex-grow:2;
+    } */
+    /* [class*="col-"]{
+      min-width:160px;
+    }
+    @media screen and (max-width:60em){
+        body{
+            background-color: #ffe1be;
+        }
+      .col-16{
+        --col:33%;
+      }
+
+      .col-25{
+        --col:50%;
+      }
+    }
+
+   @media screen and (max-width:30em){
+    [class*="col-"]{
+      --col:100%;
+      background: #fff784;
+    }
+    /* .flex{display:block} */
+    /*
+    .flex{flex-direction:column;}
+  } */
+  </style>
+</head>
+<body>
+  <!-- div.col-*8>{col-} -->
+  <div class="col-16">col-16</div>
+  <div class="col-33">col-33</div>
+  <div class="col-50">col-50</div>
+  <div class="col-66">col-66</div>
+  <div class="col-83">col-83</div>
+  <div class="col-100">col-100</div>
+  <div class="col-25">col-25</div>
+  <div class="col-75">col-75</div>
+
+  <h2>3 col float</h2>
+  <h3>pad-r pad-l</h3>
+  <!-- div.clearfix>div.col-33.fl-l*3>{col-33} -->
+  <div class="clearfix test" >
+    <div class="col-33 fl-l pad-r">col-33</div>
+    <div class="col-33 fl-l pad-l">col-33</div>
+    <div class="col-33 fl-l pad-l pad-r">col-33</div>
+  </div>
+
+  <h3>mar-r mar-l</h3>
+  <div class="clearfix wrap"  id="ali">
+    <div class="col-33 fl-l mar-r mar-15">col-33</div>
+    <div class="col-33 fl-l mar-l mar-15">col-33</div>
+    <div class="col-33 fl-l mar-l mar-r mar-15">col-33</div>
+  </div>
+
+  <h3>In the Mix :) - (mar-r) (mar-l) (pad-r) (pad-l)</h3>
+  <div class="clearfix " >
+    <div class="col-33 fl-l mar-l mar-r pad-l">col-33</div>
+    <div class="col-33 fl-l pad-l pad-r">col-33</div>
+    <div class="col-33 fl-l mar-l pad-l">col-33</div>
+  </div>
+
+  <h2>3 col flex</h2>
+  <!-- div.flex>div.col-33*3>{col-33} -->
+  <div class="flex-w">
+    <div class="col-33">col-33</div>
+    <div class="col-33 pad-lr">col-33</div>
+    <div class="col-33">col-33</div>
+  </div>
+
+  <h2>1 + asymetrisch goldener schnitt float</h2>
+  <!--div.clearfix>div.col-100{col-100}+div.col-33>{col-33}^div.col-66>{col-66} -->
+  <div class="clearfix">
+    <div class="col-100">col-100</div>
+    <div class="col-33 fl-l">col-33</div>
+    <div class="col-66 fl-l pad-lr">col-66</div>
+  </div>
+
+  <h2>1 + asymetrisch goldener schnitt flex</h2>
+  <!-- div.flex>div.col-100{col-100}+div.col-33>{col-33}^div.col-66>{col-66} -->
+  <div class="flex flex-wrap">
+    <div class="col-100">col-100</div>
+    <div class="col-33">col-33</div>
+    <div class="col-66">col-66</div>
+  </div>
+
+  <h3>weitere Beispiele</h3>
+  <div class="flex-w">
+    <div class="col-16 mar-r mar-l grow-2">col 16</div>
+    <div class="col-25 pad-l pad-r grow">col 25</div>
+    <div class="col-66 mar-r mar-l grow">col 66</div>
+  </div>
+
+  <div class="flex">
+    <div class="col- grow">spalte 1</div>
+    <div class="col- flex-grow">spalte 2</div>
+    <div class="col- f-grow">spalte 3</div>
+    <div class="col-">spalte 4</div>
+  </div>
+
+  <div>
+    <div class="col-33">col-33</div>
+    <div class="col-66">col-66</div>
+  </div>
+  
+  <div class="flex-w wrap">
+    <div class="col-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit amet accusamus facilis nisi explicabo repellat eveniet, expedita eum ex soluta qui ipsam ipsum odit non quas molestiae corrupti, eaque aliquid.</div>
+
+    <div class="col-16 pad-l pad-r">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate doloremque cupiditate eius possimus ipsum incidunt perferendis error unde ab dignissimos veritatis, alias dolore est, in eos cumque et, minus atque quo distinctio! Nulla debitis hic aperiam optio est corporis architecto minus esse, inventore totam perferendis soluta animi consectetur sint impedit repellendus tempore incidunt provident quas recusandae, sunt sit quos! Repellendus cum voluptatem rem, voluptatibus corrupti labore! Aut velit fugit cumque voluptatem architecto cum enim sunt voluptas iste sequi, culpa omnis accusamus dolores eos iure, exercitationem ipsum nisi. Voluptates eos aliquam alias itaque sequi eaque odio cumque ipsum pariatur! Animi.</div>
+
+    <div class="col-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dicta ipsa temporibus autem ipsam. Laborum quia molestiae sapiente praesentium maiores quas iusto nam voluptatibus ea eligendi molestias doloribus nobis, vitae quo, est facere minima sed itaque neque? Laboriosam repudiandae officia quos ab, totam deleniti id, tempora consequuntur, et animi exercitationem.</div>
+
+    <div class="col-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, maxime tempore. Provident modi consectetur reiciendis ad in, dignissimos optio rem. In enim perferendis numquam? Ipsa molestiae officiis asperiores ex natus!</div>
+
+    <div class="col-16">col-16</div>
+    <div class="col-16">col-16</div>
+  </div>
+  <div class="flex wrap">
+    <div class="col-25">Lorem ipsum dolor sit amet.</div>
+    <div class="col-25">Assumenda hic unde sed ratione?</div>
+    <div class="col-25">Maxime repellendus voluptates suscipit quia!</div>
+    <div class="col-25">Consequuntur dignissimos deleniti dolorum voluptatem.</div>
+  </div>
+  <div class="flex-w wrap">
+    <div class="col-25">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum facere cupiditate quidem eius dignissimos inventore facilis magni, veritatis voluptatibus nostrum distinctio provident officia optio eaque natus molestias architecto mollitia consequatur accusamus incidunt sunt reiciendis exercitationem molestiae eveniet. Tempora aut labore, nemo velit iure inventore eius hic eveniet deserunt culpa expedita, necessitatibus officiis recusandae saepe exercitationem perferendis repudiandae voluptates dignissimos esse at mollitia, veritatis eligendi error? Harum eligendi, totam commodi magnam necessitatibus incidunt, obcaecati, voluptates cum dolor quia autem doloribus sit facilis quae. Non commodi minus odit, consequuntur atque similique iste quaerat. Debitis ea doloremque magnam mollitia eligendi exercitationem sit reprehenderit.</div>
+    <div class="col-25">Reprehenderit, quasi omnis! Reiciendis laboriosam dolorem aperiam accusantium cum consequuntur voluptatum deserunt eos incidunt molestias voluptate iste, pariatur neque totam laborum blanditiis! Dolorum, repellendus? Consequatur recusandae nihil, quo ex ullam error temporibus nobis quos omnis. Nulla reprehenderit sequi, est vero non veritatis dolor consequuntur reiciendis, numquam qui deserunt ducimus totam eligendi. Voluptas delectus repudiandae accusamus harum quidem asperiores! Autem tempora veniam nulla inventore voluptatibus debitis consequuntur doloremque aut accusamus ad suscipit corrupti ipsam dignissimos praesentium in expedita, odio cum repellendus? Aut esse perferendis maiores labore eum quae neque nisi, ullam reiciendis repudiandae quibusdam consectetur dicta accusamus, deserunt necessitatibus! Quas, quos!</div>
+    <div class="col-25">Consequuntur, eligendi! Aliquam architecto ut consectetur. Explicabo ratione, beatae accusamus assumenda quaerat saepe hic fugit, ad nemo debitis molestias at earum, porro autem reprehenderit repellendus laborum suscipit atque corrupti accusantium modi provident. Expedita est accusantium voluptates ad provident porro labore ex, aliquid suscipit esse impedit molestias quisquam ipsam, repudiandae vel similique? Porro, praesentium aperiam. Tempora iusto aspernatur quam consectetur non. Velit perferendis eum, libero consectetur tenetur eos cum fugit modi error commodi magni deserunt sed asperiores illo nulla necessitatibus? Perferendis iusto ipsa dolorem voluptatibus accusantium eos sequi reprehenderit sit, rem tempore quis quisquam placeat, cupiditate quia animi. Perferendis, quod laudantium!</div>
+    <div class="col-25">Odio, quis ducimus. Ullam quidem temporibus, eligendi laboriosam non fugiat? Blanditiis libero sed aspernatur? Possimus adipisci enim ipsa voluptas, nihil vero porro totam quas nostrum reprehenderit voluptates, dicta quisquam aspernatur perferendis iure. Rem officia perferendis molestiae sequi, corrupti voluptatem, optio ratione modi, quis recusandae earum doloremque est. Cumque ea delectus vitae maiores ut laboriosam! Itaque, assumenda? Optio aliquam consequatur labore, quam eum non quod cum a tenetur atque natus sint voluptates cumque sed magnam facilis neque, perferendis tempore impedit explicabo. Unde veritatis doloribus quos hic quod inventore, odio nostrum iste, enim vitae labore, sunt blanditiis cum dolor architecto nihil. At?</div>
+  </div>
+
+</body>
+</html>
