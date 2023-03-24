@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe 1</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #3d3d3d;
+        }
+        section,article{
+            border: 1px solid #4fcdff;
+            padding: 1em;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Aufgaben</h1>
+        <article>
+            <h2>String</h2>
+            <section>
+                <h3>1. Aufgabe</h3>
+                <div id="low"></div>
+            </section>
+            <section>
+                <h3>2. Aufgabe</h3>
+                <div id="pad"></div>
+            </section>
+            <section>
+                <h3>3. Aufgabe</h3>
+                <div id="pers"></div>
+            </section>
+        </article>
+        <article>
+            <h2>Number / Math</h2>
+            <section>
+                <h3>1 Prozent errechnen</h3>
+                <div id="pro"></div>
+            </section>
+        </article>
+        <article>
+            <h2>Basic DOM</h2>
+            <section>
+                <h3>1 Aufgabe</h3>
+                <p id="output1"></p>
+            </section>
+        </article>
+    </div>
+    <script>
+        // String
+        // Übung 1
+        var sentence = "hALlo, wIE gEhT eS DIr hEUTe?"
+        sentence = sentence.toLowerCase();
+        sentence = sentence[0].toUpperCase() + sentence.slice(1);
+        console.log(sentence);
+        sentenceElt = document.getElementById("low");
+        sentenceElt.innerHTML = sentence;
+
+        // Übung 2
+        var paddingStr = "20px";
+        var padding = paddingStr.slice(0,2);
+        console.log(padding);
+        sentenceElt = document.getElementById("pad");
+        sentenceElt.innerHTML = "Initial String :" + padding; //21
+        sentenceElt.innerHTML += "<br>Using Number :" + (Number(padding)+1); //21
+        sentenceElt.innerHTML += "<br>Using Parseint : " + (parseInt(padding)+2); //22
+        sentenceElt.innerHTML += "<br>Using + : " + (+padding+3); //23
+        sentenceElt.innerHTML += "<br>Using * : " + (padding*1 + 4); //24
+        sentenceElt.innerHTML += "<br>Using / : " + (padding/1 + 5); //25
+        sentenceElt.innerHTML += "<br>Using - : " + (padding-0 + 6); //26
+        sentenceElt.innerHTML += "<br>Using ~ : " + (~~padding + 7); //27
+        sentenceElt.innerHTML += "<br>Using Math.floor() : " + (Math.floor(padding) + 8); //28
+        sentenceElt.innerHTML += "<br>So are Math.ceil() and Math.round()";
+
+        // Übung 3
+        let persId_1 = "ID23490rem";
+        let persId_2 = "ID0433rem";
+        
+        let pers;
+        pers = persId_1;
+        // pers = persId_2;
+        
+        pers = pers.slice(2);
+        // console.log(pers);
+        pers = pers.slice(0,pers.length-3);
+        // console.log(pers);
+        pers = Number(pers);
+        console.log(pers);
+
+        sentenceElt = document.getElementById("pers");
+        sentenceElt.innerHTML = "Initial String :" + pers;
+
+        pers = persId_2;
+        let info = pers.indexOf("rem");
+        console.log(info);
+        info = pers.slice(2,info);
+        console.log(typeof(info));
+
+        sentenceElt.innerHTML += "<br>Initial String :" + info; 
+
+        
+        // Number
+        // Prozent
+        var a = 1;
+        var b = 5;
+        var prozent = 0;
+
+        prozent = 1 / 5 * 100;
+        console.log(prozent);
+
+        sentenceElt = document.getElementById("pro");
+        sentenceElt.innerHTML = "Der Prozentwert von" + a + "zu " + b + " ist " + prozent + "%.";
+
+        // Basic DOM
+        // 1. Aufgabe
+        
+
+        sentenceElt = document.getElementById("output1");
+        sentenceElt.innerHTML = "Hallo <br> Welt";
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
