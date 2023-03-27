@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+    <script>
+        var wochentag = [
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag",
+            "Sontag"
+       
+        ];
+
+    //Alternative 1
+    // function 1 : leste element löschen
+    // var x = wochentag.pop();
+    // function 2 : element am anfang hinzufugen
+    // wochentag.unshift(x);
+    
+    //Alternative 2 : auf eine linie 
+    wochentag.unshift(wochentag.pop())
+    
+    //Ergebniss
+    console.log(wochentag);
+
+      
+    </script>
+    
+</body>
+</html>

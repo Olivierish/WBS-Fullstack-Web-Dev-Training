@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Aufgaben Lösung</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output2"></p>
+    <script>
+        document.getElementById("output2").innerHTML = "Hallo<br>Welt";
+
+        var anzeige = document.getElementById("output");
+
+
+        var info = "hALlo, wIE gEhT eS DIr hEUTe";
+        info = info.toLowerCase();
+        info = info[0].toUpperCase() + info.slice(1);
+        console.log(info);
+
+        anzeige.innerHTML = info;
+
+
+        var x = "240px";
+        console.log(x.length);
+        var zahl = x.slice(0, x.length - 2);
+        console.log(zahl);
+        zahl = x.slice(0, -2);
+        console.log(zahl);
+        zahl = parseInt(x);
+        console.log(zahl);
+
+
+        var y = "ID45345rem";
+        var zahl2 = y.slice(2, -3);
+        console.log(zahl2);
+
+
+        var a = 20;
+        var b = 100;
+        var proz = 20 / 200 * 100;
+        console.log(proz)
+        anzeige.innerHTML = "Der Prozentwert von " + a + " zu " + b + " ist " + proz + "%.";
+
+    </script>
+</body>
+
+</html>

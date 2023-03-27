@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+<p id="tier"></p>
+    <script>
+        let tiereAfrikas = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+
+        let haustiere = [
+            "Kaninchen",
+            "Katze",
+            "Hund",
+            "Meerschweinchen"
+        ];
+
+        let fische = [
+            "Goldfisch",
+            "Makrele",
+            "Hai",
+            "Hecht"
+        ];
+        // Alternative 1
+        // var tiere = tiereAfrikas.concat(fische).concat(haustiere);
+        
+        // Alternative 2
+        let tier=[];
+        tier = tier.concat(tiereAfrikas,fische,haustiere);
+
+        // Alternative 3
+        // var tiere = tiereAfrikas.concat(fische,haustiere);
+        
+        console.log(tier);
+        var tierliste =document.getElementById("tier");
+        tierliste.innerHTML= tier + "<br> Total : " + tier.length;
+        </script>
+    
+</body>
+</html>

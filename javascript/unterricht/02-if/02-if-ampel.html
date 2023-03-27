@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boolsche</title>
+</head>
+
+<body>
+    <script>
+        var color = prompt("Gebe die Ampelfarbe ein");
+        if (color != null) {
+            var lowerColorName = color.toLowerCase();
+        }
+
+
+        if (lowerColorName == "grün" || lowerColorName == "gruen") {
+            alert("Du darfst fahren");
+        } else if (lowerColorName == "orange" || lowerColorName == "gelb") {
+            alert("Achtung losfahren oder bremsen");
+        } else if (lowerColorName == "rot") {
+            alert("Stehen bleiben");
+        } else if (color == null || color == "") {
+            alert("keine Farbe eintragen, Spielverderber");
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

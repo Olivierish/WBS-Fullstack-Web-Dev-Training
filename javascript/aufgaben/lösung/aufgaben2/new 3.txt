@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean</title>
+</head>
+<body>
+
+    
+<script>
+    //Kinder 1
+    // var alt = 11;
+    // var begleiter = true;
+
+    //Kinder 2
+    // alt = 10;
+    // begleiter = false; 
+
+    //Kinder 3
+    // alt = 15
+
+    var alt = prompt("Bitte, gebe dein Alter ein:");
+    // var begleiter = confirm("sind sie mit begleitung?");
+
+    if(alt < 12){     
+        var begleiter = confirm("sind sie mit begleitung?");
+
+        if(begleiter == true){
+            console.log("die kinde dürfen den Film alleine anschauen.");
+        }
+        else{
+            console.log("die kinde dürfen den Film nicht alleine anschauen");
+        }
+    }
+    else{
+        console.log("die Kinder können alleine den Film anschauen.");
+    }
+    
+    
+
+</script>
+    
+</body>
+</html>

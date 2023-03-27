@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+    <script>
+        var wochentag = [
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag",
+            "Sontag"
+        ];
+    //   var x = wochentag.shift(); 
+    //   wochentag.push(x);
+
+    wochentag.push(wochentag.shift());
+
+      console.log(wochentag);
+    //   console.log(x);
+      
+    </script>
+    
+</body>
+</html>

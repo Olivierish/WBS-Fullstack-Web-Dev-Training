@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Aufgaben</title>
+    <style>
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.Aufgabe: - Wandele folgendes "hALlo, wIE gEhT eS DIr hEUTe?" in "Hallo, wie geht es dir heute?" um?
+
+         2.Aufgabe: - Erstelle eine Variable mit einem String. "20px" Der Wert dieser Variable könnte eine CSS
+         Wertanweisung sein (padding, margin, width), die man per Javascript ermittelt hat. Der numerische Wert
+         kann also unterschiedlich lang sein, einstellig oder sogar vierstellig. Es geht nun darum, den numerischen
+         Wert aus diesem String zu holen, und als numerischen Wert in einer Variablen abzuspeichern.
+         Löse die Aufgabe auf so viele verschiedene Arten wie es dir möglich ist.
+
+        3.Aufgabe: - aus einer persönlichen ID soll der reine Zahlenwert extrahiert werden.
+        die Lösung sollte für jede der beiden Variablen funktionieren
+        am Anfang steht immer ID am Ende steht immer rem
+        let persId_1 = "ID23490rem";
+        let persId_2 = "ID0433rem";                     Finde auch hier verschiedene Lösungswege. -->
+
+    <!-- Number / Math
+        1 Prozent errechnen
+        Erzeuge 2 Variablen mit 2 numerischen Werten mit den Bezeichnern a und b. Erstelle ein Programmierung, welche
+        in einer weiteren Variablen mit dem Bezeichner prozent den Prozentwert von a zu b anzeigt.
+
+        Erzeuge einen String, welcher die Aufgabe mit dem Ergebnis anzeigt. z.B: "Der Prozentwert von 5 zu 10 ist 50%." -->
+
+    <!--Basic DOM
+        1. Aufgabe
+        Erzeuge ein p Element mit der id = "output1";
+        Erzeuge im Script Block unten auf der Seite eine Variable, welche auf dieses Element zugreift
+        document.getElementById()
+        Mit Javascript soll nun in dem Absatz "Hallo Welt" stehen, aber jedes Wort in einer neuen Zeile, <br>
+        innerHTML -->
+
+    <p id="output"></p>
+   <script>
+
+    // - - Aufgabe 1:
+       var info = "hALlo, wIE gEhT eS DIr hEUTe?";
+       info = info.toLowerCase();
+       console.log(info);
+
+       info = info.slice(1);
+       console.log(info);
+
+       info = "H" + info;
+       console.log(info);
+
+
+
+    // Aufgabe 2:
+        var breite = "24px";
+        console.log(breite.length);
+
+        var zahl = breite.slice(0, breite.length - 2);
+        console.log(zahl);
+
+
+
+    // Aufgabe 3: 
+       let persId_1 = "ID23490rem";
+       let perseID_2 = "ID0433rem";
+
+       let pers;
+       pers = persID_1;
+       pers = persid_2;
+
+       pers = pers.slice(2);
+       console.log(pers);
+
+       pers = pers.slice(0, pers.length-3);
+       console.log(pers);
+
+       pers = Number(pers);
+       console.log(pers);
+
+
+
+    // Aufgabe 4:
+        var a = 10;
+        var b = 200;
+        var proz = a / b * 100;
+        console.log(proz);
+    // Aufgabe 5:
+        anzeige.innerHTML = "Der Prozentwert von "+a+" zu "+b+" ist "+proz+" %. ";
+
+   </script>
+
+</body>
+
+</html>

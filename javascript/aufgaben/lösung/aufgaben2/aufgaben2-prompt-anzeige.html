@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aufgaben2</title>
+<style>
+  /* Lora & Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
+
+/* OpenSans & PT Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Yeseva One & Josefin Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
+
+
+:root{
+    /* Allgemein Styleguide Vorgaben sammeln */
+    --color1:#333333;
+    --color2:#f9f9f9;
+    --color3:blueviolet;
+    --color4:#04a9be;
+    --color5:#46c9c0;
+    --color6:#f3f3f3;
+
+
+    /*Fonts*/
+    --font1-1: 'Open Sans', sans-serif;
+    --font1-2: 'PT Sans', sans-serif;
+
+    --font2-1: 'Lora', serif;
+    --font2-2: 'Poppins', sans-serif;
+
+    --font3-1: 'Yeseva One', serif;
+    --font3-2: 'Josefin Sans', sans-serif;
+
+    /* choosen */
+    --page-font-text:var(--font3-2);
+    --page-font-title:var(--font3-1);
+    
+
+    --page-text: var(var(--color1));
+    --page-bg: var(--color2);
+    --page-text-size: 120%;
+    --page-line: 1.4;
+
+    /*Titles*/
+    --heading-font: var(--page-font-title,serif);
+    --heading-color: var(--color3);
+
+    /* Links und Formulare*/
+    /* anker*/
+    --link-decoration:underline;
+    --link-color:inherit;
+    --link-bg:none;
+
+    --link-hov-decoration:none;
+    --link-hov-color:inherit;
+    --link-hov-bg:none;
+
+    /*Images*/
+    --img-bg-color:var(--color4);
+
+}
+
+html{
+  background: var(--page-bg);
+  font-family: var(--page-font-text);
+  color: var(--color1, initial);
+  font-size: var(--page-text-size, 100.01%);
+  line-height:var(--page-line, auto);
+}
+  body{
+      border: 1px solid blueviolet;
+      padding: 20px;
+  }
+  h1,h2,h3{
+      font-family:var(--heading-font);
+  }
+  h1{
+      color: blueviolet;
+      text-align: center;
+  }
+  h3{
+      color: #46c9c0;
+  }
+  h2{
+      color: #04a9be;
+  }
+  header{
+      border: 1px solid white;
+      margin-bottom: 10px;
+      background-color: var(--color6);
+      height: 150px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+
+  main{
+      border: 1px solid white;
+      background-color: var(--color6);
+      max-width: 920px;
+      padding: 20px;
+      margin: auto;
+  }
+
+</style>
+</head>
+
+<body>
+<header>
+  <h1>aufgaben 2</h1>
+</header>
+<main>
+  <section>
+    <h2>Prompt Anzeige</h2>
+    <p> Erzeuge eine h1 Überschrift  einer id.<br>
+      Erstelle eine Eingabeaufforderung mit der Bitte, &quot;Bitte gebe deinen Namen ein.<br>
+      Nach Bestätigen der Eingabe sollte in der h1 nun &quot;Hallo
+      (eingegebner Name) schön, dass du hier bist.&quot; stehen, z.B.: &quot;Hallo Claudia schön, dass du hier bist.</p>
+  </section>
+  <hr>
+  <section>
+    <h2>Lösung</h2>
+    <h1 id="name"></h1>
+  </section>
+
+  <script>
+    nameElt = document.getElementById("name");
+    nameElt.innerHTML =
+    "Hallo " + prompt("Bitte gebe deine Name : ") + " schon, dass du da bist!";
+  </script>
+
+
+
+
+
+
+
+
+  <section>
+    <h2>Boolean</h2>
+    <p> Die Kinobetreiber aus deiner Stadt haben dich gebeten, etwas JavaScript für ein neues<br>
+      automatisches System zu schreiben, das sie gerade aufbauen. Sie möchten damit herausfinden,<br>
+      ob jemand einen Film mit Altersfreigabe FSK 12 anschauen
+      darf oder nicht.<br>
+      Das sind die Regeln: Wer 12 Jahre oder älter ist, darf den Film alleine anschauen. Ist<br>
+      die Person noch keine 12 Jahre alt, aber in Begleitung eines Sorgeberechtigten, darf sie<br>
+      ebenfalls ins Kino hinein. Andernfalls
+      darf sie den Film nicht anschauen.<br>
+      var alter = 11;<br>
+      var begleitet = true;<br>
+      ??? <br>
+      Stelle das Beispiel fertig, um mithilfe der Variablen alter<br>
+      und begleitet herauszufinden, ob dieser 11-Jährige den<br>
+      Film anschauen darf. Versuche auch, andere Werte einzusetzen<br>
+      (setze zum Beispiel alter auf 12 und begleitet<br>
+      auf false), und schau, ob dein Code immer noch das<br>
+      richtige Ergebnis liefert.</p>
+    <p>&nbsp;</p>
+    <p>Erweitere das Beispiel, indem das Alter und die Begleitung mit Prompt und Confirm Box abfragst.<br>
+    In der Confirm Box, gibts du den Text ein, &quot;Clicke auf ok, wenn dich ein Erwachsener begleitet, klicke auf Abbrechen, wenn du aleine kommst.</p>
+  </section>
+  <h2>Array Aufgaben</h2>
+  <section>
+    <p>1</p>
+    <p>Erzeuge eine Array mit Wochentagen. Füge das letzte Element an den Anfang. Verwende dazu 2 Array Methoden. Für den Vorgang soll nur eine Zeile benötigt werden.</p>
+  </section>
+  <section>
+    <p>2</p>
+    <p>Füge das erste Element des Arrays an das Ende des Arrays. Verwende dazu 2 Array Methoden. Für den Vorgang soll nur eine Zeile benötigt werden.</p>
+  </section>
+  <section>
+    <p>3</p>
+    <p>Erzeuge 3 Arrays mit Afrikas Tiere, Haustiere, Nutztiere. Erzeuge ein Array tiere[] und füge alle Elemente der 3 Arrays in dieses Array tiere. Für den Vorgang benötgst du nur eine Zeile. Die Elemente des Arrays Tiere sollten auf der Seite
+      angezeigt werden.</p>
+  </section>
+  <section>
+    <p>4</p>
+      <p>Erzeuge ein mehrdimesionales Array person, mit Elementen in denen der Reihe nach Vorname, Name, Ort, Beruf und Geburtsjahr einer Person aufgeführt ist. z.B:<br>
+        Frieda, Müller, Berlin, LKW-Fahrerin, 1959</p>
+      <p><br>
+        Erzeuge einen Textabsatz in dem eins dieser Elemente
+        aufgeführt wird, aber jeweils mit der Bezeichnung davor.für Name, Beruf, Geburtsjahr etc.. Achte auf die nötigen Leerzeichen.<br>
+      </p>
+  </section>
+  <section>
+    <p>5</p>
+    <p> Erzeuge ein mehrdimensionales Array mit Filmtitel, Regie, Erscheinungsjahr, FSK Alter </p>
+    <p>Bei jedem neuen Laden der Seite wird ein zufälliger Film auf der Seite angezeigt mit allen Daten in einzelnen Reihen.</p>
+  </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+<p id="person"></p>
+    <script>
+        /*
+        Person :
+        vorname : Ali 
+        nachname : Haschimi
+        Beruf : Informatiker
+        Geb.jahr : 1991
+        */
+        let person = ["Ali","Haschimi","Informatiker","1991"];
+        console.log(person);
+
+        var personElt = document.getElementById("person");
+        personElt.innerHTML = "Ich heiße " + person[0] + " " + person[1] + "<br> Ich bin : " + person[2] + "von Beruf <br> Ich bin im Jahr" + person[3] + "geboren.";  
+    </script>
+    
+</body>
+</html>

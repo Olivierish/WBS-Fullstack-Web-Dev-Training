@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Passwort</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var pw = prompt("Bitte geben Sie das Passowrt ein");
+        //window.location = "01-if.html"; Befehl um eine Seite aufzurufen
+
+        if (pw == null) {
+            document.getElementById("output").innerHTML = "Sie haben abgebrochen";
+        } else {
+            window.location = pw + ".html";
+        }
+    </script>
+</body>
+
+</html>
