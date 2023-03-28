@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aufgaben 2</title>
+<style>
+    /* Lora & Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
+  
+  /* OpenSans & PT Sans */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  
+  /* Yeseva One & Josefin Sans*/
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
+  
+  
+  :root{
+      /* Allgemein Styleguide Vorgaben sammeln */
+      --color1:#333333;
+      --color2:#f9f9f9;
+      --color3:blueviolet;
+      --color4:#04a9be;
+      --color5:#46c9c0;
+      --color6:#f3f3f3;
+  
+  
+      /*Fonts*/
+      --font1-1: 'Open Sans', sans-serif;
+      --font1-2: 'PT Sans', sans-serif;
+  
+      --font2-1: 'Lora', serif;
+      --font2-2: 'Poppins', sans-serif;
+  
+      --font3-1: 'Yeseva One', serif;
+      --font3-2: 'Josefin Sans', sans-serif;
+  
+      /* choosen */
+      --page-font-text:var(--font3-2);
+      --page-font-title:var(--font3-1);
+      
+  
+      --page-text: var(var(--color1));
+      --page-bg: var(--color2);
+      --page-text-size: 120%;
+      --page-line: 1.4;
+  
+      /*Titles*/
+      --heading-font: var(--page-font-title,serif);
+      --heading-color: var(--color3);
+  
+      /* Links und Formulare*/
+      /* anker*/
+      --link-decoration:underline;
+      --link-color:inherit;
+      --link-bg:none;
+  
+      --link-hov-decoration:none;
+      --link-hov-color:inherit;
+      --link-hov-bg:none;
+  
+      /*Images*/
+      --img-bg-color:var(--color4);
+  
+      /*Max width*/
+      --main-width: 960px;
+  
+  }
+  
+  html{
+    background: var(--page-bg);
+    font-family: var(--page-font-text);
+    color: var(--color1, initial);
+    font-size: var(--page-text-size, 100.01%);
+    line-height:var(--page-line, auto);
+  }
+    body{
+        /* border: 1px solid blueviolet; */
+        /* padding: 20px; */
+    }
+    h1,h2,h3{
+        font-family:var(--heading-font);
+    }
+    h1{
+        color: blueviolet;
+        text-align: center;
+    }
+    h3{
+        color: #46c9c0;
+    }
+    h2{
+        color: #04a9be;
+    }
+    header{
+      border: 1px solid white;
+      background-color: var(--color6);
+      height: 150px;
+      max-width: var(--main-width);
+      margin: auto;
+      margin-bottom: 10px;
+  
+    }
+  
+  /* main{
+      border: 1px solid white;
+      background-color: var(--color6);
+      max-width: calc(var(--main-width) - 20px * 2);
+      margin: auto;
+      padding: 20px;
+  } */
+  
+  section, #solution{
+      border: 1px solid white;
+      background-color: var(--color6);
+      max-width: calc(var(--main-width) - 20px * 2);
+      margin: auto;
+      padding: 20px;
+  }
+  
+  </style>
+</head>
+
+<body>
+<header>
+  <h1>aufgaben 2</h1>
+</header>
+<main>
+  <section>
+        <p>5</p>
+        <p> Erzeuge ein mehrdimensionales Array mit Filmtitel, Regie, Erscheinungsjahr, FSK Alter </p>
+        <p>Bei jedem neuen Laden der Seite wird ein zufälliger Film auf der Seite angezeigt mit allen Daten in einzelnen Reihen.</p>
+        <p id="film"></p>
+    </section>
+</main>
+
+<script>
+ var movies = [ 
+        ["The Godfather", "Francis Ford Coppola", 1972, 9.2],
+
+        ["The Shawshank Redemption", "Frank Darabont", 1994, 9.3],
+
+        ["The Dark Knight", "Christopher Nolan", 2008, 9.0], 
+
+        ["Pulp Fiction", "Quentin Tarantino", 1994, 8.9], 
+
+        ["Forrest Gump", "Robert Zemeckis", 1994, 8.8], 
+
+        ["The Silence of the Lambs", "Jonathan Demme", 1991, 8.6], 
+
+        ["The Matrix", "Lana Wachowski and Lilly Wachowski", 1999, 8.7], 
+
+        ["Fight Club", "David Fincher", 1999, 8.8], 
+
+        ["Inception", "Christopher Nolan", 2010, 8.8], 
+
+        ["The Lord of the Rings: The Fellowship of the Ring", "Peter Jackson", 2001, 8.8] 
+        ];
+        
+        // Tabelle mit 10 Elementen
+        // Wir brauchen ein Nummer n zwischen 0...9
+
+
+        //Altenative 1 : schwierig
+        // var randomMovie = movies[randomIndex]; 
+        // var randomIndex = Math.floor(Math.random() * movies.length); 
+   
+        //Altenative 2
+        //random gibt ein zahl zwischen 0..1 // 0.5; 0.125 ; 0 ; 1 ; 
+        var x = Math.random();
+        console.log(x);
+    // Wir brauchen ein Nummer  y zwischen 0...9
+        var y = x * 9; // 2.221
+        console.log(y);
+        var randomIndex = Math.floor(y); // y = 2.23 dann randomIndex = 2; y = 5.54665 dann randomIndex=5 
+        console.log(randomIndex); // 0,5,4,9,8,7,6,3,1
+
+        // ein ARRAY : 
+        //gemuse = ["Karrote","tomaten","Gulken","radischen","salat","zucchini"]
+        //              0         1         2          3        4        5
+        // var f = gemuse[1]; //dann f = tomaten 
+        // var k = gemuse[4]; //dann k = tomaten 
+
+    var film = movies[randomIndex];
+    console.log(film);
+
+    //Alternative 1 
+    // document.write("<tr>"); for (var i = 0; i < randomMovie.length; i++) 
+    // {document.write("<td>" + randomMovie[i] + "</td>");} 
+    // document.write("</tr>"); 
+
+    //Alternative 2
+    var filmElt = document.getElementById("film");
+
+    filmElt.innerHTML = "Title : " + movies[randomIndex][0] + "<br> Director : " + movies[randomIndex][1] + "<br> Jahre : " +  movies[randomIndex][2] + "<br> Bewertung : " +  movies[randomIndex][3];
+
+        // document.write("<div id='solution'>All animals : " + tier + "</div>");
+
+</script>
+</body>
+</html>

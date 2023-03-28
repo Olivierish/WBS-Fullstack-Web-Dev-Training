@@ -6,7 +6,7 @@
 <title>aufgaben2</title>
 <style>
   /* Lora & Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
 
 /* OpenSans & PT Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -72,8 +72,8 @@ html{
   line-height:var(--page-line, auto);
 }
   body{
-      border: 1px solid blueviolet;
-      padding: 20px;
+      /* border: 1px solid blueviolet; */
+      /* padding: 20px; */
   }
   h1,h2,h3{
       font-family:var(--heading-font);
@@ -90,18 +90,20 @@ html{
   }
   header{
       border: 1px solid white;
-      margin-bottom: 10px;
       background-color: var(--color6);
       height: 150px;
       max-width: 960px;
+      margin: auto;
+      margin-bottom: 10px;
 
   }
 
   main{
       border: 1px solid white;
       background-color: var(--color6);
-      max-width: 960px;
+      max-width: 920px;
       margin: auto;
+      padding: 20px;
   }
 
 </style>
@@ -112,13 +114,6 @@ html{
   <h1>aufgaben 2</h1>
 </header>
 <main>
-  <section>
-    <h2>Prompt Anzeige</h2>
-    <p> Erzeuge eine h1 Überschrift  einer id.<br>
-      Erstelle eine Eingabeaufforderung mit der Bitte, &quot;Bitte gebe deinen Namen ein.<br>
-      Nach Bestätigen der Eingabe sollte in der h1 nun &quot;Hallo
-      (eingegebner Name) schön, dass du hier bist.&quot; stehen, z.B.: &quot;Hallo Claudia schön, dass du hier bist.</p>
-  </section>
   <section>
     <h2>Boolean</h2>
     <p> Die Kinobetreiber aus deiner Stadt haben dich gebeten, etwas JavaScript für ein neues<br>
@@ -142,35 +137,39 @@ html{
     <p>Erweitere das Beispiel, indem das Alter und die Begleitung mit Prompt und Confirm Box abfragst.<br>
     In der Confirm Box, gibts du den Text ein, &quot;Clicke auf ok, wenn dich ein Erwachsener begleitet, klicke auf Abbrechen, wenn du aleine kommst.</p>
   </section>
-  <h2>Array Aufgaben</h2>
-  <section>
-    <p>1</p>
-    <p>Erzeuge eine Array mit Wochentagen. Füge das letzte Element an den Anfang. Verwende dazu 2 Array Methoden. Für den Vorgang soll nur eine Zeile benötigt werden.</p>
-  </section>
-  <section>
-    <p>2</p>
-    <p>Füge das erste Element des Arrays an das Ende des Arrays. Verwende dazu 2 Array Methoden. Für den Vorgang soll nur eine Zeile benötigt werden.</p>
-  </section>
-  <section>
-    <p>3</p>
-    <p>Erzeuge 3 Arrays mit Afrikas Tiere, Haustiere, Nutztiere. Erzeuge ein Array tiere[] und füge alle Elemente der 3 Arrays in dieses Array tiere. Für den Vorgang benötgst du nur eine Zeile. Die Elemente des Arrays Tiere sollten auf der Seite
-      angezeigt werden.</p>
-  </section>
-  <section>
-    <p>4</p>
-      <p>Erzeuge ein mehrdimesionales Array person, mit Elementen in denen der Reihe nach Vorname, Name, Ort, Beruf und Geburtsjahr einer Person aufgeführt ist. z.B:<br>
-        Frieda, Müller, Berlin, LKW-Fahrerin, 1959</p>
-      <p><br>
-        Erzeuge einen Textabsatz in dem eins dieser Elemente
-        aufgeführt wird, aber jeweils mit der Bezeichnung davor.für Name, Beruf, Geburtsjahr etc.. Achte auf die nötigen Leerzeichen.<br>
-      </p>
-  </section>
-  <section>
-    <p>5</p>
-    <p> Erzeuge ein mehrdimensionales Array mit Filmtitel, Regie, Erscheinungsjahr, FSK Alter </p>
-    <p>Bei jedem neuen Laden der Seite wird ein zufälliger Film auf der Seite angezeigt mit allen Daten in einzelnen Reihen.</p>
-  </section>
 </main>
+<script>
+  //Kinder 1
+    // var alt = 11;
+    // var begleiter = true;
 
+    //Kinder 2
+    // alt = 10;
+    // begleiter = false; 
+
+    //Kinder 3
+    // alt = 15
+
+    var alt = prompt("Bitte, gebe dein Alter ein:");
+    // var begleiter = confirm("sind sie mit begleitung?");
+
+    if(alt < 12){     
+        var begleiter = confirm("sind sie mit begleitung?");
+
+        if(begleiter == true){
+            console.log("die kinde dürfen den Film alleine anschauen.");
+        }
+        else{
+            console.log("die kinde dürfen den Film nicht alleine anschauen");
+        }
+    }
+    else{
+        console.log("die Kinder können alleine den Film anschauen.");
+    }
+    
+  nameElt = document.getElementById("name");
+  // nameElt.innerHTML =
+  //"Hallo " + prompt("Bitte gebe deine Name : ") + " schon, dass du da bist!";
+  </script>
 </body>
 </html>

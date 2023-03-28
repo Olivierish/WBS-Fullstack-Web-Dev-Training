@@ -72,8 +72,8 @@ html{
   line-height:var(--page-line, auto);
 }
   body{
-      border: 1px solid blueviolet;
-      padding: 20px;
+      /* border: 1px solid blueviolet; */
+      /* padding: 20px; */
   }
   h1,h2,h3{
       font-family:var(--heading-font);
@@ -90,12 +90,11 @@ html{
   }
   header{
       border: 1px solid white;
-      margin-bottom: 10px;
       background-color: var(--color6);
       height: 150px;
       max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
+      margin-bottom: 10px;
 
   }
 
@@ -103,8 +102,8 @@ html{
       border: 1px solid white;
       background-color: var(--color6);
       max-width: 920px;
-      padding: 20px;
       margin: auto;
+      padding: 20px;
   }
 
 </style>
@@ -122,25 +121,6 @@ html{
       Nach Bestätigen der Eingabe sollte in der h1 nun &quot;Hallo
       (eingegebner Name) schön, dass du hier bist.&quot; stehen, z.B.: &quot;Hallo Claudia schön, dass du hier bist.</p>
   </section>
-  <hr>
-  <section>
-    <h2>Lösung</h2>
-    <h1 id="name"></h1>
-  </section>
-
-  <script>
-    nameElt = document.getElementById("name");
-    nameElt.innerHTML =
-    "Hallo " + prompt("Bitte gebe deine Name : ") + " schon, dass du da bist!";
-  </script>
-
-
-
-
-
-
-
-
   <section>
     <h2>Boolean</h2>
     <p> Die Kinobetreiber aus deiner Stadt haben dich gebeten, etwas JavaScript für ein neues<br>
