@@ -4,143 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aufgaben 3 - 28.03.02023</title>
-<style>
-    /* Lora & Poppins */
-    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
-  
-  /* OpenSans & PT Sans */
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-  
-  /* Yeseva One & Josefin Sans*/
-  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
-  
-  
-  :root{
-      /* Allgemein Styleguide Vorgaben sammeln */
-      --color1:#333333;
-      --color2:#f9f9f9;
-      --color3:blueviolet;
-      --color4:#04a9be;
-      --color5:#46c9c0;
-      --color6:#f3f3f3;
-  
-  
-      /*Fonts*/
-      --font1-1: 'Open Sans', sans-serif;
-      --font1-2: 'PT Sans', sans-serif;
-  
-      --font2-1: 'Lora', serif;
-      --font2-2: 'Poppins', sans-serif;
-  
-      --font3-1: 'Yeseva One', serif;
-      --font3-2: 'Josefin Sans', sans-serif;
-  
-      /* choosen */
-      --page-font-text:var(--font3-2);
-      --page-font-title:var(--font3-1);
-      
-  
-      --page-text: var(var(--color1));
-      --page-bg: var(--color2);
-      --page-text-size: 120%;
-      --page-line: 1.4;
-  
-      /*Titles*/
-      --heading-font: var(--page-font-title,serif);
-      --heading-color: var(--color3);
-  
-      /* Links und Formulare*/
-      /* anker*/
-      --link-decoration:underline;
-      --link-color:inherit;
-      --link-bg:none;
-  
-      --link-hov-decoration:none;
-      --link-hov-color:inherit;
-      --link-hov-bg:none;
-  
-      /*Images*/
-      --img-bg-color:var(--color4);
-  
-      /*Max width*/
-      --main-width: 960px;
-  
-  }
-  
-  html{
-    background: var(--page-bg);
-    font-family: var(--page-font-text);
-    color: var(--color1, initial);
-    font-size: var(--page-text-size, 100.01%);
-    line-height:var(--page-line, auto);
-  }
-    body{
-        /* border: 1px solid blueviolet; */
-        /* padding: 20px; */
-    }
-    h1,h2,h3{
-        font-family:var(--heading-font);
-    }
-    h1{
-        color: blueviolet;
-        text-align: center;
-    }
-    h3{
-        color: #46c9c0;
-    }
-    h2{
-        color: #04a9be;
-    }
-    header{
-      border: 1px solid white;
-      background-color: var(--color6);
-      height: 150px;
-      max-width: var(--main-width);
-      margin: auto;
-      margin-bottom: 10px;
-  
-    }
-  
-  /* main{
-      border: 1px solid white;
-      background-color: var(--color6);
-      max-width: calc(var(--main-width) - 20px * 2);
-      margin: auto;
-      padding: 20px;
-  } */
-  
-  section, #solution{
-      border: 1px solid white;
-      background-color: var(--color6);
-      max-width: calc(var(--main-width) - 20px * 2);
-      margin: auto;
-      padding: 20px;
-  }
-  </style>
+<link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
     <header>
-        <h1>aufgaben 3</h1>
+        <h1>aufgaben 3 - 28.03.02023</h1>
     </header>    
-    <section>
-        <p>1</p>
-        <p>Suche mit Javascript nach einem bestimmten Element (z.B. &quot;Nashorn&quot;) und lösche es. Hier kannst du soviele Zeilen Code schreiben und Variablen erstellen die du brauchst.</p>
-    </section>
+<article>
 
-    <section>
-        <p>2</p>
-        <p>Suche nach einem bestimmten Element, lösche es und füge es an dritter Stelle im Array ein. </p>
-        <p>Du kannst dazu die Methode indexOf() nutzen. Die haben wir zwar noch nicht durchgenommen, aber du kannst in meinen Tipps nachschauen: <a href="https://www.on-design.de/tutor/javascript/array/index.html#indexOf">https://www.on-design.de/tutor/javascript/array/index.html#indexOf</a></p>
-        <p>Eine weitaus kompliziertere Methode wäre auch mit einer Schleife möglich, in welcher ein if-Struktur eingebettet ist.</p>
-    </section>
-<section>
-  <p>3</p>
-            <p>Erzeuge ein Array mit Sprüchen, die als Slogan auf der Seite angezeigt werden können.<br> Erzeuge ein p Element mit der id=&quot;output&quot;.<br> Mit folgender Zeile Code kannst du etwas in dem p Element anzeigen lassen:<br> document.getElementById(&quot;output&quot;).innerHTML
-                = &quot;Hallo&quot;;<br> Beim jedem Aufruf der Seite soll ein zufällig ausgewählter Spruch angezeigt werden. Siehe Math Object.<br> Wenn man das Array um weitere Elemente erweitert sollte am Code für den Zufallsspruch keine Änderung erforderlich
-                sein.
-            </p>
-</section>
+
 
         <section>
             <p>4</p>
@@ -148,8 +20,12 @@
             </p>
             <p>Zeige zuerst den String auf der Seite an und in einer neuen Zeile die Werte des Arrays.</p>
         </section>
+
+        <section>
+            <p id="output"></p>
+        </section>
     
-    
+  <!--   
     <section>
             <p>5 </p>
             <p>schwierige Aufgabe</p>
@@ -163,11 +39,13 @@
             Ob die Antwort richtig ist, kannst du überprüfen, in dem du aus dem Array, den Antwortwert (true, false) mit dem Ergebnis des Users vergleichs. Das confirm  Element liefert true, wenn der User okay klickt  und false, wenn er auf Abbrechen klickt.</p>
             <p>let count = 0;<br>                while (count &lt; 3) {<br> eingabe = confirm(&quot;Frage!&quot;);<br> count++;
                 <br> }</p>
+
         </section>
     
     <article>
+        <h2>Schleife</h2>
+
         <section>
-            <h2>Schleife</h2>
             1
             <p>Schreibe eine for-Schleife, die das "einmal drei" bis 300 ausgibt (also 3, 6, 9 usw.).</p>
         </section>
@@ -208,6 +86,40 @@
           oder nutzt documen.write()
           </p>
       </section>
+    -->
+    </article>
+</article>
+    <script>
+    var brands = 
+    ["Toyota",
+    "Honda",
+    "Mitsubishi",
+    "Ford",
+    "Opel",
+    "Fiat",
+    "BMW",
+    "Mercedes",
+    "VW",
+    "Chevrolet",
+    "Tesl"];
+  
+    // console.log(slogans);
 
+    outputElt = document.getElementById("output");
+    console.log(outputElt);
+
+    // var n = slogans.length;
+
+    // var random = Math.floor(Math.random() * slogans.length); 
+    // console.log(slogans[random]);
+
+    outputElt.innerHTML =brands;
+    brands.sort();
+    outputElt.innerHTML +="<hr>"+brands.sort().reverse();
+
+    //document.write("<div id=\"solution\">" + slogans + "</div>");
+
+    </script>
 </body>
 </html>
+

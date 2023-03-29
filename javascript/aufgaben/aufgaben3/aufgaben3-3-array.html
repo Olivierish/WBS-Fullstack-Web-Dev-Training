@@ -7,12 +7,10 @@
 <style>
     /* Lora & Poppins */
     @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
-  
-  /* OpenSans & PT Sans */
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-  
-  /* Yeseva One & Josefin Sans*/
-  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
+    /* OpenSans & PT Sans */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    /* Yeseva One & Josefin Sans*/
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
   
   
   :root{
@@ -207,16 +205,76 @@
     </article>
 </article>
     <script>
-        var myText = "Suche mit Javascript nach einem bestimmten Element (z.B. Nashorn und lösche es. Hier kannst du soviele Zeilen Code schreiben und Variablen erstellen die du brauchst.";
-        // var words = myText.split(" ");
-        // document.write("<div id='solution'>All words : " + words + "</div>");
-        // var indexWord = words.indexOf("Nashorn");
-        // document.write("<div id='solution'>Index of the word : " + indexWord + "</div>");
-        // var word = words.splice(indexWord, 1);
-        // document.write("<div id='solution'>Rest of the words : " + words + "</div>");
+    var slogans = [["Activest",	"Die aktive Fondsgesellschaft."],
+    ["ADAC",	"Wir sind da."],
+    ["Adidas",	"Forever sport. Impossible is nothing."],
+    ["Ado",	"Die Markengardine mit der Goldkante. Achten Sie auf die Goldkante. Nur echt mit der Goldkante."],
+    ["Advance", "Bank	Banking für Fortgeschrittene. Direkt besser beraten.i"],
+    ["Advocard",	"Advocard ist Anwalts Liebling. Advocard - Und der Anwalt hilft sofort."],
+    ["AEG",	"Aus Erfahrung gut."],
+    ["Ägypten",	"Auf jedem Gesicht ein Lächeln."],
+    ["After", "Eight	Die feine englische Art."],
+    ["Afri", "Cola	Sexy ... mini ... super ... flower ... pop-op ... Cola ... alles ist in Afri Cola."],
+    ["Ahoi", "Brause	Mach was Prickelndes."],
+    ["Ajax",	"Der weiße Wirbelwind."],
+    ["Aktion", "Mensch	Leben wir los."],
+    ["Alberto", "Pizza	Alberto kommt."],
+    ["Albi",	"Albi setzt der Frucht die Krone auf."],
+    ["Alete",	"Alete isst das Kind. Alles Gute für Ihr Kind."],
+    ["Alldays",	"Die könnte Ihrem Slip so passen!"],
+    ["Allegra",	"Be yourself."],
+    ["Allianz",	"Hoffentlich Allianz versichert. Versicherung. Vorsorge. Vermögen."],
+    ["Almighurt",	"Almighurt von Ehrmann, keiner macht mich mehr an."],
+    ["Alno",	"Die Welt der Küche."],
+    ["Alpecin",	"Wartung für Ihre Haare."],
+    ["Alpia",	"Wir stecken keine Mark in die Werbung, sondern jede Mark in die Schokolade. [Anmerkung: Wirklich?]"],
+    ["Always",	"Always trocken. Always sauber. Und mit Sicherheit ein gutes Gefühl. Spricht die Sprache Ihres Körpers."],
+    ["Amazon.de","	And you're done."],
+    ["American", "Express	Bezahlen Sie einfach mit Ihrem guten Namen. Don't leave home without it."],
+    ["Amicelli",	"Unendlich genießen."],
+    ["Amnesty", "International	Du kannst."],
+    ["Anti","Drogen Kampagne	Keine Macht den Drogen."],
+    ["Antikal",	"Schmutz geht, Glanz entsteht."],
+    ["AOK",	"Die Gesundheitskasse. Die sind immer für mich da."],
+    ["AOL",	"Online für alle. Alles online. Willkommen zuhause! Bin ich schon drin? Das ist ja einfach. Mit über ... Millionen Menschen weltweit Nummer 1."],
+    ["Apollinaris",	"Aus dieser Quelle trinkt die Welt. The Queen of Table Waters. (seit 1894!)"],
+    ["Apollo", "Optik	Ideen für's Sehen."],
+    ["Apple",	"Think different. Switch!"],
+    ["Aral",	"Alles super."],
+    ["Arbeitsamt",	"Immer gut beraten."],
+    ["Arcor",	"Enjoy communication. [Anmerkung: Zu dumm, wer kein Englisch kann!] The telephone people."],
+    ["ARD",	"Das Erste ist das Fernsehen."],
+    ["ARD/ZDF","	Bei ARD und ZDF sitzen Sie in der ersten Reihe."],
+    ["Ariel",	"Ariel wäscht nicht nur sauber, sondern rein. Soll's wirklich rein sein, muess es Ariel sein."],
+    ["Aronal", "und Elmex	Morgens Aronal, abends Elmex: Der medizinische Doppelschutz für Zahnfleisch und Zähne."],
+    ["Asbach", "Uralt	Im Asbach Uralt ist der Geist des Weines. Wenn einem soviel Gutes widerfährt, das ist schon einen Asbach Uralt wert."],
+    ["Aspirin",	"Medizin Deines Lebens. Etwas weniger Schmerz auf dieser Welt."],
+    ["Ata",	"Zum Scheuern und Putzen nur Ata benutzen."],
+    ["Atika",	"Es war schon immer etwas teurer, einen besonderen Geschmack zu haben."],
+    ["AT&T","	Reach out and touch someone. The right choice. Your true choice."],
+    ["Audi",	"Vorsprung durch Technik. Truth in Engineering. Driven by instinct. (Audi TT)"],
+    ["Aurora",	"Aurora mit dem Sonnenstern."],
+    ["Aventis",	"Our challenge is life."],
+    ["Avon",	"MIt Avon siehst Du bezaubernd aus."],
+    ["AWD",	"Ihr unabhängiger Finanzoptimierer."],
+    ["AXA",	"Für Ihre Sicherheit. für Ihr Vermögen. The future. Together. Now."],
+    ["Axe",	"Der Duft, der Frauen provoziert. The Axe-Effect. New Contact."]];
+  
+    // console.log(slogans);
 
-        // words.push(word);
-        // document.write("<div id='solution'>Add the word at the end : " + words + "</div>");
+    outputElt = document.getElementById("output");
+    console.log(outputElt);
+
+    var n = slogans.length;
+
+    var random = Math.floor(Math.random() * slogans.length); 
+    console.log(slogans[random]);
+
+    outputElt.innerHTML ="<b>"+slogans[random][0]+"</b> : " +slogans[random][1]+"<br>";
+    
+
+    //document.write("<div id=\"solution\">" + slogans + "</div>");
+
     </script>
 </body>
 </html>

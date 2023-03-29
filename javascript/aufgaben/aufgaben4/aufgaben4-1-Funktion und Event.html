@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aufgaben 4 - 29.03.02023</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Aufgaben Tag 4 - 29.03.02023</h1>
+    </header>
+    <main>
+        <section>
+            <h2>1</h2>
+            <p>Funktion und Event erforderlich</p>
+            <p>Erstelle ein Array mit Tieren, genannt afrikaTiere[]. Erstelle ein Array zirkusTiere[] in dem sich noch keine Elemente befinden. Erstelle eine Funktion und einen Button, welcher die Funktion aufruft. In der Funktion wird eine Zufallszahl erzeugt,
+              welche sich im Bereich der Anzahl der tiereAfrikas befindet.</p>
+            <p>Anhand der Zufallszahl wird ein Tier aus tiereAfrikas gelöscht und im Array zirkusTiere am Anfang eingefügt.</p>
+          </section>
+
+          <section>
+            <h4>Tiere aus Afrika</h4>
+            <p id="afrika"></p>
+            <hr>
+            <h4>Tiere in Zirkus</h4>
+            <p id="zirkus"></p>
+
+            <button onclick="transferToZirkus()">Transfer</button>
+          </section>
+    </main>
+    
+    <script>
+        let tiereAfrikas = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Löwe",
+            "Zebra"
+        ];
+        let zirkusTiere=[];
+
+        var africaElt = document.getElementById("afrika");
+        var zirkusElt = document.getElementById("zirkus");
+        africaElt.innerHTML = tiereAfrikas;
+
+        function transferToZirkus(){
+            let n = tiereAfrikas.length;
+            if(n > 0){
+                let i = Math.floor(Math.random() * n);
+                let tier = tiereAfrikas.pop();
+                zirkusTiere.unshift(tier);
+            }
+            else{
+                tiereAfrikas = zirkusTiere;
+                zirkusTiere = [];
+            }
+            
+            africaElt.innerHTML = tiereAfrikas;
+            zirkusElt.innerHTML = zirkusTiere;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<title>aufgaben2</title>
+<style>
+  /* Lora & Poppins */
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap');
+
+/* OpenSans & PT Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Yeseva One & Josefin Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
+
+
+:root{
+    /* Allgemein Styleguide Vorgaben sammeln */
+    --color1:#333333;
+    --color2:#f9f9f9;
+    --color3:blueviolet;
+    --color4:#04a9be;
+    --color5:#46c9c0;
+    --color6:#f3f3f3;
+
+
+    /*Fonts*/
+    --font1-1: 'Open Sans', sans-serif;
+    --font1-2: 'PT Sans', sans-serif;
+
+    --font2-1: 'Lora', serif;
+    --font2-2: 'Poppins', sans-serif;
+
+    --font3-1: 'Yeseva One', serif;
+    --font3-2: 'Josefin Sans', sans-serif;
+
+    /* choosen */
+    --page-font-text:var(--font3-2);
+    --page-font-title:var(--font3-1);
+    
+
+    --page-text: var(var(--color1));
+    --page-bg: var(--color2);
+    --page-text-size: 120%;
+    --page-line: 1.4;
+
+    /*Titles*/
+    --heading-font: var(--page-font-title,serif);
+    --heading-color: var(--color3);
+
+    /* Links und Formulare*/
+    /* anker*/
+    --link-decoration:underline;
+    --link-color:inherit;
+    --link-bg:none;
+
+    --link-hov-decoration:none;
+    --link-hov-color:inherit;
+    --link-hov-bg:none;
+
+    /*Images*/
+    --img-bg-color:var(--color4);
+
+}
+
+html{
+  background: var(--page-bg);
+  font-family: var(--page-font-text);
+  color: var(--color1, initial);
+  font-size: var(--page-text-size, 100.01%);
+  line-height:var(--page-line, auto);
+}
+  body{
+      /* border: 1px solid blueviolet; */
+      /* padding: 20px; */
+  }
+  h1,h2,h3{
+      font-family:var(--heading-font);
+  }
+  h1{
+      color: blueviolet;
+      text-align: center;
+  }
+  h3{
+      color: #46c9c0;
+  }
+  h2{
+      color: #04a9be;
+  }
+  header{
+      border: 1px solid white;
+      background-color: var(--color6);
+      height: 150px;
+      max-width: 960px;
+      margin: auto;
+      margin-bottom: 10px;
+
+  }
+
+  main{
+      border: 1px solid white;
+      background-color: var(--color6);
+      max-width: 920px;
+      margin: auto;
+      padding: 20px;
+  }
+
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Playground</h1>
+</header>
+<main>
+
+ <h2>A</h2>
+  <section>
+  </section>
+
+</main>
+<script>
+  // nameElt.innerHTML =
+  //"Hallo " + prompt("Bitte gebe deine Name : ") + " schon, dass du da bist!";
+  // console.log(CSVToArray(`"foo, the column",bar 2,3 "4, the value",5`));
+  var Ttxt = [["Activest",	"Die aktive Fondsgesellschaft."],
+["ADAC",	"Wir sind da."],
+["Adidas",	"Forever sport. Impossible is nothing."],
+["Ado",	"Die Markengardine mit der Goldkante. Achten Sie auf die Goldkante. Nur echt mit der Goldkante."],
+["Advance", "Bank	Banking für Fortgeschrittene. Direkt besser beraten.i"],
+["Advocard",	"Advocard ist Anwalts Liebling. Advocard - Und der Anwalt hilft sofort."],
+["AEG",	"Aus Erfahrung gut."],
+["Ägypten",	"Auf jedem Gesicht ein Lächeln."],
+["After", "Eight	Die feine englische Art."],
+["Afri", "Cola	Sexy ... mini ... super ... flower ... pop-op ... Cola ... alles ist in Afri Cola."],
+["Ahoi", "Brause	Mach was Prickelndes."],
+["Ajax",	"Der weiße Wirbelwind."],
+["Aktion", "Mensch	Leben wir los."],
+["Alberto", "Pizza	Alberto kommt."],
+["Albi",	"Albi setzt der Frucht die Krone auf."],
+["Alete",	"Alete isst das Kind. Alles Gute für Ihr Kind."],
+["Alldays",	"Die könnte Ihrem Slip so passen!"],
+["Allegra",	"Be yourself."],
+["Allianz",	"Hoffentlich Allianz versichert. Versicherung. Vorsorge. Vermögen."],
+["Almighurt",	"Almighurt von Ehrmann, keiner macht mich mehr an."],
+["Alno",	"Die Welt der Küche."],
+["Alpecin",	"Wartung für Ihre Haare."],
+["Alpia",	"Wir stecken keine Mark in die Werbung, sondern jede Mark in die Schokolade. [Anmerkung: Wirklich?]"],
+["Always",	"Always trocken. Always sauber. Und mit Sicherheit ein gutes Gefühl. Spricht die Sprache Ihres Körpers."],
+["Amazon.de","	And you're done."],
+["American", "Express	Bezahlen Sie einfach mit Ihrem guten Namen. Don't leave home without it."],
+["Amicelli",	"Unendlich genießen."],
+["Amnesty", "International	Du kannst."],
+["Anti","Drogen Kampagne	Keine Macht den Drogen."],
+["Antikal",	"Schmutz geht, Glanz entsteht."],
+["AOK",	"Die Gesundheitskasse. Die sind immer für mich da."],
+["AOL",	"Online für alle. Alles online. Willkommen zuhause! Bin ich schon drin? Das ist ja einfach. Mit über ... Millionen Menschen weltweit Nummer 1."],
+["Apollinaris",	"Aus dieser Quelle trinkt die Welt. The Queen of Table Waters. (seit 1894!)"],
+["Apollo", "Optik	Ideen für's Sehen."],
+["Apple",	"Think different. Switch!"],
+["Aral",	"Alles super."],
+["Arbeitsamt",	"Immer gut beraten."],
+["Arcor",	"Enjoy communication. [Anmerkung: Zu dumm, wer kein Englisch kann!] The telephone people."],
+["ARD",	"Das Erste ist das Fernsehen."],
+["ARD/ZDF","	Bei ARD und ZDF sitzen Sie in der ersten Reihe."],
+["Ariel",	"Ariel wäscht nicht nur sauber, sondern rein. Soll's wirklich rein sein, muess es Ariel sein."],
+["Aronal", "und Elmex	Morgens Aronal, abends Elmex: Der medizinische Doppelschutz für Zahnfleisch und Zähne."],
+["Asbach", "Uralt	Im Asbach Uralt ist der Geist des Weines. Wenn einem soviel Gutes widerfährt, das ist schon einen Asbach Uralt wert."],
+["Aspirin",	"Medizin Deines Lebens. Etwas weniger Schmerz auf dieser Welt."],
+["Ata",	"Zum Scheuern und Putzen nur Ata benutzen."],
+["Atika",	"Es war schon immer etwas teurer, einen besonderen Geschmack zu haben."],
+["AT&T","	Reach out and touch someone. The right choice. Your true choice."],
+["Audi",	"Vorsprung durch Technik. Truth in Engineering. Driven by instinct. (Audi TT)"],
+["Aurora",	"Aurora mit dem Sonnenstern."],
+["Aventis",	"Our challenge is life."],
+["Avon",	"MIt Avon siehst Du bezaubernd aus."],
+["AWD",	"Ihr unabhängiger Finanzoptimierer."],
+["AXA",	"Für Ihre Sicherheit. für Ihr Vermögen. The future. Together. Now."],
+["Axe",	"Der Duft, der Frauen provoziert. The Axe-Effect. New Contact."]];
+  
+console.log(Ttxt);
+
+
+      // ref: http://stackoverflow.com/a/1293163/2343
+        // This will parse a delimited string into an array of
+        // arrays. The default delimiter is the comma, but this
+        // can be overriden in the second argument.
+        function CSVToArray( strData, strDelimiter ){
+            // Check to see if the delimiter is defined. If not,
+            // then default to comma.
+            strDelimiter = (strDelimiter || ",");
+     
+            // Create a regular expression to parse the CSV values.
+            var objPattern = new RegExp(
+                (
+                    // Delimiters.
+                    "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+     
+                    // Quoted fields.
+                    "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+     
+                    // Standard fields.
+                    "([^\"\\" + strDelimiter + "\\r\\n]*))"
+                ),
+                "gi"
+                );
+     
+     
+            // Create an array to hold our data. Give the array
+            // a default empty first row.
+            var arrData = [[]];
+     
+            // Create an array to hold our individual pattern
+            // matching groups.
+            var arrMatches = null;
+     
+     
+            // Keep looping over the regular expression matches
+            // until we can no longer find a match.
+            while (arrMatches = objPattern.exec( strData )){
+     
+                // Get the delimiter that was found.
+                var strMatchedDelimiter = arrMatches[ 1 ];
+     
+                // Check to see if the given delimiter has a length
+                // (is not the start of string) and if it matches
+                // field delimiter. If id does not, then we know
+                // that this delimiter is a row delimiter.
+                if (
+                    strMatchedDelimiter.length &&
+                    strMatchedDelimiter !== strDelimiter
+                    ){
+     
+                    // Since we have reached a new row of data,
+                    // add an empty row to our data array.
+                    arrData.push( [] );
+     
+                }
+     
+                var strMatchedValue;
+     
+                // Now that we have our delimiter out of the way,
+                // let's check to see which kind of value we
+                // captured (quoted or unquoted).
+                if (arrMatches[ 2 ]){
+     
+                    // We found a quoted value. When we capture
+                    // this value, unescape any double quotes.
+                    strMatchedValue = arrMatches[ 2 ].replace(
+                        new RegExp( "\"\"", "g" ),
+                        "\""
+                        );
+     
+                } else {
+     
+                    // We found a non-quoted value.
+                    strMatchedValue = arrMatches[ 3 ];
+     
+                }
+     
+     
+                // Now that we have our value string, let's add
+                // it to the data array.
+                arrData[ arrData.length - 1 ].push( strMatchedValue );
+            }
+     
+            // Return the parsed data.
+            return( arrData );
+        }
+  </script>
+</body>
+</html>
+
+

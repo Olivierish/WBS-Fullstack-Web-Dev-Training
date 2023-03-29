@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Function Argument Farbe</title>
+</head>
+
+<body>
+    <p>
+        Der Befehl die Hintergrundfrabe der Webseite zu ändern ist: document.bgColor = '#00ff00';
+    </p>
+<p>Erstellt eine Seite mit 3 Buttons, bei jeder Button ändert die Hintergrundfarbe der Seite in einer anderen Farbe.</p>
+
+<button onclick="changeBgColor()">New Color</button>
+<hr>
+<br>
+<button onclick="getLand(warLand)">Kriegsgebiete</button>
+<button onclick="getLand(holidayLand)">Ferienländer</button>
+<button onclick="getLand(smallLand)">Liliput Länder</button></p>
+
+<p id="anzeige"></p>
+
+    <script>
+        // document.bgColor = '#00ff00';
+        function changeBgColor(){
+            var randColor = Math.floor(Math.random()*255*255*255);
+            var color = randColor.toString(16);
+            document.bgColor = "#" + color;
+        }
+        changeBgColor();
+
+        var anzeige = document.getElementById("anzeige");
+        let warLand = [
+            "Ukraine",
+            "Syrien",
+            "Jugoslawien",
+            "Vietnam",
+            "Korea",
+            "Israel",
+            "Deutschland"
+        ];
+        let holidayLand = [
+            "Hawai",
+            "Cuba",
+            "Spanien",
+            "Italien",
+            "Malediven",
+            "Thailand"
+        ];
+        let smallLand = ["Vatikan", "Malta", "Andorra", "San Marino", "Monca", "Liechtenstein"];
+        
+        var anzeigeElt = document.getElementById("anzeige");
+        function getLand(lands){
+            var n = lands.length;
+            var randIndex = Math.floor(Math.random()*lands.length);
+            showLand(lands[randIndex], randIndex);
+        }
+        function showLand(land, id) {
+            anzeigeElt.innerHTML = land + " " + id;
+        }
+        
+        function person() {
+                for (var i = 0; i < arguments.length; i++) {
+                    anzeige.innerHTML += arguments[i];
+                }
+
+            }
+
+            person("Willi", "Peter", "Walter")
+    </script>
+</body>
+
+</html>
