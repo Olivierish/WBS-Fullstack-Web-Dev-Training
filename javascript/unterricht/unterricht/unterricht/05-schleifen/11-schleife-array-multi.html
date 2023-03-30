@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>for-schleife </title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let jaeger = [
+            ["Walter", "Hirsch", "23.03.1920", "Kassel"],
+            ["Detlef", "Dachs", "12.04.1934", "Dortmund"],
+            ["Hans", "Hase", "30.03.1930", "München"],
+            ["Resi", "Rehbein", "20.04.1933", "Dortmund"]
+        ];
+
+        console.log(jaeger[0].length)
+
+        for (var i = 0; i < jaeger.length; i++) {
+            for (var e = 0; e < jaeger[0].length; e++) {
+                document.write(jaeger[i][e]);
+                document.write(" / ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>

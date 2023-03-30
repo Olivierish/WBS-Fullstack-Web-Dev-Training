@@ -3,12 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aufgaben 4-2 - 29.03.02023</title>
+<title>Aufgaben 4-5 - 29.03.02023</title>
+
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 <link rel="manifest" href="favicon/site.webmanifest">
+
 <link rel="stylesheet" href="../style.css">
+<style>
+    #box{
+        display: flex;
+        border: 1px solid blueviolet;
+        padding: 20px 10px;
+    }
+    #box div{
+        flex-grow: 1;
+        align-self: center;
+        text-align: center;
+    }
+    button{
+        width: 80px;
+        height: 50px;
+        font-size: 1.2em;
+        color: rgb(88, 88, 88);
+    }
+</style>
 </head>
 <body>
     <header>
@@ -16,41 +36,39 @@
     </header>
     <main>
         <section>
-            <h2>2</h2>
-            <p> Erzeuge ein Programm welches auf Buttonclick, die 4er Reihe anzeigt ( Das Einmal Vier). Das sollte aber programmatisch erstellt werden, anstatt einfach hingeschrieben sein.</p>
-        </section>
+            <h2>5</h2>
+            <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
+            <p>Erzeuge ein paar Buttons, die eine Funktion aufrufen.</p>
+            <p>Die Funktion soll bei jedem Klick ein anderes Bild anzeigen, welches Bild es ist wird über ein Argument bestimmt.    </p>
+          </section>
+          <section>
+            <h2>5a</h2>
+            <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
+            <p>Erzeuge einen Button, der eine Funktion aufruft.</p>
+            <p>Die Funktion soll bei jedem Klick ein anderes Bild aufrufen. </p>
+            <p>Benutze dazu Bilder die namentlich durchnummeriert sind. 1_bild.jpg, 2_bild.jpg</p>
+            <p>oder 1.jpg, 2.jpg, 3.jpg.... Hauptsache sie haben alle den gleichen Namen mit einer durchlaufenden Nummer.</p>
+            <p>Wenn das Ende der vorhandenen Bilder erreicht ist, sollte wieder das erste Bild angzeigt werden.</p>
+            <p>&nbsp;</p>
+      </section>
+
         <section>
-            <h4>4er Reihe</h4>
-            <button onclick="show4s(reihe4)">Add</button>
-            <p id="content"></p>
+            <h4>Bild</h4>
+            <div id="box">
+                <div>
+                    <button onclick="updatePic();">&#60;</button>
+                </div>
+                <figure>
+                    <img src="" alt="photo" id="image">
+                </figure>
+                <div>
+                    <button onclick="updatePic();">&#62;</button>
+                </div>
+            </div>
+
         </section>
 
         <!-- 
-        <section>
-            <h2>3</h2>
-            <p> Erzeuge mehrere Buttons, die alle die gleiche Funktion aufrufen. In der Funktion, wird das einmal eins, einmal zwei, einmal 3 etc. erzeugt und auf der Seite angezeigt.</p>
-            <p>Welches einmal eins es ist, wird über ein Argument definiert.</p>
-            <h2>4</h2>
-            <p>Erzeuge mehrere Arrays mit  Elementen deiner Wahl.<br>
-            Auf Buttonklick sollen die Arrayelemente der Reihe nach im p Element jeweils einzeln mit Zeilenumbruch angezeigt werden. Es sollte dort nicht undefined angezeigt werden.</p>
-            <p>Welches Array wird über ein Argument definiert.</p>
-        </section>
-        <section>
-                <h2>5</h2>
-                <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
-                <p>Erzeuge ein paar Buttons, die eine Funktion aufrufen.</p>
-                <p>Die Funktion soll bei jedem Klick ein anderes Bild anzeigen, welches Bild es ist wird über ein Argument bestimmt.    </p>
-              </section>
-                  <section>
-                <h2>5a</h2>
-                <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
-                <p>Erzeuge einen Button, der eine Funktion aufruft.</p>
-                <p>Die Funktion soll bei jedem Klick ein anderes Bild aufrufen. </p>
-                <p>Benutze dazu Bilder die namentlich durchnummeriert sind. 1_bild.jpg, 2_bild.jpg</p>
-                <p>oder 1.jpg, 2.jpg, 3.jpg.... Hauptsache sie haben alle den gleichen Namen mit einer durchlaufenden Nummer.</p>
-                <p>Wenn das Ende der vorhandenen Bilder erreicht ist, sollte wieder das erste Bild angzeigt werden.</p>
-                <p>&nbsp;</p>
-          </section>
           <section>
                     <h2>5b</h2>
             <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
@@ -77,16 +95,20 @@
              -->          
     </main>
     <script>
-        let reihe4 = ["4"];
-        var contentElt = document.getElementById("content");
-        contentElt.innerHTML = reihe4;
 
-        function show4s(reihe4){
-            let n = reihe4.length;
-            console.log(reihe4[n - 1]);
-            reihe4.push(" " + (Number(reihe4[n - 1]) + 4));
-            contentElt.innerHTML = reihe4; 
+        var imageElt = document.getElementById("image");
+   
+        function updatePic(){
+            let i = Math.floor(Math.random() * 12) + 1;
+            console.log(i);
+            imageElt.setAttribute("src","img/"+i+".jpg");
+            imageElt.setAttribute("width","300");
+            imageElt.setAttribute("height","300");
         }
+
+        
+        updatePic();
+       
 
     </script>
 </body>

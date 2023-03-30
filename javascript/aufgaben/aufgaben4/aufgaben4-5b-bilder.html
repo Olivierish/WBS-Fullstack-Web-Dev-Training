@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aufgaben 4-5b - 29.03.02023</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
+<link rel="stylesheet" href="../style.css">
+<style>
+    #box{
+        display: flex;
+        border: 1px solid blueviolet;
+        padding: 20px 10px;
+    }
+    #box div{
+        flex-grow: 1;
+        align-self: center;
+        text-align: center;
+    }
+    button{
+        width: 80px;
+        height: 50px;
+        font-size: 1.2em;
+        color: rgb(88, 88, 88);
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Aufgaben Tag 4 - 29.03.02023</h1>
+    </header>
+    <main>
+        <section>
+            <h2>5</h2>
+            <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
+            <p>Erzeuge ein paar Buttons, die eine Funktion aufrufen.</p>
+            <p>Die Funktion soll bei jedem Klick ein anderes Bild anzeigen, welches Bild es ist wird über ein Argument bestimmt.    </p>
+          </section>
+          <section>
+            <h2>5a</h2>
+            <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
+            <p>Erzeuge einen Button, der eine Funktion aufruft.</p>
+            <p>Die Funktion soll bei jedem Klick ein anderes Bild aufrufen. </p>
+            <p>Benutze dazu Bilder die namentlich durchnummeriert sind. 1_bild.jpg, 2_bild.jpg</p>
+            <p>oder 1.jpg, 2.jpg, 3.jpg.... Hauptsache sie haben alle den gleichen Namen mit einer durchlaufenden Nummer.</p>
+            <p>Wenn das Ende der vorhandenen Bilder erreicht ist, sollte wieder das erste Bild angzeigt werden.</p>
+            <p>&nbsp;</p>
+      </section>
+      <section>
+        <h2>5b</h2>
+            <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
+                    <p>Erzeuge zwei Buttons, die weitere Bilder aufrufen und anzeige.</p>
+                    <p>Ein Button, läuft die Bilderreihe vorwärts, der andere die Bilderreihe rückwärts.</p>
+            <p>Du kannst es so programmieren, das am Ende angekommen keine weiteren Bilder mehr angzeigt werden und am Anfang angekommen genauso.</p>
+            <p>Wenn du es schaffst, es so zu programmieren, dass beim Ende wieder das erste Bild angzeigt wird, wenn man am Anfang angekommen ist,  das letzte Bild angezeigt wird, kannst du auch das programmieren.</p>
+                </section>
+
+        <section>
+            <h4>Bild</h4>
+            <div id="box">
+                <div>
+                    <button onclick="prevPic();">&#60;</button>
+                </div>
+                <figure>
+                    <img src="img/1.jpg" alt="photo" id="image" width="300" height="300">
+                </figure>
+                <div>
+                    <button onclick="nextPic();">&#62;</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 
+              <section>
+                <h2>6</h2>
+                <p>Zur der Bilderliste des heutigen Tages, erzeuge ein Array mit Bildtiteln. </p>
+                <p>Erzeuge eine Funktion, die durch einen Button aufgerufen wird.</p>
+                <p>Die Funktion zeigt ein zufälliges Bild an, und dazu den dazugehörigen Bildtitel, im figcaption Element.</p>
+              </section>
+          <section>
+            <h2>7</h2>
+              <p>Erstelle ein  Array in dem Mitarbeiter aufgeführt sind mit Namen, und Beruf.</p>
+                  <p>Erstelle eine Funktion, die eine beliebige Anzahl von Parametern bekommen kann.</p>
+                  <p>Die Parameter, die beim Aufruf der Funktion eingegeben werden, bestimmen die Indcies, der Array Elemente welche angzeigt werden sollen. Am besten jeweils in einer neuen Reihe.</p>
+                  <p>Erstelle ein paar Buttons welche die Funktion aufrufen.</p>
+                  <p>z.B. Wenn die Funktion showTeam heißen würde, würde bei folgendem Funktionsauf, die Mitarbeiter von Index 2, 4 und 6 angezeigt.</p>
+                  <p>showTeam(2,4,6)</p>
+            </section>
+             -->          
+    </main>
+    <script>
+
+        var imageElt = document.getElementById("image");
+        const nbrPics = 12;
+        var counter = imageElt.getAttribute("src").slice(4,1);
+        console.log(counter);
+        counter = 2;
+        function prevPic(){
+            if(counter > 1){
+                counter--;
+                displayImg(counter);
+            }
+            else{
+                counter = nbrPics;
+            }
+        }
+        function nextPic(){
+            if(counter < 12){
+                counter++;
+                displayImg(counter);
+                console.log(counter);
+            }
+            else{
+                counter = 0;
+            }
+        }
+        function displayImg(i){
+            imageElt.setAttribute("src","img/"+i+".jpg");
+        }
+    </script>
+</body>
+</html>

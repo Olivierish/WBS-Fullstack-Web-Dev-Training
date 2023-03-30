@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+
+    <script>
+        var anzeige = document.getElementById("anzeige");
+
+        function person(pers1, pers2, pers3) {
+            anzeige.innerHTML += (pers1 + " " + pers2 + " " + pers3)
+        }
+
+        person("Willi");
+    </script>
+</body>
+
+</html>

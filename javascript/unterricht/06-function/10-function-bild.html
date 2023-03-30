@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+    <style>
+        figure {
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <img src="img/1.jpg" alt="Maschine" id="bild">
+    </figure>
+
+    <p> <button onclick="changeImg(2)">click</button></p>
+    <p> <button onclick="changeImg(3)">click</button></p>
+
+    <script>
+        var bild = document.getElementById("bild");
+
+        function changeImg(bildNr) {
+            bild.src = "img/" + bildNr + ".jpg";
+        }
+    </script>
+</body>
+
+</html>

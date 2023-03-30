@@ -3,12 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aufgaben 4-2 - 29.03.02023</title>
+<title>Aufgaben 4-3 - 29.03.02023</title>
+
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 <link rel="manifest" href="favicon/site.webmanifest">
+
 <link rel="stylesheet" href="../style.css">
+
 </head>
 <body>
     <header>
@@ -16,25 +19,22 @@
     </header>
     <main>
         <section>
-            <h2>2</h2>
-            <p> Erzeuge ein Programm welches auf Buttonclick, die 4er Reihe anzeigt ( Das Einmal Vier). Das sollte aber programmatisch erstellt werden, anstatt einfach hingeschrieben sein.</p>
-        </section>
-        <section>
-            <h4>4er Reihe</h4>
-            <button onclick="show4s(reihe4)">Add</button>
-            <p id="content"></p>
-        </section>
-
-        <!-- 
-        <section>
             <h2>3</h2>
             <p> Erzeuge mehrere Buttons, die alle die gleiche Funktion aufrufen. In der Funktion, wird das einmal eins, einmal zwei, einmal 3 etc. erzeugt und auf der Seite angezeigt.</p>
             <p>Welches einmal eins es ist, wird über ein Argument definiert.</p>
-            <h2>4</h2>
-            <p>Erzeuge mehrere Arrays mit  Elementen deiner Wahl.<br>
-            Auf Buttonklick sollen die Arrayelemente der Reihe nach im p Element jeweils einzeln mit Zeilenumbruch angezeigt werden. Es sollte dort nicht undefined angezeigt werden.</p>
-            <p>Welches Array wird über ein Argument definiert.</p>
         </section>
+
+        <section>
+            <h4>Reihe einmal 1 & 2 & 3</h4>
+            <button onclick="showFolge(1);">Add</button>
+            <button onclick="showFolge(2);">Add</button>
+            <button onclick="showFolge(3);">Add</button>
+            <p id="content1"></p>
+            <p id="content2"></p>
+            <p id="content3"></p>
+        </section>
+
+        <!-- 
         <section>
                 <h2>5</h2>
                 <p>Erzeuge im HTML Markup ein Bild in einem Figure Element.</p>
@@ -77,15 +77,41 @@
              -->          
     </main>
     <script>
-        let reihe4 = ["4"];
-        var contentElt = document.getElementById("content");
-        contentElt.innerHTML = reihe4;
+        var reihe1 = [];
+        var reihe2 = [];
+        var reihe3 = [];
 
-        function show4s(reihe4){
-            let n = reihe4.length;
-            console.log(reihe4[n - 1]);
-            reihe4.push(" " + (Number(reihe4[n - 1]) + 4));
-            contentElt.innerHTML = reihe4; 
+        var contentElts = []
+        contentElts.push(document.getElementById("content1"));
+        contentElts.push(document.getElementById("content2"));
+        contentElts.push(document.getElementById("content3"));
+        
+        contentElts[0].innerHTML = reihe1;
+        contentElts[1].innerHTML = reihe2;
+        contentElts[2].innerHTML = reihe3;
+
+        function showFolge(x){
+            let r = [];
+            switch(x){
+                case 1 :
+                    update(reihe1,1);
+                break;
+                case 2 :
+                    update(reihe2,2);
+                break;
+                case 3 :
+                    update(reihe3,3);
+                break;
+                default:
+                    console.log("wrong input!");
+            }
+        }
+
+        function update(reihe,x){
+            let n = reihe.length + 1;
+            console.log(reihe[n - 1]);
+            reihe.push(" " + Number((n - 1) * x));
+            contentElts[x-1].innerHTML = reihe;
         }
 
     </script>

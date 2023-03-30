@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>for-schleife </title>
+</head>
+
+<body>
+
+    <p>continue, die nachfolgenden Befehle werden nicht mehr ausgeführt, die Schleife geht in den nächsten Schleifendurchlauf</p>
+    <p>break Die Schleife wird abgebrochen</p>
+
+    <script>
+        let tiere = ["Affe", "Bär", "Chameleon", "Dachs", "Esel", "Fliege", "Gepard", "Hund", "Opossum", "Pferd", "Qualle", "Ratte", "Schnecke", "Tiger", "Uhu", "Vogel", "Wiesel", "Xenosaurus", "Yak", "Zebra"];
+
+
+        for (var i = 0; i < tiere.length; i++) {
+            if (tiere[i] == "Schnecke") continue;
+            if (tiere[i] == "Wiesel") break;
+
+            document.write(tiere[i] + "<br>");
+        }
+    </script>
+</body>
+
+</html>

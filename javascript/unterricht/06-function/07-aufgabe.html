@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Function Argument Farbe</title>
+</head>
+
+<body>
+    <p>
+        Der Befehl die Hintergrundfrabe der Webseite zu ändern ist: document.bgColor = '#00ff00';
+    </p>
+    <p>Erstellt eine Seite mit 3 Buttons, bei jeder Button ändert die Hintergrundfarbe der Seite in einer anderen Farbe.</p>
+    <button onclick="changeColor('#af3')">change Color grasgrün</button>
+    <button onclick="changeColor('#aba')">change Color grau</button>
+    <button onclick="changeColor('#faa')">change Color grau</button>
+
+    <script>
+        //document.bgColor = '#00ff00';
+
+
+
+        function changeColor(farbe) {
+            document.bgColor = farbe;
+        }
+    </script>
+</body>
+
+</html>
