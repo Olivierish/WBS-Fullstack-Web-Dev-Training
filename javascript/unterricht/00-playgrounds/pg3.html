@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #info{
+            background: #ff7f50;
+            height: 100px;
+            width: 300px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div id="info">
+                Bonjour 
+            </div>
+        </section>
+    </main>
+<script>
+
+    function changeColor(){
+    infoElt.style.backgroundColor = "#5a0";
+    }
+
+    function initColor(){
+    infoElt.style.backgroundColor = "#ff7f50";
+    }
+
+    const infoElt = document.getElementById('info');
+
+    //Method 1
+    // infoElt.addEventListener("mouseover", changeColor);
+    // infoElt.addEventListener("mouseout", initColor);
+    
+    //Method 2 : Kurzer 
+    infoElt.onmouseover = changeColor;
+    infoElt.onmouseout = initColor;
+
+
+
+</script>
+</body>
+</html>

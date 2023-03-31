@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dom querySelector</title>
+</head>
+
+<body>
+    <p>F12</p>
+    <!--
+Dieses Thema ist kein DOM Thema sondern ein Event Thema
+Die Event Funktion bekommt ein Argument evt
+Dieser erste Parameter einer Event Funktion, liefert
+Eigenschaften des Events, unter anderem event.currentTarget
+currentTarget ist ein Verweis auf das Element welchem
+der Eventlistener zugewiesen ist.
+So kann man eine Funktion für viele Auswahllisten oder andere Element nutzen.
+
+-->
+
+
+    <p> <label for="serie">Serien</label>
+        <select id="serie">
+  <option value="rickMort">Rick & Morty</option>
+  <option value="frng">Fringe </option>
+  <option value="brkBad">Breaking Bad</option>
+  <option value="futur">Futurama </option>
+</select></p>
+
+    <p> <label for="actor">Schauspieler</label>
+        <select id="actor">
+  <option value="caprio">Leonardo Di Caprio</option>
+  <option value="niro">Robert De Niro </option>
+  <option value="cruise">Tom Cruise</option>
+  <option value="torro">Benicio Del Torro </option>
+</select></p>
+
+    <p id="output"></p>
+
+
+    <script>
+        let seriList = document.getElementById("serie");
+        let actList = document.getElementById("actor");
+
+        seriList.addEventListener("change", checkListe);
+        actList.addEventListener("change", checkListe);
+
+        function checkListe(evt) {
+            let derGeklickte = evt.currentTarget;
+            let slVal = derGeklickte.value;
+            let slId = derGeklickte.selectedIndex;
+            let slText = derGeklickte.options[slId].text;
+            console.log(slVal);
+            console.log(slId);
+            console.log(slText);
+            document.getElementById("output").innerHTML = "Auswahl: " + slText;
+        }
+    </script>
+</body>
+
+</html>

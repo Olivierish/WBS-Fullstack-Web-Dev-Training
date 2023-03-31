@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Aufgabe 3.3-Schleife</title>
+</head>
+
+<body>
+    <script>
+        // 3. Aufgabe:
+        // Erzeuge ein Array mit Strings deiner Wahl (z.B. Autos, Stadt, Land, Fluss, Name, Tier, Beruf). 
+        // Erstelle eine for-Schleife, die jedes Array Element verändert und zwar soll vor jedem Element eine Durchnummerierung stehen. 
+        // z.B: 1. München 2. Hamburg 3. Stuttgart
+
+        var stadt = [
+            "München",
+            "Hamburg",
+            "Stuttgart",
+            "Dresden",
+            "Köln",
+            "Tübingen"
+        ]
+
+
+        for (var i = 0; i < stadt.length; i++) {
+            stadt[i] = (i + 1) + ". " + stadt[i];
+            /*   document.write((i + 1) + ".) ");
+              document.write(stadt[i]);
+              document.write("<br>") */
+        }
+        document.write(stadt.join());
+        document.write("<hr>")
+        document.write(stadt[0]);
+    </script>
+
+</body>
+
+</html>

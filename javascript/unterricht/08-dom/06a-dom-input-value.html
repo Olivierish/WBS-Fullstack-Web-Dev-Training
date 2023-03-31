@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+</head>
+
+<body>
+    <!--getElementsByName() liefert ein Array.
+In der Regel werden die name Attribute jedoch mit einmaligen Werten belegt 
+In diesem Beispiel sieht man auch wie man einem input Element einen Wert zuweisen kann.
+Genauso kann man ihn auch auslesen. input.value
+-->
+    <input type="text" name="name" id="vorname">
+
+    <button>Feld 1</button>
+    <button>Feld 2</button>
+    <p id="output"></p>
+
+    <script>
+        let output = document.getElementById("output");
+        let button = document.getElementsByTagName("button");
+        let namen = document.getElementsByName("name");
+
+        button[0].addEventListener("click", setName);
+        button[1].addEventListener("click", setName);
+
+        button[0].person = "Willi";
+        button[1].person = "Peter";
+
+        function setName(evt) {
+            namen[0].value = evt.currentTarget.person;
+        }
+    </script>
+
+</body>
+
+</html>

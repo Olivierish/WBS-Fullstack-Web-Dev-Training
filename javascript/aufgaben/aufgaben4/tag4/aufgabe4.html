@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 3</title>
+</head>
+
+<body>
+    <button onclick="showTiere(tiereA)">Tiere Afrikas</button>
+    <button onclick="showTiere(haustiere)">Haustiere</button>
+    <button onclick="showTiere(fische)">Fische</button>
+    <p id="anzeige"></p>
+    <script>
+        var anzeige = document.getElementById("anzeige");
+        let tiereA = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+
+        let haustiere = [
+            "Kaninchen",
+            "Katze",
+            "Hund",
+            "Meerschweinchen"
+        ];
+
+        let fische = [
+            "Goldfisch",
+            "Makrele",
+            "Hai",
+            "Hecht"
+        ];
+
+        function showTiere(tierArr) {
+            anzeige.innerHTML = "";
+            for (var i = 0; i < tierArr.length; i++) {
+                anzeige.innerHTML += tierArr[i] + "<br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

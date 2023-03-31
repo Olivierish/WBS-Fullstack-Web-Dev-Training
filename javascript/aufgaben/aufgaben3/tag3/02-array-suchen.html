@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Elemente verschieben</title>
+</head>
+
+<body>
+
+    <script>
+        var afrikaTiere = ["Affe", "Nilpferd", "Löwe", "Gnu", "Nashorn", "Zebra"];
+        var deleteId = afrikaTiere.indexOf("Nilpferd");
+        var element = afrikaTiere.splice(deleteId, 1);
+        afrikaTiere.splice(2, 0, element);
+        document.write(afrikaTiere.join());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript function Variablen Scope</title>
+
+</head>
+
+<body>
+    <button onclick="showPic()">Click</button>
+    <p id="anzeige"></p>
+    <script>
+        var anzeige = document.getElementById("anzeige");
+        let bildernamen = [];
+        bildernamen[0] = "Schiff auf hoher See";
+        bildernamen[1] = "Wikinger";
+        bildernamen[2] = "Krone";
+        bildernamen[3] = "Mondgesicht";
+        bildernamen[4] = "Totenkopf";
+        bildernamen[5] = "Sonne";
+        bildernamen[6] = "Kopf";
+        bildernamen[7] = "Löwe";
+        bildernamen[8] = "Burg";
+        bildernamen[9] = "Hundekopf";
+        bildernamen[10] = "Pferd";
+        bildernamen[11] = "Vogel";
+        bildernamen[12] = "Biber";
+        bildernamen[13] = "Stier";
+        bildernamen[14] = "Teufel";
+        bildernamen[15] = "Flügel";
+        bildernamen[16] = "Einhorn";
+        bildernamen[17] = "Hand";
+
+        var id = 0;
+
+        function showPic() {
+            anzeige.innerHTML = bildernamen[id];
+            if (id < bildernamen.length - 1) {
+                id++;
+            } else {
+                id = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

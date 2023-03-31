@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Fragespiel confirm</title>
+</head>
+
+<body>
+    <script>
+        alert("Dir werden ein paar Fragen gestellt. Wenn du okay drückst, bedeutet es \"Ja\", wenn du \"Abbrechen\" drückst, bedeutet es \"Nein\"");
+
+
+
+
+        var fragen = [
+            ["Ist der Papst katholisch?", true],
+            ["Ist der Himmel quadratisch?", false],
+            ["Bist du schlau?", true]
+        ]
+
+        document.write(fragen[0][1]);
+
+        var counter = 0;
+        var antwort;
+        var correct = 0;
+        while (counter < fragen.length) {
+            antwort = confirm(fragen[counter][0]);
+            if (antwort == fragen[counter][1]) {
+                correct++;
+            }
+            counter++;
+        }
+        document.write("Du hast " + correct + " Fragen richtig beantwortet.")
+
+
+
+        /*         
+                
+               
+                while (counter < fragen.length) {
+                    antwort = confirm(fragen[counter][0]);
+                    if (antwort == fragen[counter][1]) {
+                        correct++;
+                    }
+                    counter++;
+                }
+                document.write("Du hast " + correct + " Fragen richtig beantwortet.") */
+    </script>
+</body>
+
+</html>

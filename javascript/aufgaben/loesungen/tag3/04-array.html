@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+    <script>
+        let anzeige = document.getElementById("anzeige");
+
+        let autos = 'Toyota;Honda;Mitsubishi;Ford;Opel;Fiat;BMW;Mercedes;VW;Chevrolet;Tesla';
+        anzeige.innerHTML = autos + "<br>";
+        let auto = autos.split(";").reverse();
+
+
+        anzeige.innerHTML += auto.toString();
+    </script>
+</body>
+
+</html>

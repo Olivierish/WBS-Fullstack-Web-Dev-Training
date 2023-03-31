@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .btn {
+            padding: 10px;
+            font-size: 1em;
+            font-weight: bolder;
+        }
+        
+        #imagebox {
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+            background-color: gray;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <button class="btn" onclick="changePrev()">&lt;</button></p>
+        <img id="imagebox" src="img/1.jpg" alt="">
+        <button class="btn" onclick="changeNext();">&gt;</button></p>
+    </div>
+
+
+</body>
+<script>
+    var bild = document.getElementById("imagebox");
+    // var bildnummer = bild.getAttribute("src");
+    // var bildnummer = Number(bildnummer.slice(3, 4));
+    var neubild;
+    var bildnummer = 1;
+
+    function changeNext() {
+
+        if (bildnummer < 6) {
+            bildnummer++;
+        } else {
+            bildnummer = 1;
+        }
+
+        neubild = "img/" + bildnummer + ".jpg";
+        bild.setAttribute("src", neubild);
+    }
+
+    function changePrev() {
+        if (bildnummer > 1) {
+            bildnummer--;
+        } else {
+            bildnummer = 6;
+        }
+
+        neubild = "img/" + bildnummer + ".jpg";
+        bild.setAttribute("src", neubild);
+    }
+</script>
+
+</html>

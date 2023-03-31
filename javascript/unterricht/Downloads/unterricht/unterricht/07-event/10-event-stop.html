@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event preventDefault</title>
+    <style>
+        .selected {
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event preventDefault</h1>
+    <p>Mittels evt.preventDefault() wird das Standardverhalten verhindert. In diesem Fall wird der Link bei einem Click nicht aufgerufen.</p>
+    <p> <a href="09-event-phasen.html" id="link">09-event-phasen.html</a></p>
+
+
+    <script>
+        var link = document.getElementById("link");
+
+        link.addEventListener("click", changeStyle);
+
+        function changeStyle(evt) {
+            evt.preventDefault();
+            this.classList.toggle('selected');
+            // this.toggle("selected");
+            // this.style.backgroundColor = "red";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+    <style>
+        p {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Hallo ich bin ein Absatz</p>
+    <p class="info">Klasse info in diesem Absatz</p>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p class="info">Klasse info in diesem Absatz</p>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p class="info">Klasse info in diesem Absatz</p>
+
+
+    <script>
+        let info = document.getElementsByClassName('info');
+        info[2].style.width = "100px";
+
+        for (let i = 0; i < info.length; i++) {
+            info[i].style.backgroundColor = "#ffaa66";
+            info[i].addEventListener("click", function() {
+                alert("Hallo")
+            });
+        }
+    </script>
+</body>
+
+</html>

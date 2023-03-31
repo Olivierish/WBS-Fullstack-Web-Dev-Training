@@ -4,22 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aufgaben 5</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <title>Aufgaben 5.1</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="stylesheet" href="../style.css">
 
 </head>
 
 <body>
     <header>
-        <h1>Aufgaben Tag 4 - 30.03.02023</h1>
+        <h1>Aufgaben Tag 5 - 30.03.2023</h1>
     </header>
     <main>
         <section>
-            <p>1.) <br> Über eine Schleife soll folgende Zahlenfolge ausgegeben werden: 4,8,12,16,28,32</p>
+            <h2>1</h2>
+            <p> Über eine Schleife soll folgende Zahlenfolge ausgegeben werden: 4,8,12,16,28,32</p>
         </section>
         <section>
             <p id="output"></p>
@@ -27,14 +28,16 @@
         
     </main>
     <script>
-        const outputElt = document.getElementById("output");
-        var i = 1;
-        while(i < 10){
-            console.log(i * 4);
-            i++;
+        var counter = 0;
+        var outputElt = document.getElementById("output");
+       
+       while (counter < 32 ){
+           counter = counter + 4;
+           //console.log(counter);
+           outputElt.innerHTML += counter + " ⁂⁘ ";
+       }
 
-        }
-    </script>
+   </script>
 </body>
 
 </html

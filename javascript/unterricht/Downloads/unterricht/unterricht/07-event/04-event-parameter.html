@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+</head>
+
+<body>
+    F12
+    <button id="but">Click</button>
+
+    <script>
+        let btn = document.getElementById("but");
+
+        btn.addEventListener("click", machWas);
+
+        function machWas(evt) {
+            console.log(evt);
+            console.log(evt.shiftKey);
+            console.log(evt.timeStamp);
+        }
+    </script>
+</body>
+
+</html>

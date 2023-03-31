@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        var zahlen = [20, 2, 11, 6, 4, 14, 10, 9, 15, 7, 21];
+
+        function compare(a, b) {
+            return a - b;
+        }
+        document.write(zahlen.join());
+        document.write("<hr>");
+        zahlen.sort(compare);
+        document.write(zahlen.join());
+        document.write("<hr>");
+        zahlen.reverse();
+        document.write(zahlen.join());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Schleife</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var alphabet = "abcdefghijklmnopqrstuvwxyz12345678901";
+
+        //  Math.floor(Math.random()* alphabet.length)
+        counter = 0;
+        var zufallString = "";
+        while (counter < 10) {
+            var id = alphabet[Math.floor(Math.random() * alphabet.length)];
+            zufallString += id;
+            counter++;
+        }
+        output.innerHTML = zufallString;
+    </script>
+</body>
+
+</html>

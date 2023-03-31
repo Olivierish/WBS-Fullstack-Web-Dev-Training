@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben 5.2</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Aufgaben Tag 5 - 30.03.2023</h1>
+    </header>
+    <main>
+        <section>
+            <h2>2. prompt</h2>
+            <p> Schreiben Sie einen kleinen Kreditrechner.<br> Die Benutzer soll aufgeforder werden Kredithöhe und Zinssatz einzugeben.<br> Der Kreditrechner soll den gesammten Rückzahlungsbetrag ausgeben.</p>
+            <p>Rückzahlungsbetrag = Kreditbetrag*(1+Zinssatz/100)</p>
+            </section>
+        <section>
+            <p id="output"></p>
+        </section>
+        
+    </main>
+    <script>
+         var kreditbetrag;
+         var rueckzahlungsbetrag;
+         var zinssatz;
+
+         var outputElt = document.getElementById("output");
+
+         kreditbetrag = window.prompt("Gibt den Kreditbetrag ein: "); 
+         console.log(kreditbetrag);
+         
+         zinssatz = window.prompt("Gibt den Zinssatz ein: "); 
+         console.log(zinssatz);
+
+         rueckzahlungsbetrag = kreditbetrag * (1 + zinssatz)/100; 
+         
+        //var boolean = window.confirm("Hello");
+
+        outputElt.innerHTML = "Kreditbetrag : " + kreditbetrag + " <br> Zinssatz : " + zinssatz + " <br> <b>Rückzahlungsbetrag : " + rueckzahlungsbetrag + "</b>";
+
+
+   </script>
+</body>
+
+</html

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOM Knoten</title>
+<style>
+div {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    width: max-content;
+    background-color: #E49963;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+    
+ <!--Emmet
+div#box$*20>{$}  
+-->   
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div>13</div>
+<div>14</div>
+<div>15</div>
+<div>16</div>
+<div>17</div>
+<div>18</div>
+<div>19</div>
+<div>20</div>    
+    
+<script>
+    /*
+    Man könnte das Script auch leicht abändern, so dass
+    jedes Element auf der Seite entfernt wird.
+    let box = document.body.childNodes;
+    */
+    
+    let box = document.getElementsByTagName("div");
+   // let box = document.body.childNodes;
+    
+    for(let i=0; i <  box.length; i++){
+        box[i].addEventListener("click", deleteMe); 
+    }
+                          
+    function deleteMe(evt){
+        this.remove();
+    }
+    
+
+    
+    
+    </script>
+</body>
+</html>

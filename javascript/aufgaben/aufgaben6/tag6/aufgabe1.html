@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Addieren</title>
+</head>
+
+<body>
+    <p>Gebe Zahlen ein die addiert werden sollen. Drücke nach jeder Zahl den Button "Hinzufügen". Klicke auf den Button "Ausrechnen, um das Ergebnis anzuzgein.</p>
+    <p> <input type="number" id="eingabe" size="4"><label for="eingabe"> Zahl </label></p> <button id="put">Hinzufügen</button>
+    <p><button id="calc">ausrechnen</button></p>
+    <p id="ausgabe"></p>
+
+
+    <script>
+        var put = document.getElementById("put");
+        var calc = document.getElementById("calc");
+        var eingabe = document.getElementById("eingabe");
+        var ausgabe = document.getElementById("ausgabe");
+        var zahlen = [];
+
+        put.addEventListener("click", addNumber);
+        calc.addEventListener("click", addieren);
+
+        function addNumber() {
+
+            zahlen.push(eingabe.value);
+            eingabe.value = "";
+            ausgabe.innerHTML = zahlen.join();
+
+        }
+
+        function addieren() {
+            var ergebnis = 0;
+            for (var i = 0; i < zahlen.length; i++) {
+                ergebnis += Number(zahlen[i]);
+            }
+            ausgabe.innerHTML = "Das Ergebnis ist: " + ergebnis;
+            zahlen = [];
+        }
+    </script>
+</body>
+
+</html>

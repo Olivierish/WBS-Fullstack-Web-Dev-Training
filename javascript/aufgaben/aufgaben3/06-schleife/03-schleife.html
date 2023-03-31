@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Schleife</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var stadt = ["Berlin", "München", "Hamburg", "Stuttgart", "Köln", "Dresden", "Köln", "Tübingen"];
+        for (var i = 0; i < stadt.length; i++) {
+            stadt[i] = (i + 1) + ". " + stadt[i];
+        }
+        output.innerHTML = stadt.toString();
+    </script>
+</body>
+
+</html>

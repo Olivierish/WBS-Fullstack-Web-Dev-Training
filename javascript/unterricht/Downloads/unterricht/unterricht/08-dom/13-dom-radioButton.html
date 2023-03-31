@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOM Radio Checkbox</title>
+</head>
+
+<body>
+
+    <p>Wählen Sie eine Farbe.</p>
+    
+    <input type="radio" id="red" value="red" name="farbe">
+    <label for="red">Rot</label>
+    <br>
+    
+    <input type="radio" id="green" value="green" name="farbe">
+    <label for="green">Grün</label>
+    <br>
+    
+    <input type="radio" id="blue" value="blue" name="farbe">
+    <label for="blue">Blau</label>
+    <br>
+    
+    <p id="output"></p>
+    
+
+<script>
+        let output = document.getElementById("output");
+        let farbRdo = document.getElementsByName("farbe");
+    
+        for(let i=0; i < farbRdo.length; i++){
+            farbRdo[i].addEventListener("click", checkColor);
+        }       
+
+        function checkColor(evt){
+            output.innerHTML = evt.currentTarget.value;
+        }
+    
+</script>
+</body>
+</html>

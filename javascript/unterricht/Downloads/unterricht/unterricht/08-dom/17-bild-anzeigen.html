@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bild anzeigen und weiterblättern</title>
+    <style>
+        #bildBox{padding: 10px; 
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height:300px;
+            margin: auto;
+        }
+        body{text-align: center;}
+    
+    </style>
+    
+</head>
+
+<body>
+
+    
+
+    <figure id="bildBox">
+  <!-- <figcaption id="bildText">Schiff auf hoher See</figcaption>-->
+    </figure>
+       <p> <button onclick="nextBild()">click</button></p>
+    <script>
+        
+        let bildBox = document.getElementById("bildBox");
+        let bildText = document.getElementById("bildText"); 
+     
+        let  img = document.createElement("img");
+        img.src = "img/img_0.png";
+        img.setAttribute("title", "Schiff auf hoher See");  
+        bildBox.append(img);
+             
+        let id = 0;
+        
+        function nextBild(){         
+            if(id < 17){
+             id++;   
+            }else{
+                id= 0;
+            }
+            img.src = "img/img_"+id+".png";   
+        }
+        
+    </script> 
+</body>
+</html>

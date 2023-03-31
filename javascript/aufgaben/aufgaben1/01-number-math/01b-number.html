@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Number Aufgabe 1b</title>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+    <script>
+        let a = 30;
+        let b = 5;
+        let min = Math.min(a, b);
+        let max = Math.max(a, b);
+
+        let c = (min / max) * 100;
+        c = Math.round(c * 10);
+        c = c / 10;
+        console.log("Der Prozentwert von " + min + " zu " + max + " ist " + c);
+        document.getElementById("anzeige").innerHTML = "Der Prozentwert von " + min + " zu " + max + " ist " + c;
+    </script>
+</body>
+
+</html>

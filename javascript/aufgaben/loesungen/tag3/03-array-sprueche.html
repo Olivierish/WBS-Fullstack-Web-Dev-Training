@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+    <script>
+        let sprueche = [
+            "Wir versprechen nichts, aber das halten wir auch.",
+            "Die Gedanken sind blei.",
+            "Computer können alles, mit können sie kreuzweise.",
+            "Vorsicht ist besser als Nachtschicht.",
+            "Steter Tropfen höhlt die Leber.",
+            "Dummheit schützt vor Reichtum nicht.",
+            "Das Innere der Leberworscht ist noch völlig unerforscht.",
+            "Gentiv in Wasser! Wieso ist es Dativ?",
+            "Der Klügere gibt so lange nach, bis er der Dumme ist.",
+            "Geld allein macht nicht glücklich, es muss dir auch gehören.",
+            "Gott ist groß, der Mensch ist klein, ich muß wohl dazwischen sein.",
+            "Hier kann man nicht mal in Ruhe Krach machen.",
+            "Ich bin ganz meiner Meinung",
+            "Leben ist zeichnen ohne Radiergummi.",
+            "Käfigvögel singen von Freiheit, freie Vögel fliegen",
+            "Ihr da Ohm   Watt  Volt ihr denn.",
+            "Mit jeder Minute meines Lebens erhöht sich die Zahl derer, die mich am Arsch lecken können."
+        ];
+        let anzeige = document.getElementById("anzeige");
+        let index = Math.floor(Math.random() * sprueche.length);
+        anzeige.innerHTML = sprueche[index];
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <h1>Callback Funktion</h1>
+    <p><a href="https://www.on-design.de/tutor/javascript/function/functionReferenz.htm">Siehe Tipp</a></p>
+    <p id="info">info</p>
+    <button id="btn1">Button1</button>
+    <button id="btn2">Button2</button>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var info = document.getElementById("info");
+
+        btn1.addEventListener("click", show("Hallo"));
+        btn2.addEventListener("click", show("Welt"));
+
+        function showInfo(a) {
+            info.innerHTML = a;
+        }
+
+        function show(b) {
+            return function() {
+                showInfo(b);
+            }
+        }
+    </script>
+</body>
+
+</html>

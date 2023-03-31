@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String </title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+
+        var song = "Mein Hut der hat 3 Ecken. 3 Ecken hat man Hut."
+        var hutPosAnfang = song.indexOf("Hut");
+        output.innerHTML = hutPosAnfang + " / ";
+        var hutPosAnfang = song.lastIndexOf("Hut");
+        output.innerHTML += hutPosAnfang;
+    </script>
+</body>
+
+</html>

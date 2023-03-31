@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(115, 171, 160, 0.52);
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>target & currentTarget</h1>
+    <p>Das target ist das Element auf den der Eventlistener registiert ist. Das currentTarget ist das Element welches direkt angeklickt wurde und eventuell ein Kindelement des target ist.</p>
+    <div id="parent">
+        <div id="child">
+            <div id="innerChild"></div>
+        </div>
+    </div>
+    <script>
+        let eltern = document.getElementById("parent");
+        let child = document.getElementById("child");
+        let innerChild = document.getElementById("innerChild");
+
+        eltern.addEventListener("click", machWas);
+
+        function machWas(evt){
+            evt.target.style.backgroundColor = "rgba(150,115,171,0.52)";
+            evt.currentTarget.style.borderWidth = "10px";
+        }
+    </script>
+</body>
+
+</html>

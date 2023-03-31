@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 3</title>
+</head>
+
+<body>
+    <button onclick="tierHandel()">Tierhandel</button>
+    <p id="anzeige"></p>
+    <script>
+        let tiere = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Nashorn",
+            "Zebra",
+            "Krokodil",
+            "Antilope",
+            "Gorilla"
+        ];
+        var zirkusTiere = [];
+        var anzeige = document.getElementById("anzeige");
+
+        function tierHandel() {
+            if (tiere.length > 0) {
+                var zz = Math.floor(Math.random() * tiere.length);
+                var totesTier = tiere.splice(zz, 1);
+                zirkusTiere.push(totesTier);
+                anzeige.innerHTML = tiere.join() + "<br>";
+                anzeige.innerHTML += zirkusTiere.join();
+            } else {
+                anzeige.innerHTML = "Scheiß Tierhändler in den Zoo."
+            }
+        }
+    </script>
+</body>
+
+</html>

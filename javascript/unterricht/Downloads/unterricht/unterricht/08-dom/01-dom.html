@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="info">Hallo <strong>Welt</strong></p>
+</body>
+<script>
+    console.log(document.getElementById("info").textContent);
+    document.getElementById("output").textContent = "Hallo";
+</script>
+
+</html>

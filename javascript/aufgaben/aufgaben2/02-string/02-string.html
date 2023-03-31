@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>String Aufgabe 2</title>
+</head>
+
+<body>
+    <script>
+        var breite = "20px";
+        var wert1 = parseInt(breite);
+        console.log(wert1);
+        var wert2 = breite.match(/\d+/)[0]; //Regulärer Ausdruck
+        console.log(wert2);
+        var wert3 = breite.substring(0, breite.length - 2); //Teilstring bis zum Ende minus 2 Zeichen
+        console.log(wert3);
+        wert4 = breite.slice(0, breite.length - 2);
+        console.log(wert4);
+    </script>
+</body>
+
+</html>

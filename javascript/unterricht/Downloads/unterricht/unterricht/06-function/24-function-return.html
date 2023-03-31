@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+    <style>
+        div {
+            width: 40px;
+            background-color: aquamarine;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <p> <button onclick="boxSize()">BoxSize</button></p>
+    <div id="box"></div>
+
+    <script>
+        var box = document.getElementById("box");
+
+        function zufall(von, bis) {
+            var e = Math.round(Math.random() * (bis - von) + von);
+            console.log(e);
+            return e;
+        }
+
+        function boxSize() {
+            box.style.width = zufall(30, 230) + "px";
+            box.style.height = zufall(50, 300) + "px";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Number Aufgabe</title>
+</head>
+
+<body>
+    <h1>Rechner</h1>
+    <p>Wähle eine Rechenart, gebe 2 Zahlen ein und klicke auf "Ausrechnen"</p>
+    <p><label for="a"><input type="number" id="a"> Zahl a</label> </p>
+    <p> <label for="b"><input type="number" id="b"> Zahl b</label></p>
+    <p> <label for=""><input type="radio" name="rechenart" value="addition">Addition</label><label for=""><input type="radio" name="rechenart" value="subtraktion"></label>Subratktion<label for=""><input type="radio" name="rechenart" value="multiplikation"></label>Multiplikation
+        <label for=""><input type="radio" name="rechenart" value="div">Division</label></p>
+    <p><button id="btn">Ausrechnen</button></p>
+    <p id="ausgabe"></p>
+
+
+    <script>
+        let btn = document.getElementById("btn");
+        let ausgabe = document.getElementById("ausgabe");
+        let rdBtn = document.querySelectorAll("input[name='rechenart']");
+
+        btn.addEventListener("click", ausrechnen);
+        let rechenart;
+
+        function ausrechnen() {
+            let a = document.getElementById("a");
+            let b = document.getElementById("b");
+
+            a = Number(a.value);
+            b = Number(b.value);
+            console.log(a);
+            console.log(b);
+            let e;
+
+            for (let i = 0; i < rdBtn.length; i++) {
+                if (rdBtn[i].checked) {
+                    rechenart = rdBtn[i].value;
+                    console.log(rechenart);
+
+                }
+            }
+            console.log(rechenart);
+            switch (rechenart) {
+                case "addition":
+                    e = a + b;
+                    ausgabe.innerHTML = a + " + " + b + " = " + e;
+                    break;
+                case "subtraktion":
+                    e = a - b;
+                    ausgabe.innerHTML = a + " - " + b + " = " + e;
+                    break;
+                case "multiplikation":
+                    e = a * b;
+                    ausgabe.innerHTML = a + " * " + b + " = " + e;
+                    break;
+                case "div":
+                    e = a / b;
+                    ausgabe.innerHTML = a + " / " + b + " = " + e;
+                    break;
+                default:
+                    ausgabe.innerHTML = "Wählen Sie eine Grundrechenart.";
+            }
+        }
+    </script>
+</body>
+
+</html>

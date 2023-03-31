@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Schleife</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var result = 3;
+        var counter = 0;
+
+        for (var i = 0; i < 30; i++) {
+            result = i % 5;
+            if (result == 4) {
+                output.innerHTML += result + "<br>";
+            } else {
+                output.innerHTML += result + ",";
+            }
+        }
+    </script>
+</body>
+
+</html>

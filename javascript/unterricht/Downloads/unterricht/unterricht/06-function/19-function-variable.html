@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript function Variablen Scope</title>
+
+</head>
+
+<body>
+    f12
+    <script>
+        /*globale Variablen, die innerhalb der Funktion
+                                aufgerufen werden und nicht deklariert werden
+                                können auf die globale Variable zugreifen
+                                und diese auch verändern.
+
+                                Wenn man jedoch innerhalb einer Funktion 
+                                eine Variable gleichen Namens deklariert
+                                hat sie nur in der Funktion Gültigkeit
+                                Es ist dann quasi eine andere Variable
+                                man sagt auch die globale Variable wird überdeckt  */
+        var globalX = 20;
+
+        function myFunc() {
+            globalX = 10;
+            console.log(globalX);
+        }
+        myFunc();
+
+        alert(globalX);
+        /* Fehler siehe Console Variable exisiert nicht außerhalb der Funktion */
+    </script>
+</body>
+
+</html>

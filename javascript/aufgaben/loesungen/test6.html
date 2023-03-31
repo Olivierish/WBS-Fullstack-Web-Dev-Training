@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Aufgaben von 3.Tag</title>
+</head>
+
+<body>
+    <script>
+        /*
+                                                                        // ---------------------1------------------------------
+                                                                        var i;
+                                                                        for (i = 1; i <= 100; i++){
+                                                                            document.write(i*3 + " - ")
+                                                                        }
+                                                                        document.write("<hr>");
+                                                                        // --------------------------2-----------------------------
+                                                                        var a, b;
+                                                                        for (a = 0; a <= 10; a++){
+                                                                            for (b = 0; b <=4; b++){
+                                                                                if (b<4){
+                                                                                    document.write(b + ", ");}
+                                                                                    else {
+                                                                                    document.write(b);}
+                                                                            }
+                                                                            document.write("<br>");
+                                                                        }
+                                                                        document.write("<hr>");
+                                                                        // ----------------------------3----------------
+                                                                        var tiere =  ["Affe","Bär","Dachs","Esel","Fliege","Gepard","Hund","Junikäfer","Löwe","Uhu","Maus","Igel","Ratte","Nilpferd","Zebra"];
+                                                                        for (i = 0; i < tiere.length; i++){
+                                                                            document.write((i + 1) + ". " + tiere[i] + " ");
+                                                                        }
+                                                                        document.write("<hr>");
+
+                                                                        // -----------------------------4------------------------------
+                                                                       
+                                                                        for (i = 0; i < tiere.length; i++){
+                                                                            document.write((i + 1) + ". " + tiere[i] + "<br>");
+                                                                        }
+                                                                        document.write("<hr>");
+
+                                                                        // ----------------------5--------------------
+                                                                        for (i = 0; i < tiere.length; i++) {
+                                                                            if ((i % 3) == 0) {
+                                                                                document.write("<br>");
+                                                                                document.write(tiere[i] + " ");
+                                                                            } else {
+                                                                                document.write(tiere[i] + " ");  
+                                                                            }
+                                                                        }
+                                                                        document.write("<hr>");
+                                                                */
+        // ---------------------6----------------------
+        var alphabet_str = 'q,w,e,r,t,z,u,i,o,p,a,s,d,f,g,h,j,k,l,y,x,c,v,b,n,m,?,!,$,&,/,+,-,*';
+        var alphabet = alphabet_str.split(",");
+        var passwort = "";
+        var buchschtabe = "";
+
+        var zahl = Math.floor(Math.random() * alphabet.length);
+        if (zahl < 6) {
+            zahl = zahl + 6
+        }
+        var i = 0;
+        console.log(zahl);
+        // console.log(alphabet);
+        while (i < zahl) {
+            i++;
+            buchschtabe = alphabet[Math.floor(Math.random() * alphabet.length)];
+            passwort = passwort + buchschtabe;
+            console.log(passwort);
+        }
+        document.write(passwort);
+    </script>
+</body>
+
+</html>

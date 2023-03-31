@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>String Aufgabe 3</title>
+</head>
+
+<body>
+    <script>
+        let persId_1 = "ID23490rem";
+        let persId_2 = "ID0433rem";
+        let id1 = persId_1.match(/\d+/)[0];
+        let id2 = persId_2.match(/\d+/)[0];
+        console.log(id1);
+        console.log(id2);
+        let sub1 = persId_1.substr(2, persId_1.length - 5);
+        console.log(sub1);
+        let sub2 = persId_2.substr(2, persId_2.length - 5);
+        console.log(sub2);
+    </script>
+</body>
+
+</html>
