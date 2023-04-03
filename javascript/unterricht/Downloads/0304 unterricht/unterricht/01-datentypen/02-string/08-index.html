@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String </title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+
+        var partner = "Bärbel";
+        var info = "Dein Partner XXX ist in dich verliebt.";
+        var infoPos = info.indexOf("XXX");
+        var anfang = info.slice(0, infoPos);
+        output.innerHTML = anfang;
+        var ende = info.slice(infoPos + 3);
+        output.innerHTML = anfang + partner + ende;
+    </script>
+</body>
+
+</html>

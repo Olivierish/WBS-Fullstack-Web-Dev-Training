@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var trex = {
+            beine: 2,
+            laenge: 6,
+            nahrung: "Fleisch",
+            art: "T-Rex",
+        }
+
+        for (var prop in trex) {
+            output.innerHTML += prop + " / " + trex[prop] + "<br>";
+        }
+    </script>
+</body>
+
+</html>

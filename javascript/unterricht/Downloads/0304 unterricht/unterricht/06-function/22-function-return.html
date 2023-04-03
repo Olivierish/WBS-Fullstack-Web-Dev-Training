@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+    <style>
+        div {
+            width: 100px;
+            background-color: aquamarine;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>sdf</div>
+    <button onclick="zufall(3,9)">zufallszahl von 3 bis 9</button>
+
+    <button onclick="zufall(-3,3)">zufallszahl von -3 bis 3</button>
+    <p id="output"></p>
+
+    <script>
+        function zufall(von, bis) {
+            var e = Math.round(Math.random() * (bis - von) + von);
+            console.log(e);
+            return e;
+        }
+
+
+        document.getElementById("output").innerHTML = zufall(1, 40)
+    </script>
+</body>
+
+</html>

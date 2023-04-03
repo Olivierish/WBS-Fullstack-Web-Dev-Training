@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var trex = {
+            beine: 2,
+            laenge: 6,
+            nahrung: "Fleisch"
+        }
+
+        trex.art = "T-Rex";
+        trex.gebiet = ["Afrika", "Amerika", "Europa"];
+
+        output.innerHTML = trex.art;
+        output.innerHTML += "<br>";
+        output.innerHTML += "Nahrung: " + trex.nahrung;
+        output.innerHTML += "<br>";
+        output.innerHTML += "Anzahl der Beine: " + trex["beine"];
+        output.innerHTML += "<br>";
+        output.innerHTML += "Länge: " + trex.laenge + " Meter";
+        output.innerHTML += "<br>";
+        output.innerHTML += "Gebiete: " + trex.gebiet[0] + " , " + trex.gebiet[1] + " , " + trex.gebiet[2];
+    </script>
+</body>
+
+</html>

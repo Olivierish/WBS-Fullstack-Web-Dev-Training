@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+    <style>
+        td,
+        th {
+            border: 1px solid;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Filme</h1>
+    <select name="Filmauswahl" id="filmSelect"></select>
+    <table id="filmTabelle">
+        <caption>Filme</caption>
+        <tr>
+            <td>Film</td>
+            <td>Regie</td>
+            <td>Genre</td>
+            <td>Jahr</td>
+            <td>Schauspieler</td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        var filme = [{
+            name: "Indiana Jones, Jäger des verlorenen Schatzes",
+            regie: "Steven Spielberg",
+            genre: "Abenteuer",
+            jahr: 1981,
+            actor: "Harrison Ford"
+        }, {
+            name: "Herr der Ringe, Die Gefährten",
+            regie: "Peter Jackson",
+            genre: "Märchen",
+            jahr: 2001,
+            actor: "Ian Mc Kellen"
+        }, {
+            name: "Valerian",
+            regie: "Luc Besson",
+            genre: "Science Fiction",
+            jahr: 2017,
+            actor: "Cara Delevingne"
+        }, {
+            name: "Inception",
+            regie: "Christopher Nolan",
+            genre: "Science Fiction",
+            jahr: 2010,
+            actor: "Leonardo Di Caprio"
+        }, {
+            name: "Pulp Fiction",
+            regie: "Quentin Tarantino",
+            genre: "Pulp Fiction",
+            jahr: 1994,
+            actor: "John Travolta, Samuel L Jackson, Uma Thurman, Bruce Willis"
+        }, {
+            name: "Matrix",
+            regie: "Die Wachowskis",
+            genre: "Science Fiction",
+            jahr: 1999,
+            actor: "Keanu Reeves"
+        }, {
+            name: "Fight Club",
+            regie: "David Fincher",
+            genre: "Kultfilm",
+            jahr: 1999,
+            actor: "Brad Pit, Edward Norton"
+        }, {
+            name: "Only Lovers Left Alive",
+            regie: "Jim Jarmush",
+            genre: "Horror",
+            jahr: 2013,
+            actor: "Tilda Swinton, Tom Hiddelston"
+        }, {
+            name: "Das fünfte Element",
+            regie: "Luc Besson",
+            genre: "Science Fiction",
+            jahr: 1997,
+            actor: "Bruce Willis"
+        }, {
+            name: "Men in Black",
+            regie: "Barry Sonnenfeld",
+            genre: "Science Fiction",
+            jahr: 1997,
+            actor: "Will Smith, Tommy Lee Jones"
+        }]
+
+        var filmSelect = document.getElementById("filmSelect");
+        var tabelle = document.getElementById("filmTabelle")
+
+        for (var i = 0; i < filme.length; i++) {
+            var option = document.createElement("option");
+            option.innerHTML = filme[i].name;
+            option.value = i;
+            filmSelect.appendChild(option);
+        }
+
+        function insertFilm(id) {
+            var reihe = document.createElement('tr');
+            var spalte = document.createElement('td');
+            spalte.textContent = filme[id].name;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].regie;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].genre;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].jahr;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].actor;
+            reihe.appendChild(spalte);
+            tabelle.appendChild(reihe);
+        }
+
+        insertFilm(0);
+    </script>
+</body>
+
+</html>

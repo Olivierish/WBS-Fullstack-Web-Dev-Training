@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boolsche</title>
+</head>
+
+<body>
+    <script>
+        /*Der boolsche Datentyp hat nur 2 mögliche Werte true oder false
+                        Ähnlich wie man numerische Werte mit arithmetischen Operatoren (+ - / * %)kombinieren kann.
+                        kann man auch boolsche Wert mit boolschen Operatoren kombinieren
+                        die drei wichtigsten logischen Operatoren sind
+                        && logisches und
+                        || entweder oder, eins von beiden
+                        ! ungleich, ein Ausrufezeichen am Anfang des Wertes kehrt den Wert um, aus true wird false, aus false wird true
+
+                        Wenn man beispielsweise auf einer Webseite abfragen will, ob Datenschutzerklärung abgehakt wurde
+                        und AGB abgehakt wurde, kann man  den logischen Und-Operator einsetzen
+                */
+        var datenschutz = true;
+        var agb = true;
+        var freigabe = datenschutz && agb;
+        console.log("Ist freigegeben " + freigabe);
+        console.log("Eingabe erforderlich " + !freigabe);
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

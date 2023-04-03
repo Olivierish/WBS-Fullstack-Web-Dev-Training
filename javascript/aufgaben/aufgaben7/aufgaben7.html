@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aufgaben Tag 7</title>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Aufgaben Tag 7 - 03.04.2023</h1>
+  </header>
+  <section>
+    <h2>Auswahlliste / DOM</h2>
+<p>Erstelle ein Array. Die Elemente des Arrays sind Objekte.</p>
+<p>Die Objekte enthalten Filme. Filmtitel, Erscheinungsjahr, Genre, Regisseur, Hauptdrasteller</p>
+<p>Die Hauptdarsteller sind wiederum ein Array.</p>
+<p><br>
+  Erstelle händisch eine Auswahliste als HTML select-Element.<br>
+  Füge programmatisch die Filmtitel aus Auswahlfelder der Auswahlliste hinzu.</p>
+<p>Wenn der User auf ein eines der Filmtitel im Select Feld aufruft. Soll der Film mit allen Eigenschaften angzeigt werden und zwar in den Spalten einer Tabellenreihe.</p>
+<p>Die erste Reihe der Tabelle enthält Kopfzellen mit den Beschreibungen der Objekt Eigenschaften: Titel, Erscheinungsjahr, Genre, Regisseur, Schauspieler</p>
+<p>In den Aufgaben befinden sich ein paar Bilder. Eine weitere Herausforderung wäre, auch ein Bild zum Film in der Tabelle anzeigen zu lassen.</p>
+<p>Eine weitere Herausforderung wäre, eine Mehrfachauswahl zuzulassen. So dass man sich auch mehrere Filme gleichzeitig anzeigen lassen kann.</p>
+<p>&nbsp;</p>
+</section>
+<section>
+  <form>
+    <label for="filmen">Wählen Sie einen film:</label>
+    <select name="filmen" id="filmen">
+
+    </select>
+    <!-- <input type="submit" value="Submit"> -->
+  </form>
+</section>
+<script>
+  //Beispiel object
+  var obj = { 
+    name : "Ali",
+    alter : 25,
+  };
+  //Array Filmen 
+  var filmen =[
+    {filmtitel:"Der Tod auf dem Nil", erscheinungsjahr:"1937" , genre:"Krimi" , regisseur:"Agatha Christie"},
+    {filmtitel:"The Darkest Hour", erscheinungsjahr:"18. Januar 2018 (Deutschland)", genre:"Science Fiction", regisseur:"Joe Wrigh" }, 
+    {filmtitel:"Chang Can Dunk", erscheinungsjahr:"10. März 2023", genre:"Drama", regisseur:" Lena Waithe"}, 
+    {filmtitel:"The Last Duel", erscheinungsjahr:": 14. Oktober 2021", genre:"Action", regisseur:"Ridley Scott"}
+  ];
+  
+  var filmenElt = document.getElementById("filmen");
+  
+  // for (var prop in img) {
+  //           output.innerHTML += prop + " :" + img[prop] + "<br>";
+  // }
+
+  for(let i = 0; i < filmen.length; i++){
+    let optionElt = document.createElement("option"); // <option value="f1">Name der Film</option>
+    //optionElt.value = "f1";
+    optionElt.setAttribute("value", "f" + i);  //f0,f1,f2,f3
+    let textNode = document.createTextNode(filmen[i].filmtitel); 
+    optionElt.append(textNode); 
+    filmenElt.append(optionElt);
+  }
+
+console.log(filmenElt);
+
+
+
+
+  // optionElt.innerText = "Der Tod auf dem Nil";
+  // //select element bekommt ein Kind der heißt option element
+  // filmenElt.append(optionElt);
+  // console.log(filmenElt);
+  
+
+  let  img = document.createElement("img");
+  // // img.src = "img/img_0.png";
+  // // img.setAttribute("title", "Schiff auf hoher See");  
+  // // bildBox.append(img);
+  
+  
+  
+  console.log(filmen);
+
+  </script>
+</body>
+</html>

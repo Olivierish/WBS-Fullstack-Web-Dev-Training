@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bild anzeigen und weiterblättern</title>
+    <style>
+        #bildBox {
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+            width: 300px;
+            padding: 40px;
+            margin: auto;
+        }
+        
+        body {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <figure id="bildBox">
+        <figcaption id="output">Schiff auf hoher See</figcaption>
+    </figure>
+
+    <p> <button id="nextButton">nächstes Bild</button></p>
+
+    <script>
+        let bildTitel = [
+            "Schiff auf hoher See",
+            "Schiff Wikinger",
+            "Krone",
+            "Sonne",
+            "Piraten",
+            "Sonnenschild",
+            "Herkules",
+            "Adler",
+            "Burg Löweherz",
+            "Hund",
+            "König Esel",
+            "Flattermann",
+            "Biber",
+            "Totenkopf",
+            "Teufel",
+            "Pegasus",
+            "Pegasus",
+            "Proletarier aller Länder vereinigt euch."
+        ];
+
+        let bildBox = document.getElementById("bildBox");
+        let figcap = document.getElementById("output");
+        let nextBtn = document.getElementById("nextButton");
+        nextBtn.addEventListener("click", nextBild);
+
+        let img = document.createElement("img");
+        img.src = "img/img_0.png";
+        img.setAttribute("title", bildTitel[0]);
+        bildBox.insertBefore(img, figcap);
+
+        let id = 0;
+
+        function nextBild() {
+            if (id < 17) {
+                id++;
+            } else {
+                id = 0;
+            }
+            img.src = "img/img_" + id + ".png";
+            figcap.innerHTML = bildTitel[id];
+            img.setAttribute("title", bildTitel[id]);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dom querySelector</title>
+</head>
+
+<body>
+    
+<p id="output">Hallo <strong>Leute</strong> wie geht`s denn so?</p>
+<p>Hier geht es darum das Wort "Leute" durch einen Namen zu ersetzen. "Leute" ist in einem strong-Element eingeschlossen.</p>
+<p>Ein guter Fall vor den querySelector.</p>
+    
+    
+<script>
+
+let begriff = document.querySelector("#output > strong");
+    begriff.innerHTML = "Willi";
+    
+</script>
+</body>
+</html>

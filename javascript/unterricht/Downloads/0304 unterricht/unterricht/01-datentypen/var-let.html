@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testseite</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button id="button1"> Zurück </button>
+    <button id="button2"> Weiter </button>
+    <p id="output"> </p>
+
+
+    <script>
+        var condition = false;
+
+        function foo(condition) {
+            if (condition) {
+                var a = 4; // Gültigkeitsbereich von a ist die Funktion foo
+                let b = 5; // Gültigkeitsbereich von b ist der Block der if-Abfrage
+            }
+
+            console.log(typeof b);
+            console.log(a);
+        }
+
+        foo(condition);
+
+        /*ersetze let i durch var i  
+        let ist an jede Funktion der Forschleife gebunden, var nicht, 
+        var hat auch außerhalb der ForSchleife Gültigkeit*/
+        var buttons = document.querySelectorAll("button");
+
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = function() {
+                console.log("Button " + i);
+            }
+        }
+        //console.log(i);
+
+
+        {
+            let x = 1;
+            console.log(x); {
+                let x = 2;
+                console.log(x)
+            };
+            console.log(x);
+        }
+    </script>
+</body>
+
+</html>

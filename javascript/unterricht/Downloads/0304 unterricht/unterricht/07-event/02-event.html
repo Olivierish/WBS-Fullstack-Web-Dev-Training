@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+</head>
+
+<body>
+    <!--
+Verweis auf eine Funktion
+Das heißt der Name der Funktion wird ohne Klammern aufgeführt.
+So kann man keine Argumente der Funktion zuweisen.
+Man kann auch stattdessen eine namenlose Funktion  in die Klammer schreiben, siehe btn2 und btn3
+-->
+
+    <p> F12</p>
+
+    <p> <button id="but1">Click 1</button>
+        <button id="but2">Click 2</button>
+        <button id="but3">Click 3</button>
+        <button id="but4">Click 4</button></p>
+    <p id="output"></p>
+
+    <script>
+        let output = document.getElementById("output");
+        let btn1 = document.getElementById("but1");
+        let btn2 = document.getElementById("but2");
+        let btn3 = document.getElementById("but3");
+        let btn4 = document.getElementById("but4");
+
+        btn1.onclick = function() {
+            output.innerHTML = "Button1 geklickt."
+        };
+        btn2.addEventListener("click", function() {
+            output.innerHTML = "Button2 geklickt."
+        });
+
+        btn3.addEventListener("click", () =>
+            output.innerHTML = "Button3 geklickt."
+        );
+
+
+        btn4.addEventListener("click", machWas);
+
+        function machWas(evt) {
+            output.innerHTML = "Hab ich Klick, gemacht!";
+        }
+
+        console.log(machWas);
+    </script>
+</body>
+
+</html>
