@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>setTimeout Animation Frame</title>
+    <style>
+        img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="moon.png" alt="Moon" id="moon">
+    <script>
+        var moon = document.getElementById("moon");
+        var xPos = 20;
+
+
+        function animate() {
+            moon.style.left = xPos + "px";
+            xPos += 10;
+            setTimeout(animate, 500);
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>

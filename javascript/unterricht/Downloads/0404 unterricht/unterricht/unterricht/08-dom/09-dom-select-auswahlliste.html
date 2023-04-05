@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dom querySelector</title>
+</head>
+
+<body>
+    <!--
+In dieser Liste ist beim Aufruf der Seite das erste Element ausgewählt.
+Man sieht den Zugriff:
+
+select.value
+select.selectedIndex
+
+Um auf den ausgwählten Text zu gelangen,
+wählt man den index des Options Elements aus
+und wählt dann dort den text
+
+select.options[select.selectedIndex].text
+
+-->
+    <p>F12</p>
+
+    <label for="serie">Serien</label>
+    <select id="serie">
+  <option value="rickMort">Rick & Morty</option>
+  <option value="frng">Fringe </option>
+  <option value="brkBad">Breaking Bad</option>
+  <option value="futur">Futurama </option>
+</select>
+
+    <!-- liste.value der Wert des value Attributs
+liste.selectedIndex der ausgwählte Index
+liste.options[0].text als id kann man liste.selectedIndex eingeben, um das ausgwählte options Element zu erhalten
+liste.items[0] Auch items ist ein Objekt welches alle Elemente der Auswahlliste enthält.
+liste.selectedOptions ein Objekt welches alle ausgewählten Options Elemente enthält -->
+    <script>
+        let seriList = document.getElementById("serie");
+        let slVal = seriList.value;
+        let slId = seriList.selectedIndex;
+        let slText = seriList.options[slId].text;
+
+        console.log(slVal);
+        console.log(slId);
+        console.log(slText);
+    </script>
+</body>
+
+</html>

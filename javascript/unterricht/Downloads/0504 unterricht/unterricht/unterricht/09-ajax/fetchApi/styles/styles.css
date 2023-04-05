@@ -1,0 +1,13 @@
+th,
+td {
+    border: 1px solid #abaaaa;
+    padding: 10px;
+}
+
+tr:nth-child(even)>td {
+    background-color: rgb(209, 206, 206);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}

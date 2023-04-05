@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <style>
+        #datumAnzeige {
+            text-align: center;
+            font-size: 2rem;
+            color: #3B0E9B;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="datumAnzeige"></p>
+    <script>
+        /*
+                Es sieht blöd aus, wenn die Zeitanzeige springt, je nachdem ob die Sekunden einstellig oder zweistellig sind. Hier kann man mit einer Funktion Abhilfe schaffen, welche immer eine zweistellige Anzeige zurückgibt.
+                Die Funktion zweiStellig bekommt einen Zahlenwert egal ob String oder Number
+                er wird sowieso in einen string umgewandelt. Wenn die length, die Zeichenanzahl 1 ist, wird eine 0 vorangestellt. Der Wert wird dann zurückgegeben.
+                Am Besten ist eine Monospace Schrift, weil dort alle Zeichen die gleiche Breite haben. 
+                        */
+
+
+
+        let wochentag = [
+            "Sonntag",
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag"
+        ];
+
+        let monat = [
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"
+        ];
+
+        let datum, sekunde, minute, stunde, ausgabe;
+
+        function showDate() {
+            datum = new Date();
+            sekunde = datum.getSeconds();
+            minute = datum.getMinutes();
+            stunde = (datum.getHours());
+
+            ausgabe = wochentag[datum.getDay()] + " ";
+            ausgabe += datum.getDay() + " . ";
+            ausgabe += monat[datum.getMonth()] + " ";
+            ausgabe += datum.getFullYear() + "<br>";
+            ausgabe += zweiStellig(stunde) + ":" + zweiStellig(minute) + ":" + zweiStellig(sekunde);
+
+            document.getElementById("datumAnzeige").innerHTML = ausgabe;
+        }
+        setInterval(showDate, 1000);
+
+        function zweiStellig(zahl) {
+            let wert = String(zahl);
+            if (wert.length == 1) {
+                wert = "0" + wert;
+            }
+            return wert;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Request Animation Frame</title>
+    <style>
+        img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="moon.png" alt="Moon" id="moon">
+    <script>
+        var moon = document.getElementById("moon");
+        var iterationCount = 0;
+        var speed = 5;
+        var repeater;
+
+        function runlock() {
+
+            // easing = easeInQuad(iterationCount, 0, width, 300);
+            moon.setAttribute('style', 'left: ' + iterationCount * speed + 'px');
+            iterationCount++;
+
+            if ((iterationCount * speed) > window.innerWidth) {
+                iterationCount = 0;
+            }
+            repeater = requestAnimationFrame(runlock);
+        }
+
+        runlock();
+    </script>
+</body>
+
+</html>

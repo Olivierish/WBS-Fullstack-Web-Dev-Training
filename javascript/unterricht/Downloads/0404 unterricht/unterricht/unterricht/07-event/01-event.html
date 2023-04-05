@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+</head>
+
+<body>
+    <!--Den ersten beiden Buttons wurde ein Event-Handler zugewiesen, dem
+dritten Button wurde ein EventListener zugewiesen
+Bei den beiden letzten Buttons, wird ein Verweis auf eine Funktion erwartet
+Das heißt der Name der Funktion wird ohne Klammern aufgeführt.
+So kann man keine Argumente der Funktion zuweisen.
+Man kann auch stattdessen eine namenlose Funktion  in die Klammer schreiben, siehe nächstes Beispiel
+-->
+
+    F12
+    <button id="but1" onclick="machWas()">Click</button>
+    <button id="but2">Click</button>
+    <button id="but3">Click</button>
+
+
+    <script>
+        //let btn1 = document.getElementById("but1");
+        let btn2 = document.getElementById("but2");
+        let btn3 = document.getElementById("but3");
+
+        btn2.onclick = machWas; //event Handler
+        btn3.addEventListener("click", machWas); // event Listener
+
+        function machWas(evt) {
+            console.log("Hallo");
+        }
+    </script>
+</body>
+
+</html>

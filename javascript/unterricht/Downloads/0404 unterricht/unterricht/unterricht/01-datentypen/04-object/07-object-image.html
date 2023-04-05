@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p><button id="btn">click</button></p>
+    <p><img src="flyer.png" alt="Flieger" id="bild" class="bildKlasse"></p>
+    <p id="output"></p>
+
+
+    <script>
+        var btn = document.getElementById("btn");
+        var img = document.getElementById("bild");
+        var output = document.getElementById("output");
+
+        for (var prop in img) {
+            output.innerHTML += prop + " :" + img[prop] + "<br>";
+        }
+        btn.addEventListener("click", hideImg);
+
+        function hideImg(evt) {
+            img.hidden = !img.hidden;
+        }
+    </script>
+</body>
+
+</html>

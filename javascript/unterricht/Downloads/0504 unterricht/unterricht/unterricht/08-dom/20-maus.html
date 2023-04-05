@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Maus</title>
+    <style>
+        #moon {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="moon.png" alt="Moon" id="moon">
+    <p id="anzeige"></p>
+    <script>
+        var anzeige = document.getElementById("anzeige");
+        var moon = document.getElementById("moon");
+
+        function mousemove(event) {
+            /*      console.log("pageX: ", event.pageX,
+                     "pageY: ", event.pageY,
+                     "clientX: ", event.clientX,
+                     "clientY:", event.clientY) */
+            anzeige.innerHTML = "x: " + event.clientX + "<br>y: " + event.clientY;
+            moon.style.left = event.clientX + "px";
+            moon.style.top = event.clientY + "px";
+
+
+
+        }
+
+        window.addEventListener('mousemove', mousemove);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <button id="frage">Artists Anfrage</button>
+    <p id="antwort"></p>
+    <script>
+        var xhrObj = new XMLHttpRequest();
+
+        function sendReq() {
+            xhrObj.open('get', 'json/artists.json', true);
+            xhrObj.onload = handleResponse;
+            xhrObj.send();
+        }
+
+        function handleResponse() {
+            var daten = JSON.parse(xhrObj.responseText);
+            document.getElementById("antwort").innerHTML = daten.artists[1].name + "<br>" + daten.artists[0].name + "<br>" + daten.artists[0].albums[0].title + "<br>" + daten.artists[0].albums[1].title;
+        }
+
+        document.getElementById("frage").onclick = sendReq;
+    </script>
+</body>
+
+</html>

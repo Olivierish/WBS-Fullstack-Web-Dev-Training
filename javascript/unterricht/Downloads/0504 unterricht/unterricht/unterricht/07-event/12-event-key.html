@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Test</title>
+    <style>
+        div {
+            height: 200vh;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Key Tastatur Event</h1>
+
+
+    <p id="info">info</p>
+    <div></div>
+
+    <script>
+        var anzeige = document.getElementById("info");
+        document.addEventListener("keydown", showKey);
+
+        function showKey(evt) {
+
+            console.log(evt.keyCode);
+            console.log(evt);
+
+            switch (evt.keyCode) {
+                case 37:
+                    anzeige.innerHTML = "links";
+                    break;
+                case 38:
+                    anzeige.innerHTML = "oben";
+                    evt.returnValue = false;
+                    break;
+                case 39:
+                    anzeige.innerHTML = "rechts";
+                    break;
+                case 40:
+                    anzeige.innerHTML = "unten";
+                    evt.returnValue = false;
+                    break;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

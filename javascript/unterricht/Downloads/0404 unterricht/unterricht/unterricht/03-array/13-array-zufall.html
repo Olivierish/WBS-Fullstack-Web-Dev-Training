@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+
+<body>
+    <p id="output"></p>
+
+    <script>
+        var tiere = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra",
+            "Krokodil",
+            "Antilope",
+            "Gorilla"
+        ];
+
+
+        var output = document.getElementById("output");
+        var zi = Math.floor(Math.random() * tiere.length);
+        output.innerHTML = zi + " " + tiere[zi];
+    </script>
+
+
+</body>
+
+</html>

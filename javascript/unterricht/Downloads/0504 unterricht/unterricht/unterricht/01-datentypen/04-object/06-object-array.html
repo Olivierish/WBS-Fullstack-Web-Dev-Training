@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+
+
+        var dino = [{
+            name: "Tyrannosaurus Rex",
+            beine: 2,
+            laenge: 6,
+            nahrung: "andere Saurierer"
+        }, {
+            name: "Stegosaurus",
+            beine: 4,
+            laenge: 8,
+            nahrung: "Obst und Gemüse"
+        }, {
+            name: "Brontosaurus",
+            beine: 4,
+            lange: 15,
+            nahrung: "Blätter"
+        }];
+
+        for (var i = 0; i < dino.length; i++) {
+            for (var prop in dino[i]) {
+                output.innerHTML += prop + ": " + dino[i][prop] + " / ";
+            }
+            output.innerHTML += "<br>";
+        }
+    </script>
+</body>
+
+</html>

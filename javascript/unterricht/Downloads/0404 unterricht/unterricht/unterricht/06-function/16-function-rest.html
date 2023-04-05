@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript function</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>
+        <button onclick="person('Werner','Hans')">click</button>
+        <button onclick="person('Beate','Peter', 'Frieda','Franz','Otto','Walter')">click</button>
+        <button onclick="person('Ulla','Hans','Gerda','Rita','Yvette','Debbi')">click</button></p>
+    <p id="anzeige"></p>
+
+    <script>
+        var anzeige = document.getElementById("anzeige");
+
+        function person(a, b, ...restArgs) {
+            anzeige.innerHTML = "";
+            anzeige.innerHTML = a + " und " + b + " sind ein Liebespaar.<br>";
+
+            if (restArgs.length > 0) {
+                for (var i = 0; i < restArgs.length; i++) {
+                    anzeige.innerHTML += restArgs[i] + ", ";
+                }
+                anzeige.innerHTML += " sind es nicht."
+            }
+        }
+        person("Willi", "Walter", "Tante Frieda", "Ulla", "Papa");
+    </script>
+</body>
+
+</html>

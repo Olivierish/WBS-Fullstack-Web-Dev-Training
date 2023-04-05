@@ -1,0 +1,21 @@
+{
+    "hunde": [{
+            "rasse": "Deerhound",
+            "charakter": "entspannt, freundlich, selbstsicher",
+            "hoehe": 41,
+            "gewicht": 43
+        },
+        {
+            "rasse": "Jagdterrier",
+            "charakter": "aktiv, clever, selbstsicher",
+            "hoehe": 78,
+            "gewicht": 10
+        },
+        {
+            "rasse": "Italienisches Windspiel",
+            "charakter": "clever, freundlich, wachsam, verspielt",
+            "hoehe": 38,
+            "gewicht": 6
+        }
+    ]
+}

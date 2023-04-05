@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Text laden</title>
+</head>
+
+<body>
+
+    <p id="antwort"></p>
+    <script>
+        var xhrObj = new XMLHttpRequest();
+        xhrObj.open('get', 'pillepalle.txt', true);
+        // xhrObj.onload = (evt) => document.getElementById("antwort").innerHTML = xhrObj.responseText;
+        xhrObj.onload = function(evt) {
+            document.getElementById("antwort").innerHTML = xhrObj.responseText;
+        }
+        xhrObj.send();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .btn {
+            padding: 10px;
+            font-size: 1em;
+            font-weight: bolder;
+        }
+        
+        #imagebox {
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+            background-color: gray;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function addiere(a, b) {
+            var ergebnis = a + b;
+            return ergebnis;
+
+        }
+
+        var a = addiere(12, 30);
+        var b = addiere(12332403, a)
+        console.log(b);
+    </script>
+</body>
+
+</html>

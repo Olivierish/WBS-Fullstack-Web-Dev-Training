@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript function</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>
+        <button onclick="showLand(warLand)">Kriegsgebiet</button><button onclick="showLand(holidayLand)">Holidayland</button><button onclick="showLand(smallLand)">Liliput Land</button></p>
+    <p id="anzeige"></p>
+    <script>
+        var anzeige = document.getElementById("anzeige");
+        let warLand = [
+            "Ukraine",
+            "Syrien",
+            "Jugoslawien",
+            "Vietnam",
+            "Korea",
+            "Israel",
+            "Deutschland"
+        ];
+        let holidayLand = [
+            "Hawai",
+            "Cuba",
+            "Spanien",
+            "Italien",
+            "Malediven",
+            "Thailand"
+        ];
+        let smallLand = ["Vatikan", "Malta", "Andorra", "San Marino", "Monca", "Liechtenstein"];
+
+        function showLand(land) {
+            var zz = Math.floor(Math.random() * land.length);
+            anzeige.innerHTML = land[zz];
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

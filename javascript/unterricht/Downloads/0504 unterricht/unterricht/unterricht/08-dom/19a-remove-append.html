@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>image</title>
+</head>
+
+<body>
+
+    <p> <button id="b1">click</button></p>
+    <!--     <button id="b2">click</button> -->
+    <script>
+        let b1 = document.getElementById("b1");
+        /*  let b2 = document.getElementById("b2"); */
+        b1.addEventListener("click", append);
+        var counter = 0;
+
+        function append() {
+            if (counter < 17) {
+                let karte;
+                karte = document.createElement("img");
+                karte.src = "img/img_" + counter + ".png";
+                document.body.appendChild(karte);
+                counter++;
+            }
+        }
+    </script>
+</body>
+
+</html>

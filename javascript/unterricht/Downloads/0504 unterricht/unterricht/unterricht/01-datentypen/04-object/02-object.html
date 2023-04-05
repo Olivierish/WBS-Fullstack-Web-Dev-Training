@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var trex = {
+            beine: 2,
+            laenge: 6,
+            nahrung: "Fleisch",
+            art: "T-Rex",
+            gebiet: ["Afrika", "Amerika", "Europa"],
+            eigenschaften: function() {
+                output.innerHTML = "Ich bin ein " + this.art + " und fresse gerne " + this.nahrung;
+            }
+        }
+
+        trex.eigenschaften();
+    </script>
+</body>
+
+</html>

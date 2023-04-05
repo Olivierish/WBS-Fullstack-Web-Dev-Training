@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>setInterval Animation Frame</title>
+    <style>
+        img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="moon.png" alt="Moon" id="moon">
+    <script>
+        var moon = document.getElementById("moon");
+        var xPos = 20;
+
+        function animate() {
+
+            moon.style.left = xPos + "px";
+
+            if (xPos < window.innerWidth) {
+                xPos += 10;
+            } else {
+                xPos = 0;
+            }
+        }
+
+        setInterval(animate, 100);
+    </script>
+</body>
+
+</html>

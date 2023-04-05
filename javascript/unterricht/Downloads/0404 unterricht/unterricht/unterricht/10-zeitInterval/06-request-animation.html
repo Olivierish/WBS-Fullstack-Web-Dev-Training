@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Request Animation Frame</title>
+    <style>
+        #moon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="moon.png" alt="Moon" id="moon">
+    <script>
+        var moon = document.getElementById("moon");
+        var iterationCount = 0;
+        var speed = 5;
+        var repeater;
+
+        window.addEventListener('mousemove', mousemove);
+        var zielX, zielY, xPos, yPos, mouseX, mouseY;
+
+        function mousemove(event) {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        }
+
+        function runlock() {
+            xPos = moon.offsetLeft;
+            yPos = moon.offsetTop;
+            // console.log(xPos)
+            zielX = (mouseX - xPos) / 40;
+            zielY = (mouseY - yPos) / 40;
+            moon.style.left = (xPos + zielX) + 'px';
+            moon.style.top = (yPos + zielY) + 'px';
+            repeater = requestAnimationFrame(runlock);
+        }
+
+        /*         for (prop in moon) {
+                    console.log(prop + " / " + moon[prop]);
+
+                } */
+
+        runlock();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>regulärer Ausdruck</title>
+</head>
+
+<body>
+
+    <p id="anzeige">324</p>
+
+    <p id="ausgabe"></p>
+    <script>
+        let anzeige = document.getElementById("anzeige");
+        let ausgabe = document.getElementById("ausgabe");
+
+        // let myRegExp = /^[\d][\d][\d]$/; 
+        let myRegExp = /\d{3}$/;
+
+        ausgabe.innerHTML = myRegExp.test(anzeige.textContent);
+        //^[\d] beginnt mit Zahl {3}das voranstehende Zeichen 3 mal $ Ende der Eingabe
+    </script>
+
+</body>
+
+</html>

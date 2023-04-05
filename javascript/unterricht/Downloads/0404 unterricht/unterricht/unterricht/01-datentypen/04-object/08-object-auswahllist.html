@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p><button id="btn">click</button></p>
+    <p id="output"></p>
+    <select name="" id="farbe"></select>
+
+    <script>
+        var select = document.getElementById("farbe");
+        var btn = document.getElementById("btn");
+
+        let tiere = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+
+        btn.addEventListener("click", setOption);
+        var id = -1;
+
+        function setOption() {
+            var option = document.createElement("option");
+            option.innerHTML = tiere[++id];
+            option.value = id;
+            select.appendChild(option);
+        }
+    </script>
+</body>
+
+</html>

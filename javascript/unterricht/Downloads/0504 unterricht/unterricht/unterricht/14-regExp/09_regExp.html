@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String 8</title>
+</head>
+
+<body>
+    F12
+    <p id="info1"></p>
+    <p id="info2"></p>
+    <script>
+        let info1 = document.getElementById("info1");
+        let info2 = document.getElementById("info2");
+
+        let wert = "250 Birnen 30 Pflaumen 49 Äpfel";
+        let regExp = /\d+/g;
+        let zahlen = wert.match(regExp);
+        info1.innerHTML = zahlen;
+
+        //match liefert ein Array, mit dem Array Zugriffsoperator kann man auf die einzelnen gefundenen Werte zugreifen
+        //mit dem Flag g werden alle Treffer in einem Array angezeigt
+        //exec liefert immer nur das erste Vorkommen
+
+
+        console.log(zahlen.length);
+        let summe = Number(zahlen[0]) + Number(zahlen[1]) + Number(zahlen[2]);
+        info2.innerHTML = summe + " Produkte";
+    </script>
+</body>
+
+</html>

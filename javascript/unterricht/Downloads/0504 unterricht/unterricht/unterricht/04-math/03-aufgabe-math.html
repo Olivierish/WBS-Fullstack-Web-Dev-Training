@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array</title>
+</head>
+
+<body>
+    <p>
+        Erzeuge ein Zufallszahlen als Ganzzahlen (integer): <br> von 1 bis 8 <br> von 0 bis 6 <br> von 5 bis 10 <br>von -3 bis 3
+    </p>
+    <script>
+        var zz1 = Math.ceil(Math.random() * 8);
+        document.write(zz1);
+        document.write("<hr>");
+        var zz2 = Math.round(Math.random() * 6);
+        document.write(zz2);
+        document.write("<hr>");
+        var zz3 = Math.floor(Math.random() * 6) + 5;
+        document.write(zz3);
+        document.write("<hr>");
+        var zz4 = Math.floor(Math.random() * 7) - 3;
+        document.write(zz4);
+    </script>
+</body>
+
+</html>

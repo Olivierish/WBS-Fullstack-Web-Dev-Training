@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Maus</title>
+    <style>
+        #moon {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form1" method="post">
+        <p>
+            <label for="eingab">Text Field:</label>
+            <input name="eingab" type="text" id="eingab"><span id="eingabInfo"></span>
+        </p>
+        <p>
+            <input type="button" value="Senden" onclick="senden()">
+            <input type="button" value="Reset" onclick="rueckSetz()">
+        </p>
+    </form>
+
+    Javascript
+    <script>
+        function senden() {
+
+            if (document.getElementById('eingab').value == "") {
+                document.getElementById('eingabInfo').innerHTML = "Das wurde nicht ausgefüllt";
+            } else {
+                window.document.forms[0].submit();
+            }
+        }
+
+        function rueckSetz() {
+            document.getElementById('eingabInfo').innerHTML = "";
+            window.document.forms[0].reset();
+        }
+        window.document.forms[0].action = "abholen.php";
+    </script>
+
+</body>
+
+</html>

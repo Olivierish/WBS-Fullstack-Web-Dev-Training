@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <style>
+        #datumAnzeige {
+            text-align: center;
+            font-size: 2rem;
+            color: #3B0E9B;
+            font-style: italic;
+            font-family: 'Bad Script', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="datumAnzeige"></p>
+
+    <script>
+        let datum = new Date();
+
+        document.write(datum);
+        document.write("<hr>");
+        document.write(datum.toLocaleString());
+
+        document.getElementById("datumAnzeige").textContent = datum;
+    </script>
+</body>
+
+</html>

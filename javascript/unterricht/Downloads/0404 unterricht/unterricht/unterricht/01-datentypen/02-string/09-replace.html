@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String </title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+
+        var partner = "Bärbel";
+        var info = "Dein Partner XXX ist in dich verliebt. Also kümmer dich schön um XXX.";
+        var ausgabe = info.replace("XXX", partner);
+        output.innerHTML = ausgabe;
+        var ausgabe2 = info.replace("XXX", partner).replace("XXX", partner);
+        output.innerHTML = ausgabe2;
+        var ausgabe3 = info.replace(/XXX/, partner);
+        output.innerHTML = ausgabe3;
+    </script>
+</body>
+
+</html>

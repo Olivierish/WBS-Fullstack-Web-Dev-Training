@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Request Animation Frame</title>
+    <style>
+        #moon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="https://www.mediaevent.de/javascript/animation-api.html">Siehe Web Animation</a></p>
+    <img src="moon.png" alt="Moon" id="moon">
+    <script>
+        var moon = document.getElementById("moon");
+        moon.animate(
+            [{
+                transform: "rotate(0deg)"
+            }, {
+                transform: "rotate(360deg)"
+            }], {
+                duration: 2000,
+                iterations: Infinity
+            }
+        );
+    </script>
+</body>
+
+</html>

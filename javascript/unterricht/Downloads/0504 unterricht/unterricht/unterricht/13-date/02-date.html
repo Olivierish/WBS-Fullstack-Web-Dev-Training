@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <style>
+        #datumAnzeige {
+            text-align: center;
+            font-size: 2rem;
+            color: #3B0E9B;
+            font-family: 'Bad Script', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="datumAnzeige"></p>
+    <script>
+        /*
+                  Das Datum liefert mit getDay() einen numerischen Wochentag beginnend bei 0 für Sonntag. Mittels eines Array lässt sich dieser dann anzeigen.
+                  wochentag[datum.getDay()];
+                  Gleiches gilt für Montate getMonth() liefert den Monat beginnend bei 0 für Januar.
+                  */
+
+
+        let wochentag = [
+            "Sonntag",
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag"
+        ];
+
+        let monat = [
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"
+        ]
+
+        var datum = new Date();
+
+        let ausgabe = wochentag[datum.getDay()] + " ";
+        ausgabe += datum.getDate() + ". ";
+        ausgabe += monat[datum.getMonth()] + " ";
+        ausgabe += datum.getFullYear();
+
+        document.getElementById("datumAnzeige").textContent = ausgabe;
+    </script>
+</body>
+
+</html>

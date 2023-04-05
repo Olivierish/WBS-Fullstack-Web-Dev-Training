@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Ajax html</title>
+</head>
+
+<body>
+    <nav></nav>
+    <script>
+        var nav = document.getElementsByTagName("nav")[0];
+
+        var xhrObj = new XMLHttpRequest();
+
+        xhrObj.open('get', 'nav.html', true);
+        xhrObj.onload = function(evt) {
+            nav.innerHTML = xhrObj.responseText;
+        }
+        xhrObj.send();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Javascript function</title>
+</head>
+
+<body>
+    <p> <button onclick="zeichne(10, 'Katze')">10 Katzen</button></p>
+
+    <p> <button onclick="zeichne(20, 'Tiger')">20 Tiger</button></p>
+
+    <p id="anzeige"></p>
+
+
+    <script>
+        var output = document.getElementById("anzeige");
+
+
+
+        function zeichne(anzahl, was) {
+            output.innerHTML = "";
+            for (var i = 0; i < anzahl; i++) {
+                output.innerHTML += was + (i + 1) + " ^.^ <br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

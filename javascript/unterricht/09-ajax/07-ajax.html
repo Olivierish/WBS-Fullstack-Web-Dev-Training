@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <p>Erstellt eine JSON Datei welche Hunderassen enthält. Die Hunde haben die Eigenschaften rasse, charakter, hoehe, gewicht.</p>
+    <p>Unter folgender Adresse könnt ihr euch die Daten anzeigen lassen. <a href="https://www.hunderasse.de/alle-hunderassen/?psafe_param=1">Hunderassen</a></p>
+    <p>Erzeugt eine HTML Datei, welche die JSON Datei lädt und einen der Hunde mit seinen Eigenschaften anzeigt.</p>
+    <button id="frage">Hunde Anfrage</button>
+
+    <p id="antwort"></p>
+    <script>
+        var daten;
+        var xhrObj = new XMLHttpRequest();
+
+        function sendReq() {
+            xhrObj.open('get', 'json/hunde.json', true);
+            xhrObj.onload = handleResponse;
+            xhrObj.send();
+        }
+
+        function handleResponse() {
+            daten = JSON.parse(xhrObj.responseText);
+            showDog(2);
+        }
+
+        document.getElementById("frage").onclick = sendReq;
+
+
+        function showDog(id) {
+            document.getElementById("antwort").innerHTML = daten.hunde[id].rasse + "<br>" + daten.hunde[id].charakter + "<br>" + daten.hunde[id].hoehe + "<br>" + daten.hunde[id].gewicht;
+        }
+    </script>
+</body>
+
+</html>
