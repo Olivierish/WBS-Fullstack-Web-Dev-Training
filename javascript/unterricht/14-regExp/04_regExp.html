@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>regulärer Ausdruck</title>
+    <style>
+        body{font-size: 1.5rem;}
+        button{font-size: 1.3em;}
+    </style>
+</head>
+
+<body> 
+    <p>Gebe etwas ein und wähle einen Regulären Ausdruck</p>
+<p><input type="text" id="eingabe"> </p>
+<p>    <button id="btn1">/[abc]/</button> 
+eines der Zeichen
+ </p>
+<p>    <button id="btn2">/[^abc]/</button> 
+keines der Zeichen aber irgend ein anderes
+ </p>
+<p>    <button id="btn3">/[0-9]/</button> 
+Zahlen
+ </p>
+<p>    <button id="btn4">/[^0-9]/</button> 
+keine Zahlen
+ </p>
+<p>    <button id="btn5">/allo/</button> </p>
+
+    <p id="ausgabe"></p>
+    
+    <script>
+    let eingabe = document.getElementById("eingabe");
+    let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById("btn2");
+    let btn3 = document.getElementById("btn3");
+    let btn4 = document.getElementById("btn4");
+    let btn5 = document.getElementById("btn5");
+
+    let ausgabe = document.getElementById("ausgabe"); 
+        
+
+        
+    btn1.addEventListener("click", function(){
+     let   regExp = /[abc]/;
+       ausgabe.innerHTML =  regExp.test(eingabe.value);  
+    }); 
+        
+    btn2.addEventListener("click", function(){
+     let   regExp = /[^abc]/;
+       ausgabe.innerHTML =  regExp.test(eingabe.value);  
+    }); 
+        
+    btn3.addEventListener("click", function(){
+     let   regExp = /[0-9]/;
+       ausgabe.innerHTML =  regExp.test(eingabe.value);  
+    }); 
+    btn4.addEventListener("click", function(){
+     let   regExp = /[^0-9]/;
+       ausgabe.innerHTML =  regExp.test(eingabe.value);  
+    }); 
+    btn5.addEventListener("click", function(){
+     let   regExp = /allo/;
+       ausgabe.innerHTML =  regExp.test(eingabe.value);  
+    }); 
+ 
+        
+/*
+Wenn eine einzige Zahl vorkommen täte, würde true gliefert.
+*/
+  
+    </script>
+    
+</body>
+</html>

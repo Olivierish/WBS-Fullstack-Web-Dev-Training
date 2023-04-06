@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Versorgungsrechner</title>
+</head>
+<!-- 
+  7) Ein ängstlicher Bürger plant, wegen des Coronavirus sein Haus nicht mehr zu verlassen.
+	Entwickle einen Versorgungsrechner, der ihm in der Konsole ausgibt, wie viele Beutel Tee 
+	oder Packungen Pasta er heute kaufen muss, um bis an sein Lebensende auszuharren.
+	 
+	Verwende Variablen für Alter, Lebenserwartung,
+  Konsum pro Tag sowie Artikel (Tee) und Einheit (Beutel).
+
+  Beispiellösung:
+  Du brauchst 56210 Beutel Tee bis zum Alter von 100 Jahren.
+  -->
+
+<body>
+    <h1>Versorgungsrechner</h1>
+    <script>
+        const alter = window.parseInt(window.prompt('Bitte geben sie ihr Alter ein:'))
+        const lebenserwartung = window.parseInt(window.prompt('Bitte geben sie ihre Lebenserwartung ein:'))
+        const artikel = window.prompt('Bitte geben sie den gewünschten Artikel ein:')
+        const einheit = window.prompt('In welcher Einheit wird dieser Artikel verkauft?')
+        const konsum = window.parseInt(window.prompt('Wieviel ' + einheit + ' ' + artikel + ' bnötigen sie pro Tag?'))
+
+        if (window.isNaN(alter) || window.isNaN(lebenserwartung)) {
+            console.error('Die Angaben zum Berechnen des Alters sind ungültig')
+        } else if (artikel == '') {
+            console.error('Sie müssen einen Artikel angeben')
+        } else if (einheit == '') {
+            console.error('Sie müssen eine Einheit angeben')
+        } else if (window.isNaN(konsum)) {
+            console.error('Die Eingabe des Tagesbedarf ist ungültig')
+        } else {
+            const bedarf = (lebenserwartung - alter + 1) * 365 * konsum;
+            console.error('Du brauchst ' + bedarf + ' ' + einheit + ' ' + artikel + ' bis zum Alter von ' + lebenserwartung + ' Jahren.')
+        }
+    </script>
+</body>
+
+</html>

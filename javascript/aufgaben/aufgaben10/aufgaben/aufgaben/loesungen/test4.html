@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 3</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        let tiere = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Nashorn",
+            "Zebra",
+            "Krokodil",
+            "Antilope",
+            "Gorilla"
+        ];
+        var tier;
+        for (var i = 0; i < tiere.length; i++) {
+            if (tiere[i] == "Nashorn") {
+                tier = tiere.splice(i, 1);
+                break;
+            }
+        }
+        document.write(tiere.join());
+        tiere.splice(2, 0, tier);
+
+        document.write("<hr>");
+        document.write(tiere.join());
+    </script>
+</body>
+
+</html>

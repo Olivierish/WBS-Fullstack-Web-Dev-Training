@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Array 2</title>
+</head>
+
+<body>
+    
+
+    <button id="hin">hin</button>
+    <button id="zurueck">zurück</button>
+    <p id="ausgabe">Ich bin die Ausgabe</p>
+    
+<script>
+    
+let ausgabe = document.getElementById("ausgabe");
+let hinBut = document.getElementById("hin");
+let backBut = document.getElementById("zurueck"); 
+    
+let weg = ["Markt", "Kirchweg", "Kirche", "Fegerweg", "Höllermanstr.", "Brücke","Ziel" ]
+let hinweg = [];
+let count = 0;
+
+    
+hinBut.onclick = function(){
+   hinweg.push(weg[count]);
+    ausgabe.innerHTML = hinweg[count];
+    count++;
+}
+
+
+</script>
+    
+</body>
+</html>

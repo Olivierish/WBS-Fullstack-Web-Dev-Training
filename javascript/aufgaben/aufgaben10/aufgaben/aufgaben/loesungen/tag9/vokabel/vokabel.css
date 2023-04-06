@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+th {
+    font-family: 'Lobster', "Times New Roman", serif;
+    font-weight: normal;
+    color: #512906;
+}
+
+h1 {
+    text-shadow: -1px 1px 1px #FFF;
+    font-size: 2.2rem;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: black;
+    /* background-image: url(../game/actor/img/backBeam.png);*/
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #000000;
+}
+
+#wrapper {
+    max-width: 700px;
+    min-width: 600px;
+    margin: 20px auto;
+    border: 12px ridge #A76B30;
+    background-color: #F4D2A1;
+    padding: 12px;
+    background-image: linear-gradient(90deg, #D7A25F, #E3D1A6, #E3D1A6, #D7A25F);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+
+/* dialog:modal {
+    max-width: 600px;
+} */
+
+.center {
+    text-align: center;
+}
+
+.bigText {
+    font-size: 1.5em;
+}
+
+td,
+th {
+    padding: 10px;
+    border: 1px solid #A67E45;
+}
+
+table {
+    border-spacing: 5px;
+    border: 6px outset #A76B30;
+    padding: 10px;
+    width: 100%;
+    background-color: #EBD2B5;
+}
+
+
+/*dialog::backdrop {
+background: rgba(0,0,0,0.2);
+}*/
+
+#picContainer>img {
+    max-width: 100%;
+    transition: opacity 8s;
+    display: block;
+}
+
+#picContainer {
+    width: max-content;
+    margin: 0 auto;
+    background-image: url("blueStar.jpg");
+    text-align: center;
+}
+
+#backWow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #00A492;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.70);
+    padding: 0.8rem;
+    border: 0px solid #000;
+    border-radius: 50%;
+    line-height: 80%;
+}

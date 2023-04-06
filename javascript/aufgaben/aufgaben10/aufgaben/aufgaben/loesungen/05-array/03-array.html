@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="ausgabe"></p>
+    <script>
+        let tiereAfrikas = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+        let haustiere = [
+            "Hund",
+            "Katze",
+            "Maus",
+            "Hamster",
+            "Fliege"
+        ]
+        let nutztiere = [
+            "Kuh",
+            "Schwein",
+            "Huhn",
+            "Ente",
+            "Esel",
+            "Pferd",
+            "Schaf"
+        ]
+        let tiere = tiereAfrikas.concat(haustiere).concat(nutztiere);
+        //  let ausgabe = document.getElementById("ausgabe");
+        // ausgabe.innerHTML = tiere.join(" / ");
+        // console.log(tiere);
+        document.write(tiere.join());
+    </script>
+</body>
+
+</html>

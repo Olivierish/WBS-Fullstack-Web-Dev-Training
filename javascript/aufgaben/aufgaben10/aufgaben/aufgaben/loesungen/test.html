@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 3</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var vorname = ["Ali", "Ahmad", "Willi", "Müller", "Nashorn", "Hirschkuh", "Jupiter", "Ford"];
+        var id = vorname.indexOf("Nashorn");
+        vorname.splice(id, 1);
+
+        var id = vorname.indexOf("Ahmad");
+        vorname.splice(id, 1);
+        document.write(vorname);
+    </script>
+</body>
+
+</html>

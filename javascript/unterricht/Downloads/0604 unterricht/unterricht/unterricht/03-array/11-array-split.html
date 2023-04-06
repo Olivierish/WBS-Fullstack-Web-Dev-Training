@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+
+<body>
+    <p id="output"></p>
+
+    <script>
+        var output = document.getElementById("output");
+        var moebelString = "Tisch;Stuhl;Schrank;Sessel;Kommode";
+        var moebel = moebelString.split(";");
+
+        output.innerHTML = moebel[3];
+    </script>
+
+
+</body>
+
+</html>

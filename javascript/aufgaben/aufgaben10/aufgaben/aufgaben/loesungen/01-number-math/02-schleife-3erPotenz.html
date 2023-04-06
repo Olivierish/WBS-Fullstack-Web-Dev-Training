@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Schleife</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var ergebnis = 3;
+        for (var i = 1; i < 100; i++) {
+            ergebnis = Math.pow(3, i);
+            output.innerHTML += ergebnis + "<br>";
+        }
+    </script>
+</body>
+
+</html>

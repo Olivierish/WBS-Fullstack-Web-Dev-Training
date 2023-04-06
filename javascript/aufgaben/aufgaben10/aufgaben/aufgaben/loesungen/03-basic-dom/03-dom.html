@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Basic Dom Aufgabe</title>
+</head>
+
+<body>
+    <p id="ausgabe"></p>
+
+    <script>
+        let ausgabe = document.getElementById("ausgabe");
+        let a = 5;
+        while (a <= 50) {
+            ausgabe.innerHTML += a + "<br>";
+            a = a + 5;
+        }
+    </script>
+</body>
+
+</html>

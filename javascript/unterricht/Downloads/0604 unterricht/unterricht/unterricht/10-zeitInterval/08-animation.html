@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Request Animation Frame</title>
+    <style>
+        #moon {
+            padding: 10px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="moonAni.playbackRate -= 0.2">langsamer</button>
+    <button onclick="moonAni.play()">PLAY</button>
+    <button onclick="moonAni.pause()">PAUSE</button>
+    <button onclick="moonAni.playbackRate += 0.2">schneller</button>
+    <p><a href="https://www.mediaevent.de/javascript/animation-api.html">Siehe Web Animation</a></p>
+    <img src="moon.png" alt="Moon" id="moon">
+    <script>
+        var width = window.innerWidth;
+        var umdrehungen = 6;
+        var duration = 10000;
+        var moon = document.getElementById("moon");
+        let moonAni = moon.animate(
+            [{
+                transform: "translateX(0) rotate(0deg)",
+                backgroundColor: "#050",
+                easing: "ease-in"
+            }, {
+                transform: "translateX(" + width + "px) rotate(" + (umdrehungen * 360) + "deg)",
+                backgroundColor: "#5f0",
+            }, {
+                transform: "translateX(0) rotate(0deg)",
+                backgroundColor: "#050",
+                easing: "ease-out"
+            }], {
+                duration: duration,
+                iterations: Infinity
+            }
+        );
+    </script>
+</body>
+
+</html>

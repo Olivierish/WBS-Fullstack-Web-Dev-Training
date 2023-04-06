@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>regulärer Ausdruck Pipe </title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Regulärer Ausdruck | Pipe Zeichen</h1><br>
+    <p> dieses Zeichen | oder dieses</p>
+    <p>Drei Japanesen mit dem Kontrabass.</p>
+    <pre>let lied = "Drei Chinesen mit dem Kontrabass";
+let regExp = /ei|a|o|u/g;
+let lied_1 = lied.replace(regExp, "o")</pre>
+    <p id="ausgabe"></p>
+
+    <script>
+        let ausgabe = document.getElementById("ausgabe");
+
+        let lied = "Drei Japanesen mit dem Kontrabass";
+        let regExp = /ei|a|o|u/g;
+
+        ausgabe.innerHTML = lied.replace(regExp, "o") + "<br>";
+        ausgabe.innerHTML += lied.replace(regExp, "ö") + "<br>";
+        ausgabe.innerHTML += lied.replace(regExp, "u") + "<br>";
+        ausgabe.innerHTML += lied.replace(regExp, "a") + "<br>";
+        ausgabe.innerHTML += lied.replace(regExp, "i") + "<br>";
+        ausgabe.innerHTML += lied.replace(regExp, "ü") + "<br>";
+        ausgabe.innerHTML += lied.replace(regExp, "ei") + "<br>";
+    </script>
+
+</body>
+
+</html>

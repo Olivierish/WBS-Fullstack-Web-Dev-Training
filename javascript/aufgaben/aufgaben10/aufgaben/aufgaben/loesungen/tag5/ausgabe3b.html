@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>5.Tag</title>
+    <style>
+        .btn {
+            background: greenyellow;
+            margin: 20px;
+            font-size: 20px;
+            padding: 20px;
+        }
+        
+        #p1,
+        #p2,
+        #p3 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<!-- do-while, for-schleife
+Erstellen Sie ein kleines Gedächtnis-Spiel.
+Beim Aufrufen der Seite wird der Spieler durch ein Dialogfenster über 
+die Regeln informiert:
+"Merken Sie sich die Ziffernfolgen die gleich erscheinen, und geben Sie sie 
+anschließend ein.
+Es erscheinen zunächst einmal drei Ziffern, dann vier Ziffern usw.
+Sobald Sie eine Ziffernfolge falsch eingegeben haben, ist das Ende des Spiels 
+erreicht."
+Programmieren Sie das Gedächtnisspiel. Am Ende soll dem Spieler mitgeteilt 
+werden wie gut er war.
+Ein zufällige Ziffer zwischen 0 bis 9 wird generiert 
+über let ziffer = Math.floor(Math.random()*10)
+Eine andere Variante, wäre, das nach jeder Frage nur der Bereich 
+aus dem Zufallszahl generiert wird, um eine Stelle erweitert wird. 
+zuerst 3 mögliche Ziffern, dann 4 mögliche Ziffern usw. -->
+
+<body>
+    <p id="p1"></p>
+    <button class="btn" onclick="spiel()"> Möchten Sie spielen? </button>
+    <button class="btn" onclick="myAntwotr()"> Möchten Sie antworten? </button>
+
+    <p id="p2"></p>
+    <p id="p3"></p>
+
+    <script>
+        var n = 3;
+        var number = [];
+        var anwort = [];
+        document.getElementById("p1").innerHTML = "Merken Sie sich die Ziffernfolgen die gleich erscheinen, und geben Sie sie anschließend ein. Es erscheinen zunächst einmal drei Ziffern, dann vier Ziffern usw. Sobald Sie eine Ziffernfolge falsch eingegeben haben, ist das Ende des Spiels erreicht.";
+
+        function spiel() {
+            for (var i = 0; i < n; i++) {
+                number[i] = Math.floor(Math.random() * 10);
+                document.getElementById("p2").innerHTML = "Merken Sie die Zahlen!";
+                document.getElementById("p3").innerHTML += number[i] + "  ";
+            }
+            setTimeout(function() {
+                document.getElementById("p2").innerHTML = "Time is out!";
+                document.getElementById("p3").innerHTML = "";
+            }, 5000);
+        }
+
+        function myAntwotr() {
+            var str = prompt("Geben Sie Zahlen ohne Lehrzeichen");
+            if (str.length != 0) {
+                var richtig = 0;
+                for (i = 0; i < n; i++) {
+                    anwort[i] = str[i];
+                    if (anwort[i] == number[i]) {
+                        richtig++;
+                    }
+                }
+            } else {
+                alert("Keine Antwort. Schade.. ");
+            }
+            console.log(anwort);
+            console.log(str);
+            if (richtig == n) {
+                alert("Haben Sie gut gemacht!");
+                n++;
+            } else {
+                alert("Schade, aber Antwort war nicht korrect");
+            }
+            console.log(n);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String 8</title>
+</head>
+
+<body>
+
+    <p id="info1"></p>
+    <p id="info2"></p>
+    <script>
+        let info1 = document.getElementById("info1");
+        let info2 = document.getElementById("info2");
+        let regExp = /^(\+?\d{2})\s(\d{2})\s(\d{5,7})$/;
+        let result = regExp.exec('49 30 123494');
+        console.log(result[0]);
+        console.log(result[1]);
+        console.log(result[2]);
+        console.log(result[3]);
+
+        //exec liefert immer nur das erste Vorkommen
+        //exec kann man auf Gruppen anwenden dann werden alle Gruppen in einem Array geliefert
+    </script>
+</body>
+
+</html>

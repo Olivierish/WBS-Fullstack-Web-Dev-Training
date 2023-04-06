@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Knoten</title>
+    <style>
+        main,
+        section,
+        p {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main id="main">
+        <h1>Die DOM Baum Hierachie F12</h1>
+        <section id="sec">
+            <h2 id="secH">Überschrift(id="secH") in Section(id="sec")</h2>
+            <p id="p1">Absatz mit der id p1</p>
+            <p id="p2">Absatz mit der id p2</p>
+            <p id="p3">Absatz mit der id p3</p>
+        </section>
+    </main>
+
+    <script>
+        let el = document.getElementById("p2");
+        console.log(el.parentElement.id); //sec
+        console.log(el.previousElementSibling.id); //p1
+        console.log(el.nextElementSibling.id); //p3
+        console.log(el.nextElementSibling.localName); //p
+        console.log(document.body.lastElementChild.localName); //script
+        console.log(document.body.childNodes);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Event Aufgaben</title>
+</head>
+
+<body>
+    <p><button id="btn">Tierliste vorwärts</button> / <button id="btnBack">Tierliste rückwärts</button></p>
+    <p id="ausgabe"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        let btnBack = document.getElementById("btnBack");
+        let ausgabe = document.getElementById("ausgabe");
+        btn.addEventListener("click", showArray);
+        btnBack.addEventListener("click", goBack)
+
+        let tiere = ["Löwe", "Tiger", "Elefant", "Pinguin", "Fisch", "Vogel", "Hund", "Katze", "Schwein", "Nasenbär", "Tapir", "Uhu", "Pferd", "Grashüpfer"]
+        let count = tiere.length - 1;
+
+        function showArray(evt) {
+            if (count < tiere.length - 1) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            ausgabe.innerHTML = tiere[count];
+
+        }
+
+        function goBack() {
+            if (count > 0) {
+                count--
+            } else {
+                count = tiere.length - 1;
+            }
+            ausgabe.innerHTML = tiere[count];
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Filme demnächst hier</h1>
+    <table id="filmbox"></table>
+    <script src="img/filmList.js"></script>
+    <script>
+        let filmbox = document.getElementById("filmbox");
+
+        for (let i = 0; i < (titelF.length); i++) {
+
+            var reihe = document.createElement("tr");
+            filmbox.appendChild(reihe);
+            let spalte1 = document.createElement("td");
+            reihe.appendChild(spalte1);
+            const myImage = new Image(329, 184);
+            myImage.src = "img/" + i + "_film.jpg";
+            spalte1.appendChild(myImage);
+            let spalte2 = document.createElement("td");
+            reihe.appendChild(spalte2);
+            spalte2.innerHTML = titelF[i][0];
+
+            let spalte3 = document.createElement("td");
+            reihe.appendChild(spalte3);
+
+            spalte3.innerHTML = titelF[i][1].getFullYear() + " - " + ((titelF[i][1].getMonth()) + 1) + " - " +
+                titelF[i][1].getDate();
+
+
+            for (let e = 4; e < 6; e++) {
+                let spalte = document.createElement("td");
+                spalte.innerHTML = "reihe " + i + " Spalte " + e;
+                reihe.appendChild(spalte);
+            }
+        }
+
+        function calcDate(start) {
+            let today = new Date();
+            let datedif = Math.floor(start.getTime() - today.getTime()) / 1000;
+            let tagefull = Math.floor(datedif / 86400);
+            let woche = Math.floor(tagefull / 7);
+            let resttage = tagefull % 7;
+            return woche + " Wochen und " + resttage + " Tage";
+
+        }
+        console.log(calcDate(titelF[4][1]));
+    </script>
+</body>
+
+</html>

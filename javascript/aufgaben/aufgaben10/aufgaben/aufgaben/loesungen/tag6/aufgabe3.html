@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Addieren</title>
+    <style>
+        #flyer {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            transition: top, left, 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/flyer.png" alt="Flieger" id="flyer">
+
+    <p id="anzeige"></p>
+    <script>
+        var flyer = document.getElementById("flyer");
+        var anzeige = document.getElementById("anzeige");
+        document.addEventListener("keydown", fly);
+
+        var yPos;
+        var xPos;
+        var speed = 500;
+
+        function fly(evt) {
+
+            /*  topCSS = window.getComputedStyle(flyer).getPropertyValue("top");
+             leftCSS = window.getComputedStyle(flyer).getPropertyValue("left"); */
+            yPos = parseInt(window.getComputedStyle(flyer).getPropertyValue("top"));
+            xPos = parseInt(window.getComputedStyle(flyer).getPropertyValue("left"));
+
+            switch (evt.keyCode) {
+                case 37:
+                    anzeige.innerHTML = "links";
+                    flyer.style.left = (xPos - speed) + "px";
+                    break;
+                case 38:
+                    anzeige.innerHTML = "oben";
+                    flyer.style.top = (yPos - speed) + "px";
+                    evt.returnValue = false;
+                    break;
+                case 39:
+                    anzeige.innerHTML = "rechts";
+                    flyer.style.left = (xPos + speed) + "px";
+                    break;
+                case 40:
+                    anzeige.innerHTML = "unten";
+                    flyer.style.top = (yPos + speed) + "px";
+                    evt.returnValue = false;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

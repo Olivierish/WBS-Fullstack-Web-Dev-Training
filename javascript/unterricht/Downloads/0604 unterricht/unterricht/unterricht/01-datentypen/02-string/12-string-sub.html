@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String </title>
+</head>
+
+<body>
+    <h1>substring & substr</h1>
+    <p id="output1"></p>
+    <p id="output2"></p>
+
+    <script>
+        var output1 = document.getElementById("output1");
+        var output2 = document.getElementById("output2");
+
+        var song = "Alle meine Entchen.";
+        var a = song.substring(3, 8); //anfangsindex , endindex
+        output1.innerHTML = a;
+        var b = song.substr(6, 3); //anfangsindex, länge
+        output2.innerHTML = b;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOM input output</title>
+</head>
+
+<body>
+    <h1>Hallo</h1>
+    <p>Bitte geben Sie ihren Vor- und Nachnamen ein und klicken Sie auf den Gruß-Button</p>
+<p>
+  <label for="vorname">Vorname</label>
+  <input type="text" id="vorname" name="vorname">
+</p>
+<p>
+  <label for="nachname">Nachname</label>
+  <input type="text" id="nachname" name="nachname">
+</p>
+<p>
+    <input type="submit" value="Gruß" id="gruss">
+</p>
+<p id="output">Mein Name ist Hase ich weiß von nichts.</p>
+    
+    
+<script>
+    let vorname = document.getElementById("vorname");
+    let nachname = document.getElementById("nachname");
+    let gruss = document.getElementById("gruss");
+    let output = document.getElementById("output");
+    
+    gruss.addEventListener("click", gruessen);
+    
+    function gruessen(){
+        output.innerHTML = "Mein Name ist <b>"+vorname.value +" "+nachname.value+"</b> ich weiß von nichts!";
+    }
+    
+    
+    
+</script>
+</body>
+</html>

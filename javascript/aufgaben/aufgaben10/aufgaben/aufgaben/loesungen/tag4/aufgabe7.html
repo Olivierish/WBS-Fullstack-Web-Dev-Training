@@ -1,0 +1,93 @@
+<!Doctype html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Funktionen in Javascript</title>
+    <style>
+        .page-header {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .page-header,
+        #next {
+            background: rgb(20, 20, 42);
+            color: rgb(248, 214, 23);
+        }
+        
+        .page-content {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 30px 20px;
+        }
+        
+        .page-content p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+        
+        #next {
+            border: none;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+        
+        #next:hover {
+            background-color: rgb(11, 60, 110)
+        }
+        
+        #quoteFrom {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Mitarbeiter</h1>
+    </header>
+    <div class="page-content">
+        <button id="b1" onclick="showTeam(0,3,8)">Buisiness</button>
+        <button id="b2" onclick="showTeam(4,6,5,9,10)">Künstler</button>
+        <button id="b3" onclick="showTeam(1,2,7)">Kriminalisten</button>
+        <p id="quote">Wählen Sie eine Mitarbeiter Gruppe aus.</p>
+
+    </div>
+    <script type="text/javascript">
+        var btn1 = document.getElementById("b1");
+        var btn2 = document.getElementById("b2");
+        var btn3 = document.getElementById("b3");
+
+        var anzeige = document.getElementById("quote");
+
+        var namen = [
+            "Klaas Klever, Geschäftsmann",
+            "Daniel Düsentrieb, Polizist",
+            "Mickey Maus, Detektiv",
+            "Dagobert Duck, Milliardär",
+            "Peter Alexander, Sänger",
+            "Uma Thurman, Schauspielerin",
+            "Jimi Hendrix, Gitarist",
+            "Paulchen Panther, Dedektiv",
+            "Bill Gates, Geschäftsmann",
+            "Elton John, Musiker",
+            "Ernst Fuchs Maler"
+        ];
+
+        function showTeam() {
+            anzeige.innerHTML = "";
+            for (var i = 0; i < arguments.length; i++) {
+                anzeige.innerHTML += namen[arguments[i]] + "<br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

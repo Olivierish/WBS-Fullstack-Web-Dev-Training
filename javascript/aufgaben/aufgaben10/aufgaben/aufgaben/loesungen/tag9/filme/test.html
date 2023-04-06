@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filme und Zeit</title>
+    <style>
+        #filmTable {
+            border: 1px solid #000;
+            margin: 15px;
+        }
+        
+        #filmTable td {
+            border: 1px solid #000;
+            background: rgb(176, 198, 240);
+            width: 150px;
+            text-align: center;
+        }
+        
+        img {
+            width: 150px;
+        }
+        
+        h2 {
+            color: rgb(34, 34, 206);
+            text-align: center;
+        }
+        
+        p {
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Filme</h2>
+    <p><button id="fillmAdd"> Filmliste </button></p>
+    <p><select name="filmSelect" id="filmSelect"></select></p>
+    <table id="filmTable"></table>
+
+    <script>
+        var zeit = [
+            [2023, 4, 15],
+            [2023, 6, 3],
+            [2023, 8, 17],
+            [2023, 7, 1],
+            [2023, 3, 2]
+        ];
+        var filme = [{
+            Title: "Tod auf dem Nil",
+            Year: 2022,
+            Gerne: "Crime, Drama, Mystery",
+            Regisseur: "Kenneth Branagh",
+            Actor: ["Kenneth Branagh", "Gal Gadot", "Armie Hammer", "Emma Mackey"],
+        }, {
+            Title: "The darkest hour",
+            Year: 2011,
+            Gerne: "Science fiction, Action",
+            Regisseur: "    Chris Gorak",
+            Actor: ["Emile Hirsch", "Olivia Thirlby", "Max Minghella", "Rachael Taylor"],
+        }, {
+            Title: "Chang can Dunk",
+            Year: 2023,
+            Gerne: "Sport, Drama",
+            Regisseur: "Jingyi Shao",
+            Actor: ["Bloom Li", "Dexter Darden", "Ben Wang", "Zoe Renee"],
+        }, {
+            Title: "The last duel",
+            Year: 2021,
+            Gerne: "Historical Action, Drama",
+            Regisseur: "Ridley Scott",
+            Actor: ["Matt Damon", "Adam Driver", "Jodie Comer", "Ben Affleck"],
+        }, {
+            Title: "The shape of water",
+            Year: 2017,
+            Gerne: "Spielfilm",
+            Regisseur: "Guillermo del Toro",
+            Actor: ["Sally Hawkins", "Michael Shannon", "Richard Jenkins"],
+        }]
+
+        var btnAdd = document.getElementById("fillmAdd");
+        btnAdd.addEventListener("click", AddFilm);
+        var selectFilm = document.getElementById("filmSelect");
+
+        var keys = Object.keys(filme[0]);
+        var table = document.getElementById("filmTable");
+        var thead = false;
+
+        function AddFilm() {
+            for (let i = 0; i < filme.length; i++) {
+                let option = document.createElement("option");
+                option.value = filme[i].Title;
+                option.innerHTML = filme[i].Title;
+                selectFilm.appendChild(option);
+            }
+        }
+
+        selectFilm.addEventListener("change", FillFilm);
+
+
+        function FillFilm(event) {
+            var id = event.currentTarget.selectedIndex;
+            var row = document.createElement("tr");
+            table.appendChild(row);
+
+            if (thead == false) {
+                var td = document.createElement("td");
+                td.textContent = "Bild";
+                row.appendChild(td);
+                for (let i = 1; i <= keys.length; i++) {
+                    thead = true;
+                    td = document.createElement("td");
+                    td.textContent = keys[i - 1];
+                    row.appendChild(td);
+                }
+                td = document.createElement("td");
+                td.textContent = "Wann";
+                row.appendChild(td);
+
+                td = document.createElement("td");
+                td.textContent = "Wie lange?";
+                row.appendChild(td);
+            }
+
+            var row = document.createElement("tr");
+            table.appendChild(row);
+
+            td = document.createElement("td");
+            row.appendChild(td);
+
+            var img = document.createElement("img");
+            let src = "img/" + id + "_film.jpg";
+            img.src = src;
+            td.appendChild(img);
+
+            console.log(src);
+
+            for (let i = 0; i < keys.length; i++) {
+                td = document.createElement("td");
+                if (keys[i] != 'Actor') {
+                    td.textContent = filme[id][keys[i]];
+                } else {
+                    for (let a = 0; a < filme[id][keys[i]].length; a++) {
+                        console.log(filme[id][keys[i]][a]);
+                        let actor = [];
+                        actor = filme[id][keys[i]];
+                        console.log(actor);
+                        td.innerHTML += actor[a] + "<br>";
+                    }
+                }
+                row.appendChild(td);
+            }
+
+            td = document.createElement("td");
+            td.textContent = zeit[id][2] + "." + (zeit[id][1] + 1) + "." + zeit[id][0];
+            row.appendChild(td);
+
+            var datum = new Date();
+            var t = new Date(zeit[id][0], zeit[id][1], zeit[id][2], 0, 0, 0);
+            var datedif = Math.floor(t.getTime() - datum.getTime()) / 1000;
+            td = document.createElement("td");
+            let tagefull = Math.floor(datedif / 86400);
+            if (tagefull < 0) {
+                datedif = Math.floor(datum.getTime() - t.getTime()) / 1000;
+                let tagefull = Math.floor(datedif / 86400);
+                td.textContent = tagefull + " Tage schon im Kino";
+            } else {
+                td.textContent = tagefull + " Tage noch";
+            }
+            row.appendChild(td);
+
+        }
+    </script>
+</body>
+
+</html>

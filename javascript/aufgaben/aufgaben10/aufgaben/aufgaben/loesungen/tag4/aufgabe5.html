@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 3</title>
+</head>
+
+<body>
+    <figure>
+        <img src="img/1.jpg" alt="Maschine" id="bild">
+    </figure>
+    <button onclick="changePic(2)">Change Picture</button>
+    <button onclick="changePic(3)">Change Picture</button>
+    <button onclick="changePic(4)">Change Picture</button>
+
+    <p id="anzeige"></p>
+    <script>
+        var bild = document.getElementById("bild");
+        var anzeige = document.getElementById("anzeige");
+
+
+        function changePic(bildNr) {
+            bild.src = "img/" + bildNr + ".jpg";
+        }
+    </script>
+</body>
+
+</html>

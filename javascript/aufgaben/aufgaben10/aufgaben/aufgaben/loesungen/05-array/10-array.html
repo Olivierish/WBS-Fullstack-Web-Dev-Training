@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <button id="btn">Zeige Film</button>
+    <p id="anzeige"></p>
+    <script>
+        let film = [
+            ["Jurassic Park", "Steven Spielberg", 1993, 12],
+            ["Men in Black", "Barry Sonnenfeld", 1997, 12],
+            ["Star Wars", "George Lucas", 1977, 12],
+            ["Indiana Jones", "Steven Spielberg", 1981, 12]
+        ]
+        let anzeige = document.getElementById("anzeige");
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", showFilm);
+
+        let count = 0;
+
+        function showFilm() {
+            anzeige.innerHTML = "Film: " + film[count][0] + "<br>Regie: " + film[count][1] + "<br>Erscheinungsjahr: " + film[count][2] + "<br>FSK " + film[count][3];
+
+
+            if (count < film.length - 1) {
+                count++;
+            } else {
+                count = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

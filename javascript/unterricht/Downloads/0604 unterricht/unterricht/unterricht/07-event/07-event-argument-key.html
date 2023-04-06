@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>test function</title>
+</head>
+
+<body>
+    <button onclick="farbe('#afa')">Click</button>
+    <button id="but">Click</button>
+    <button id="but2">Click2</button>
+
+    <script>
+        let btn = document.getElementById("but");
+        let btn2 = document.getElementById("but2");
+
+        btn.addEventListener("click", machWas);
+        btn2.addEventListener("click", machWas);
+
+        btn.farbe = "#f00";
+        btn2.farbe = "#0f0";
+
+        function machWas(evt) {
+            document.bgColor = evt.currentTarget.farbe;
+        }
+
+        function farbe(farbwert) {
+            document.bgColor = farbwert;
+        }
+    </script>
+
+</body>
+
+</html>

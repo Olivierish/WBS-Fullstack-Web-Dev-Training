@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <style>
+        #datumAnzeige {
+            text-align: center;
+            font-size: 2rem;
+            color: #3B0E9B;
+            font-family: 'Bad Script', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="datumAnzeige"></p>
+    <script>
+        var anzeige = document.getElementById("datumAnzeige");
+        var datum = new Date();
+        var xmas = new Date((datum.getFullYear()), 11, 24, 0, 0, 0);
+        var datedif = Math.floor(xmas.getTime() - datum.getTime()) / 1000;
+
+        if (datedif < 0) {
+            xmas = new Date((datum.getFullYear() + 1), 11, 24, 0, 0, 0)
+            datedif = Math.floor(xmas.getTime() - datum.getTime()) / 1000;
+        }
+
+
+        let tagefull = Math.floor(datedif / 86400);
+        let stunderest = Math.floor((datedif % 86400) / 3600);
+        let minuterest = Math.floor(((datedif % 86400) % 3600) / 60);
+        let sekunderest = Math.floor((datedif % 86400) % 3600) % 60;
+
+        let textAusgabe = tagefull + "  Tage und " + stunderest +
+            " Stunden und " + minuterest + " Minuten und " + sekunderest + " Sekunden";
+
+        anzeige.innerHTML = "Bis Weihnachten sind es insgesamt " +
+            datedif + " Sekunden oder <br>";
+        anzeige.innerHTML += textAusgabe;
+    </script>
+</body>
+
+</html>

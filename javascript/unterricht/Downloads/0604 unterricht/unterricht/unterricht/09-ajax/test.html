@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <button id="frage">Hunde Anfrage</button>
+
+    <div id="antwort"></div>
+    <script>
+        var xhrObj = new XMLHttpRequest();
+
+        function sendReq() {
+            xhrObj.open('get', 'Hunde.json', true);
+            xhrObj.onload = handleResponse;
+            xhrObj.send();
+        }
+
+        function handleResponse() {
+            var daten = JSON.parse(xhrObj.responseText);
+            console.log(daten.hunde.length);
+
+            for (var i = 0; i < daten.hunde.length; i++) {
+                document.getElementById("antwort").innerHTML += "<p><b>" + daten.hunde[i].rasse + "</b><br>Charakter: " + daten.hunde[i].charakter + "<br>Höhe: " + daten.hunde[i].hoehe + " cm<br>Gewicht: " + daten.hunde[i].gewicht + " kg</p>";
+            }
+        }
+        document.getElementById("frage").onclick = sendReq;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Event Aufgaben</title>
+</head>
+
+<body>
+    <p id="ausgabe">0</p>
+
+
+    <button id="btn2">Click 2</button>
+    <button id="btn3">Click 3</button>
+    <button id="btn4">Click 4</button>
+    <button id="btn5">Click 5</button>
+
+    <p><button id="reset">reset</button></p>
+    <script>
+        let a = 0;
+        let b = 2;
+        let ausgabe = document.getElementById("ausgabe");
+
+        let btn = document.getElementsByTagName("button");
+        for (let i = 0; i < btn.length - 1; i++) {
+            btn[i].value = b + i;
+            btn[i].addEventListener("click", reihe);
+        }
+
+
+        function reihe(evt) {
+            a += Number(evt.currentTarget.value);
+            ausgabe.innerHTML = a;
+        }
+
+        document.getElementById("reset").addEventListener("click", loeschen);
+
+        function loeschen(evt) {
+            a = 0;
+            ausgabe.innerHTML = "0";
+        }
+    </script>
+</body>
+
+</html>

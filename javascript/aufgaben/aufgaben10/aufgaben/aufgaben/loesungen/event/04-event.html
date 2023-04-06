@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Event Aufgaben</title>
+</head>
+
+<body>
+    <p><button id="btn">Click</button></p>
+    <p id="ausgabe"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        let ausgabe = document.getElementById("ausgabe");
+        btn.addEventListener("click", showArray);
+
+        let tiere = ["Löwe", "Tiger", "Elefant", "Pinguin", "Fisch", "Vogel", "Hund", "Katze", "Schwein", "Nasenbär", "Tapir", "Uhu", "Pferd", "Grashüpfer"]
+        let count = 0;
+
+        function showArray(evt) {
+            ausgabe.innerHTML = tiere[count];
+            if (count < tiere.length - 1) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

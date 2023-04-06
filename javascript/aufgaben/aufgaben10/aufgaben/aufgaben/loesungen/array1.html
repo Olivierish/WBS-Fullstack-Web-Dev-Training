@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Array Aufgaben Lösung</title>
+<style>
+#dragBox {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+</style>
+</head>
+
+<body>
+
+    
+<script>
+ let afrikaTiere = ["Affe", "Nilpferd", "Löwe", "Gnu", "Nashorn", "Zebra"];
+    
+afrikaTiere.unshift(afrikaTiere.pop());
+    
+console.log(afrikaTiere);
+    
+afrikaTiere.push(afrikaTiere.shift());
+    
+console.log(afrikaTiere);
+    
+let haustiere =["Kaninchen", "Katze", "Meerschweinchen", "Pferd", "Hund", "Fliege"];
+    
+let echsen = ["Waran", "Krokodil", "Eidechse" ];
+    
+let tiere = haustiere.concat(echsen).concat(afrikaTiere);
+    
+console.log(tiere);
+
+let tierId = tiere.indexOf("Krokodil");
+tiere.splice(tierId,1);
+
+console.log(tiere);
+    
+let favTier = "Katze";
+tierId = tiere.indexOf(favTier);
+tiere.splice(tierId,1);
+tiere.splice(2,1,favTier);
+    
+console.log(tiere);
+
+tiere.sort();
+
+console.log(tiere);
+
+let cars = 'Toyota;Honda;Mitsubishi;Ford;Opel;Alfa Romeo;Fiat;BMW;Mercedes;VW;Chevrolet; Tesla' ;
+let autos = cars.split(";").sort();
+
+console.log(autos);
+    
+let person = ["Walter", "Musterhaus", "Dachdecker", "23.03.1849"];
+let ausgabe = "Name: "+person[0]+" "+person[1]+" Beruf: "+person[2]+" Geburtsdatum: "+person[3];
+
+console.log(ausgabe);
+    
+</script>
+</body>
+</html>

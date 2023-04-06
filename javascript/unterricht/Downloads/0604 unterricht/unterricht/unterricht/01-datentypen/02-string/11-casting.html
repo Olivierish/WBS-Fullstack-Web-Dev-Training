@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String </title>
+</head>
+
+<body>
+    <h1>Casting</h1>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        /*         var a = "330";
+                console.log(typeof a);
+                var b = "13";
+                var c = Number(a) + Number(b);
+                output.innerHTML = c; */
+
+        var a = prompt("Gebe mal bitte eine Zahl ein.");
+        var b = prompt("Noch ne Zahl zum addieren.");
+        output.innerHTML = "Das Ergebnis ist " + (Number(a) + Number(b));
+        /* Die Rechnung innerhalb eines Strings, muss in Klammern gesetzt werden. */
+    </script>
+</body>
+
+</html>

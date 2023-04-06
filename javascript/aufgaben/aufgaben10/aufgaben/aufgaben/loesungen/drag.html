@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled</title>
+<style>
+#dragBox {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+</style>
+</head>
+
+<body>
+<div id="dragBox"><img id="large" src="img/bild1.gif"> </div>
+    
+<script>
+let dragBox = document.getElementById ("dragBox");
+let isDown = false;
+dragBox.addEventListener('mousedown', function(e) {
+    isDown = true;
+}, true);
+
+document.addEventListener('mouseup', function() {
+  isDown = false;
+}, true);
+
+document.addEventListener('mousemove', function(event) {
+   event.preventDefault();
+   if (isDown) {
+   var deltaX = event.movementX;
+   var deltaY = event.movementY;
+  var rect = dragBox.getBoundingClientRect();
+  dragBox.style.left = rect.x + deltaX + 'px';
+  dragBox.style.top  = rect.y + deltaY + 'px';
+ }
+}, true);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>regulärer Ausdruck</title>
+    <style>
+        body {
+            font-size: 1.3rem;
+        }
+        
+        button {
+            font-size: 1.1em;
+            min-width: 14rem;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Der große graue Hund macht gr.</p>
+    <p id="ausgabe"></p>
+
+
+    <script>
+        let ausgabe = document.getElementById("ausgabe");
+        let info = "Der grosse graue Hund macht gr.";
+        let regExp = /gr\w*/g;
+
+        let x = info.match(regExp);
+        ausgabe.innerHTML = x;
+        //\w ein beliebiges Alphanumerisches druckbares Zeichen einschließlich Unterstrich  * 0 oder mehrmals, dadurch ist das Ende beim Leerzeichen und auch beim Punkt erreicht
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Schleife</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var stadt = ["Berlin", "München", "Hamburg", "Stuttgart", "Köln", "Dresden", "Köln", "Tübingen", "Düsseldorf", "Frankfurt", "Mainz", "Kiel", "Duisburg", "Essen", "Bochum"];
+
+        for (var i = 0; i < stadt.length; i++) {
+            output.innerHTML += stadt[i];
+            if (i % 3 == 2) {
+                output.innerHTML += "<br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

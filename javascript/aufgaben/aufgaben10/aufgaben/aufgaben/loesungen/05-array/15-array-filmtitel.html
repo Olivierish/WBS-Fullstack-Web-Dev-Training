@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var movie = [];
+
+        movie[0] = ["Titanic", " James Cameron", " 1997", " FSK 12"];
+        movie[1] = ["Sing", " Garth Jennings / Christophe Lourdelet", " 2016", " FSK 0"];
+        movie[2] = ["Ghostbusters", " Ivan Reitman", " 1984", " FSK 12"];
+
+        var output = document.getElementById("output");
+        var zufall = Math.floor(Math.random() * movie.length);
+
+        output.innerHTML = zufall + " " + movie[zufall];
+    </script>
+</body>
+
+</html>

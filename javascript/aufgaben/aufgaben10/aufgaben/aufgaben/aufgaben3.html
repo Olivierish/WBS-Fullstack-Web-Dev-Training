@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled</title>
+</head>
+
+<body>
+    
+    
+    
+<section>
+            <p>1</p>
+            <p>Suche mit Javascript nach einem bestimmten Element (z.B. &quot;Nashorn&quot;) und lösche es. Hier kannst du soviele Zeilen Code schreiben und Variablen erstellen die du brauchst.</p>
+        </section>
+<section>
+  <p>2</p>
+    <p>Suche nach einem bestimmten Element, lösche es und füge es an dritter Stelle im Array ein. </p>
+    <p>Du kannst dazu die Methode indexOf() nutzen. Die haben wir zwar noch nicht durchgenommen, aber du kannst in meinen Tipps nachschauen: <a href="https://www.on-design.de/tutor/javascript/array/index.html#indexOf">https://www.on-design.de/tutor/javascript/array/index.html#indexOf</a></p>
+            <p>Eine weitaus kompliziertere Methode wäre auch mit einer Schleife möglich, in welcher ein if-Struktur eingebettet ist.</p>
+  </section>
+<section>
+  <p>3</p>
+            <p>Erzeuge ein Array mit Sprüchen, die als Slogan auf der Seite angezeigt werden können.<br> Erzeuge ein p Element mit der id=&quot;output&quot;.<br> Mit folgender Zeile Code kannst du etwas in dem p Element anzeigen lassen:<br> document.getElementById(&quot;output&quot;).innerHTML
+                = &quot;Hallo&quot;;<br> Beim jedem Aufruf der Seite soll ein zufällig ausgewählter Spruch angezeigt werden. Siehe Math Object.<br> Wenn man das Array um weitere Elemente erweitert sollte am Code für den Zufallsspruch keine Änderung erforderlich
+                sein.
+            </p>
+</section>
+
+        <section>
+            <p>4</p>
+            <p>Erzeuge aus nachfolgendem String ein Array und sortiere dieses in alphabetischer Reihenfolge rückwärts. <br> 'Toyota;Honda;Mitsubishi;Ford;Opel;Fiat;BMW;Mercedes;VW;Chevrolet;Tesla'
+            </p>
+            <p>Zeige zuerst den String auf der Seite an und in einer neuen Zeile die Werte des Arrays.</p>
+        </section>
+    
+    
+    <section>
+            <p>5 </p>
+            <p>schwierige Aufgabe</p>
+            <p>fragespiel mit confirm und if else Erstelle eine Seite mit einem Fragespiel Die einzelnen Fragen erscheinen in confirm UI Elementen. Jede Frage kann mit Ja oder Nein beantwortet werden. Klickt man auf Okay bedeutet es Ja, klickt man auf Abbrechen
+                bedeutet es nein. Zähle die Anzahl der richtigen Antworten und gebe das Ergebnis aus.            </p>
+            <p>Fragen erstellen.</p>
+            <p> Erstelle ein mehrdimensionales Array mit Fragen. und zu jeder Frage den Wert true oder false , je nachdem ob man die Frage mit richtig oder falsch beantwortet werden
+                soll. Erstelle ein Variable, die nach jeder Frage einen weiterzählt Erstelle in Variable für richtige Antworten. </p>
+            <p>Erstelle eine while Schleife oder do while Schleife welche die confirm Elemente aufruft so lange es Fragen gibt. Kleiner Tipp: </p>
+            <p>Die Fragen für die confirm Elemente holst du dir aus dem Array.<br>
+            Ob die Antwort richtig ist, kannst du überprüfen, in dem du aus dem Array, den Antwortwert (true, false) mit dem Ergebnis des Users vergleichs. Das confirm  Element liefert true, wenn der User okay klickt  und false, wenn er auf Abbrechen klickt.</p>
+            <p>let count = 0;<br>                while (count &lt; 3) {<br> eingabe = confirm(&quot;Frage!&quot;);<br> count++;
+                <br> }</p>
+
+        </section>
+    
+    <section>
+        <h2>Schleife</h2>
+
+        <section>
+            1
+            <p>Schreibe eine for-Schleife, die das "einmal drei" bis 300 ausgibt (also 3, 6, 9 usw.).</p>
+        </section>
+
+
+        <section>2
+            <p>Erzeuge eine Schleife, die 10 mal die Werte von 0 bis 4 ausgibt, 0,1,2,3,4,0,1,2,3,4,... (Tipp Modulo)<br> Nach jeder Zahl sollte ein Komma erscheinen, nach einer 0-4-Reihe eine neue Zeile. (Tipp: if)<br> Ändere die Programmierung, so dass
+                die Zahlen 1 bis 5 angezeigt werden</p>
+        </section>
+
+        <section>3
+            <p>Erzeuge ein Array mit Strings deiner Wahl (z.B. Autos, Stadt, Land, Fluss, Name, Tier, Beruf). Erstelle eine for-Schleife, die jedes Array Element verändert und zwar soll vor jedem Element eine Durchnummerierung stehen. z.B: 1. München 2.
+                Hamburg 3. Stuttgart</p>
+        </section>
+
+
+        <section>4
+            <p>Erzeuge ein Array mit Strings deiner Wahl (z.B. Autos, Stadt, Land, Fluss, Name, Tier, Beruf). Erzeuge eine Ausgabe auf der Seite in der jedes Element aufgeführt, aber mit einer Durchnummerierung am Anfang und einem Zeilenumbruch nach jedem
+                Element. z.B:
+                <br> 1. München<br> 2. Hamburg<br> 3. Stuttgart<br> 4. Köln<br> 5. Dresden<br> 6. Köln<br> 7. Tübingen<br></p>
+        </section>
+
+
+        <section>5
+            <p>Erstelle ein Array. Lasse diese in einem HTML Element ausgeben, aber auf die Art, dass nach 3 Elementen jeweils eine neue Zeile anfängt. (Tipp Modulo)</p>
+        </section>
+
+
+        <section>
+            <p>6 Passwort Generator </p>
+            <p>etwas schwierigere Aufgabe</p>
+            <p>Zufällige Strings generieren<br> 
+              Baue dir einen Zufallsgenerator für Strings. Zuerst brauchst du dafür einen String mit<br> allen Buchstaben des Alphabets, allen Zahlen und dem Ausrufezeichen:<br> var alphabet = &quot;abcdefghijklmnopqrstuvwxyz0123456789!&quot;;<br>                Um daraus einen zufälligen Buchstaben herauszupicken, kannst du den Code für<br> eine Zufallszahl nutzen Math.floor(Math.random()* alphabet.length). <br> Damit erhältst du einen zufälligen Index innerhalb des Strings. Mit<br> eckigen Klammern
+                kannst du dann den Buchstaben an dieser Position auslesen.<br> Um den zufälligen String zu erzeugen, fängst du zuerst mit einem leeren String an<br> (var zufallString = &quot;&quot;). Dann legst du eine while-Schleife an, die immer neue
+                Buchstaben
+                <br> an den String anhängt, solange dieser kürzer als 6 Zeichen (oder eine beliebige, von<br> dir festgelegte Länge) ist. Zum Anfügen eines neuen Buchstabens ans Ende der Zeichenkette<br> könntest du den Operator += verwenden. Nachdem
+          die Schleife beendet ist,<br> schreibst du dein Ergebnis in die Konsole, wo du es dann begutachten kannst!<br> oder fügst es mit innerHTML in ein HTML Element ein<br>
+          oder nutzt documen.write()
+          </p>
+      </section>
+
+        &nbsp;
+    </section>
+</body>
+</html>

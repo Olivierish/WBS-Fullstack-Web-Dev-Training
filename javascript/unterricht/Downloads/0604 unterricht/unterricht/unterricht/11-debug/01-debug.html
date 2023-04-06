@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Javascript window.location</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        let numbers = [5, 2, 5, 4, 1, 8, 2, 33];
+
+        for (let i = 0; i < numbers.length; i++) {
+            let nr1 = numbers[i];
+            for (let j = 0; j < numbers.length; j++) {
+                let nr2 = numbers[j];
+                compareNumbers(nr1, nr2);
+            }
+        }
+
+        function compareNumbers(no1, no2) {
+            if (no1 === no2) {
+                console.log("Treffer, folgende Zahl gibt es öfter: " + no1);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .mittig {
+            text-align: center;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #filmTabelle {
+            margin: auto;
+        }
+        
+        caption {
+            background-color: #b9b9fa;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-top: 1px solid black;
+            padding: 5px;
+        }
+        
+        td,
+        th {
+            border: 1px solid;
+            padding: 10px;
+            vertical-align: top;
+            background-color: #e3cbf1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Filme</h1>
+    <p class="mittig"> <select name="Filmauswahl" id="filmSelect"></select></p>
+    <table id="filmTabelle">
+        <caption>Die besten Filme</caption>
+        <tr>
+            <th>Film</th>
+            <th>Regie</th>
+            <th>Genre</th>
+            <th>Jahr</th>
+            <th>Schauspieler</th>
+        </tr>
+    </table>
+
+
+
+    <script>
+        var filme = [{
+            name: "Indiana Jones",
+            regie: "Steven Spielberg",
+            genre: "Abenteuer",
+            jahr: 1981,
+            actor: ["Harrison Ford"]
+        }, {
+            name: "Herr der Ringe",
+            regie: "Peter Jackson",
+            genre: "Märchen",
+            jahr: 2001,
+            actor: ["Elijah Wood", "Ian Mc Kellen", "Orlando Bloom", "Cate Blanchet", "Viggo Mortensen", "Liv Tyler"]
+        }, {
+            name: "Valerian",
+            regie: "Luc Besson",
+            genre: "Science Fiction",
+            jahr: 2017,
+            actor: ["Cara Delevingne", "Dane DeHaan", "Rihanna", "Clive Owen"]
+        }, {
+            name: "Inception",
+            regie: "Christopher Nolan",
+            genre: "Science Fiction",
+            jahr: 2010,
+            actor: ["Leonardo Di Caprio", "Joseph Gordon-Levitt", "Elliot Page", "Tom Hardy"]
+        }, {
+            name: "Pulp Fiction",
+            regie: "Quentin Tarantino",
+            genre: "Pulp Fiction",
+            jahr: 1994,
+            actor: ["John Travolta", "Samuel L Jackson", "Uma Thurman", "Bruce Willis"]
+        }, {
+            name: "Matrix",
+            regie: "Die Wachowskis",
+            genre: "Science Fiction",
+            jahr: 1999,
+            actor: ["Keanu Reeves", "Carrie-Anne Moss", "Lawrence Fishburne", "Hugo Weaving"]
+        }, {
+            name: "Fight Club",
+            regie: "David Fincher",
+            genre: "Kultfilm",
+            jahr: 1999,
+            actor: ["Brad Pit", " Edward Norton", "Helena Bonham Carter", "Meat Loaf"]
+        }, {
+            name: "Only Lovers Left Alive",
+            regie: "Jim Jarmush",
+            genre: "Horror",
+            jahr: 2013,
+            actor: ["Tilda Swinton", "Tom Hiddelston"]
+        }, {
+            name: "Das fünfte Element",
+            regie: "Luc Besson",
+            genre: "Science Fiction",
+            jahr: 1997,
+            actor: ["Bruce Willis", "Milla Jovovich", "Ian Holm", "Gary Oldman", "Chris Tucker"]
+        }, {
+            name: "Men in Black",
+            regie: "Barry Sonnenfeld",
+            genre: "Science Fiction",
+            jahr: 1997,
+            actor: ["Will Smith", "Tommy Lee Jones", "Linda Fiorentino", "Vincent D’Onofrio"]
+        }]
+
+
+        /* {name: "",regie: "",  genre: "", jahr: ,actor: ""} */
+
+
+        var filmSelect = document.getElementById("filmSelect");
+        var tabelle = document.getElementById("filmTabelle");
+        tabelle.hidden = true;
+        var reihe;
+
+        for (var i = 0; i < filme.length; i++) {
+            var option = document.createElement("option");
+            option.innerHTML = filme[i].name;
+            option.value = i;
+            filmSelect.appendChild(option);
+        }
+
+        filmSelect.addEventListener("change", showFilm);
+
+        function showFilm(evt) {
+            console.log(evt.currentTarget.selectedIndex);
+            console.log(this.selectedIndex);
+            console.log(filmSelect.selectedIndex);
+            insertFilm(evt.currentTarget.selectedIndex);
+        }
+
+        function insertFilm(id) {
+            tabelle.hidden = false;
+            if (reihe != undefined) {
+                reihe.remove();
+            }
+            reihe = document.createElement('tr');
+            var spalte = document.createElement('td');
+            spalte.textContent = filme[id].name;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].regie;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].genre;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            spalte.textContent = filme[id].jahr;
+            reihe.appendChild(spalte);
+            spalte = document.createElement('td');
+            for (var i = 0; i < filme[id].actor.length; i++) {
+                spalte.innerHTML += filme[id].actor[i] + "<br>";
+            }
+            reihe.appendChild(spalte);
+            tabelle.appendChild(reihe);
+        }
+
+        //  insertFilm(0);
+    </script>
+</body>
+
+</html>

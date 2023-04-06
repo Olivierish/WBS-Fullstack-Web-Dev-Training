@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String 8</title>
+</head>
+
+<body>
+
+    <p id="info1"></p>
+    <p id="info2"></p>
+    <script>
+        let info1 = document.getElementById("info1");
+        let info2 = document.getElementById("info2");
+
+        let wert = "250 Birnen 30 Pflaumen 49 Äpfel 53 Orangen 23 Pfirsiche";
+        let regExp = /\d+/g;
+        let zahlen = wert.match(regExp);
+        info1.innerHTML = zahlen;
+        let summe = 0;
+        for (let i = 0; i < zahlen.length; i++) {
+            summe += Number(zahlen[i]);
+        }
+        info2.innerHTML = summe + " Produkte";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Event Aufgabe</title>
+</head>
+
+<body>
+    <form action="">
+        <p><input type="text" id="vorname"><label for="vorname"> Bitte Namen eineben</label></p>
+        <p><input type="submit" id="submit"></p>
+        <p id="ausgabe"></p>
+
+    </form>
+    <script>
+        let eingabe = document.getElementById("vorname");
+        let submit = document.getElementById("submit");
+        let ausgabe = document.getElementById("ausgabe");
+
+        submit.addEventListener("click", abschicken);
+
+        function abschicken(evt) {
+            evt.preventDefault();
+
+            ausgabe.innerHTML = "Mein Name ist " + eingabe.value + " ich weiß von nichts."
+
+
+        }
+    </script>
+</body>
+
+</html>

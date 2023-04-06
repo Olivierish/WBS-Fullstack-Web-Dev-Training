@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dom querySelector</title>
+</head>
+
+<body>
+    <p>F12</p>
+
+    <!--
+Der Event change wird bei Auswahl aufgerufen
+Es genügt nicht außerhalb der Event.Funktion
+Varialben auf value, selectedIndex etc 
+zu setzen diese dann innerhalb aufzurufen
+Folgende Funktion reicht nicht
+function checkListe(){
+    console.log(slVal);
+    console.log(slId);
+    console.log(slText);
+}
+Die Werte der Variablen ändern sich ja bei Neuauswahl.
+
+-->
+
+    <label for="serie">Serien</label>
+    <select id="serie">
+  <option value="rickMort">Rick & Morty</option>
+  <option value="frng">Fringe </option>
+  <option value="brkBad">Breaking Bad</option>
+  <option value="futur">Futurama </option>
+</select>
+
+
+    <script>
+        let seriList = document.getElementById("serie");
+
+        seriList.addEventListener("change", checkListe);
+
+        function checkListe(evt) {
+            var liste = evt.currentTarget;
+            let slVal = liste.value;
+            let slId = liste.selectedIndex;
+            let slText = liste.options[slId].text;
+
+            console.log(slVal);
+            console.log(slId);
+            console.log(slText);
+        }
+    </script>
+</body>
+
+</html>

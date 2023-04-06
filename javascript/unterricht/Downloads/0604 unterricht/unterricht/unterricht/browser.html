@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript window.location</title>
+    <link rel="stylesheet" type="text/css" href="../../css/albers.css">
+    <style>
+        html {
+            min-height: 200%;
+        }
+        
+        #checkOut {
+            position: fixed;
+            top: 16px;
+            right: 70px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="checkOut">
+        <p id="anzeige">anzeige</p>
+        <p>
+            <button onClick="showScroll()">Show Scroll</button>
+        </p>
+        <p>
+            <button onClick="byScroll()"> ScrollBy 50px</button>
+        </p>
+        <p>
+            <button onClick="toScroll()"> ScrollTo 50px</button>
+        </p>
+    </div>
+
+    </div>
+    <script>
+        function showScroll() {
+            document.getElementById("anzeige").innerHTML = window.scrollY;
+        }
+
+        function byScroll() {
+            window.scrollBy({
+                top: 50,
+                behavior: 'smooth'
+            });
+        }
+
+        function toScroll() {
+            window.scrollTo(0, 50, 'smooth');
+        }
+    </script>
+</body>
+
+</html>

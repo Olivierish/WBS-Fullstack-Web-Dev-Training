@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="Document">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <p id="frage">click mich</p>
+    <p id="antwort"></p>
+    <script>
+        var xhrObj = new XMLHttpRequest();
+
+        function sendReq() {
+            xhrObj.open('get', 'pillepalle.txt', true);
+            xhrObj.onreadystatechange = handleResponse;
+            xhrObj.send();
+        }
+
+        function handleResponse() {
+            if (xhrObj.readyState == 4 && xhrObj.status === 200) {
+                document.getElementById("antwort").innerHTML = xhrObj.responseText;
+            }
+        }
+
+        document.getElementById("frage").onclick = sendReq;
+    </script>
+</body>
+
+</html>

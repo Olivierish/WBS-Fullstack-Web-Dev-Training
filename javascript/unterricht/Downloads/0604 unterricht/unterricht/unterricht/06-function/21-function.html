@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript function Variablen Scope</title>
+
+</head>
+
+<body>
+    <button onclick="showPic()">Click</button>
+    <p id="anzeige"></p>
+    <script>
+        var zahlen = [];
+        var zz = Math.floor(Math.random() * 10);
+        zahlen.push(zz);
+
+
+        function zZahlen() {
+
+            if (zahlen.length < 10) {
+                var zz = Math.floor(Math.random() * 10);
+                zahlen.push(zz);
+                zZahlen();
+            }
+
+        }
+
+
+        zZahlen();
+        console.log(zahlen)
+    </script>
+</body>
+
+</html>

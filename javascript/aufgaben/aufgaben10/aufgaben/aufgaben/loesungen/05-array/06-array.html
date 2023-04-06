@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+    <script>
+        let tiere = [
+            "Affe",
+            "Leopard",
+            "Kuh",
+            "Tiger",
+            "Reh",
+            "Maus",
+            "Dachs",
+            "Elefant",
+            "Ibis",
+            "Nashorn",
+            "Chamäleon",
+            "Hund",
+            "Jaguar",
+            "Qualle",
+            "Bär",
+            "Zebra",
+            "Fuchs",
+            "Schlange",
+            "Gans",
+            "Papagei",
+            "Ochsenfrosch"
+        ];
+        tiere.sort();
+        let anzeige = document.getElementById("anzeige").innerHTML = tiere.toString();
+    </script>
+</body>
+
+</html>

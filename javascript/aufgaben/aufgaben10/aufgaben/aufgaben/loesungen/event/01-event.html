@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Event Aufgaben</title>
+</head>
+
+<body>
+    <p id="ausgabe">0</p>
+    <button id="btn">Click</button>
+    <script>
+        let a = 4;
+        let ausgabe = document.getElementById("ausgabe");
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", vierer);
+
+        function vierer() {
+            ausgabe.innerHTML = a;
+            a += 4;
+
+
+        }
+    </script>
+</body>
+
+</html>

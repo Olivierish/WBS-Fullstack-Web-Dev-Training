@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOM</title>
+    <style>
+        main{max-width: 900px; margin: auto;}
+        article, section{padding: 10px;}
+    </style>
+    
+</head>
+
+<body>
+<!--
+-->
+
+<main> 
+    <h1>querySelector, querySelectorAll</h1>
+    <section>
+    <h2>Info</h2>
+    <p>In diesem Beispiel geht es darum eine Stelle im Dokument, genauso auszuwählen, wie man es mit CSS macht. Die vielen Möglichkeiten eine bestimmte Stelle zu wählen, stehen einem mit dem querySelector und dem querySelectorAll auch in Javascript zur Verfügung.</p>
+   <p> Auf dieser Seite sind mehrere article Elemente und section Elemente. Darin befinden sich p-Absätze. Alle p-Absätze in den article Elementen werden angesprochen und bekommen eine Farbe die anderen p-Absätze nicht.</p>
+   <p> Desweiteren wird mit querySelector nur das erste Element angesprochen, in diesem Beispiel der erste Absatz im ersten section hat eine border</p>
+   <p><code>document.querySelector(&quot;section &gt; p&quot;)</code></p>
+    </section>
+    <!--article*3>(h2>{Article})+p*3>lorem-->
+    <article>
+        <h2>Article</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ex consectetur perferendis. Officiis natus dignissimos, eveniet hic animi sunt consequuntur. Similique error odit praesentium officiis reiciendis consectetur et, facere aliquam.</p>
+        <p>Rerum laborum, impedit! Praesentium, corrupti. Inventore aperiam cum reiciendis quisquam, sequi temporibus ullam adipisci unde impedit illum natus dolorem architecto dolores iste nisi rem sint, fugiat quos est maxime laboriosam.</p>
+        <p>Laborum nisi dolor excepturi voluptate debitis voluptatum et eos eveniet explicabo unde, voluptates optio libero accusamus ipsa harum quo minus, delectus consectetur rerum molestiae nemo porro quod. Aut nam, assumenda!</p>
+    </article>
+    
+    <section>
+        <h2>Section</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo, quia sunt dicta ad itaque eveniet tenetur nam! Sunt vitae sequi, iusto dicta ea eos accusantium harum tenetur nisi minima.</p>
+        <p>Voluptates ipsa voluptatum hic, voluptatibus totam rem harum. Reprehenderit, cumque, libero? Commodi rerum culpa minus ut, possimus, repellendus maiores totam, explicabo excepturi adipisci placeat, beatae est mollitia! Expedita reiciendis, ratione?</p>
+        <p>Quaerat nisi laudantium, doloremque debitis amet facere vel? Eum dolorum excepturi sit modi quasi, aliquam, aliquid doloribus harum. Perferendis sapiente quisquam ad obcaecati odio ea! Magni, inventore repudiandae eos voluptas.</p>
+    </section>
+    <article>
+        <h2>Article</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi qui ab, vero maxime quaerat tempore saepe odio quae necessitatibus assumenda, consectetur doloribus incidunt hic nam? Quia natus architecto, odit vero.</p>
+        <p>Eveniet earum, inventore? Voluptates praesentium sed nostrum facilis explicabo illum sint assumenda iure repudiandae debitis delectus, omnis dicta nihil in ipsa ea velit sequi magni perferendis commodi exercitationem amet ratione.</p>
+        <p>Eum, beatae, aperiam. Magnam maxime perferendis laudantium dolorem nobis rerum! Eligendi doloribus nostrum vitae, distinctio optio! Hic illo mollitia aperiam suscipit similique fuga consectetur id, sapiente optio inventore necessitatibus. Enim!</p>
+    </article></main>
+    
+    
+    <script>
+        let pSection = document.querySelector("section > p");
+        pSection.style.border = "3px solid black";
+
+   let pArticles = document.querySelectorAll("article > p");
+       
+    for(let i = 0; i < pArticles.length; i++){
+            pArticles[i].style.padding = "20px";
+            pArticles[i].style.backgroundColor = "#faf";
+        }
+        
+    pArticles[0].style.padding = "10px";
+    pArticles[0].style.backgroundColor = "#3af"; 
+    </script>
+    
+</body>
+</html>

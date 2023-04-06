@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+    <script>
+        let tiere = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+        for (let i = 0; i < tiere.length; i++) {
+            if (tiere[i] === "Elefant") {
+                let treffer = tiere.splice(i, 1);
+                tiere.splice(2, 0, treffer);
+                break;
+            }
+        }
+        let anzeige = document.getElementById("anzeige").innerHTML = tiere.toString();
+    </script>
+</body>
+
+</html>

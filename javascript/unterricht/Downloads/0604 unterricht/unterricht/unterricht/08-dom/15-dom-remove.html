@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Knoten</title>
+    <style>
+        div {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #000;
+            width: max-content;
+            background-color: #E49963;
+        }
+        
+        #box1 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Emmet
+div#box$*20>{$}  
+-->
+
+    <div id="box1">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+    <div>17</div>
+    <div>18</div>
+    <div>19</div>
+    <div>20</div>
+
+    <script>
+        let box1 = document.getElementById("box1");
+
+        box1.addEventListener("click", deleteMe);
+
+        function deleteMe(evt) {
+            evt.currentTarget.nextElementSibling.remove();
+        }
+
+
+        /*    console.log(el.parentElement.id);
+            console.log(el.previousElementSibling.id);
+            console.log(el.nextElementSibling.id);
+            console.log(document.body.lastElementChild.localName);
+            console.log(document.body.childNodes);*/
+    </script>
+</body>
+
+</html>

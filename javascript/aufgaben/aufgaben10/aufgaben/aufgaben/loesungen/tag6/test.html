@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 6.1</title>
+</head>
+
+<body>
+
+    <p>Gebe Zahlen ein die addiert werden sollen. Drücke nach jeder Zahl den Button "Hinzufügen". Klicke auf den Button "Ausrechnen, um das Ergebnis anzuzgein.</p>
+    <div>
+        <label for="eingabe">Zahl</label>
+        <input type="number" id="eingabe">
+        <p><button id="addBtn">die Zahl hinzufüge</button></p>
+        <p></p><button id="reBtn">Ergebnis ausrechnen</button></p>
+
+        <p id="ergebnis"></p>
+
+        <script>
+            let addBtn = document.getElementById("addBtn");
+            let reBtn = document.getElementById("reBtn");
+            let eingabe = document.getElementById("eingabe");
+            let ergebnis = document.getElementById("ergebnis");
+            let zahlen = [];
+
+            addBtn.addEventListener("click", addNumber);
+            reBtn.addEventListener("click", rechnen);
+
+            function addNumber() {
+                zahlen.push(eingabe.value);
+                eingabe.value = "";
+                ergebnis.innerHTML = zahlen.join();
+
+            }
+
+            function rechnen() {
+                var sum = 0;
+                for (var i = 0; i < zahlen.length; i++) {
+                    sum += Number(zahlen[i]);
+                }
+                ergebnis.innerHTML = sum;
+                zahlen = [];
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

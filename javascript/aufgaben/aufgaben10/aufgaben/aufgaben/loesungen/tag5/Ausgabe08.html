@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperaturkonverter</title>
+</head>
+<body>
+  <!-- 
+  Du hörst von deinen amerikanischen Freunden vom ausserordentlich kalten Winter in Amerika. 
+  Programmiere ein Skript, das dir Grad Fahrenheit in Grad Celsius umrechnet.
+
+  Formel Umwandlung Celsius / Fahrenheit:
+  https://www.mathsisfun.com/temperature-conversion.html
+	   oder	 
+  https://www.t-online.de/leben/alltagswissen/id_100061236/so-rechnen-sie-fahrenheit-in-celsius-und-celsius-in-fahrenheit-um.html
+  -->
+  <h1>Temperaturkonverter</h1>
+  <script>
+    if (window.confirm('Möchten sie Fahrenheit in Celsius umrechnen')) {
+      const fahrenheit = window.parseFloat(window.prompt('Bitte geben sie eine Temperatur in Fahrenheit an.'))
+      if (window.isNaN(fahrenheit)) {
+        console.error('Die eingegebene Temperatur ist ungültig.')
+      } else {
+        const celsius = (fahrenheit - 32) * (5/9)
+        console.log( fahrenheit.toFixed(2) + ' Grad Fahrenheit entspricht ' + celsius.toFixed(2) + ' Grad Celsius.')
+      }
+    } else if (window.confirm('Möchten sie Celsius in Fahrenheit umrechnen')) {
+      const celsius = window.parseFloat(window.prompt('Bitte geben sie eine Temperatur in Celsius an.'))
+      if (window.isNaN(celsius)) {
+        console.error('Die eingegebene Temperatur ist ungültig.')
+      } else {
+        const fahrenheit = celsius * 1.8 + 32
+        console.log( celsius.toFixed(2) + ' Grad Celsius entspricht ' + fahrenheit.toFixed(2) + ' Grad Fahrenheit.')
+      }
+    }
+     
+  </script>
+</body>
+</html>

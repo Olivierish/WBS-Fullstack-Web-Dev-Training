@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Event Aufgaben</title>
+</head>
+
+<body>
+    <p id="ausgabe">0</p>
+    <p><button id="reset">reset</button></p>
+
+    <button id="btn2">Click 2</button>
+    <button id="btn3">Click 3</button>
+    <button id="btn4">Click 4</button>
+    <button id="btn5">Click 5</button>
+    <script>
+        let a = 0;
+        let ausgabe = document.getElementById("ausgabe");
+
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let btn4 = document.getElementById("btn4");
+        let btn5 = document.getElementById("btn5");
+
+        btn2.value = 2;
+        btn3.value = 3;
+        btn4.value = 4;
+        btn5.value = 5;
+
+
+        btn2.addEventListener("click", reihe);
+        btn2.addEventListener("click", reihe);
+        btn3.addEventListener("click", reihe);
+        btn4.addEventListener("click", reihe);
+        btn5.addEventListener("click", reihe);
+
+        function reihe(evt) {
+            a += Number(evt.currentTarget.value);
+            ausgabe.innerHTML = a;
+        }
+
+        document.getElementById("reset").addEventListener("click", loeschen);
+
+        function loeschen(evt) {
+            a = 0;
+            ausgabe.innerHTML = "0";
+        }
+    </script>
+</body>
+
+</html>

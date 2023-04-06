@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Filme demnächst hier</h1>
+    <table id="filmbox"></table>
+    <script>
+        const myImage = new Image(329, 184);
+        myImage.src = "img/0_film.jpg";
+        document.body.appendChild(myImage);
+
+
+        let amountF = 23
+        let filmbox = document.getElementById("filmbox");
+
+        for (let i = 0; i < amountF; i++) {
+
+            var reihe = document.createElement("tr");
+            filmbox.appendChild(reihe);
+
+            for (let e = 0; e < 5; e++) {
+                let spalte = document.createElement("td");
+                spalte.innerHTML = "reihe " + i + " Spalte " + e;
+                reihe.appendChild(spalte);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

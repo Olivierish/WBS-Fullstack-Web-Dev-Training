@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Javascript Aufgabe 4 </title>
+    <style>
+        #rad {
+            position: absolute;
+            transition: all 2s;
+        }
+        
+        button {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Aufgabe 05</h1>
+
+
+    <script>
+        let tiere = ["Affe", "Bär", "Chameleon", "Dachs", "Esel", "Fliege", "Gepard",
+            "Junikäfer", "Krabbe", "Löwe", "Maus", "Nilpferd", "Opossum", "Pferd", "Qualle",
+            "Schnecke", "Tiger", "Uhu", "Vogel", "Wiesel", "Xenosaurus", "Yak", "Zebra"
+        ];
+
+        var count = tiere.length;
+        var tempPos = [];
+        var mixArray = [];
+        for (i = 0; i < count; i++) {
+            tempPos[i] = tiere[i];
+        }
+        tiere = [];
+
+        for (i = 0; i < count; i++) {
+
+            var zuZa = Math.floor(Math.random() * tempPos.length);
+            tiere[i] = tempPos[zuZa];
+            tempPos.splice(zuZa, 1);
+        }
+        console.log(tiere);
+    </script>
+</body>
+
+</html>

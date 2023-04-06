@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>regulärer Ausdruck</title>
+    <style>
+        body{font-size: 1.3rem;}
+        button{font-size: 1.1em;
+        min-width: 14rem;
+        }
+    </style>
+</head>
+
+<body> 
+<p>Drei Chinesen mit dem Kontrabass.</p>
+<p id="ausgabe"></p>
+    
+    
+    <script>
+        let ausgabe = document.getElementById("ausgabe");
+        let info = "Drei Chinesen mit dem Kontrabass";
+        let regExp = /eu|au|ei|ie|a|e|i|o|u|ä|ö|ü/g;
+        
+        
+    ausgabe.innerHTML = info.replace(regExp, "o")+"<br>";
+    ausgabe.innerHTML += info.replace(regExp, "ö")+"<br>";  
+     ausgabe.innerHTML += info.replace(regExp, "u")+"<br>"; 
+    ausgabe.innerHTML += info.replace(regExp, "a")+"<br>"; 
+     ausgabe.innerHTML += info.replace(regExp, "i")+"<br>"; 
+      ausgabe.innerHTML += info.replace(regExp, "ü")+"<br>"; 
+        ausgabe.innerHTML += info.replace(regExp, "au")+"<br>"; 
+        console.log(x);
+
+  
+    </script>
+    
+</body>
+</html>

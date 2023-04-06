@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 3</title>
+</head>
+
+<body>
+    <button onclick="einMalEins(12)">Einmal 12</button>
+    <button onclick="einMalEins(13)">Einmal 13</button>
+    <button onclick="einMalEins(14)">Einmal 14</button>
+    <button onclick="einMalEins(15)">Einmal 15</button>
+    <button onclick="einMalEins(16)">Einmal 16</button>
+    <p id="anzeige"></p>
+    <script>
+        var anzeige = document.getElementById("anzeige");
+
+
+        function einMalEins(a) {
+            anzeige.innerHTML = "";
+            for (var i = 0; i <= 10; i++) {
+                anzeige.innerHTML += (i * a) + "<br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+
+<body>
+    <p>Mit concat() wird ein Array an ein anderes angehängt.</p>
+
+    <script>
+        let tiereAfrikas = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+
+        let haustiere = [
+            "Kaninchen",
+            "Katze",
+            "Hund",
+            "Meerschweinchen"
+        ];
+
+        let fische = [
+            "Goldfisch",
+            "Makrele",
+            "Hai",
+            "Hecht"
+        ];
+
+        var tiere = tiereAfrikas.concat(fische).concat(haustiere);
+        console.log(tiere)
+    </script>
+
+
+</body>
+
+</html>

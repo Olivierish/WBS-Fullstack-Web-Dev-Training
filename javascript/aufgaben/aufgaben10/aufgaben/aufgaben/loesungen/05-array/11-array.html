@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <button id="btn">Catch Animal</button>
+    <p id="anzeige"></p>
+    <script>
+        let tiereAfrikas = [
+            "Affe",
+            "Leopard",
+            "Tiger",
+            "Gnu",
+            "Elefant",
+            "Ibis",
+            "Giraffe",
+            "Zebra"
+        ];
+        let zirkusTiere = [];
+        let anzeige = document.getElementById("anzeige");
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", catchAnimal);
+
+        function catchAnimal(evt) {
+            if (tiereAfrikas.length > 0) {
+                let id = Math.floor(Math.random() * tiereAfrikas.length);
+                zirkusTiere.push(tiereAfrikas.splice(id, 1));
+                anzeige.innerHTML = zirkusTiere.toString() + "<br>" + tiereAfrikas.toString();
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

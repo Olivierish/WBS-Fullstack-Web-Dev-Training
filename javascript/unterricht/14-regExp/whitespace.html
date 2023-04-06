@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>regulärer Ausdruck</title>
+    <style>
+        body{font-size: 1.3rem;}
+        button{font-size: 1.1em;
+        min-width: 14rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+F12 und Quelltext
+<script>
+
+        let info = "Der grosse graue Hund";
+        let regExp = /gr\w*/g; 
+      let  ergebnis = info.match(regExp);
+       console.log(ergebnis);
+ 
+    </script>
+</body>
+</html>

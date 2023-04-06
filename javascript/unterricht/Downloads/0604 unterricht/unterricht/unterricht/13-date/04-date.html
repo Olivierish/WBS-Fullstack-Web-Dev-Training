@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datum</title>
+    <style>
+        #datumAnzeige {
+            text-align: center;
+            font-size: 2rem;
+            color: #3B0E9B;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="datumAnzeige"></p>
+    <script>
+        /*
+                        Die Zeitanzeige erfordert eine ständige Aktualisierung
+                        mittels setInterval kann man eine Funktion in einer Zeitschleife aufrufen.
+                        Alle erforderlichen Daten zur Erfassung des Datums werden in eine
+                        Funktion gepackt und diese wird dann mit setInterval jede Sekunde erneut aufgerufen. 
+                        setInterval() benötigt 2 Argumente, die Funktion  und eine Zeitangabe in Millisekunde, welche das Zeitinterval des Funktionsaufrufs bestimmt.
+                        */
+
+
+
+        let wochentag = [
+            "Sonntag",
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag"
+        ];
+
+        let monat = [
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"
+        ];
+
+        let datum, sekunde, minute, stunde, ausgabe;
+
+        function showDate() {
+            datum = new Date();
+            sekunde = datum.getSeconds();
+            minute = datum.getMinutes();
+            stunde = (datum.getHours());
+
+            ausgabe = wochentag[datum.getDay()] + " ";
+            ausgabe += datum.getDay() + " . ";
+            ausgabe += monat[datum.getMonth()] + " ";
+            ausgabe += datum.getFullYear() + "<br>";
+            ausgabe += stunde + ":" + minute + ":" + sekunde;
+
+            document.getElementById("datumAnzeige").innerHTML = ausgabe;
+        }
+        setInterval(showDate, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+</head>
+
+<body>
+    <ul>
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+        <li>Element 5</li>
+    </ul>
+
+    <script>
+        let liste = document.getElementsByTagName("li");
+        liste[3].style.backgroundColor = "#af0";
+
+        for (let i = 0; i < liste.length; i++) {
+            liste[i].style.width = "200px";
+            liste[i].style.border = "1px solid #000";
+            liste[i].style.marginTop = "10px";
+
+        }
+    </script>
+</body>
+
+</html>

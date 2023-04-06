@@ -1,0 +1,89 @@
+<!Doctype html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Funktionen in Javascript</title>
+    <style>
+        .page-header {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .page-header,
+        #next {
+            background: rgb(20, 20, 42);
+            color: rgb(248, 214, 23);
+        }
+        
+        .page-content {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 30px 20px;
+        }
+        
+        .page-content p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+        
+        #next {
+            border: none;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+        
+        #next:hover {
+            background-color: rgb(11, 60, 110)
+        }
+        
+        #quoteFrom {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Bekannte Zitate</h1>
+    </header>
+    <div class="page-content">
+        <button id="next">Nächstes Zitat</button>
+        <p id="quote">Das Leben besteht hauptsächlich darin, dass man mit dem Unvorhergesehenen fertig werden muss.</p>
+        <p id="quoteFrom">John Steinbeck</p>
+    </div>
+    <script type="text/javascript">
+        var quotesArr = [
+            ["Das Leben besteht hauptsächlich darin, dass man mit dem Unvorhergesehenen fertig werden muss.", "John Steinbeck"],
+            ["Das Problem zu erkennen ist wichtiger als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung.", "Albert Einstein"],
+            ["Die meisten Führungskräfte zögern, ihre Leute mit dem Ball laufen zu lassen, aber es ist erstaunlich, wie schnell ein informierter und motivierter Mensch laufen kann.", "Lee Iacocca"],
+            ["Eine Investition in Wissen bringt immer noch die besten Zinsen.", "Benjamin Franklin"],
+            ["Eine positive Einstellung zu lösbaren Problemen ist bereits der halbe Erfolg.", "Ernst Ferstl"],
+            ["Es ist kein Drama, wenn das Projekt nicht nach Plan läuft. Es ist ein Drama, wenn der Projektmanager nichts davon weiß.", "Peter Hobbs"],
+            ["Es ist nicht genug zu wissen, man muss es auch anwenden. Es ist nicht genug zu wollen, man muss es auch tun.", "Johann Wolfgang von Goethe"]
+        ];
+
+
+        document.getElementById("next").onclick = function() {
+            randomize();
+        }
+
+        function randomize() {
+            var range = quotesArr.length;
+            var randomIndex = Math.floor(Math.random() * range);
+            var quote = quotesArr[randomIndex][0];
+            var quoteFrom = quotesArr[randomIndex][1];
+
+            document.getElementById('quote').innerHTML = quote;
+            document.getElementById('quoteFrom').innerHTML = quoteFrom;
+        }
+    </script>
+</body>
+
+</html>

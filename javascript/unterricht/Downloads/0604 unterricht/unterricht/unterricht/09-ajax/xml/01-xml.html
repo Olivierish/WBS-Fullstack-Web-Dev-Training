@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>XML</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+    <div id="anzeige"></div>
+    <script>
+        'use strict';
+        let anzeige = document.getElementById("anzeige");
+
+
+        let request = new XMLHttpRequest();
+        request.onload = (e) => {
+            if (request.status === 200) {
+                let xmlDoc = request.responseXML;
+                let artists = xmlDoc.getElementsByTagName("artist");
+                anzeige.innerHTML = artists[0].getAttribute("name");
+                let album = artists[0].getElementsByTagName("album");
+                anzeige.innerHTML += album[0].getElementsByTagName("title")[0].innerHTML;
+            }
+        };
+        request.open(
+            'GET',
+            'content/artists.xml'
+        );
+        request.responseType = 'document';
+        request.setRequestHeader('Accept', 'text/xml');
+        request.send(null);
+    </script>
+</body>
+
+</html>

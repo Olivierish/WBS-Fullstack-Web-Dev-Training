@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Array Aufgabe</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var output = document.getElementById("output");
+        var person = [];
+        person[0] = ["Michael", "Bauer", 1991, "Hamburg", "Profifussballer"];
+        person[1] = ["Samanta", "Kohl", 1986, "Berlin", "Koch"];
+        person[2] = ["Klaus", "Meyer", 1985, "Düsseldorf", "Polizist"];
+        person[3] = ["Tomas", "Knall", 1999, "Bremen", "IT-Ingeneur"];
+        person[4] = ["Linda", "Anderson", 2000, "Köln", "Kauffrau"];
+
+        /*    output.innerHTML = "Am 24 Februar 2023 wurde lange vermisste " + person[0][4] + " " + person[0][0] + " " + person[0][1] + " (" + person[0][2] + " in " + person[0][3] + " geb.) tot im Schwarzwald gefunden.";
+           var id = 0; */
+
+        output.innerHTML = "<br>Name: " + person[id][0] + " " + person[id][1] + " <br>geb.: " + person[id][2] + " <br>Ort: " + person[id][3] + " <br>Beruf: " + person[id][4];
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Notenrechner</title>
+</head>
+<body>
+  <!--
+   Programmiere ein Skript, das dir je nach Punktzahl (0-100) jeweils
+   die entsprechende Note (1-6) in der Konsole ausgibt. Verwende für die
+   Lösung dieser Aufgabe die if-else-Anweisung.
+   https://bildungsbibel.de/wp-content/uploads/2018/09/notenschluessel-nach-ihk-schema.pdf
+  -->
+  <h1>Notenrechner</h1>
+  <script>
+    const punkte = 48
+    let ausgabe = 'Bei einer Punktzahl von ' + punkte + ' Punkten bekommt man die Note '
+
+    if (punkte >= 92) {
+      ausgabe += '1 - sehr gut'
+    } else if (punkte >= 81) {
+       ausgabe += '2 - gut'
+    } else if (punkte >= 67) {
+       ausgabe += '3 - befriedigend'
+    } else if (punkte >= 50) {
+      ausgabe += '4 - ausreichend'
+    } else if (punkte >= 30) {
+      ausgabe += '5 - mangelhaft'
+    } else {
+      ausgabe += '6 - unfenügend'
+    } 
+
+    /*
+    if (punkte >= 92) ausgabe += '1 - sehr gut'
+    else if (punkte >= 81) ausgabe += '2 - gut'
+    else if (punkte >= 67) ausgabe += '3 - befriedigend'
+    else if (punkte >= 50) ausgabe += '4 - ausreichend'
+    else if (punkte >= 30) ausgabe += '5 - mangelhaft'
+    else ausgabe += '6 - unfenügend'
+    */
+
+    console.log (ausgabe)
+    
+  </script>
+</body>
+</html>

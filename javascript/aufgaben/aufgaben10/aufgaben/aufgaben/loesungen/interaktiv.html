@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic Interaktiv</title>
+</head>
+
+<body>
+    
+    <p id="ausgabe"></p>
+    <button id="push">Push</button>
+    
+<script>
+    
+let ausgabe = document.getElementById("ausgabe");
+ausgabe.innerHTML = "Hallo ich bin die Ausgabe";
+    
+let button = document.getElementById("push");
+    
+button.onclick = function(){
+    ausgabe.innerHTML = "Button wurde gedrückt";
+}
+    
+
+</script>
+    
+</body>
+</html>

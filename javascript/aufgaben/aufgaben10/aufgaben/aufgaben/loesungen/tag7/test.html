@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 1 Tag 7</title>
+    <style>
+        td,
+        th {
+            border: 1px solid;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Wähle einen Film</p>
+    <select name="filmauswahl" id="fiml"></select>
+    <p id="output"></p>
+    <table id="tabelle">
+        <tr>
+            <th>Film</th>
+            <th>Regie</th>
+            <th>Genre</th>
+            <th>Jahr</th>
+            <th>Schauspieler</th>
+        </tr>
+    </table>
+
+    <script>
+        var output = document.getElementById("output");
+        // Arrays mit den ganzen Filmen
+        var filme = [{
+            name: "Indiana Jones, Jäger des verlorenen Schatzes",
+            regie: "Steven Spielberg",
+            genre: "Abenteuer",
+            jahr: 1981,
+            actor: "Harrison Ford"
+        }, {
+            name: "Herr der Ringe, Die Gefährten",
+            regie: "Peter Jackson",
+            genre: "Märchen",
+            jahr: 2001,
+            actor: "Ian Mc Kellen"
+        }, {
+            name: "Valerian",
+            regie: "Luc Besson",
+            genre: "Science Fiction",
+            jahr: 2017,
+            actor: "Cara Delevingne"
+        }, {
+            name: "Inception",
+            regie: "Christopher Nolan",
+            genre: "Science Fiction",
+            jahr: 2010,
+            actor: "Leonardo Di Caprio"
+        }, {
+            name: "Pulp Fiction",
+            regie: "Quentin Tarantino",
+            genre: "Pulp Fiction",
+            jahr: 1994,
+            actor: "John Travolta"
+        }];
+
+        //Erstellung der Auswahlliste mit den Filmen
+        var filmSelect = document.getElementById("fiml");
+        var filmauswahl = document.getElementById("fimlauswahl");
+        var tabelle = document.getElementById("tabelle");
+        var zeile;
+        var spalte;
+
+
+
+        for (var i = 0; i < filme.length; i++) {
+            var option = document.createElement("option");
+            option.innerHTML = filme[i].name;
+            option.value = i;
+            fiml.appendChild(option);
+        }
+
+        filmSelect.addEventListener("change", showFilm)
+
+
+        function showFilm(evt) {
+            //die Id die gerade ausgewählt wurde
+            //selectedIndex liefert die ausgewählte Id des option Elements einer select Liste
+            //console.log(this.selectedIndex);
+            welcherfilm(this.selectedIndex);
+        }
+        //tabelle wird am Anfang ausgeblendet, und erst eingeblendet wenn man was auswählt
+        tabelle.hidden = true;
+        //Erstellen einer Tabelle
+        function welcherfilm(nr) {
+            tabelle.hidden = false;
+
+            console.log(zeile);
+            if (zeile != undefined) {
+                zeile.remove();
+            }
+
+
+            zeile = document.createElement('tr');
+            spalte = document.createElement('td');
+
+            spalte.textContent = filme[nr].name;
+            zeile.appendChild(spalte);
+
+            spalte = document.createElement('td');
+            spalte.textContent = filme[nr].regie;
+            zeile.appendChild(spalte);
+
+            spalte = document.createElement('td');
+            spalte.textContent = filme[nr].genre;
+            zeile.appendChild(spalte);
+
+            spalte = document.createElement('td');
+            spalte.textContent = filme[nr].jahr;
+            zeile.appendChild(spalte);
+
+            spalte = document.createElement('td');
+            spalte.textContent = filme[nr].actor;
+
+            zeile.appendChild(spalte);
+            tabelle.appendChild(zeile);
+            console.log(zeile);
+            console.log(tabelle)
+
+        }
+    </script>
+
+</body>
+
+</html>
