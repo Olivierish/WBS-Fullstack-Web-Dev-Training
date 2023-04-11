@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 1-3</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        const tiere = [
+
+            {name : "Säugetier", srcImg : "https://img.freepik.com/free-vector/many-cute-animals-bamboo-forest_1308-32851.jpg"},
+            {name : "Vögel", srcImg : "https://img.freepik.com/free-vector/various-colorful-small-birds-set_74855-14197.jpg"},
+            {name : "Kriechtiere", srcImg : "https://img.freepik.com/free-vector/animal-vector-antique-watercolor-drawing-collection-remixed-from-artworks-by-robert-jacob-gordon_53876-111008.jpg"},
+            {name : "Fische", srcImg : "https://img.freepik.com/free-vector/fishes-shell-collection_1365-36.jpg"},
+        ];
+        $(document).ready(
+            function(){
+                for (let i = 1; i < tiere.length + 1; i++) {
+                    $("option:nth-child("+(i+1)+")").text(tiere[i-1].name);  
+                }
+            
+                $("select").change(
+                    function() {
+                        let j = $(this).val() - 1;
+                        console.log(j);
+                        $("img").attr("src", tiere[j].srcImg);
+                        $("figcaption").text(tiere[j].name);
+                    }
+                );
+                }
+                );
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 100px;
+            width: 100%;
+            background: #ffc1fa;
+            text-align: center;
+        }
+        select{
+            height: 40px;
+            width: 200px;
+            display: block;
+            margin: 5px auto;
+            background: blueviolet;
+            border: rgb(40, 6, 71) 1px solid;
+            font-family: var(--font-page-text);
+            font-size: 1em;
+            color: white;
+        }
+        select:hover{
+            background: white;
+            color: blueviolet;
+            border: blueviolet 1px solid;
+
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 1-3</h1>
+    </header>
+    <main>
+        <section>
+            <select name="tiere" id="tiere">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+            </select>
+        </section>
+        <section>
+            <figure>
+                <img src="https://img.freepik.com/free-vector/many-cute-animals-bamboo-forest_1308-32851.jpg" alt="image">
+                <figcaption>Säugetier</figcaption>
+            </figure>
+            
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            
+            $('#aus').click(function() {
+                $('p').fadeOut();
+            });
+
+            $('#ein').click(function() {
+                $('p').fadeIn();
+            });
+
+            $('#farbe').click(function() {
+                $('p').css('background-color', 'green');
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <button id="aus">Absatz unsichtbar schalten</button>
+    <button id="ein">Absatz sichtbar schalten</button> 
+    <button id="farbe">Hintergrundfarbe ändern</button>
+    <p>In diesem Absatz steht unbedeutender Text</p>
+    
+</body>
+</html>

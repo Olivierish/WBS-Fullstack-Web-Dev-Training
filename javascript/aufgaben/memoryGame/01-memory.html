@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="anzeige"></p>
+    <section id="bildBox">
+    </section>
+    <script>
+        var anzahl = 18 * 2;
+        var cards = new Array();
+        var anzeige = document.getElementById("anzeige");
+        var bildBox = document.getElementById("bildBox");
+
+
+        spielAufbau();
+
+
+        function spielAufbau() {
+            for (i = 0; i < anzahl; i++) {
+
+                cards[i] = new Image();
+                cards[i].src = "img/back.png";
+                bildBox.appendChild(cards[i]);
+                cards[i].addEventListener("click", turnCard);
+            }
+        }
+
+        function turnCard(evt) {
+            console.log(evt.currentTarget.src);
+
+        }
+    </script>
+</body>
+
+</html>

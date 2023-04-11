@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="anzeige"></p>
+    <section id="bildBox">
+    </section>
+    <script>
+        var zufallszahl, turnCard1, turnCard2;
+        var anzahl = 18 * 2;
+        var zug = 0;
+        var hits = 0;
+        var zahlen = new Array();
+        var cards = new Array();
+        var spielzug = 0;
+        var anzeige = document.getElementById("anzeige");
+        var bildBox = document.getElementById("bildBox");
+
+        spielAufbau();
+        spielStart();
+        function spielAufbau() {
+            for (i = 0; i < anzahl; i++) {
+                cards[i] = new Image();
+                cards[i].src = "img/back.png";
+                bildBox.appendChild(cards[i]);
+                cards[i].addEventListener("click", turnCard);
+            }
+        }
+        function neueZahlen() {
+            for (i = 0; i < (anzahl / 2); i++) {
+                zahlen[i] = i;
+                zahlen[i + anzahl / 2] = i;
+            }
+        }
+        function spielStart() {
+            neueZahlen();
+            for (i = 0; i < anzahl; i++) {
+                cards[i].src = "img/back.png";
+                zufallszahl = Math.floor(Math.random() * zahlen.length);
+                cards[i].no = zahlen[zufallszahl];
+                cards[i].back = true;
+                cards[i].style.visibility = "visible";
+                zahlen.splice(zufallszahl, 1);
+            }
+        }
+        function turnCard(evt) {
+            console.log(evt.currentTarget.no);
+            console.log(zug);
+            console.log(evt.currentTarget.back);
+            if (zug == 0) {
+                turnCard1 = evt.currentTarget;
+                evt.currentTarget.src = "img/img_" + evt.currentTarget.no + ".png";
+                evt.currentTarget.back = false;
+                zug = 1;
+            } else if (zug == 1 && evt.currentTarget.back) {
+                zug = 2;
+                turnCard2 = evt.currentTarget;
+                evt.currentTarget.src = "img/img_" + evt.currentTarget.no + ".png";
+                evt.currentTarget.back = false;
+                setTimeout(umdrehen, 2000);
+                spielzug++;
+                anzeige.text = "Spielzug " + spielzug;
+            }
+        }
+        function umdrehen() {
+            var no1 = turnCard1.no;
+            var no2 = turnCard2.no;
+            turnCard1.src = "img/back.png";
+            turnCard2.src = "img/back.png";
+            turnCard1.back = true;
+            turnCard2.back = true;
+            if (no1 == no2) {
+                turnCard1.style.visibility = "hidden";
+                turnCard2.style.visibility = "hidden";
+                hits++;
+            }
+            zug = 0;
+            if (hits == anzahl / 2) {
+                spielStart();
+                hits = 0;
+                spielzug = 0;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 1-3</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        var images = [
+            "https://img.freepik.com/free-vector/illustration-house-insurance_53876-6157.jpg",
+            "https://img.freepik.com/free-psd/bicycle-icon-isolated-3d-render-illustration_47987-11020.jpg",
+            "https://img.freepik.com/free-vector/flat-key-background_23-2147737852.jpg",
+            "https://img.freepik.com/free-vector/trees-collection-flat-style_23-2147772420.jpg",
+            "https://img.freepik.com/free-vector/pathway-infographic-template-with-location-marks_1017-31482.jpg"
+                    ];
+        $(document).ready(
+            function(){
+                $("button:first").click(
+                    function() {
+                        $("img").attr("src", images[0]);
+                    }
+                );
+                $("button:nth-child(2)").click(
+                    function() {
+                        $("img").attr("src", images[1]);
+                    }
+                );
+                $("button:nth-child(3)").click(
+                    function() {
+                        $("img").attr("src", images[2]);
+                    }
+                );
+                $("button:nth-child(4)").click(
+                    function() {
+                        $("img").attr("src", images[3]);
+                    }
+                );
+                $("button:nth-child(5)").click(
+                    function() {
+                        $("img").attr("src", images[4]);
+                    }
+                );
+                }
+                );
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 100px;
+            width: 100%;
+            background: #ffc1fa;
+            text-align: center;
+        }
+        button{
+            margin: 5px;
+            background: blueviolet;
+            border: rgb(40, 6, 71) 1px solid;
+            color: white;
+        }
+        button:hover{
+            background: white;
+            color: blueviolet;
+            border: blueviolet 1px solid;
+
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 1-3</h1>
+    </header>
+    <main>
+        <section>
+            <button class="btn">Haus</button>
+            <button class="btn">Farrad</button>
+            <button class="btn">Auto</button>
+            <button class="btn">Baum</button>
+            <button class="btn">Straße</button>
+        </section>
+        <section>
+            <img src="https://img.freepik.com/free-vector/collection-creative-click-collect-buttons_23-2148770197.jpg" alt="image">
+        </section>
+    </main>
+</body>
+</html>

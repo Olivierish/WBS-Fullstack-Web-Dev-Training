@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 1</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        var filmen = ["The Gray Man","Adam à travers le temps","Purple Hearts","Le haut du panier","L'arnaqueur de Tinder"];
+        $(document).ready(
+            function(){
+                $("h2").text("Top 5 filmen netflix 2022");
+
+                for (let i = 0; i < filmen.length; i++) {
+                    $("li:nth-child("+(i+1)+")").text(filmen[i]);
+                }
+                $("p:first").text(filmen);
+                }
+                );
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 100px;
+            width: 100%;
+            background: #9ffff2;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 1</h1>
+    </header>
+    <main>
+        <section>
+            <h2></h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <p></p>
+        </section>
+    </main>
+</body>
+</html>

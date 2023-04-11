@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selektoren zweites Beispiel</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#demo').text("Hier wurde die ID selektiert");
+            $('.klasse').text("Hier wurde eine Klasse selektuert");
+            $('li[title="titel"]').text("Hier wurde das Attribut selektiert ...");
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="demo"></li>
+        <li class="klasse"></li>
+        <li title="titel"></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>memory</title>
+</head>
+<body>
+    <p id="anzeige"></p>
+    <section id="bildBox">
+    </section>
+    <script>
+        var anzahl = 18 * 2;
+        var cards = new Array();
+        var anzeige = document.getElementById("anzeige");
+        var bildBox = document.getElementById("bildBox");
+        var zahlen = new Array();
+
+        spielAufbau();
+        spielStart();
+
+        function spielAufbau() {
+            for (i = 0; i < anzahl; i++) {
+                cards[i] = new Image();
+                cards[i].src = "img/back.png";
+                bildBox.appendChild(cards[i]);
+                cards[i].addEventListener("click", turnCard);
+            }
+        }
+
+
+        function neueZahlen() {
+            for (i = 0; i < (anzahl / 2); i++) {
+                zahlen[i] = i;
+                zahlen[i + anzahl / 2] = i;
+            }
+            console.log(zahlen)
+        }
+
+        function spielStart() {
+            neueZahlen();
+            for (i = 0; i < anzahl; i++) {
+                cards[i].src = "img/back.png";
+                var zufallszahl = Math.floor(Math.random() * zahlen.length);
+                cards[i].no = zahlen[zufallszahl];
+                cards[i].back = true;
+                cards[i].style.visibility = "visible";
+                zahlen.splice(zufallszahl, 1);
+            }
+        }
+
+        function turnCard(evt) {
+            console.log(evt.currentTarget.no);
+            evt.currentTarget.src = "img/img_" + evt.currentTarget.no + ".png";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erste Schrite im jQuery</title>
+
+    <script src="jquery/jquery-3.6.4.js"></script>
+
+    <script>
+        // Warten, bis das Dokument geladen ist
+        $(document).ready(function() {
+            // dem selektierten Objekt soll ein neuer Text zu gewiesen werden
+            $("#meinDiv").text("Hallo jQuery");
+        });
+    </script>
+
+</head>
+<body>
+    <div id="meinDiv">Hallo Welt!</div>
+</body>
+</html>
