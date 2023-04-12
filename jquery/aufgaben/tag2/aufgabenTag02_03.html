@@ -29,7 +29,8 @@
                 $('li').unwrap();
                 $('li').wrapAll('<ul></ul>');
 
-                $('section:last').wrapAll();
+                $('section:last').wrap('<div></div>');
+                $('header').append('<nav>Hier kommt die Nav</nav>');
                 });
     </script>
 
@@ -39,7 +40,7 @@
             padding: 20px 0;
             min-height: 80px;
             width: 100%;
-            background: #ffc1fa;
+            background: #d54dca;
             text-align: center;
         }
         img{
@@ -50,6 +51,10 @@
         }
         figcaption{
             text-align: center;
+        }
+        div *{
+            background: #242424;
+            color: white;
         }
     </style>
 </head>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 2-3</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        var produkte={};
+        var alleProdukte =[];
+        var count = 0;
+        $(document).ready(
+            function(){    
+                $('.btn').click(
+                    function(){
+                        produkte.idP = 'id'+ count;
+                        count++;
+                        console.log(count);
+                        produkte.nameP = $("#nameP").val();
+                        produkte.descrP = $("#descrP").val();
+                        produkte.preisP = $("#preisP").val();
+                        console.log(produkte);
+                        alleProdukte.push(produkte);
+                        displayP();
+                    }
+
+                ); 
+            
+                // $('button[id^="id"]').click(function(){
+                $('#id1').click(
+                    function(){
+                    // let btnId = $(this).attr('id').replace(/id/, '');
+                    // console.log(btnId);
+                    alert("coucou");
+                });
+                });
+
+    // function addP(produkte){
+    //     alleProdukte.push(produkte);
+    //     console.log(alleProdukte);
+    // }
+    function displayP(){
+        alleProdukte.forEach(function(element){
+            $('table').append('<tr></tr>');
+            $('tr:last-child').append('<td>'+element.nameP+'</td>');
+            $('tr:last-child').append('<td>'+element.descrP+'</td>');
+            $('tr:last-child').append('<td>'+element.preisP+'</td>');
+            $('tr:last-child').append('<td><button id="'+element.idP+'">🧺</button></td>');
+            console.log(element.idP);
+        });
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 80px;
+            width: 100%;
+            background: #d54dca;
+            text-align: center;
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;   
+            margin: 20px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+        label, textarea, input{
+            display: inline-block;
+            margin-left: 20px;
+            font-family: var(--page-font);
+            font-size: 1em;
+
+        }
+        [type='button']{
+            margin: auto;
+        }
+        label{
+            width: 150px;
+        }
+        form > div {
+            display: flex;
+            margin: 20px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 2-2</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Produkte </h2>
+            <img src="https://img.freepik.com/free-vector/sir-isaac-newton-with-gravitation-theory_1308-84764.jpg" alt="Einstein Albert" style="width: 400px; height: 280px;">
+        </section>
+        <section>
+            <h3>Produkt hinzufügen</h3>
+            <form action="#">
+                <div>
+                    <label for="nameP">Name : </label>
+                    <input type="text" id="nameP">
+                </div>
+                <div>
+                    <label for="descrP">Beschreibung : </label>
+                    <textarea name="descrP" id="descrP" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="preisP">Preis : </label>
+                    <input type="number" id="preisP">
+                    <label for="preisP">euros</label>
+                </div>
+                <div>
+                    <input type="button" value="Add" class="btn">
+                </div>
+                
+                
+            </form>
+        </section>
+        <section>
+            <table>
+                <tr>
+                    <th>Produkte</th>
+                    <th>Beschreibung</th>
+                    <th>Preis</th>
+                    <th>Löschen</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
