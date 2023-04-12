@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entfernen / Wiederherstellen</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Bevor ein Element entfernt wird, soll es in einer Variablen gespeichert
+            var absatz01 = $('#p1');
+            $('#entf').click(function() {
+                $('#p1').remove();
+            });
+
+            $('#wieder').click(function() {
+                $('body').prepend(absatz01);
+            });
+
+            $('li').click(function() {
+                $(this).remove();
+            });
+
+            $('<h2>das ist eine Überschrift </h2>').replaceAll('#ziel');
+        });
+    </script>
+</head>
+<body>
+    <p id="p1">Das ist ein Absatz mit der Nummer 1</p>
+    <p id="p2">Das ist ein Absatz mit der Nummer 2</p>
+    <p id="p3">Das ist ein Absatz mit der Nummer 3</p>
+    <hr>
+    <button id="entf">Absatz 1 entfernen</button>
+    <button id="wieder">Absatz 1 wieder herstellen</button>
+    <hr>
+    <ul>
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+    </ul>
+    <hr>
+    <p id="ziel">Ein Absatz</p>
+</body>
+</html>

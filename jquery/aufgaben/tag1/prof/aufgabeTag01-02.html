@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entwickeln mit jQuery Tag 01 - Aufgabe 2</title>
+    <script src="../jquery/jquery-3.6.0.min.js"></script>
+   <script>
+        $(document).ready(function(){
+            $("h1").text("Das ist der Text für die Überschrift 1");
+            $("h2").text("Das ist der Text für die Überschrift 2");
+           var info = $('#a').text() + ', ' + $('#b').text() + ', ' + $('#c').text() + ', ' + $('#d').text() + ', ' + $('#d').text();
+           $('p').text(info);
+  });
+</script>
+</head>
+<body>
+    <h1></h1>
+    <h2></h2>
+    <ul>
+        <li id="a">Montag</li>
+    <li id="b">Dienstag</li>
+    <li id="c">Mittwoch</li>
+    <li id="d">Donnerstag</li>
+    <li id="e">Freitag</li>
+    <p id="p2"></p>
+    </ul>
+    
+</body>
+</html>

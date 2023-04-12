@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Jquery Übung 07 : Entfernen / Wiederhrestellen</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        var absatz01 = $('#p1');
+        $(document).ready(
+            function(){
+                var absatz01 = $('#p1');
+                $('#entf').click(function() {
+                    $('#p1').remove();
+                });
+                $('#wieder').click(function() {
+                    $('#p2').prepend(absatz01);
+                });
+                $('<h2>Überschrift 2</h2>').replaceAll(".ziel");
+            } //ready
+        );
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            min-height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery Übung 07 : Entfernen / Wiederhrestellen</h1>
+    </header>
+    <main>
+        <section>
+            <p id="p1">Das ist ein Absatz mit der Nummer 1</p>
+            <p id="p2">Das ist ein Absatz mit der Nummer 2</p>
+            <p id="p2">Das ist ein Absatz mit der Nummer 3</p>
+        </section>
+        <section>
+            <button id="entf" class="btn">Absatz 1 Entfernen</button>
+            <button id="wieder" class="btn">Absatz 1 wieder herstellen</button>
+        </section>
+        <section>
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ul>
+        </section>
+        <section>
+            <p class="ziel">Lorem ipsum dolor sit amet.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemente entfernen</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('p').remove('#ziel');
+        });
+        
+    </script>
+</head>
+<body>
+    <div id="box">
+        <p id="ziel">Wird mit .remove() entfernt</p>
+        <p>Das ist ein Absatz der nicht entfernt werden soll.</p>
+    </div>
+</body>
+</html>

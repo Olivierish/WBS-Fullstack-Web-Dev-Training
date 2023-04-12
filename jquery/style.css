@@ -77,13 +77,13 @@
         text-align: center;
     }
     h3{
-        color: #46c9c0;
+        color: var(--color5)
     }
     h2{
-        color: #04a9be;
+        color: var(--color4);
     }
     header{
-      border: 1px solid white;
+      border: 1px solid var(--color2);
       background-color: var(--color6);
       height: 150px;
       max-width: var(--main-width);
@@ -101,7 +101,7 @@
   } */
   
   section, #solution{
-      border: 1px solid white;
+      border: 1px solid var(--color2);
       background-color: var(--color6);
       max-width: calc(var(--main-width) - 20px * 2);
       margin: auto;
@@ -110,7 +110,15 @@
 
   .btn{
     font-family: var(--page-font-text);
-    width: 150px;
+    min-width: 150px;
     height: 40px;
     font-size: large;
+    background-color: var(--color4);
+    color: var(--color2);
+    border:none;
+    box-shadow: 0px 0px 2px #000000;
+  }
+  .btn:hover{
+    background-color: var(--color5);
+    color: var(--color2);
   }

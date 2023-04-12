@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entwickeln mit jQuery Tag 01 - Aufgabe 3</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>>
+   <script>
+        $(document).ready(function(){
+            $("button").click(function() {
+                $("p").text($(this).text());
+            })
+  });
+</script>
+</head>
+<body>
+    <button id="1">Das ist Button 1</button>
+    <button id="2">Das ist Button 2</button>
+    <button id="3">Das ist Button 3</button>
+    <button id="4">Das ist Button 4</button>
+    <button id="5">Das ist Button 5</button>
+    <p id="p2"></p>
+    
+</body>
+</html>

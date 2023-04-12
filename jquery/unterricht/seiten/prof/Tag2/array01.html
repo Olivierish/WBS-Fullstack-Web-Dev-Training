@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array für DOM-Elemente nutzen</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // ein select-Element im BODY einfügen
+            $('body').append('<select id="staaten"></select>');
+            // Array definieren
+            var laender = ['Deutschland', 'Spanien', 'Portugal', 'Frankreich', 'Italien', 'Niederlande']; 
+            // so lage das Array Werte liefert soll ein <option> Element erzeugt werden und im select eingebunden werden
+            laender.forEach(function(land) {
+                $('#staaten').append("<option>" + land + "</option>");
+            });
+        });
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

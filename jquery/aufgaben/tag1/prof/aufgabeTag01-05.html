@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entwickeln mit jQuery Tag 01 - Aufgabe 4</title>
+    <script src="../jquery/jquery-3.6.0.min.js"></script>
+   <script>
+        $(document).ready(function(){
+            $("#1").click(function() {
+                $('#image').show();
+            })
+            $("#2").click(function() {
+                $('#image').hide();
+            })
+            $("#3").click(function() {
+                $('#image').fadeIn()
+            })
+            $("#4").click(function() {
+                $('#image').fadeOut()
+            })
+
+  });
+</script>
+</head>
+<body>
+    <button id="1">An</button>
+    <button id="2">Aus</button>
+    <button id="3">Einblenden</button>
+    <button id="4">Ausblenden</button>
+    <hr>
+  <img src="../medien/tazacorte.jpg" id="image" alt="nur ein Bild zum Testen ..." width="500">
+    
+</body>
+</html>

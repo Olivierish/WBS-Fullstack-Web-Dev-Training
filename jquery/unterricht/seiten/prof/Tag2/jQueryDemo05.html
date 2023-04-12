@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipuklation des DOM</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+           // $('<p>Das ist ein Absatz, der durch jQuery angehängt wird.</p>').insertAfter('h1');
+           // $('.ziel').after('<p>Dieser Inhalt wird wird after eingefügt</p>');
+           var count = 0;
+           $('.ziel').after(function() {
+               count++;
+               return '<p id="p-">Das ist der ' + count + '. hinzugefügte Absatz</p>';
+           })
+        })
+
+    </script>
+</head>
+<body>
+    <h1 class="ziel">Elemente im DOM hinzufügen</h1>
+    <p class="ziel">Das ist der Absatz</p>
+    <h2 class="ziel">Überschrift 2</h2>
+
+</body>
+</html>

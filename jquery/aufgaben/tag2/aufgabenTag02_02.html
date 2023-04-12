@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 2-2</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        var btnElt, olElt;
+        $(document).ready(
+            function(){    
+                btnElt = $('button').detach(); 
+                console.log(btnElt);  
+                $("ol").click(function() {
+                    olElt = $(this).detach();
+                    $('section:last').append(btnElt);
+                });
+
+                $(btnElt).click(function() {
+                    $(this).detach(); 
+                    $('section:last').append(olElt);
+                   
+                });
+                });
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 100px;
+            width: 100%;
+            background: #ffc1fa;
+            text-align: center;
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;
+            margin: 20px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 2-2</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Albert Einstein </h2>
+            <img src="https://img.freepik.com/free-vector/sir-isaac-newton-with-gravitation-theory_1308-84764.jpg" alt="Einstein Albert" style="width: 400px; height: 280px;">
+            <p>Albert Einstein was a German-born theoretical physicist, widely acknowledged to be one of the greatest and most influential physicists of all time. Einstein is best known for developing the theory of relativity, but he also made important contributions to the development of the theory of quantum mechanics.</p>
+        </section>
+        <section>
+            <h3>Die besten Einstein-Bücher</h3>
+            <ol>
+                <li>Albert Einstein Quotes</li>
+                <li>Relativity : the special and the general theory</li>
+                <li>The World As I see It</li>
+                <li>Albert Einstein in His Own Voice</li>
+                <li>Albert Einstein/Mileva Marić - the Love Letters</li>
+            </ol>
+            <button class="btn">Wiedersehen</button>
+        </section>
+    </main>
+</body>
+</html>
