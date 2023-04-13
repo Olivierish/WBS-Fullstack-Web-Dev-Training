@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entwickeln mit jQuery Tag 02 - Aufgabe 3</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+   <script>
+       $(document).ready(function() {
+        $('#hinzu').click(function() {
+
+            // Holen Sie sich die Werte aus dem Formular
+            var productName = $('#product-name').val();
+            var productDescription = $('#product-description').val();
+            var productPrice = $('#product-price').val();
+
+            // Erstellen Sie das DOM-Element für das neue Produkt
+            var newProduct = $('<li>').addClass('product')
+                               .append($('<h3>').text(productName))
+                               .append($('<p>').text(productDescription))
+                               .append($('<span>').addClass('price').text(productPrice));
+
+    // Fügen Sie das neue Produkt der Liste hinzu
+    $('#product-list').append(newProduct);
+
+    // Setzen Sie die Formularfelder zurück
+    $('form')[0].reset();
+  });
+
+   // Listen-Elemente enfernen 
+   $('#leeren').click(function() {
+    $('#product-list li').remove();
+   })
+   
+});
+</script>
+</head>
+<body>
+    <form>
+        <label for="product-name">Name:</label>
+        <input type="text" id="product-name">
+      
+        <label for="product-description">Beschreibung:</label>
+        <textarea id="product-description"></textarea>
+      
+        <label for="product-price">Preis:</label>
+        <input type="number" id="product-price">
+      
+        
+       
+      </form>
+      <button id="hinzu">Produkt hinzufügen</button>
+      <button id="leeren">Warenkorb leeren</button>
+      <ul id="product-list">
+      </ul>
+      
+</body>
+</html>

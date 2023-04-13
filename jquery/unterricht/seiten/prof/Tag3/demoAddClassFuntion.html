@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background Color Changer</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+		         $(document).ready(function() {
+                    $("li").addClass(function(index, curClass) {
+                        // "selected" durch "active" ersetzen
+                        if (curClass != "auswahl") {
+                        return "list-element-" + index;
+                         };
+                    });
+                });
+
+
+
+
+	</script>
+</head>
+<body>
+	<ul>
+        <li>Thema 1</li>
+        <li class="auswahl">Thema 2</li>
+        <li>Thema 3</li>
+     </ul>
+     
+	
+</body>
+</html>

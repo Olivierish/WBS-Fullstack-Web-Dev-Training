@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entwickeln mit jQuery Tag 02 - Aufgabe 2</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+   <script>
+        $(document).ready(function(){
+            var liste = $('ol').html();
+           $('li').click(function() {
+            $(this).remove();
+           })
+           $('button').click(function() {
+            // Liste komplett entfernen
+            $('ol').remove();
+            // neue OL einfügen
+            $('h2').after('<ol></ol>');
+            $('ol').html(liste);
+           })
+
+        });
+</script>
+</head>
+<body>
+    <h2>Bücherliste</h2>
+    <ol>
+        <li>Herr der Ringe</li>
+        <li>Der kleine Hobbit</li>
+        <li>Romeo und Julia</li>
+        <li>Der Schwarm</li>
+        <li>Reiseführer Teneriffa</li>
+    </ol>
+    <button>Wiederherstellen</button>
+</body>
+</html>

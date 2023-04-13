@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 3-3</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+       
+        $(document).ready(
+           
+            function(){    
+
+                $('button').click(()=>{
+                    $('p').removeClass("highlight");
+                });
+               
+            });
+
+    function displayP(produkte){
+
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 80px;
+            width: 100%;
+            background: #ffadf8;
+            text-align: center;
+            transition: all 0.5s ease-in;
+        }
+        .highlight{
+            background-color: rgb(159, 255, 255);
+            border: 2px solid #ffadf8;
+            transition: all 1s ease-in;
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;   
+            margin: 20px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 3-3</h1>
+    </header>
+    <main>
+        <section>
+            <h2>jQuery removeClass() Method</h2>
+            <img src="https://img.freepik.com/free-vector/programmers-using-javascript-programming-language-computer-tiny-people-javascript-language-javascript-engine-js-web-development-concept_335657-2412.jpg" alt="Jquery" style="width: 300px; height: 200px;">
+            <p class="highlight">
+                The removeClass() method removes one or more class names from the selected elements.
+                Note: If no parameter is specified, this method will remove ALL class names from the selected elements.
+                <a href="https://www.w3schools.com/jquery/html_removeclass.asp">Read on W3schools</a>
+            </p>
+            <button class="btn">Remove Class</button>
+        </section>
+        
+    </main>
+</body>
+</html>

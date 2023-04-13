@@ -13,11 +13,14 @@
     <script>
         var produkte={};
         var alleProdukte =[];
-        var count = 0;
+       
         $(document).ready(
+           
             function(){    
-                $('.btn').click(
-                    function(){
+                var count = 0;
+                $('.btn').on('click',
+                    function(e){
+                        e.preventDefault();
                         produkte.idP = 'id'+ count;
                         count++;
                         console.log(count);
@@ -26,33 +29,51 @@
                         produkte.preisP = $("#preisP").val();
                         console.log(produkte);
                         alleProdukte.push(produkte);
-                        displayP();
+                        displayP(produkte);
                     }
 
                 ); 
-            
-                // $('button[id^="id"]').click(function(){
-                $('#id1').click(
-                    function(){
+                
+                 $('button').on('click',function(e){
+                //$('.id1').click(function(){
                     // let btnId = $(this).attr('id').replace(/id/, '');
                     // console.log(btnId);
-                    alert("coucou");
+                    e.preventDefault();
+                    //console.log(e);
+                    console.log("coucou");
                 });
-                });
+
+                // $('#res').
+                // write(alleProdukte.toString());
+            });
+
+                
+
+                
 
     // function addP(produkte){
     //     alleProdukte.push(produkte);
     //     console.log(alleProdukte);
     // }
-    function displayP(){
-        alleProdukte.forEach(function(element){
-            $('table').append('<tr></tr>');
-            $('tr:last-child').append('<td>'+element.nameP+'</td>');
-            $('tr:last-child').append('<td>'+element.descrP+'</td>');
-            $('tr:last-child').append('<td>'+element.preisP+'</td>');
-            $('tr:last-child').append('<td><button id="'+element.idP+'">🧺</button></td>');
-            console.log(element.idP);
-        });
+    function displayP(produkte){
+             var element = produkte;
+             $('table').append('<tr></tr>');
+             $('tr:last-child').append('<td>'+element.nameP+'</td>');
+             $('tr:last-child').append('<td>'+element.descrP+'</td>');
+             $('tr:last-child').append('<td>'+element.preisP+'</td>');
+             $('tr:last-child').append('<td><button id="'+element.idP+'">🧺</button></td>');
+             console.log(element.idP);
+        // $('table tr[id]').remove();
+        // for (let i = 0; i < alleProdukte.length; i++) {
+        //     console.log('Taille array : ' + alleProdukte);
+        //     const element = alleProdukte[i];
+        //     $('table').append('<tr id="l'+i+'"></tr>');
+        //     $("#l"+i).append('<td>'+element.nameP+'</td>');
+        //     $("#l"+i).append('<td>'+element.descrP+'</td>');
+        //     $("#l"+i).append('<td>'+element.preisP+'</td>');
+        //     $("#l"+i).append('<td><button id="'+element.idP+'">🧺</button></td>');
+        //     console.log(element.idP);
+        // }
     }
     </script>
 
@@ -101,7 +122,7 @@
     <main>
         <section>
             <h2>Produkte </h2>
-            <img src="https://img.freepik.com/free-vector/sir-isaac-newton-with-gravitation-theory_1308-84764.jpg" alt="Einstein Albert" style="width: 400px; height: 280px;">
+            <img src="https://img.freepik.com/free-vector/shop-with-we-are-open-sign_23-2148557016.jpg" alt="Einstein Albert" style="width: 300px; height: 300px;">
         </section>
         <section>
             <h3>Produkt hinzufügen</h3>
@@ -125,6 +146,7 @@
                 
                 
             </form>
+            <div id="res"></div>
         </section>
         <section>
             <table>
@@ -135,6 +157,7 @@
                     <th>Löschen</th>
                 </tr>
             </table>
+            <button>hello</button>
         </section>
     </main>
 </body>

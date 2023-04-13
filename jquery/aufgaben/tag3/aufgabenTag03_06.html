@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 3-6</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+       
+        $(document).ready(
+           
+            function(){    
+                let showed = true; 
+                $('button').click(()=>{
+                    $('.highlight').toggle("0.3s","swing");
+                    if(showed == false)
+                    {
+                        $('button').text("Show");
+                        showed == true;
+
+                    }
+                    else{
+                        $('button').text("Hide");
+                        showed == false;
+                    }
+                    
+                    // $(this).text("Show");
+                    
+                });
+               
+            });
+
+    function displayP(produkte){
+
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 80px;
+            width: 100%;
+            background: #ffadf8;
+            text-align: center;
+            /* transition: all 0.5s ease-in; */
+        }
+        .highlight{
+            background-color: rgb(159, 255, 255);
+            border: 2px solid #ffadf8;
+            /* transition: all 1s ease-in; */
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;   
+            margin: 20px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 3-6</h1>
+    </header>
+    <main>
+        <section>
+            <h2>jQuery toggle() Method            </h2>
+            <img src="https://img.freepik.com/free-vector/programmers-using-javascript-programming-language-computer-tiny-people-javascript-language-javascript-engine-js-web-development-concept_335657-2412.jpg" alt="Jquery" style="width: 300px; height: 200px;">
+            
+            <button class="btn">Hide</button>
+
+            <p class="highlight">
+                The toggle() method toggles between hide() and show() for the selected elements.
+
+This method checks the selected elements for visibility. show() is run if an element is hidden. hide() is run if an element is visible - This creates a toggle effect.
+
+Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+
+Tip: This method can also be used to toggle between custom functions.
+                <a href="https://www.w3schools.com/jquery/eff_toggle.asp">Read on W3schools</a>
+            </p>
+
+        </section>
+        
+    </main>
+</body>
+</html>

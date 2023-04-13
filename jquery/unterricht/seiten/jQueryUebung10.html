@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Jquery Übung 10 : Überprüfen, ob eine Klasse vorhanden ist</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        var absatz01 = $('#p1');
+        $(document).ready(
+            function(){
+                $('li:nth(0)').addClass("container");
+                $('li:nth(1)').addClass("container");
+                $('li:nth(2)').addClass("container");
+            } //ready
+        );
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            min-height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+        .container{
+            border: 1px salmon solid;
+            padding: 20px;
+            background: #96efff;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery Übung 10</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Top Vier (Kanto) - PokéWiki</h2>
+            <ul>
+                <li>Lorelei</li>
+                <li>Bruno</li>
+                <li>Agathe</li>
+                <li>Siegfried</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Jquery Übung 10 : Überprüfen, ob eine Klasse vorhanden ist</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                $('p').click(function(){
+                    $(this).toggleClass("auswahl");
+                });
+
+                    
+            } //ready
+        );
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            min-height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+        .auswahl{
+            border: 2px #e5a4ff solid;
+            margin-bottom: 20px;
+            background: #96efff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery Übung 10</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Top Vier (Kanto) - PokéWiki</h2>
+            <p>Loreleis Team besteht, mit Ausnahme des Lahmus’, nur aus Eis-Pokémon, weshalb sich gegen sie der Typ Kampf eignet. Rücksicht sollte jedoch auf den Zweittyp Psycho von Rossana und Lahmus Rücksicht genommen werden. </p>
+            <p>Trotz der relativ großen Auswahl an Kampf-Pokémon in der ersten Generation hat Bruno auch zwei Onix in sein Team aufgenommen. Diese benutzen allerdings nur relativ schwache Attacken und mit einer Wasser- bzw. Pflanzen-Attacke sollten sie aufgrund der Doppelschwäche mit einem Schlag zu besiegen sein.</p>
+            <p>Obwohl sich Agathe auf Geist-Pokémon spezialisiert hat, besteht ihr Team nicht gänzlich aus ihnen, was daran liegt, dass es in der ersten Generation nur die eine Entwicklungsreihe von Nebulak vom Typen Geist gab. Auffällig ist jedoch, dass all ihre Pokémon den Typ Gift gemeinsam haben und somit anfällig gegenüber Psycho- und (mit Ausnahme von Golbat) Boden-Attacken sind.</p>
+            <p>Obwohl sich Siegfried auf Drachen-Pokémon spezialisiert hat, besteht sein Team nicht gänzlich aus ihnen, was wohl daran liegt, dass es in der ersten Generation nur die Entwicklungsreihe von Dratini vom Typen Drache gab, weshalb er Pokémon mit einem drachenähnlichen Aussehen in sein Team mit aufgenommen hat. </p>
+        </section>
+    </main>
+</body>
+</html>

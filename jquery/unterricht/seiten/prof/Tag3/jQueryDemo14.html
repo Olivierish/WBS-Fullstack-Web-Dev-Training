@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methode .css() </title>
+    <style>
+        p {
+            background-color: brown;
+            color: #C6C;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // einen Style setzen
+            $('p').click(function() {
+                $(this).css({"color":"#FFF", "background-color":"#000"});
+            });
+            
+          
+        });
+    </script>
+</head>
+<body>
+    <p>Hier steht Text drin</p>
+</body>
+</html>

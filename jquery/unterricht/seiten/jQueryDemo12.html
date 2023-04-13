@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Klassen entfernen</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                // $("div").removeClass("demo");
+                $("div").removeClass().addClass("container");
+            }
+        );
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Klassen entfernen</h1>
+    </header>
+    <main>
+        <section>
+            <!-- <h2>CSS</h2> -->
+            <div class="demo highlight dark">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

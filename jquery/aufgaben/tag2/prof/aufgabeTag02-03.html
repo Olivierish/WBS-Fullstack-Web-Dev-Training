@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entwickeln mit jQuery Tag 02 - Aufgabe 3</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+   <script>
+        $(document).ready(function(){
+            $('li').unwrap();
+            $('li').wrapAll('<ul>');
+            $('body').wrapInner('<main>'); 
+            $('body').prepend('<nav>');        
+            $('nav').wrap('<header>');
+            $('nav').text('Hier kommt die Navigation rein!');
+
+        });
+</script>
+</head>
+<body>
+    <h2>Bücherliste</h2>
+    <p>Das ist ein Absatz</p>
+    <ol>
+        <li>Montag</li>
+        <li>Dienstag</li>
+        <li>Mittwoch</li>
+        <li>Donnerstag</li>
+        <li>Freitag</li>
+    </ol>
+</body>
+</html>

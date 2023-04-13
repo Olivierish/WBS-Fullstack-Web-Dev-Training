@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Methode .css()</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                $("p").click(function(){
+                    let txtColor = $(this).css("background");
+                    // $(this).css("background","#7cebff");
+                    $(this).css({"background":"#51c1d1", "color":"white"});
+                });  
+            }
+        );
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+        .auswahl{
+            margin: 10px 50px 0 10px;
+            padding: 5px;
+            cursor: pointer;
+            background: #ebbaff;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Methode .css()</h1>
+    </header>
+    <main>
+        <section>
+            <h2>css( )</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quos nobis tenetur tempore id accusantium fugit veniam enim repellat vitae!</p>
+        </section>
+    </main>
+</body>
+</html>

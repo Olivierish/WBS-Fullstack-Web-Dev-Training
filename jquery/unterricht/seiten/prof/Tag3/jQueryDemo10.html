@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Überprüfen, ob eine Klasse vorhanden ist.</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Prüfung auf Existenz - Ergebnis in eine Variable
+            var ergebnis = $('#box01').is('.shop.demoklasse.container');
+            alert(ergebnis);
+            if(ergebnis==true) {
+                $('#box01').text("Die Klassen sind vorhanden.");
+            }
+        })
+    </script>
+
+</head>
+<body>
+    <div id="box01" class="demoklasse shop  container"></div>
+</body>
+</html>

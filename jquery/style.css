@@ -65,10 +65,10 @@
     font-size: var(--page-text-size, 100.01%);
     line-height:var(--page-line, auto);
   }
-    body{
+    /* body{ */
         /* border: 1px solid blueviolet; */
         /* padding: 20px; */
-    }
+    /* } */
     h1,h2,h3{
         font-family:var(--heading-font);
     }
