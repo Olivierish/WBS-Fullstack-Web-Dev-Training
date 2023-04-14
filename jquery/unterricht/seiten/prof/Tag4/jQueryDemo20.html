@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abmessungen</title>
+    <style>
+        p {
+            background-color: #CCC;
+         
+        }
+
+        div {
+                padding: 5px;
+                border: 1px solid black;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#p1').text(
+            'Box 1 hat eine Breite von ' + $('#box1').width() + 'px'
+            + ' und eine innere Breite ' + $('#box1').innerWidth() + 'px'
+            + ' und eine äußere Breite ' + $('#box1').outerWidth() + 'px'
+            + ' hat eine Höhe von ' + $('#box1').height() + 'px'
+            + ' hat eine innere Höhe von ' + $('#box1').innerHeight() + 'px'
+            + ' hat eine äußere Höhe von ' + $('#box1').outerHeight() + 'px'
+            );
+            var meinOffset = $('#p5').offset();
+            $('#p5').text('Position Abstand von links: ' + meinOffset.left
+            + 'px Abstand von oben :' + meinOffset.top + 'px');
+
+            $('#p5').click(function() {
+                $('#p5').offset({top: 150, left: 300});
+                meinOffset = $('#p5').offset();
+                $('#p5').text('Position Abstand von links: ' + meinOffset.left
+                + 'px Abstand von oben :' + meinOffset.top + 'px');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <p id="p1"></p>
+        <p id="p2">Lorem Ipsum dingsbum</p>
+        <p id="p3">Lorem Ipsum</p>
+        <p id="p4">Lorem Ipsum</p>
+        <p id="p5"></p>
+    </div>
+</body>
+</html>

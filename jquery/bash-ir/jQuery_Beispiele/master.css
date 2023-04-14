@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; 
+}
+
+.current {
+	background-color: #cd0000;
+	font-weight: bold;
+	display: block;
+	color: #fff;
+}
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery  a {
+	text-decoration: none;
+}
+.gallery-item {
+	border: solid 2px #999;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+	background-color: #333;
+}
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.85);
+
+	animation: fadeInAnimation 1.5s;
+}
+
+@keyframes fadeInAnimation {
+	0% {opacity: 0;}
+	100%{opacity: 1;}
+}
+
+#overlay-image {
+	max-width: 90%;
+	max-height: 90%;
+	margin: 5% auto;
+	display: block;
+}
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.box3 h2 {
+	background: #fff url(../images/open.png) no-repeat left center;
+	padding-left: 20px;
+}
+
+.box3 .close {
+	background-image: url(../images/close.png);
+}
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.box4 {
+	display: flex;
+	width: 80%;
+	height: 300px;
+}
+
+.box4 h2 {
+	width: 200px;
+	text-align: center;
+	padding: 1rem;
+	border-right: solid 2px #333;
+	word-wrap: break-word;
+}
+
+.box4 h2:nth-of-type(odd), .box4 h2:nth-of-type(odd) + div {
+	background-color: #ffc;
+}
+
+.box4 h2:nth-of-type(even), .box4 h2:nth-of-type(even) + div {
+	background-color: #fefefe;
+}
+
+.box4 div {
+	overflow: auto;
+}
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.box5 .aktiv {
+	background-color: #e0eeee;
+	color: #10438b;
+}
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#navi {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+}
+
+#navi li a {
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	color: #fff;
+	line-height: 10px;
+	padding: 15px 0;
+	background: #333 url(../images/navi.gif) repeat-x top;
+}
+
+#navi li {
+	min-width: 120px;
+	height: 40px;
+	overflow: hidden;
+}
+
+#navi li span {
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	color: #fff;
+	line-height: 10px;
+	padding: 15px 0;
+	cursor: pointer;
+	background: #333 url(../images/navi.gif) repeat-x bottom;
+}

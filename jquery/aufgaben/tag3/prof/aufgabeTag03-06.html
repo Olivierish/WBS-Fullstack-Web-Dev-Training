@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery-Klassenprüfung</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p>Dies ist ein Beispiel-Text.</p>
+    <button id="highlight-btn">Hervorheben</button>
+    
+  <script>
+   $(document).ready(function() {
+  $("#highlight-btn").click(function() {
+    $("p").toggleClass("highlight");
+    if ($("p").hasClass("highlight")) {
+      $(this).text("Nicht mehr hervorheben");
+    } else {
+      $(this).text("Hervorheben");
+    }
+  });
+});
+  </script>
+</body>
+</html>

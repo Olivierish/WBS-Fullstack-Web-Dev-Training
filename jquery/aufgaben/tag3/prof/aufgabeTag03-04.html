@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery-Klassenprüfung</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="toggleBtn">Toggle Class</button>
+    <p id="text">Lorem ipsum dolor sit amet.</p>
+
+    
+    
+  <script>
+ $(document).ready(function() {
+  $('#toggleBtn').click(function() {
+    $('#text').attr('class', 'active');
+  });
+});
+
+  </script>
+</body>
+</html>

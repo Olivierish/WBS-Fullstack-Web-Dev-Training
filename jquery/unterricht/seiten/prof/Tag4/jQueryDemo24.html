@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleines Accordeon</title>
+    <style>
+        #kopf1, #kopf2 {
+            background-color: black;
+            color: white
+        }
+        #box1, #box2 {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        #wrap {
+            width:200px;
+        }
+
+        #box1 {
+            display: block;
+        }
+
+        #box2 {
+            display: none;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#kopf1, #kopf2').click(function() {
+                $('#box1, #box2').slideToggle(400);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Teil 1 -->
+        <div id="kopf1">Wetterbericht</div>
+        <div id="box1">Temperatur 23 <br> Lufdruck hoch <br> Starker Regen</div>
+        <!-- Teil 2 -->
+        <div id="kopf2">Sport-Infos</div>
+        <div id="box2">Final 4 in Köln <br> Leverkusen spiel unentschieden <br> Starker Regen <br>Handball WM</div>
+    </div>
+</body>
+</html>

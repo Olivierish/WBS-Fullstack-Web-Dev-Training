@@ -1,0 +1,5 @@
+den Pfad zu jquery.js anpassen. 
+ 
+den Pfad zu bootstrap anpassen.
+
+den Pfad zu den Bildern anpassen. 

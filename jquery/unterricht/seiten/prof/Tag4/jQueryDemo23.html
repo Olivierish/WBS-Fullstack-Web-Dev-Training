@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation slide</title>
+    <style>
+        p {
+            border: 1px solid #CCC;
+            background-color: beige;
+            padding: 10px;
+            margin: 0;
+        }
+        #komplett {
+            display: none;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#ein').click(function() {
+                $('#teaser').slideDown('fast', function() {
+                    $('#ausgabe').text('Die Box ist sichtbar!');
+                });
+            });
+            $('#aus').click(function() {
+                $('#teaser').slideUp('fast', function() {
+                    $('#ausgabe').text('Die Box ist unsichtbar.');
+                } );
+            })
+
+            $('#auf').click(function(){
+                $('#komplett').slideToggle('fast');
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <p id="teaser">Hallo Welt ...<br>
+        <a href="#" id="auf">Auf und zuklappen</a>
+    </p>
+    <p id="komplett">Lorem ipsum bla bla bla ..</p>
+
+    <div id="ausgabe"></div>
+    <hr>
+    <button id="ein">Aufklappen</button>
+    <button id="aus">Zuklappen</button>
+
+</body>
+</html>

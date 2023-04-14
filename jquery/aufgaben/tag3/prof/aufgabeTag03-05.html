@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background Color Changer</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<button id="color-changer">Change Background Color</button>
+	<script>
+		$(document).ready(function(){
+			$("#color-changer").click(function(){
+				$("body").css("background-color", "red");
+			});
+		});
+	</script>
+</body>
+</html>

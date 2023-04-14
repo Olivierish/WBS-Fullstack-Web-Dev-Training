@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeiten mit der Scroll-Position</title>
+    <style>
+        body {
+            width: 5000px;
+            height: 5000px;
+        }
+        #box1 {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        #box2 {
+            position: absolute;
+            top: 350px;
+            left: 1200px;
+        }
+    </style>
+    <script src="/jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                $('#box1 div').html($(window).scrollTop() + 'px vertikal. <br>'
+                + $(window).scrollLeft() + 'px horizontal');
+            });
+        });
+
+        function sprung() {
+            // Bestimmung der Position von Box 2
+            var sTop = $('#box2').offset().top;
+            var sLeft = $('#box2').offset().left;
+            // Sprung zur Position
+            $(window).scrollTop(sTop);
+            $(window).scrollLeft(sLeft);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <strong>Scrollposition</strong>
+        <div><!-- Ausgabe --> </div>
+        <a href="javascript:sprung()">Springe zu Box 2</a>
+    </div>
+    <div id="box2">ein kleiner Text</div>
+</body>
+</html>

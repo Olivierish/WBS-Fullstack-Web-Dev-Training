@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery-Klassenprüfung</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p class="highlight">Dies ist ein Beispiel-Text.</p>
+    <button id="remove-btn">Klasse entfernen</button>
+    
+    
+  <script>
+  $(document).ready(function() {
+  $("#remove-btn").click(function() {
+    $("p").removeClass("highlight");
+  });
+});
+  </script>
+</body>
+</html>

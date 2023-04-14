@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 4-1</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+       
+        $(document).ready(
+           
+            function(){    
+                let showed = true; 
+                $('button').click(()=>{  
+                   vertHorPos();
+                });
+               
+            });
+
+    function vertHorPos(){
+        var offTop,offLeft = 0; 
+        offTop = $('#myDiv').offset().top;
+        offLeft = $('#myDiv').offset().left;
+        $('#myDiv').html('Offset top : ' + offTop + '<br> Offset left : ' + offLeft);
+        // return {offTop, offLeft};
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 80px;
+            width: 100%;
+            background: #ffadf8;
+            text-align: center;
+            /* transition: all 0.5s ease-in; */
+        }
+        .highlight{
+            background-color: rgb(159, 255, 255);
+            border: 2px solid #ffadf8;
+            /* transition: all 1s ease-in; */
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;   
+            margin: 20px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+        #myDiv{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 4-1</h1>
+    </header>
+    <main>
+        <section>
+            <h2>jQuery offset() Method</h2>
+            <img src="https://img.freepik.com/free-vector/programmers-using-javascript-programming-language-computer-tiny-people-javascript-language-javascript-engine-js-web-development-concept_335657-2412.jpg" alt="Jquery" style="width: 300px; height: 200px;">
+            
+            <button class="btn">Hide</button>
+
+            <div id="myDiv" class="highlight">
+                The offset() method set or returns the offset coordinates for the selected elements, relative to the document.
+                    <br>
+                <b>When used to return the offset:</b>
+                This method returns the offset coordinates of the FIRST matched element. It returns an object with 2 properties; the top and left positions in pixels. <br>
+
+                <b>When used to set the offset:  </b>
+                This method sets the offset coordinates of ALL matched elements.
+                <a href="https://www.w3schools.com/jquery/css_offset.asp">Read on W3schools</a>
+            </div>
+
+        </section>
+        
+    </main>
+</body>
+</html>

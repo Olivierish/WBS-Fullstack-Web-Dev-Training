@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Arbeiten mit der Scroll-Position</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                $(window).scroll(function(){
+                    $("#box1 div").html($(window).scrolltop() + ' px vertical. <br>'
+                    +$(window).scrollLeft() +  'px vertical.'); 
+                });
+
+
+
+                $("#p1").text(
+                    'Box 1 breite ' + $('#box1').width() + 'px '
+                + 'Innere Breite ' + $('#box1').innerWidth() + 'px '
+                + 'äusere Breite ' + + $('#box1').outerWidth() + 'px '
+                + '########## ##########   '
+                + 'Box 1 Höhe ' + $('#box1').height() + 'px '
+                + 'Innere Höhe ' + $('#box1').innerHeight() + 'px '
+                + 'äusere Höhe ' + + $('#box1').outerHeight() + 'px '); 
+                
+                var mainOffset = $('#p5').offset();
+                $('#p5').text(
+                    'Position Abstand left : ' + mainOffset.left +'px'
+                + 'Position Abstand right : ' + mainOffset.top +'px');
+
+                $('#p5').click(function() {
+                $('#p5').offset({top: 150, left: 300});
+                meinOffset = $('#p5').offset();
+                $('#p5').text('#### Position Abstand von links: ' + meinOffset.left
+                + 'px Abstand von oben :' + meinOffset.top + 'px');
+            
+            });
+            
+        });
+
+        function sprung(params) {
+            //Bestimmung der Position von Box 2
+            var sTop = $('#box2').offset().top;
+            var sLeft = $('#box2').offset().left;
+            //Sprung zur Position
+            $(window).scrollTop(sTop);
+            $(window).scrollLeft(sLeft);
+            //A COMPLETER #########################
+        }
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+        body{
+            width: 5000px;
+            height: 5000px;
+            
+        }
+        #box1{
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff8fd4;
+        }
+        #box2{
+            position: absolute;
+            top: 350px;
+            right: 1200px;
+            background: #ce92ff;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Abmessungen</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Breite & Höhe</h2>
+            <div id="box1">
+                <strong>Scrollposition</strong>
+                <div>  <!--Ausgabe-->  </div>
+                <a href="javascript:sprung()">Springe zu Box 2</a>
+            </div>
+            <div id="box2">ein kleiner Text <a href="#">Hier</a></div>
+        </section>
+    </main>
+</body>
+</html>
+

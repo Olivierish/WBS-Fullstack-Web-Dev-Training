@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Jquery - Aufgaben Tag 4-9</title>
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+       
+        $(document).ready(
+           
+            function(){    
+                 $('button').click(()=>{  
+                     $('#ball').animate(
+                        {top: $(window).height()-102,
+                         left: $(window).width()-102,
+                        }, "slow", "swing");
+                });
+                $('#ball').draggable();
+               
+            });
+
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            padding: 20px 0;
+            min-height: 80px;
+            width: 100%;
+            background: #ffadf8;
+            text-align: center;
+            /* transition: all 0.5s ease-in; */
+        }
+        .highlight{
+            background-color: rgb(159, 255, 255);
+            border: 2px solid #ffadf8;
+            /* transition: all 1s ease-in; */
+        }
+        img{
+            width: 400px;
+            height: 350px;
+            display: block;   
+            margin: 20px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+        #myDiv{
+            padding: 10px;
+            margin-top: 20px;
+        }
+        #ball{
+            top: 0;
+            left: 0;
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color:var(--color3);
+            border-radius: 50%;
+            border: 1px white solid;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery - Aufgaben Tag 4-9</h1>
+    </header>
+    <main>
+        <section>
+            <h2>toggle, Hide & Show / slideToggle, slideUp & SlideDown / fadeToggle, fadeOut & fadeIn</h2>
+            <img src="https://img.freepik.com/free-vector/programmers-using-javascript-programming-language-computer-tiny-people-javascript-language-javascript-engine-js-web-development-concept_335657-2412.jpg" alt="Jquery" style="width: 300px; height: 200px;">
+            
+            <div id="ball"></div>
+            <button class="btn">Animate</button>
+
+            <div id="myDiv" class="highlight">
+                The animate() method performs a custom animation of a set of CSS properties.
+
+                This method changes an element from one state to another with CSS styles. The CSS property value is changed gradually, to create an animated effect.
+
+                Only numeric values can be animated (like "margin:30px"). String values cannot be animated (like "background-color:red"), except for the strings "show", "hide" and "toggle". These values allow hiding and showing the animated element.
+
+                Tip: Use "+=" or "-=" for relative animations.
+                <a href="https://www.w3schools.com/jquery/eff_animate.asp">Read on W3schools</a>
+            </div>
+
+        </section>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery-Klassenprüfung</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <p class="highlight">Dieser Text ist hervorgehoben.</p>
+  <button id="pruefen">Klasse prüfen</button>
+  <script>
+    $(document).ready(function() {
+      $('#pruefen').click(function() {
+        if ($('p').hasClass('highlight')) {
+          alert('Der Absatz hat die Klasse "highlight".');
+        } else {
+          alert('Der Absatz hat nicht die Klasse "highlight".');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
