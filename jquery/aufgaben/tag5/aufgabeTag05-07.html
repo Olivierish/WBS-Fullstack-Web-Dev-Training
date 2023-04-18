@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aufgabe 5-7</title>
+  
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+  var imageLoaded = false;
+  var imageUrl = 'https://via.placeholder.com/150';
+
+  $('#loadImage').on('click', function() {
+    if (!imageLoaded) {
+      $('<img>').attr('src', imageUrl).appendTo('#imageContainer');
+      imageLoaded = true;
+    }
+  });
+
+  $('#unloadImage').on('click', function() {
+    $('#imageContainer').empty();
+    imageLoaded = false;
+  });
+});
+
+	</script>
+</head>
+<body>
+    <button id="loadImage">Laden</button>
+    <button id="unloadImage">Entladen</button>
+    <div id="imageContainer"></div>
+      
+</body>
+</html>

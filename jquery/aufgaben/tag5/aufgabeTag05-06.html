@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aufgabe 5-6</title>
+  
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+  var contentLoaded = false;
+  var htmlContent = '<h2>Willkommen auf unserer Webseite!</h2><p>Hier finden Sie alles, was Sie über unser Unternehmen wissen müssen.</p>';
+
+  $('#loadContent').on('click', function() {
+    if (!contentLoaded) {
+      $('#contentContainer').html(htmlContent);
+      contentLoaded = true;
+    }
+  });
+
+  $('#unloadContent').on('click', function() {
+    $('#contentContainer').empty();
+    contentLoaded = false;
+  });
+});
+
+	</script>
+</head>
+<body>
+    <button id="loadContent">Laden</button>
+    <button id="unloadContent">Entladen</button>
+    <div id="contentContainer"></div>
+      
+</body>
+</html>

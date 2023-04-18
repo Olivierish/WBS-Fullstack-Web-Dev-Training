@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery-Animationen: slideUp, slideDown und slideToggle</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn-toggle").click(function(){
+				$("#abschnitt").slideToggle(1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btn-toggle">Zeigen/Verstecken</button>
+	<div id="abschnitt" style="display:none">
+		<p>Hier ist ein versteckter Abschnitt, der durch Klicken des Buttons angezeigt oder ausgeblendet werden kann.</p>
+	</div>
+</body>
+</html>

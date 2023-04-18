@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Kleines Accordeon</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                $('#kopf1, #kopf2').click(function() {
+                $('#box1, #box2').slideToggle(400);
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }   
+        #kopf1, #kopf2 {
+            background-color: var(--color3);
+            color: white
+        }
+        #box1, #box2 {
+            padding: 10px;
+            border: 1px solid var(--color3);
+        }
+
+        #wrap {
+            width:600px;
+
+        }
+
+        #box1 {
+            display: block;
+        }
+
+        #box2 {
+            display: none;
+        }   
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kleines Accordeon</h1>
+    </header>
+    <main>
+        <section>
+            <h2>slideToggle</h2>
+            <div id="wrap">
+                <!-- Teil 1 -->
+                <div id="kopf1">Wetterbericht</div>
+                <div id="box1">Temperatur 23 <br> Lufdruck hoch <br> Starker Regen</div>
+                <!-- Teil 2 -->
+                <div id="kopf2">Sport-Infos</div>
+                <div id="box2">Final 4 in Köln <br> Leverkusen spiel unentschieden <br> Starker Regen <br>Handball WM</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+

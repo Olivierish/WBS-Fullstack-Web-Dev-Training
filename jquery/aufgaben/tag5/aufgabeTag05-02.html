@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aufgabe 5-2</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+  $('#myDiv').on('click', function() {
+    $('#notification').text('Du hast einmal auf das Element geklickt!');
+  }).on('dblclick', function() {
+    $('#notification').text('Du hast zweimal auf das Element geklickt!');
+  });
+});
+	</script>
+</head>
+<body>
+	<div id="myDiv">Klick oder Doppelklick mich!</div>
+<div id="notification"></div>
+
+      
+</body>
+</html>

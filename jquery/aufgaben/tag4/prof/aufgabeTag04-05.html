@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery-Animationen: show und hide</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn-show").click(function(){
+				$("#abschnitt").show();
+			});
+			$("#btn-hide").click(function(){
+				$("#abschnitt").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btn-show">Anzeigen</button>
+	<button id="btn-hide">Verstecken</button>
+	<div id="abschnitt" style="display:none">
+		<p>Hier ist ein versteckter Abschnitt, der durch Klicken der Buttons angezeigt oder ausgeblendet werden kann.</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab-Navigation</title>
+    <style>
+   .slider {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 2400px; /* 800px * 3 */
+  animation: slide-animation 10s infinite linear;
+}
+
+.slider img {
+  flex: 0 0 800px;
+  height: 100%;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider-nav button {
+  margin: 0 10px;
+}
+
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2400px); /* 800px * 3 */
+  }
+}
+
+
+    </style>
+        <script src="../jquery/jquery-3.6.4.js"></script>
+        <script>
+   $(document).ready(function() {
+  // Vor- und Zurück-Buttons hinzufügen
+  var prevButton = $('.prev-slide');
+  var nextButton = $('.next-slide');
+  
+  // Vor- und Zurück-Buttons klicken
+  prevButton.on('click', function() {
+    $('.slider-container').stop();
+    $('.slider-container').animate({marginLeft: '+=800px'}, 500);
+  });
+  nextButton.on('click', function() {
+    $('.slider-container').stop();
+    $('.slider-container').animate({marginLeft: '-=800px'}, 500);
+  });
+});
+
+        </script>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider">
+            <div class="slider-container">
+              <img src="https://via.placeholder.com/800x400.png?text=Slide%201" alt="Slide 1">
+              <img src="https://via.placeholder.com/800x400.png?text=Slide%202" alt="Slide 2">
+              <img src="https://via.placeholder.com/800x400.png?text=Slide%203" alt="Slide 3">
+              <img src="https://via.placeholder.com/800x400.png?text=Slide%201" alt="Slide 1">
+            </div>
+            <div class="slider-nav">
+              <button class="prev-slide">Zurück</button>
+              <button class="next-slide">Weiter</button>
+            </div>
+          </div>
+          
+      
+      
+</body>
+</html>

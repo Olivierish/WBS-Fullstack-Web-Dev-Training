@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastatur-Events</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function (){
+            $(document).keypress(function(event) {
+                // Ermittlung, welche Taste gedrückt wurde
+                var taste = event.which;
+                $('#allgemein').text('Die Taste ' + taste + ' wurde gedrückt!');
+                if(taste == 83 || taste == 115 ) {
+                    $('#speziell').text("Die S-Taste oder die s-Taste wurde gedrückt");
+                } else {
+                    $('#speziell').text('');
+                };
+
+                // spezielle Taste STRG ctrlKey oft in Kombinationen
+               if(event.ctrlKey && event.which == 13) {
+                $('#demo').text("Die STRG und Ü-Taste wurden gedrückt.");
+                    } else {
+                $('#demo').text('');
+             };
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="allgemein"></p>
+    <p id="speziell"></p>
+    <p id="demo"></p>
+
+
+</body>
+</html>

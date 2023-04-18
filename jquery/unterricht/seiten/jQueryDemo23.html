@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Animation slide</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+         $(document).ready(function() {
+            $('#ein').click(function() {
+                $('#teaser').slideDown('fast', function() {
+                    $('#ausgabe').text('Die Box ist sichtbar!');
+                });
+            });
+            $('#aus').click(function() {
+                $('#teaser').slideUp('fast', function() {
+                    $('#ausgabe').text('Die Box ist unsichtbar.');
+                } );
+            })
+
+            $('#auf').click(function(){
+                $('#komplett').slideToggle('fast');
+            })
+
+        });
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animation slide</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Hide & Show 2</h2>
+            <p id="teaser">Hallo Welt ...<br>
+                <a href="#" id="auf">Auf und zuklappen</a>
+            </p>
+            <p id="komplett">Lorem ipsum bla bla bla ..</p>
+            
+            <div id="ausgabe"></div>
+            <hr>
+            <button id="ein" class="btn">Aufklappen</button>
+            <button id="aus" class="btn">Zuklappen</button>
+        </section>
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aufgabe 5-4</title>
+  <style>
+    #myRect {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+  </style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+  $('#myRect').on('mousemove', function(event) {
+    var x = event.pageX - $(this).offset().left;
+    var y = event.pageY - $(this).offset().top;
+    $('#notification').text('Mausposition: ' + x + ', ' + y);
+  }).on('mousedown', function() {
+    $('#notification').text('Rechteck geklickt');
+  }).on('mouseup', function() {
+    $('#notification').text('Mausbutton losgelassen');
+  });
+});
+	</script>
+</head>
+<body>
+    
+    <div id="myRect"></div>
+    <div id="notification"></div>
+
+      
+</body>
+</html>

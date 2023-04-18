@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Klickevents</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                $('button').click(function() {
+                $('p').text('Ich wurde einmal angeglickt!');
+            });
+            $('button').dblclick(function() {
+                $('p').text('ich wurde doppelt geklickt!');
+            });
+            // Rechte Maustaste über Kontextmenü
+            $('button').contextmenu(function(event) {
+                // eigentliche Aktioen deaktivieren
+                event.preventDefault();
+                $('p').text('Das war die rechte Maustaste');
+            })
+            // das ScrollRad - mousewheel() oder wheel() - analolg zum contextmenu
+        });
+
+        function sprung(params) {
+            //Bestimmung der Position von Box 2
+            var sTop = $('#box2').offset().top;
+            var sLeft = $('#box2').offset().left;
+            //Sprung zur Position
+            $(window).scrollTop(sTop);
+            $(window).scrollLeft(sLeft);
+            //A COMPLETER #########################
+        }
+
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Klickevents</h1>
+    </header>
+    <main>
+        <section>
+            <h2>click( ) & dblclick( )</h2>
+            <button>Mach was!</button>
+            <p></p>
+        </section>
+    </main>
+</body>
+</html>
+

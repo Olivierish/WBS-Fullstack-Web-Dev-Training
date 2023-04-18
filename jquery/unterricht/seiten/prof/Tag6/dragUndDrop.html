@@ -1,0 +1,57 @@
+<head>
+    <meta charset="utf-8">
+    <title>Drag & Drog</title>
+    <style>
+       .draggable {
+          cursor: move;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+      }
+#droppable {
+  border: 2px dashed #aaa;
+  padding: 10px;
+}
+
+    </style>
+      <script src="../jquery/jquery-3.6.4.js"></script>
+  
+      <script>
+      
+      $(function() {
+  $(".draggable").on("mousedown", function(event) {
+    var offsetX = event.offsetX;
+    var offsetY = event.offsetY;
+    var draggable = $(this);
+    $(document).on("mousemove.drag", function(event) {
+      var x = event.pageX - offsetX;
+      var y = event.pageY - offsetY;
+      draggable.css({ left: x + "px", top: y + "px" });
+    });
+    $(document).on("mouseup.drag", function(event) {
+      $(document).off(".drag");
+      if (isOverlapping(draggable, $("#droppable"))) {
+        $("#droppable p").text("Dropped!");
+      }
+    });
+  });
+
+ 
+});
+  
+      </script>
+  </head>
+  <body>
+    <div class="draggable" style="background-color: blueviolet; left: 150px;">
+        <p>Box 1</p>
+      </div>
+      <div class="draggable" style="background-color: aqua; left: 350px;">;
+        <p>Box 2</p>
+      </div>
+      <div class="draggable" style="background-color: antiquewhite; left:500px;">
+        <p>Box 3</p>
+      </div>
+      
+
+  </body>
+  </html>

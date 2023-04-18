@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aufgabe 5-3</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+  $('#myInput').on('keydown', function(event) {
+    $('#notification').text('ASCII-Code der gedrückten Taste: ' + event.which);
+  }).on('keyup', function(event) {
+    if (event.which == 13) {
+      $('#notification').text('Du hast eingegeben: ' + $(this).val());
+      $(this).val('');
+    }
+  });
+});
+	</script>
+</head>
+<body>
+  <input type="text" id="myInput" placeholder="Gib etwas ein...">
+  <div id="notification"></div>
+
+      
+</body>
+</html>

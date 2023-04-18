@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laden / entladen / Größenänderungen / Scrollen</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+              $('p').text('Das Dokument wurde komplett geladen!');
+      
+            // Browserfenster in seiner Größe anpassen
+            $(window).resize(function(){
+                $('p').text('Die Größe wurde verändert');
+            });
+           // $(window).unload(function() {
+                // Code wird beim Entladen der Seite ausgeführt;
+                // Datensätze in DB speichern
+           // });
+
+            $(window).scroll(function() {
+                $('p').text('ich scrolle im Fenster');
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+    <div><a href="https://www.wbstraining.de">Bitte hier klicken</a></div>
+</body>
+</html>

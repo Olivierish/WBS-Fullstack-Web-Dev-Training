@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tabnavi</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <script src="../../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(
+             function(){
+                //Start-Tab aktivieren
+                $(".tab-menu li:first-child").addClass("active");
+                $(".tab-content .tab-pane:first-child").addClass("active");
+                $(".tab-menu li").click(function() {
+                    //aus dem ListenElement a wird der Inhalt von href ermittelt
+                    var tabId = $(this).find('a').attr('href');
+                    //alle active klasse entfernen
+                    $('.tab-menu li').removeClass("active");
+                    $('.tab-content .tab-pane').removeClass("active");
+                    // Klasse activ neu zuweisen
+                    $(this).addClass('active');
+                    $(tabId).addClass('active');
+                });
+
+            });
+
+
+    </script>
+
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        p{
+            min-height: 100px;
+            width: 80%;
+            background: #e5a4ff;
+            text-align: center;
+            padding: 20px;
+            margin: 5px auto;
+        }
+        .tab-navigation .tab-menu{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab-navigation .tab-menu li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .tab-navigation .tab-menu li a{
+            display: block;
+            padding: 10px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-navigation .tab-menu li:hover a{
+            background: #666;
+            color: white;
+            transition: color 1s ease-in-out ;
+        }
+        
+        .tab-navigation .tab-menu li.active a {
+            background: #333;
+            color: white;
+        }
+        .tab-pane{
+            display: none;
+            padding: 20px 10px;
+            background: #333;
+            border-radius: 0 5px 5px 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .tab-pane.active{
+            display: block;
+        }
+        img{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tabnavi</h1>
+    </header>
+    <main>
+        <section>
+            <h2>OpenAI</h2>
+            <div class="tab-navigation">
+                <ul class="tab-menu">
+                    <li><a href="#tab1">ChatGPT</a></li>
+                    <li><a href="#tab2">GPT-4</a></li>
+                    <li><a href="#tab3">DALL.E2</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane">
+                        <img src="https://blog.routinehub.co/content/images/2023/02/openAI-chat-gpt-1.jpg" alt="ChatGPT" width="500">
+                        <p>ChatGPT (Generative Pre-trained Transformer) ist ein Prototyp eines Chatbots, also eines textbasierten Dialogsystems als Benutzerschnittstelle, der auf maschinellem Lernen beruht. Den Chatbot entwickelte das US-amerikanische Unternehmen OpenAI, das ihn im November 2022 veröffentlichte.</p>
+                    </div>
+                    <div id="tab2" class="tab-pane">
+                        <img src="https://www.mlyearning.org/wp-content/uploads/2023/03/GPT-4-Parameters-How-many-parameters-will-ChatGPT-4-have.jpg" alt="GPT-4" width="500">
+                        <p>
+                            Im März 2023 wurde GPT-4 vorgestellt. Das Programm wurde öffentlich erst am 14. März 2023 vorgestellt, war aber ausgewählten Journalisten und Software-Entwicklern wohl schon mindestens eine Woche vorher verfügbar gemacht worden. GPT-4 soll nun auch Bilder erkennen und dazu passende Texte schreiben können. Laut Berichterstattung von Heise online soll GPT-4 angeblich ein halbes Jahr lang durch Sicherheitstrainings und menschliche Nachjustierungen gelaufen sein, nachdem es auf „AzureAI-Supercomputern“ trainiert habe. GPT-4 soll aber auch aufgrund der wohl „erhöhten“ Fähigkeiten neue Risiken bergen, die aber nicht im technischen Bericht des OpenAI-Teams (oder sonst) veröffentlicht wurden.
+                        </p>
+                    </div>
+                    <div id="tab3" class="tab-pane">
+                        <img src="https://dallery.gallery/wp-content/uploads/2018/09/DALL-E-Guide-FAQ.png" alt="DALL E2" width="500">
+                        <p>
+                            DALL-E wurde am 5. Januar 2021 von OpenAI vorgestellt. Der Name bildet ein Kofferwort aus WALL-E und dem spanischen Künstler Salvador Dalí. Das Programm beruht auf GPT-3 und kann Wörter als Input in Anordnungen von Pixeln als Output transferieren. Das System kombiniert dabei Bilderkennung und Computerlinguistik. So erstellt das Programm fotorealistische Bilder allein auf Basis von Texteingaben. Im April 2022 wurde die verbesserte Version DALL-E 2.0 vorgestellt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+

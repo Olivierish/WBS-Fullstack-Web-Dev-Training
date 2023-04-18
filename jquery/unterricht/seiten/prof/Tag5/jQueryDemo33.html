@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular</title>
+    <style>
+        .focus {
+            background-color: beige;
+            color:blue;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // wenn man das Input-feld auswählt
+            $('input').focus(function() {
+                $(this).addClass('focus');
+            });
+            // wenn das Feld wieder verlassen wird
+            $('input').blur(function() {
+                $(this).removeClass('focus');
+            });
+            // bei jeder Änderung
+            $('input').keypress(function() {
+                var inhalt = $('#name').val();
+                var inhalt2 = $('#vorname').val();
+                var land = $('#land').val();
+                $('p').text('aktueller Inhalt: ' + inhalt + ' ' + inhalt2)
+            });
+            // den Wechsel im Select auswerten
+            $('#land').change(function() {
+                // den ausgewählten Wert ermitteln
+                var land = $('#land').val();
+                var inhalt = $('#name').val();
+                var inhalt2 = $('#vorname').val();
+                // den ermittelten Wert an den Text anhängen
+                $('p').text('aktuelle Infos ' + inhalt + ' ' + inhalt2 + ' ' +land);
+            })
+
+            // Submit Button definieren
+            $('form').on('submit', function(event) {
+                // den Standard abschalten
+                event.preventDefault();
+                $('p').text('Der Absenden-Button wurde geklickt');
+            })
+            
+        } );
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" name="name">
+        <br>
+        <input type="text" id="vorname" name="vorname">
+        <br>
+        <select id="land">
+            <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Hamburg">Hamburg</option>
+        </select>
+        <button type="submit">Absenden</button>
+    </form>
+    <p></p>
+</body>
+</html>

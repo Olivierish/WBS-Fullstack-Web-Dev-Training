@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maus-Ereignisse</title>
+    <style>
+        #rechteck {
+            width: 200px;
+            height: 150px;
+            background-color: aquamarine;
+            /* für Mausaktionen immer an den Curser denken */
+            cursor: pointer;
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#rechteck').on({
+                mouseup: function(event) {
+                    $('#ausgabe').text('Maustaste auf dem Rechteck losgelassen');
+                    // click wäre überflüssig
+                    // ausserhalb Maustaste runter und auf dem Rechteck hoch
+                },
+                //click hat Vorrang vor mouseup
+                click: function(event) {
+
+                   // event.which ermittelt auch die Maustaste
+                   // 1 linke, 2  Rad, 3 rechte
+                   // Default sollte ausgeschalten werden
+                   // event.preventDefault();
+                   $('#ausgabe').text('das Rechteck wurde angeklickt!');
+                },
+               dblclick: function(event) {
+                   $('#ausgabe').text('Rechteckeck wurde doppelt geklickt');
+               } ,
+               mousedown: function(event) {
+                    $('#ausgabe').text('Maustaste auf dem Rechteck runter');
+               },
+               mouseout: function(event) {
+                    $('#ausgabe').text('Maus vom Rechteck runter bewegen');
+               },
+               mouseover: function(event) {
+                    $('#ausgabe').text('Maus auf dem Rechteck');
+               },
+               mousemove: function(event) {
+                    var links = event.pageX;
+                    var oben = event.pageY;
+                    $('#ausgabe').text('Die Maus ist: ' + links + '/' + oben);
+               }
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+    <p id="rechteck"></p>
+    <p id="ausgabe"></p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery offset Aufgabe</title>
+    <style>
+      p { border: 1px solid black;
+          width: 400px;
+      }
+      div { 
+        border: 1px solid black;
+        padding: 5px;}
+    </style>
+
+    <script src="../jquery/jquery-3.6.4.js"></script>
+
+    <script>
+   
+      $(document).ready(function() {
+        $("#scrollButton").click(function() {
+        var myDiv = $("#myDiv");
+        myDiv.scrollTop(myDiv.scrollTop() + 50);
+        myDiv.scrollLeft(myDiv.scrollLeft() + 100);
+  });
+});
+    </script>
+  </head>
+  <body>
+
+      <div id="myDiv" style=" width: 300px; height: 100px; overflow: auto;">
+        <!-- langer Inhalt hier -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu turpis velit. Fusce lacinia sapien eu diam blandit, vel mollis nulla viverra. Duis convallis iaculis lorem. Sed rhoncus eget nisl eget convallis. Nullam et leo sem. Vivamus mollis bibendum lacus, in finibus est hendrerit et. Nam vehicula velit eu velit bibendum ullamcorper. Aliquam non tincidunt tellus. Sed auctor, dolor id tristique varius, tellus libero mollis purus, sed bibendum ex sapien vitae tortor. Nam convallis aliquam sapien ac rhoncus. Nam rutrum purus non diam eleifend, eu euismod nulla dapibus. Duis suscipit lobortis est, id suscipit ex ultrices sed.</p>
+    
+      </div>
+      
+      <button id="scrollButton">Scroll</button>
+      
+  </body>
+</html>

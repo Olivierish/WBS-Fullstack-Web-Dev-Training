@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+    <style>
+        .tooltip {
+            position: absolute;
+            z-index: 999;
+            padding: 5px;
+            background-color: black;
+            color:white;
+            border-radius: 5px;
+            font-size: 14px;
+    
+        }
+    </style>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Tooltips aktivieren bei Mausberührung
+            $('.tooltip-btn').hover(function(){
+                // Tooltip Text aus dem data-tooltip ermitteln
+                var tooltipText = $(this).attr('data-tooltip');
+
+                // HTML Element für den Tooltip erstellen
+                var tooltipHtml = '<div class="tooltip">' + tooltipText + '</div>';
+
+                $(this).append(tooltipHtml);
+            }, function() {
+                // Tooltip entfernen
+                $('.tooltip').remove();
+            } )
+
+        });
+    </script>
+</head>
+<body>
+    <p d class="tooltip-btn" data-tooltip="Das ist der Hinweistext für den Absatz">Hier steht irgendwelcher Inhalt</p>
+    <br>
+    <button class="tooltip-btn" data-tooltip="Das ist ein Button.">KLick mich</button>
+    <br>
+    <p>Hier geht der Tooltip nicht</p>
+</body>
+</html>
