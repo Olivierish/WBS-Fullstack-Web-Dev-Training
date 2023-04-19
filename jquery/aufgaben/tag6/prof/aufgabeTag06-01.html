@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+    <style>
+        .tooltip {
+            position: absolute;
+            /*top: 100%;
+            left: 0; */
+            z-index: 999;
+            padding: 5px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+        <script src="../jquery/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Tooltips aktivieren
+                $('.tooltip-ziel').hover(function() {
+                   
+                    // Tooltip-Text abrufen
+                    var tooltipText = $(this).attr('data-tooltip');
+                    
+                    // Tooltip-HTML erstellen
+                    var tooltipHtml = '<div class="tooltip">' + tooltipText + '</div>';
+                   // alert(tooltipHtml);
+                    // Tooltip dem Dokument hinzufügen
+                    $(this).append(tooltipHtml);
+                    }, function() {
+                     // Tooltip entfernen
+                     $('.tooltip').remove();
+                });
+            });
+        </script>
+</head>
+<body>
+    <button class="tooltip-ziel" data-tooltip="Hier ist der Tooltip-Text">Hover mich!</button>
+    <br>
+    <br>
+    <p class="tooltip-ziel" data-tooltip="Das ist ein Absatz">Hover mich!</p>
+    <br>
+    <br>
+    <imput type="text" class="tooltip-ziel" data-tooltip="Hier kannst Du was eingeben">Hover mich!</p>
+</body>
+</html>

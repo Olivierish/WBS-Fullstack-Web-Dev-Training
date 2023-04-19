@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe 6-5</title>
+    <style>
+   .slider {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500%;
+  height: 100%;
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.slides img {
+  width: 20%;
+  height: 100%;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: black;
+}
+
+   
+   
+       </style>
+        <script src="../jquery/jquery-3.6.4.js"></script>
+        <script>
+    $(document).ready(function() {
+  var slideIndex = 0;
+  var slides = $('.slides');
+  var dots = $('.dot');
+  var slideInterval;
+
+  function showSlide(n) {
+    // Zur korrekten Slide navigieren
+    slideIndex = n % dots.length;
+
+    // Alle Dots auf den Anfangszustand zurücksetzen
+    dots.removeClass('active');
+    dots.eq(slideIndex).addClass('active');
+
+    // Slides um die Breite eines einzelnen Slides nach links bewegen
+    slides.css('transform', 'translateX(-' + slideIndex*20 + '%)');
+
+    // Vorherige Interval-Clearn, damit das Intervall immer gleichmäßig läuft
+    clearInterval(slideInterval);
+
+    // Neues Intervall starten
+    slideInterval = setInterval(function() {
+      showSlide(slideIndex + 1);
+    }, 3000);
+  }
+
+  // Initialen Slide anzeigen
+  showSlide(slideIndex);
+
+  // Dot-Navigation aktivieren
+  dots.click(function() {
+    var dotIndex = $(this).index();
+    showSlide(dotIndex);
+  });
+});
+
+
+        </script>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides">
+      <img src="https://via.placeholder.com/800x400.png?text=Slide%201" alt="Slide 1">
+      <img src="https://via.placeholder.com/800x400.png?text=Slide%202" alt="Slide 2">
+      <img src="https://via.placeholder.com/800x400.png?text=Slide%203" alt="Slide 3">
+      <img src="https://via.placeholder.com/800x400.png?text=Slide%203" alt="Slide 4">
+      <img src="https://via.placeholder.com/800x400.png?text=Slide%201" alt="Slide 1">
+    </div>
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+  
+      
+      
+</body>
+</html>
