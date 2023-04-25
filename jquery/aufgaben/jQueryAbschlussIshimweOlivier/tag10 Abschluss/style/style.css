@@ -1,0 +1,135 @@
+    /* Yeseva One & Josefin Sans*/
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Yeseva+One&display=swap');
+  
+  
+:root{
+    /* Allgemein Styleguide Vorgaben sammeln */
+    --color1:#333333;
+    --color2:#f9f9f9;
+    --color3:blueviolet;
+    --color4:#04a9be;
+    --color5:#46c9c0;
+    --color6:#f3f3f3;
+
+
+    /*Fonts*/
+    --font3-1: 'Yeseva One', serif;
+    --font3-2: 'Josefin Sans', sans-serif;
+
+    /* choosen */
+    --page-font-text:var(--font3-2);
+    --page-font-title:var(--font3-1);
+    
+
+    --page-text: var(var(--color1));
+    --page-bg: var(--color2);
+    --page-text-size: 120%;
+    --page-line: 1.4;
+
+    /*Titles*/
+    --heading-font: var(--page-font-title,serif);
+    --heading-color: var(--color3);
+
+    /* Links und Formulare*/
+    /* anker*/
+    --link-decoration:underline;
+    --link-color:inherit;
+    --link-bg:none;
+
+    --link-hov-decoration:none;
+    --link-hov-color:inherit;
+    --link-hov-bg:none;
+
+    /*Images*/
+    --img-bg-color:var(--color4);
+
+    /*Max width*/
+    --main-width: 960px;
+
+}
+html{
+    background: var(--page-bg);
+    font-family: var(--page-font-text);
+    color: var(--color1, initial);
+    font-size: var(--page-text-size, 100.01%);
+    line-height:var(--page-line, auto);
+}
+h1,h2,h3{
+    font-family:var(--heading-font);
+}
+h1{
+    color: blueviolet;
+    text-align: center;
+}
+h3{
+    color: var(--color5)
+}
+h2{
+    color: var(--color4);
+}
+a{
+    color: var(--color4);
+}
+a:hover{
+    color: var(--color3);
+}
+
+header{
+    position: relative;
+    border: 1px solid var(--color2);
+    background-color: var(--color6);
+    min-height: 120px;
+    max-width: var(--main-width);
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.nav > ul{
+    margin: 0 auto;
+    width:fit-content;
+    list-style-type: circle;
+}
+   
+section, footer{
+    border: 1px solid var(--color2);
+    background-color: var(--color6);
+    max-width: calc(var(--main-width) - 20px * 2);
+    margin: auto;
+    padding: 20px;
+}
+
+img{
+    width: 400px;
+    /* height: 350px; */    
+}
+figure{
+    width: fit-content;
+    margin: 20px auto;
+}
+.btn{
+    font-family: var(--page-font-text);
+    min-width: 150px;
+    height: 40px;
+    font-size: large;
+    background-color: var(--color4);
+    color: var(--color2);
+    border:none;
+    box-shadow: 0px 0px 2px #000000;
+}
+.btn:hover{
+    background-color: var(--color5);
+    color: var(--color2);
+}
+
+
+/* Aufgabe 2 */
+.tooltipElt {
+    position: absolute;
+    z-index: 999;
+    padding: 5px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    font-size: 14px;
+
+}

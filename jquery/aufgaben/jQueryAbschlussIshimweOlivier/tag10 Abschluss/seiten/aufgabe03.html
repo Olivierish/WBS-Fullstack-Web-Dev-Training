@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		$(document).ready(function() {
+            $('#buttons button').click(
+                function ()
+                {
+                    var modeVal = $(this).attr('data-mode');
+                    var dunkel = "#000";
+                    var mittel = "#ccc";
+                    var hell = "white";
+                    var textDunkel="white";
+                    var textHell="#333";
+                    var textMittel="black";
+
+                    switch (modeVal) {
+                        case 'h':
+                        $('html').css("background-color",hell);
+                        $('section').css("background-color",hell);
+                        $('header').css("background-color",hell);
+                        $('footer').css("background-color",hell);
+                        $('html>*').css("color",textHell);
+                            break;
+
+                        case 'm':
+                        $('html').css("background-color",mittel);
+                        $('section').css("background-color",mittel);
+                        $('header').css("background-color",mittel);
+                        $('footer').css("background-color",mittel);
+                        $('html>*').css("color",textMittel);
+                            break;
+
+                        case 'd':
+                        $('html').css("background-color",dunkel);
+                        $('section').css("background-color",dunkel);
+                        $('header').css("background-color",dunkel);
+                        $('footer').css("background-color",dunkel);
+                        $('html>*').css("color",textDunkel);
+                            break;
+                    }
+
+                   
+                });
+
+        });
+	</script>
+    <style>
+        #buttons{
+            position: absolute;
+            right:20px;
+            top: 20px;
+        }
+        header,section,footer{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="buttons">
+                <button data-mode="h">Hell</button>
+                <button data-mode="m">Mittel</button>
+                <button data-mode="d">Dunkel</button>
+            </div>
+            <h1>Aufgabe 03</h1>
+        </header>
+        <section>
+            <h2>Space Shuttle</h2>
+            <p>Das ist ein Absatz</p>
+            <ul>
+                <li>Columbia</li>
+                <li>Challenger</li>
+                <li>Discovery</li>
+                <li>Atlantis</li>
+                <li>Endeavour</li>
+            </ul>
+            <figure class="tooltip" data-tooltip="Space Shuttle Bild">
+                <img src="https://img.freepik.com/free-vector/space-shuttle-isometric-composition_1284-20656.jpg" alt="Space Shuttle" >
+            </figure>
+
+
+        </section>
+        <footer>
+            <p>
+                Das Space Shuttle (auch das Shuttle) war der bislang einzige für bemannte Raumflüge eingesetzte Raumfährentyp. Das System wurde seit den 1970er-Jahren im Auftrag der US-Raumfahrtbehörde NASA entwickelt, die erste Mission STS-1 startete am 12. April 1981. Durch die Wiederverwendung der Teile des Systems sollten die Flüge in den Weltraum deutlich kostengünstiger als mit nicht wiederverwendbaren Trägerraketen werden. Diese Erwartung erfüllte sich wegen hoher Instandsetzungskosten nicht. 2011 fand der letzte Flug statt.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

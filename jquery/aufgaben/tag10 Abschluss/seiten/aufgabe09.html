@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+
+		 $(document).ready(
+             function(){
+                $("p:last").slideUp();
+                $(".up").click(function(){
+                $("p:last").slideToggle();
+                    });
+               
+            });
+        
+	</script>
+    <style>
+         
+
+        img{
+            display: block;
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        section > div{
+            height: 50px;
+            width: 300px;
+            background-color: #ff7df8;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section > div p{
+            width: fit-content;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 09</h1>
+        </header>
+        <section>
+            <h2>Was ist jquery? </h2>
+            <p>
+                jQuery is a JavaScript framework designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax. It is free, open-source software using the permissive MIT License. As of Aug 2022, jQuery is used by 77% of the 10 million most popular websites.
+            </p>
+            <p class="show">
+                jQuery ist eine JavaScript-Bibliothek, die viele nützliche Funktionen und Methoden enthält, die die Arbeit mit JavaScript und HTML vereinfachen. Es wurde erstmals im Jahr 2006 veröffentlicht und ist seitdem eine der beliebtesten JavaScript-Bibliotheken.
+
+                jQuery ermöglicht es Entwicklern, schnell und einfach auf DOM-Elemente zuzugreifen, Ereignisse zu binden und zu verwalten, Animationen und Effekte zu erstellen, AJAX-Anfragen durchzuführen und vieles mehr. Es bietet auch eine plattformübergreifende Kompatibilität, was bedeutet, dass es auf allen gängigen Browsern und Geräten funktioniert.
+            </p>
+            <button class="up">Mehr</button>
+            
+</body>
+</html>
+        </section>
+        <!-- <footer>
+        <p>
+            </p> 
+        </footer> -->
+
+    </div>
+
+</body>
+</html>

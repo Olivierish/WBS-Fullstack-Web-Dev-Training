@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		 $(document).ready(
+             function(){
+                $("section > div").click(function(){
+                    $(this).html('<p>Ein Click!</p>');
+                });
+                $("section > div").dblclick(function(){
+                    $(this).html('<p>Ein DoppelClick!</p>');
+                });
+                $("section > div").mouseenter(function(){
+                    $(this).html('<p>Mouse Enter!</p>');
+                });
+                $("section > div").mouseout(function(){
+                    $(this).html('<p>Mouse Enter!</p>');
+                });
+                $("section > div").mousedown(function(){
+                    $(this).html('<p>Mouse down!</p>');
+                });
+                $("input").on("keydown",function(event){
+                    $("section > div").html('<p>Key Press!</p>' + event.which);
+                });
+            });
+        
+	</script>
+    <style>
+         
+
+        img{
+            display: block;
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        section > div{
+            height: 50px;
+            width: 300px;
+            background-color: #ff7df8;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section > div p{
+            width: fit-content;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 08</h1>
+        </header>
+        <section>
+            <h2>Mausaktivität </h2>
+            <div>
+            </div>
+            <input type="text">
+</body>
+</html>
+        </section>
+        <!-- <footer>
+        <p>
+            </p> 
+        </footer> -->
+
+    </div>
+
+</body>
+</html>

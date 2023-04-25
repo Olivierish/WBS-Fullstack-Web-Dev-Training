@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		$(document).ready(function() {
+            $(".tab-nav li:first-child").addClass("active");
+            $(".tab-content .tab-pane:first-child").addClass("active");
+            $(".tab-nav li").click(function() {
+                    //aus dem ListenElement a wird der Inhalt von href ermittelt
+                    var tabId = $(this).find('a').attr('href');
+                    //alle active klasse entfernen
+                    $('.tab-nav li').removeClass("active");
+                    $('.tab-content .tab-pane').removeClass("active");
+                    // Klasse activ neu zuweisen
+                    $(this).addClass('active');
+                    $(tabId).addClass('active');
+            });
+        });
+	</script>
+    <style>
+        .tab-nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab-nav ul li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .tab-nav ul li a{
+            display: block;
+            padding: 10px;
+            background: white;
+            color: var(--color1);
+            text-decoration: none;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-nav ul li:hover a{
+            background: #666;
+            color: white;
+            /* transition: color 1s ease-in-out ; */
+        }
+        .tab-nav ul li.active a {
+            background: var(--color1);
+            color: white;
+        }
+        .tab-pane{
+            display: none;
+            padding: 20px 10px;
+            background: var(--color1);
+            border-radius: 0 5px 5px 5px;
+            border: 1px solid black;
+            border-top: 1px solid rgb(68, 68, 68);
+            text-align: center;
+            color: var(--color6);
+        }
+        .tab-pane.active{
+            display: block;
+        }
+        img{
+            text-align: center;
+        }
+        p,ol{
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 04</h1>
+        </header>
+        <section>
+            <h2>Sports</h2>
+           <div class="tab-nav">
+                <ul>
+                    <li><a href="#tab1">Fussball</a></li>
+                    <li><a href="#tab2">Handball</a></li>
+                    <li><a href="#tab3">Formel 1</a></li>
+                    <li><a href="#tab4">Surf WM</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane">
+                        <img src="https://img.freepik.com/free-photo/multinational-friends-cheering-football-match-home_329181-3628.jpg" alt="Fussball" width="500">
+                        <p>
+                            In Deutschland wird 2024 die UEFA Europameisterschaft stattfinden. Es wird 16 Mannschaften geben, die in vier Gruppen eingeteilt werden. Jede Mannschaft wird mindestens drei Gruppenspiele und möglicherweise ein Achtelfinale, Viertelfinale, Halbfinale und ein Finale spielen. Die Spiele werden in verschiedenen Stadien in ganz Deutschland stattfinden.
+                        </p>
+                        <p>
+                            Es wird auch einige neue Regeln geben, wie z.B. die Einführung von Video-Assistenten, die helfen sollen, Entscheidungen auf dem Platz zu überprüfen. Es wird auch ein neues System für die Vergabe von Strafen geben, das auf dem Fair-Play-Prinzip basiert.
+                        </p>
+                    </div>
+                    <div id="tab2" class="tab-pane">
+                        <img src="https://img.freepik.com/free-vector/handball-player-silhouette_23-2147872368.jpg" alt="handaball" width="500">
+                        <p>
+                            Handball ist eine Sportart, die weltweit viele Fans hat. Neue Entwicklungen in der Welt des Handballs werden regelmäßig veröffentlicht.
+
+Einige der aktuellen Neuigkeiten im Handball sind:
+</p>
+<ol>
+    <li>
+        Die International Handball Federation (IHF)
+    </li>
+    <li>
+        Der Handball-Weltverband hat auch eine neue Website gestartet, auf der Fans und Interessierte aktuelle Informationen über Handballpartien, Turniere und Wettbewerbe erhalten können.
+    </li>
+  
+</ol>
+                    </div>
+                    <div id="tab3" class="tab-pane">
+                        <img src="https://img.freepik.com/free-photo/3d-racing-car_1048-5051.jpg" alt="Formel 1" width="500">
+                        <p>
+                            Michael Schumacher ist einer der erfolgreichsten Fahrer in der Geschichte der Formel 1. Er hat 91 Rennen gewonnen, einen Rekord, der nie aufgestellt wurde, und er hat sieben Weltmeistertitel gewonnen. Er begann seine Karriere 1991 beim Jordan-Team und wechselte dann zu Benetton, wo er seine ersten beiden Titel gewann. 
+                            </p>
+                            <p>
+                            Er fuhr dann für Ferrari, wo er fünf weitere Titel gewann. Nach seinem Rücktritt im Jahr 2006 kehrte Schumacher im Jahr 2010 bei Mercedes zurück, aber er konnte keine weiteren Titel gewinnen. Schumacher ist nicht nur ein sehr erfolgreicher Fahrer, sondern auch ein großer Name in der Welt des Motorsports und er ist ein großer Inspirationsquelle für viele ambitionierte junge Fahrer.
+                        </p>
+                    </div>
+                    <div id="tab4" class="tab-pane">
+                        <img src="https://img.freepik.com/free-photo/men-girls-are-surfing_1321-1093.jpg" alt="Surf WM" width="500">
+                        <p>
+                            
+Die World Surf League (WSL) ist der Veranstalter der offiziellen Weltmeisterschaft im Surfen. Die Weltmeisterschaft wird alljährlich in den Disziplinen Longboard und Shortboard ausgetragen. Die Weltmeisterschaft ist ein globales Event, das an verschiedenen Stränden auf der ganzen Welt stattfindet. 
+</p>
+<p>
+Die Weltmeisterschaftsrunden werden im Rahmen des WSL Championship Tours (CT) ausgetragen. Die CT besteht aus zehn Events, die auf den verschiedenen Kontinenten ausgetragen werden. Der World Surf League Champion wird nach dem letzten Event der Tour bestimmt, wobei der Erfolg der Surfer sowohl auf der CT als auch auf verschiedenen anderen Events berücksichtigt wird.
+                        </p>
+                    </div>
+                </div>
+           </div>
+           
+            
+
+
+        </section>
+        <footer>
+            <p>
+                <a href="https://www.freepik.com/">Bilder - Freepik</a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

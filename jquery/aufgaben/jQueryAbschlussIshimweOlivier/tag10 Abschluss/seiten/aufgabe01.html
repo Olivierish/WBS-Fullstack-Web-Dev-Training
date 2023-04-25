@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		$(document).ready(function() {
+        $("h2").text("Hier wurde als Selektor ein HTML-Element verwendet");
+        $(".absatz-1").text("Hier wurde als Selektor eine Klasse verwendet");
+        $("#absatz-2").text("Hier wurde als Selektor die ID verwendet");
+        $("[href]").text("Hier wurde als Selektor ein Attribut verwendet");
+        $("ul li:last").text("Hier wurde als Selektor eine Kombination verwendet.");
+        });
+	</script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 01</h1>
+        </header>
+        <section>
+            <h2></h2>
+            <p class="absatz-1"></p>
+            <p id="absatz-2"></p>
+            <a href="#"></a>
+
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li></li>
+            </ul>
+            
+        </section>
+        <footer>
+            <p>erstellt am 24.04.2023 von Gerald Reinhardt</p>
+        </footer>
+    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		$(document).ready(function() {
+           
+            $('figure').mouseenter(function() {
+                $('figure img').attr("src","../images/spielplatzColor.jpg");
+            });
+            $('figure').mouseout(function() {
+                $('figure img').attr("src","../images/spielplatzMono.jpg");
+            });
+        
+        });
+        
+	</script>
+    <style>
+       
+        img{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 06</h1>
+        </header>
+        <section>
+            <figure>
+                <img src="../images/spielplatzMono.jpg" alt="Spielplatz">
+            </figure>
+            
+        </section>
+        <!-- <footer>
+        <p>
+            </p> 
+        </footer> -->
+
+    </div>
+
+</body>
+</html>

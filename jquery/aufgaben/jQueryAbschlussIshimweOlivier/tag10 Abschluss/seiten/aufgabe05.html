@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		$(document).ready(function() {
+            var geschlechtesDe = ["männlich", "weiblich", "divers", "keine Angaben"];
+            var geschlechtesEn = ["male", "female", "diverse", "no information"];
+            var geschlechtesEs = ["hombre", "feminino", "diverso", "sin información"];
+            setContent(geschlechtesDe);
+
+            $('#buttons button:first').click(
+                function() {
+                    emptyContent();
+                    setContent(geschlechtesDe);
+                }
+            );
+            $('#buttons button:eq(1)').click(
+                function() {
+                    emptyContent();
+                    setContent(geschlechtesEn);
+                }
+            );
+            $('#buttons button:last').click(
+                function() {
+                    emptyContent();
+                    setContent(geschlechtesEs);
+                }
+            );
+
+        
+        });
+        function setContent(geschletesList) {
+            for (let i = 0; i < geschletesList.length; i++) {
+                const element = geschletesList[i];
+                var input = '<input type="radio" id="m" name="geschlechte" value="'+geschletesList[i]+'">'+geschletesList[i];
+                $('form').append(input + '<br>');
+            }
+        }
+        function emptyContent() {
+            $('form').empty();
+        }
+	</script>
+    <style>
+        .tab-nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab-nav ul li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .tab-nav ul li a{
+            display: block;
+            padding: 10px;
+            background: white;
+            color: var(--color1);
+            text-decoration: none;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-nav ul li:hover a{
+            background: #666;
+            color: white;
+            /* transition: color 1s ease-in-out ; */
+        }
+        .tab-nav ul li.active a {
+            background: var(--color1);
+            color: white;
+        }
+        .tab-pane{
+            display: none;
+            padding: 20px 10px;
+            background: var(--color1);
+            border-radius: 0 5px 5px 5px;
+            border: 1px solid black;
+            border-top: 1px solid rgb(68, 68, 68);
+            text-align: center;
+            color: var(--color6);
+        }
+        .tab-pane.active{
+            display: block;
+        }
+        img{
+            text-align: center;
+        }
+        p,ol{
+            text-align: left;
+        }
+        #form{
+            position: relative;
+        }
+        #buttons{
+            position: absolute;
+            right:0px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 05</h1>
+        </header>
+        <section>
+            <div id="form">
+                <div id="buttons">
+                    <button>Deutsch</button>
+                    <button>Englisch</button>
+                    <button>Spanish</button>
+                </div>
+                <div id="form-content">
+                    <form>
+                    </form>
+                </div>
+            </div>
+            
+
+        </section>
+        <!-- <footer>
+        <p>
+            </p> 
+        </footer> -->
+
+    </div>
+
+</body>
+</html>

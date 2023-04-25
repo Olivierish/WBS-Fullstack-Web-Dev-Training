@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		 $(document).ready(
+             function(){
+                //Akkordeonelement aktivieren oder deaktivieren
+                $(".accordion-header").click(function(){
+                    $(this).parent().find('.accordion-content').slideToggle();
+                    $(this).parent().toggleClass("active");
+                });
+            });
+        
+	</script>
+    <style>
+         .accordion{
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+        .accordion-header{
+            padding: 10px;
+            cursor: pointer;
+            background: #eee;
+        }
+
+        .accordion-header h4{
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .accordion-content{
+            padding: 10px;
+            min-height: 200px;
+            display: none;
+        }
+        .accordion.active .accordion-content{
+            display: block;
+        }
+
+        img{
+            display: block;
+            text-align: center;
+            margin: 5px auto;
+        }
+        p{
+            background-color: #eee;
+            border-radius: 4px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 07</h1>
+        </header>
+        <section>
+            <h2>OpenAI</h2>
+            <div class="accordion-navigation">
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h4>1. ChatGPT</h4>
+                    </div>
+                    <div class="accordion-content">
+                        <img src="https://blog.routinehub.co/content/images/2023/02/openAI-chat-gpt-1.jpg" alt="ChatGPT" width="500">
+                        <p>ChatGPT (Generative Pre-trained Transformer) ist ein Prototyp eines Chatbots, also eines textbasierten Dialogsystems als Benutzerschnittstelle, der auf maschinellem Lernen beruht. Den Chatbot entwickelte das US-amerikanische Unternehmen OpenAI, das ihn im November 2022 veröffentlichte.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h4>2. GPT-4</h4>
+                    </div>
+                    <div class="accordion-content">
+                        <img src="https://www.mlyearning.org/wp-content/uploads/2023/03/GPT-4-Parameters-How-many-parameters-will-ChatGPT-4-have.jpg" alt="GPT-4" width="500">
+                        <p>
+                            Im März 2023 wurde GPT-4 vorgestellt. Das Programm wurde öffentlich erst am 14. März 2023 vorgestellt, war aber ausgewählten Journalisten und Software-Entwicklern wohl schon mindestens eine Woche vorher verfügbar gemacht worden. GPT-4 soll nun auch Bilder erkennen und dazu passende Texte schreiben können. Laut Berichterstattung von Heise online soll GPT-4 angeblich ein halbes Jahr lang durch Sicherheitstrainings und menschliche Nachjustierungen gelaufen sein, nachdem es auf „AzureAI-Supercomputern“ trainiert habe. GPT-4 soll aber auch aufgrund der wohl „erhöhten“ Fähigkeiten neue Risiken bergen, die aber nicht im technischen Bericht des OpenAI-Teams (oder sonst) veröffentlicht wurden.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h4>3. DALL.E2</h4      >
+                    </div>
+                    <div class="accordion-content">
+                        <img src="https://dallery.gallery/wp-content/uploads/2018/09/DALL-E-Guide-FAQ.png" alt="DALL E2" width="500">
+                        <p>
+                            DALL-E wurde am 5. Januar 2021 von OpenAI vorgestellt. Der Name bildet ein Kofferwort aus WALL-E und dem spanischen Künstler Salvador Dalí. Das Programm beruht auf GPT-3 und kann Wörter als Input in Anordnungen von Pixeln als Output transferieren. Das System kombiniert dabei Bilderkennung und Computerlinguistik. So erstellt das Programm fotorealistische Bilder allein auf Basis von Texteingaben. Im April 2022 wurde die verbesserte Version DALL-E 2.0 vorgestellt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <!-- <footer>
+        <p>
+            </p> 
+        </footer> -->
+
+    </div>
+
+</body>
+</html>

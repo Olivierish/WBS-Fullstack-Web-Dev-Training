@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <title>Abschluss Aufgabe</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+		$(document).ready(function() {
+            $('.tooltip').hover(function () {
+                var tooltipText = $(this).attr('data-tooltip');
+                var tooltipHtml = '<div class="tooltipElt">' + tooltipText + '</div>';
+                $(this).append(tooltipHtml);
+            },function(){
+                $('.tooltipElt').remove();
+            })
+        });
+	</script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Aufgabe 02</h1>
+        </header>
+        <section>
+            <h2 class="tooltip" data-tooltip="Überschrift 2">Das ist eine Überschrift 2</h2>
+            <p class="tooltip" data-tooltip="Überschrift 2">Das ist ein Absatz</p>
+            <ul>
+                <li class="tooltip" data-tooltip="Element 1">Element 1</li>
+                <li class="tooltip" data-tooltip="Element 2">Element 2</li>
+                <li class="tooltip" data-tooltip="Element 3">Element 3</li>
+                <li class="tooltip" data-tooltip="Element 4">Element 4</li>
+                <li class="tooltip" data-tooltip="Element 5">Element 5</li>
+            </ul>
+            <figure class="tooltip" data-tooltip="Space Shuttle Bild">
+                <img src="https://img.freepik.com/free-vector/space-shuttle-isometric-composition_1284-20656.jpg" alt="Space Shuttle" >
+            </figure>
+            
+            
+        </section>
+        <!-- <footer>
+            <p></p>
+        </footer> -->
+    
+    </div>
+    
+</body>
+</html>
