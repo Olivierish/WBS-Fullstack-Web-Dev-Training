@@ -9,9 +9,11 @@
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <div id="logo">
-                <h2>PHP.olivieris</h2>
+    <header style="--bgImg :url('../images/bg-header4.jpg');">
+            <div>
+                <div id="logo">
+                    <h2>php.olivieris</h2>
+                </div>
             </div>
         </header>
         <div id="mainContent">
@@ -119,5 +121,6 @@
 
         </footer>
     </div>
+    <script src="../../scripts/app.js"></script>
 </body>
 </html>

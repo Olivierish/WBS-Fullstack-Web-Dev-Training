@@ -17,6 +17,7 @@
     --color5:#15202C;
     --color6:#a1a1a1; 
     --color7:#1f184e;
+    --color8:rgb(20, 20, 20);
 
 
     /*Fonts*/
@@ -74,7 +75,7 @@ html{
     /* } */
     h1,h2,h3{
         font-family:var(--heading-font);
-        text-shadow: 1px 1px 8px black;
+        text-shadow: 1px 1px 8px var(--color8);
     }
     h1{
         color: var(--color3);
@@ -87,23 +88,38 @@ html{
     h2{
         color: var(--color1);
     }
+    h3,h4{
+      margin-bottom: 5px;
+    }
     header,#wrapper{
         max-width: var(--main-width);
         margin: 0 auto;
     }
     header{
       border: 1px solid var(--color2);
-      height: 80px;
+      height: calc(100vh - 500px);
       
       margin: auto;
       margin-bottom: 10px;
-      padding: 20px;
-      background: url(../images/bg-header4-1.png) no-repeat;
+      
+      /* background: url(../images/bg-header4-1.png) no-repeat; */
+      /* background: url(../images/bg-header4.jpg) no-repeat; */
+      background: var(--bgImg) no-repeat;
       background-position: left top;
-      /* background-size: fitcontent; */
+      background-size: cover;
       border-radius: 16px;
       box-shadow: 1px 1px 6px black;
       opacity: 9;
+    }
+    header>div{
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      background: rgb(168,0,179);
+      background: radial-gradient(circle, rgba(168,0,179,1) 0%, rgba(255, 255, 255, 0) 44%);
+      background-size: 50%;
+      background-position:-170px -180px;
+      background-repeat: no-repeat;
     }
     #wrapper #mainContent{
         display: flex;
@@ -123,7 +139,7 @@ html{
     background: var(--color5);
     margin-bottom: 15px;
     border-radius: 16px;
-    box-shadow: 1px 1px 8px rgb(0, 0, 0);
+    box-shadow: 1px 1px 8px var(--color8);
   }
   li a {
     display: inline-block;
@@ -160,5 +176,13 @@ html{
   section hr{
     border: 1px solid var(--color3);
     opacity: 0.5;
+    margin-bottom: 10px;
+  }
+
+  section>div{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.171),rgba(255, 255, 255, 0.014));
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
   }
 
