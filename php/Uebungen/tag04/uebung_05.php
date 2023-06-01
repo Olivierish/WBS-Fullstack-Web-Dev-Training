@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
-    <title>Übungen Tag 3</title>
+    <title>Übungen Tag 4</title>
     <style>
     
     .bg-body{
@@ -58,7 +58,7 @@
     </header>
     <div class="bg-main p-5">
     <main>
-        <h1 class="color-1">Tag 03</h1>
+        <h1 class="color-1">Tag 04</h1>
         <div id="content">
             <section class="pt-3 pb-5">
                 <h2 class="color-2 text-center">Zahlen</h2>

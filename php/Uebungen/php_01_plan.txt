@@ -1,0 +1,28 @@
+1 - Einführung
+		PHP Grundlagen
+		
+2 - Variablen und Operatoren
+		Datentypen
+		Konstanten, String, Array, Zeit, Datum
+		Reguläre Ausdrücke,
+		Mathematische Funktionen,
+		Kontrollstrukturen, Verzweigungen, Schleifen
+
+3 - Objektorientierte Programmierung
+		Klassen und Objekte
+		Eigenschaften, Methoden und Vererbung
+		Konstruktor und Destruktor
+		Abstrakte und anonyme Klassen
+		Objekte vergleichen und serialisieren 
+		Iteration
+		Namespaces
+		Entwurfsmuste
+
+4 - Formulare
+		Cookies
+		Sessions
+		
+5 - Fehlerbehandlung
+		
+6 - Bausteinprüfung
+
