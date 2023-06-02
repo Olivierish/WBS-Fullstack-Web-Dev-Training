@@ -37,7 +37,7 @@
 </head>
 <body class="bg-body">
 <div id="wrapper" class="container">
-    <header  class="jumbotron bg-image px-5 py-3" style="background-image :url('images/bg.jpg'); height: calc(100vh - 500px); background-size:cover;">
+    <header  class="jumbotron bg-image px-5 py-3 " style="background-image :url('images/bg.jpg'); height: calc(100vh - 500px); background-size:cover;">
         <div class="h-100 position-relative">
             <nav class="navbar navbar-light navbar-expand-md">
                 <a href="#" class="navbar-brand">php.olivieris</a>
