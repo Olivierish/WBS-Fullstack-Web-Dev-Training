@@ -78,7 +78,7 @@
             <div class="col">
                 <div class="p-4 border rounded-2">
                 <h2>Rechner</h2>
-                <form>
+                <form action="<?= $_SERVER['PHP'] ?>">
                 <div class="form-group py-2">
                     <label for="nachname">Nachname</label>
                     <input type="text" class="form-control" name="nachname" id="nachname" placeholder="Mustermann">
@@ -163,7 +163,7 @@
                             echo '<p>Lieblingsfarbe: <span class="farbe" style="background-color:'.$farbevalue.'">'.$farbe.'</span></p>';
                             echo "<p>Anzahlung: {$anzahlung}€</p>";
                             echo "<p>Laufzeit: {$laufzeit} Monate</p>";
-                            echo '<div class="preis bg-success rounded-2 px-3 pt-3 pb-1 mb-3 fw-bold ">';
+                            echo '<div class="preis bg-success rounded-2 px-3 pt-3 pb-1 mb-3 fw-bold " style="border:2px solid 0+'.$farbevalue.'">';
                             echo "<p>Preis: {$preis}€</p>";
                             echo '</div>';
                             echo '<div class="rkpreis border bg-primary rounded-2 px-3 pt-3 pb-1 fw-bold">';
