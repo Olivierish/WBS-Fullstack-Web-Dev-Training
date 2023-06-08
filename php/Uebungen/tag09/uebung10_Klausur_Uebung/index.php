@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 $page = $_GET['page'] ?? '';
 
 require_once 'inc/functions.inc.php';

@@ -1,5 +1,4 @@
 <?php
-heading("kundenbg.jpg", "Kunden");
 
 $kunden = array(
     array(
@@ -126,29 +125,3 @@ $kunden = array(
 #------------------------------------------
 
 ?>
-<div class="col-8 mx-auto">
-    <table class="table table-dark table-striped fs-5 mt-5">
-<thead>
-	<tr>
-		<th>Name</th> <th>Wohnort</th> <th>E-Mail</th> <th>Telefon</th>
-	</tr>
-</thead>
-<tbody>
-<?php foreach($kunden AS $value): 
-	if($value['geschlecht']=='m') {
-		$anrede = 'Herr';
-		$farbe = 'man';}
-	else {
-		$anrede = 'Frau';
-		$farbe = 'woman';}
-?>
-	<tr>
-		<td><?= '<span class="badge '.$farbe.'">' . $anrede . ' ' . $value['nachname'] . ' ' . $value['vorname'];?></span></td>
-		<td><?= $value['ort']; ?></td>
-		<td><?= $value['mail']; ?></td>
-		<td><?= $value['telefon']; ?></td>
-	</tr>
-<?php endforeach; ?>
-</tbody>
-</table>
-</div>
