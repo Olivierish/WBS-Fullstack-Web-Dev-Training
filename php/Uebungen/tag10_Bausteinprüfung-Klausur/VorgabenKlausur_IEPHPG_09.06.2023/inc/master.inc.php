@@ -47,12 +47,12 @@ function rechnenMitWaehrung($euro, $w){
 }
 function displayMsg($titel='',$beschreibung,$success=false){
                 if(!$success){
-                    echo '<div id="messageBox" class="card bg-danger mb-3 col-md-6 text-light" style="margin: 0 auto;">';
+                    echo '<div class="card bg-danger mb-3 col-md-6 text-light" style="margin: 0 auto;">';
                     echo '<div class="card-header text-center">Error</div>';
                 }
                 else{
-                    echo '<div id="messageBox" class="card bg-info mb-3 col-md-6 text-light" style="margin: 0 auto;">';
-                    echo '<div class="card-header text-center">Ergebnis</div>';
+                    echo '<div class="card bg-info mb-3 col-md-6 text-light" style="margin: 0 auto;">';
+                    echo '<div class="card-header text-center fw-bold">Ergebnis</div>';
                 }
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">'.$titel.'</h5>';
@@ -70,5 +70,14 @@ function displayMsg($titel='',$beschreibung,$success=false){
 function isRadioChecked($waehrung_benutzer, $waehrung){
     var_dump($waehrung_benutzer);
         return (($waehrung_benutzer === $waehrung)? 'checked' : ''); 
+}
+
+function zeichencounter($str){
+    return '<small class="text-info" >('.strlen($str).' Zeichen) </small>';
+}
+
+function dateFormatChange($date){
+    $dateElements =explode('/',$date);
+    return ($dateElements[2].'.'.$dateElements[1].'.'.$dateElements[0]);
 }
 ?>

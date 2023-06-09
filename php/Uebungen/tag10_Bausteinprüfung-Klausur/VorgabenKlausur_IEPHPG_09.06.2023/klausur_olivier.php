@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,6 @@
     <main>
         <h1 class="color-1 fs-2 fw-bold">Klausur PHP Grundlagen Olivier Ishimwe</h1>
         <?php require_once('inc/master.inc.php');?>
-        <?php require_once('inc/personenListe.php');?>
         <p><?= displayDate(); ?></p>
         <div id="content">
             <section class="pt-3 pb-3">
@@ -46,6 +45,9 @@
                 </div>
                 <div class="form-group py-2">
 		            <input type="text" name="name" placeholder="Name..."  class="form-control" id="antwort" value="<?= $_POST['name'] ?? '';?>"/>
+                </div>
+                <div class="form-group py-2">
+		            <input type="text" name="datum" placeholder=""  class="form-control" id="datum" value="<?= displayDate(); ?>"/>
                 </div>
                 <div class="form-group py-2">
 		            <input type="text" name="euro" placeholder="€..."  class="form-control" id="antwort" value="<?= $_POST['euro'] ?? '';?>"/>
@@ -69,13 +71,13 @@
                 </div>
                 
                 
-                <div class="py-2 d-flex justify-content-center">
+                <div id="messageBox" class="py-2 d-flex justify-content-center">
                 <input type="submit" value="Umrechnen" class="btn btn-success px-5" name="umrechnen"/>
 	            </div>
                 </form>
             </section>
         </div>
-    </main>
+    
 
     <?php 
         if(isset($_POST['umrechnen'])):
@@ -90,9 +92,13 @@
                 'tuerkLira' => 'Türkische Lira'
             ];
 
-            $anrede =  htmlspecialchars($_POST["anrede"]);
-            $name =  htmlspecialchars($_POST["name"]);
-            $euro =  htmlspecialchars($_POST["euro"]);
+            $anrede =  htmlspecialchars($_POST["anrede"]??'');
+            $name =  htmlspecialchars($_POST["name"]??'');
+            $datum =  htmlspecialchars($_POST["datum"]);
+            $jetze = displayDate();
+            $datum = ($jetze !== $datum) ? $jetze : $datum;
+
+            $euro =  htmlspecialchars($_POST["euro"]??'');
             $waehrung =  (isset($_POST["waehrung"]))? htmlspecialchars($_POST["waehrung"]) : '';
             
             if(!preg_match($musterAnrede, $anrede)){
@@ -109,19 +115,38 @@
             }
             else{
                 $summe = rechnenMitWaehrung($euro, $waehrung);
-                $msg = 'Hallo '.$anrede.' '.$name.'<br/><span class="fw-bold fs-4">'.$euro.' € sind = '.number_format($summe,2,',','.').' '.$waehrungNamen[$waehrung].'</span>';
-                displayMsg('',$msg, true);
+                $msg = '<strong class="display-6">Hallo '.$anrede.' '.ucfirst($name).'</strong><br/><span class="fw-bold fs-4" style="text-shadow:1px 1px 3px #9d9d9d;">'.$euro.' € sind = '.number_format($summe,2,',','.').' '.$waehrungNamen[$waehrung].'</span>';
+                $anfrageDatum = '<small class="text-dark text-opacity-75">Anfrage am : '.$datum.'</small>';
+                displayMsg($anfrageDatum,$msg, true);
             }
            
         endif; #isset 
     ?>
+    <hr class="my-5">
+    <h2 class="color-2 text-center fw-bold mb-5 pt-3">Die letzten Besucher(in) </h2>
+    <div class="row g-2 g-lg-3">
+    <?php require_once('inc/personenListe.php');?>
+    <?php foreach($personen AS $person): ?>
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold color-3 text-center"><?=  strtoupper($person['name']).' '.zeichencounter($person['name']);?></h5>
+                    <p class="card-text">
+                    <ul class="list-group my-2 list-group-item-light mt-3">
+                        <li class="list-group-item"><b>Wohnort :</b> <?= $person['wohnort']?></li>
+                        <li class="list-group-item"><b>Geboren : </b><?= dateFormatChange($person['geboren'])?></li>
+                        <li class="list-group-item"><b>KurzeInfo : </b><?= $person['kurzeInfo']?></li>
+                    </ul>
+                    </p>
+                </div>
+                </div>
+            </div>
+    <?php endforeach; ?>
+    </div>
 
 
-    <?php 
-        var_dump($personen);
-        
-    ?>
 
+</main>
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2023 Olivieris</p>
 
@@ -131,8 +156,8 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="impressum.html" class="nav-link px-2 text-muted">Impressum</a></li>
-      <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li> -->
     </ul>
+
   </footer>
     </div>
 </div>
