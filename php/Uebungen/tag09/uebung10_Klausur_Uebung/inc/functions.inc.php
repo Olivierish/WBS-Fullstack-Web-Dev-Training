@@ -5,7 +5,7 @@ function heading($bg_img, $title){
     
     
     <div  class="jumbotron col-md-6   position-absolute bottom-0 end-0">
-                <div class="px-0 pb-5 mt-2">
+                <div class="ps-0 pe-3 pb-3 mt-2">
                 <h1 class="display-5 text-light text-center"><?= $title ?></h1>    
                 </div>
                 
@@ -13,5 +13,11 @@ function heading($bg_img, $title){
     </header>
 <?php
 }
-
 ?>
+
+<?php
+function classActiv($page, $value=''){
+    return ($page === $value) ? 'active' : '';
+}
+?>
+
