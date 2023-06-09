@@ -1,0 +1,21 @@
+'Marie LUISE Kaschnitz'
+'Paris'
+'2000/12/31'
+'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten.' 
+	
+'matthiAS CLaudIUs'
+'Bangkok',
+'1995/06/23'
+'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten.'
+
+
+'GertRUD KOLMAR'
+'St. Peter Ording'
+'1998/11/23'
+'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten.'
+
+
+'JosePH VON Eichendorff'
+'Algarve'
+'1987/07/01'
+'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten.'

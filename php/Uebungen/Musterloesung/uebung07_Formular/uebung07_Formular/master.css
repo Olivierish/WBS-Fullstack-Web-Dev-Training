@@ -1,0 +1,11 @@
+* {	margin: 0;padding: 0;box-sizing: border-box;}
+body {font-size: 1rem;font-family: Verdana, sans-serif;padding: 1rem;	line-height: 1.5;}
+
+#formular {width: 50%;background-color: #E0EEE0;border: 10px solid #ccc;border-bottom: none;	margin: 1rem auto;padding: 1rem;}
+.fehler {width: 80%;margin: 1rem auto;color: #3A5FCD; padding: 1rem;font-size: 1.5rem; }
+form {font-weight: bold;margin: 1rem auto;width: 80%;	background-color: #F0FFF0;}
+form p {font-size: 1rem;text-align: right; padding: 1px 10px;}
+form h2 {padding: 1rem;border: 2px dotted #3b3b3b;	border-bottom: none;margin: 0.3rem;}
+input {font-size: 1rem; padding: 0.5rem; margin-right: 0.5rem;margin-left: 0.2rem;}
+select {font-size: 1.5rem; padding: 0.5rem; margin: 0.5rem 1rem;width: 50%;}
+button[type="submit"] {color: #008B45; width: 96%; margin: 0.3rem 2%; padding: 1rem; font-weight: bold;font-size: 2rem;	} 

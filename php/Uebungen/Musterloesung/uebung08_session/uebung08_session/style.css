@@ -1,0 +1,32 @@
+* {	margin: 0;padding: 0;box-sizing: border-box;}
+body {font-size: 1rem;font-family: Verdana, sans-serif;padding: 1rem;	line-height: 1.5;}
+/*wrapper
+++++++++++++++++++++++++++++++++*/
+#wrapper {width: 80%;border: 10px solid #ccc;	background-color: #F0FFF0;margin: 2rem auto;}
+header {background-color: #FF7256;}
+/*navi
+++++++++++++++++++++++++++++++*/
+header ul {list-style: none;display: flex;padding: 3px 1rem;flex-direction: row;flex-wrap: wrap;}
+header ul li {margin: 0 0.5rem;} 
+header li a {
+	display: inline-block;
+	color: #000;
+	background-color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 3px;
+	padding: 1rem 2rem;}
+header h3 {letter-spacing: 5px;color: #963;	padding: 1rem;}
+main {	padding: 2rem;}
+form {width:50%;margin: 1rem 0;	background-color: #E0EEE0;padding: 1rem; }
+form fieldset {	padding: 1rem; }
+form p {text-align: right;margin: 3px 0;}
+input[type="text"] {font-size: 1rem; padding: 0.5rem;}
+input[type="submit"] {color: #008B45; width: 70%; padding: 1rem; font-weight: bold;font-size: 2rem;	}
+
+/*Tabelle
+++++++++++++++++++++++++++++++*/
+table tr td {background-color: #efefef;width: 200px;padding: 5px;font-weight: bold;}
+
+footer {background-color: #FF8247;padding: 1rem;}
+

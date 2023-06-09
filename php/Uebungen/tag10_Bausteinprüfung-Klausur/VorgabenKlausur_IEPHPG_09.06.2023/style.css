@@ -1,0 +1,38 @@
+.bg-body{
+    background-color: #011C26 !important;
+}
+.bg-main{
+    background-color: #eefff8;
+}
+.bg-second{
+    background-color: #04588C;
+}
+.color-0{
+    color:white; /*form*/ 
+}
+.color-1{
+    color:#033473; /*h1*/
+}
+.color-2{
+    color:#0487D9; /*h2*/
+}
+.color-3{
+    color:#03588C; /*h3 h4*/
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1rem;
+    /* line-height: 150%; */
+}
+
+/* section{
+    border-bottom: solid 1px #03588C;
+} */
+
+nav img{
+    filter: invert(1);
+    width: 40px;
+    height: 40px;
+
+}
