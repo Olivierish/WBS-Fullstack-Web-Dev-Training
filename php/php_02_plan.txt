@@ -1,0 +1,34 @@
+1 - Objektorientierte Programmierung
+		Klassen und Objekte
+		Eigenschaften, Methoden und Vererbung 
+		Konstruktor und Destruktor
+		Abstrakte und anonyme Klassen
+		Objekte vergleichen und serialisieren
+		Iteration
+		Namespaces
+		Entwurfsmuste
+		
+2 - Arbeiten mit Dateien und Verzeichnissen
+		Auf Dateien und Verzeichnisse zugreifen
+
+3 - Arbeiten mit Datenbanken
+		Einführung in MySQL
+		Installation von MySQL
+		MySQL im Vergleich zu Standard-SQL
+		Einführung in SQL
+		PDO
+
+4 - MySQL-Funktionen verwenden
+		Wichtige MySQL-Funktionen kennen
+		
+5 - Planen und Realisieren eines Datenbankprojekts
+
+6 - Kommunikation unter PHP
+		
+7 - Bausteinprüfung
+
+8 - Fehlersuche
+
+9 - Bausteinbezogen Qualifikationsstand messen
+
+
