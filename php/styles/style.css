@@ -79,8 +79,7 @@ html{
     }
     h1{
         color: var(--color3);
-        text-align: center;
-        
+        text-align: center;  
     }
     h3{
         color: var(--color4);
@@ -141,7 +140,7 @@ html{
     border-radius: 16px;
     box-shadow: 1px 1px 8px var(--color8);
   }
-  li a {
+  aside li a {
     display: inline-block;
     width: calc(100% - 40px);
     height: 100%;
@@ -150,7 +149,7 @@ html{
     color: var(--color6);
     text-decoration: none;
   }
-  li a:hover {
+  aside li a:hover {
     background:var(--color3);
     color: var(--color1);
     border-radius: 16px;
