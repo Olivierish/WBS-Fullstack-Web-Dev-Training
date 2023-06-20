@@ -20,4 +20,23 @@ function pageTitle(){
             echo ' - Home'; break;
     }
 }
+
+/**
+ * A function to truncate a text
+ * 
+ *
+ *
+ * @param string $text The text to truncate
+ * @param int $length Optional. The length of the new text.
+ * @return string a new truncated text.
+ */
+function truncate(string $text, int $length = 20): string {
+    if (strlen($text) <= $length) {
+        return $text;
+    }
+    $text = substr($text, 0, $length);
+    $text = substr($text, 0, strrpos($text, " "));
+    $text .= "...";
+    return $text;
+}
 ?>

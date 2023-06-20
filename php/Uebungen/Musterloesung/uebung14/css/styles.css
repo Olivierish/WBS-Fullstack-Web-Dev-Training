@@ -1,0 +1,14 @@
+.name {
+	white-space: nowrap;
+	overflow: hidden;
+	max-width: 50%;
+	text-overflow: ellipsis;
+}
+/*
+oder .text-truncate von bootstrap benutzen
+*/
+
+#header .current {
+	background-color: #fff; 
+	color: #000;
+}
