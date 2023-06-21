@@ -3,7 +3,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
     $id = $_SESSION['id'];
 } else {
     http_response_code(403);
-    echo "Bitte sich anmelden oder registrieren";
+    echo '<p class="fs-2 text-light fw-bold p-2">Bitte sich anmelden oder registrieren</p>';
     die();
 }
 

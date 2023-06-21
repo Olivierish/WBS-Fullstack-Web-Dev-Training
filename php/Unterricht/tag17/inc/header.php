@@ -18,7 +18,7 @@
 		<!-- Jumbotron -->
 <div class="jumbotron-fluid bg-image p-4" style="background: linear-gradient(86deg, rgba(33,37,41,1) 0%, rgba(255,255,255,0) 60%),url('images/bg1.png'); background-size:cover;background-position:50%;">
 	<h1 class="display-3 text-light">Tag 17</h1>
-	<p class="lead text-light">Database - Navigation - </p>
+	<p class="lead text-light">Database - update - join - foreign key - fontawesome - Übungen </p>
 	<hr class="my-2">
 	<p class="text-light">Mehr Infos</p>
 	<p class="lead">

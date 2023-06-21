@@ -37,4 +37,23 @@ function formatiereDatum($dbDatum, $format = 'd.m.Y H:i'){
     $datum_db = new DateTime($dbDatum);
     return $datum_db->format($format);
 }
+
+function logOut() {
+    unset($_SESSION['vorname']);
+    unset($_SESSION['id']);
+    unset($_SESSION['login']);
+  
+    $_SESSION['msg'] = 'Du bist abgemeldet!';
+    header('Location:index.php'); 
+  }
+  
+  function userIstLogged() {
+    if(isset($_SESSION['id']) && isset($_SESSION['login'])) {
+      $id = $_SESSION['id'];
+    } else {
+      http_response_code(403);
+      echo '<p class="fs-2 text-light fw-bold p-2">Bitte sich anmelden oder registrieren</p>';
+      die();
+    }
+  }
 ?>

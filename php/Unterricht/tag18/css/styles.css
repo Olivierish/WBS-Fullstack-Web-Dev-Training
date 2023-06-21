@@ -1,0 +1,25 @@
+:root{
+  --colorA:#ffc107;
+  --colorA2:#ffca2c;
+  --colorB : #BF281B;
+  --colorC :#17813c;
+}
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 50%;
+  text-overflow: ellipsis; 
+}
+
+h2{
+  color: var(--colorB);
+}
+h3{
+  color: var(--colorC) !important;
+}
+
+
+/*
+die klasse in bootstrap für oben
+.text-truncate
+*/
