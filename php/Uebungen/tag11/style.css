@@ -1,0 +1,48 @@
+.bg-body{
+    background-color: #73330E !important;
+}
+.bg-main{
+    background-color: #ffffff;
+}
+.bg-second{
+    background-color: #11AEBF;
+}
+.color-0{
+    color:white; /*form*/ 
+}
+.color-1{
+    color:#11AEBF; /*h1*/
+}
+.color-2{
+    color:#F28B30; /*h2*/
+    text-shadow: 1px 1px 5px rgb(207, 207, 207);
+}
+.color-3{
+    color:#F25D27; /*h3 h4*/
+}
+.color-4{
+    color:#0D518C !important; /*some p*/
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1rem;
+    /* line-height: 150%; */
+}
+
+/* section{
+    border-bottom: solid 1px #03588C;
+} */
+
+nav img {
+    filter: invert(1);
+    width: 180px;
+    height: 65px;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 5%;
+    padding: 5px;
+}
+nav img:hover {
+    box-shadow: 1px 1px 10px black;
+    transition: all 0.3s ease-in-out;
+}

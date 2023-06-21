@@ -1,0 +1,4 @@
+Falls die Tabelle "posts" nicht existiert dann die importieren.
+
+Machen wir nächstes mal...
+oder vorher screenshot ansehen. 

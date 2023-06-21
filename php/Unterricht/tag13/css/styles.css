@@ -1,0 +1,11 @@
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 50%;
+  text-overflow: ellipsis; 
+}
+
+/*
+die klasse in bootstrap für oben
+.text-truncate
+*/
