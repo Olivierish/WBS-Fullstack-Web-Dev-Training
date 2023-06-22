@@ -18,13 +18,6 @@
 
 <div class="bg-main p-5">
     <main>
-    <div class="row">
-            <?php if(isset($_SESSION['msg'])):?>
-                <div class="col-md-6 p-2 mx-auto">
-                    <p class="alert bg-dark color-5" style="transition : all ease-in-out 0.3s;"><?= $_SESSION['msg']?></p>
-                </div>
-            <?php endif; ?>
-        </div>
         <div class="row">
             <?php foreach($cocktails AS $cocktail): ?>
                 

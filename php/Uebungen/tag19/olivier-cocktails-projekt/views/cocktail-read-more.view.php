@@ -24,10 +24,10 @@ Cheers!, Prost!, À la santé !, ¡Salud!, Salute!, Afya!, 乾杯 (Kanpai)
 <div class="col-md-6">
                     <?php 
                     // if((isset($_SESSION['id'])) && (isset($_SESSION['login']))):    
-                    $login_system_not_yet_added = false;        
+                    $login_system_not_yet_added = true;        
                     if($login_system_not_yet_added):            
                         ?> 
-                    <a class="btn btn-warning" href="index.php?page=edit" role="button">Modify</a>
+                    <a class="btn btn-warning" href="index.php?page=edit&id=<?= $cocktail['id']?>" role="button">Modify</a>
                     <a class="btn btn-secondary" href="auth/entries/delete.php" role="button">Delete</a>
                     <?php endif;?>
                 </div>  
