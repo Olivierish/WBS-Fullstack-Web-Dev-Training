@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="favicon_io/site.webmanifest">
 
+    
 <title>Cocktails Blog <?php pageTitle() ?></title>
 </head>
 <body class="bg-body">
@@ -36,3 +37,11 @@
                     </ul>
                 </div>
             </nav>
+
+    
+        <?php if(isset($_SESSION['msg'])):?>
+            <div id="msg" class="col-md-6 p-2 mx-auto">
+                <p class="alert bg-dark color-5" style="transition : all ease-in-out 0.3s;"><?= $_SESSION['msg']?></p>
+            </div>
+        <?php endif; ?>
+    

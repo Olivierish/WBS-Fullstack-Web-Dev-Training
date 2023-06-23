@@ -17,7 +17,7 @@
 </head>
 <body class="bg-body">
 <div id="wrapper" class="container">
-    <header  class="jumbotron bg-image px-5 py-3 " style="background-image :url('images/bg3.jpeg'); height: calc(100vh - 500px); background-size:cover; background-position:100%;">
+    <header  class="jumbotron bg-image px-5 py-3 " style="background-image :url('images/bg3.jpeg'); height: calc(100vh - 500px); background-size:cover; background-position:10%;">
         <div class="h-100 position-relative">
             <nav class="navbar navbar-light navbar-expand-md">
                 <a href="#" class="navbar-brand">
