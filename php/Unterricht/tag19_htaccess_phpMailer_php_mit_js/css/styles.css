@@ -1,0 +1,60 @@
+body {
+	background: url(../images/meer.jpg) no-repeat center center fixed;
+	background-repeat: no-repeat;
+	webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+	font-family: 'Rubik', sans-serif; 
+}
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 50%;
+  text-overflow: ellipsis;
+}
+
+.header {
+	background-color: #002042;
+}
+.main-menue {
+	background-color: #0b69b3;
+}
+.user-menue {
+	background-color: #165396;
+	color: #fff;
+}
+
+.blau {
+	background-color: #8ecef8;
+	color: #002042;
+}
+
+.rot {
+	background-color: #f696a6;
+	color: #002042;
+}
+
+.sub-send {
+	background-color: #1aa628;
+	color: #f5faf6;
+}
+
+.sub-send:hover {
+	background-color: #217c29;
+}
+
+.rahmen {
+	border: 1px dashed #ccc;
+}
+
+.editMode {
+	border: 2px solid #333;
+	box-shadow: 0 0 2px #ccc;
+	background-color: #efefef !important;
+	border-radius: 5px;
+	padding: 5px;
+}
+[contentEditable] {
+	border: 1px solid #ccc;
+}

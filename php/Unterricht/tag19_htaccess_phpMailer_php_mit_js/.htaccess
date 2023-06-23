@@ -1,0 +1,5 @@
+#ÜbersichtsSeite verbieten
+
+Options -Indexes
+
+ErrorDocument 404 /WEBFULL101a-02.1/Unterricht/tag19/index.php?page=error404

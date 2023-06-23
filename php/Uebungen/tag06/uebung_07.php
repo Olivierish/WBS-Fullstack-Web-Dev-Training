@@ -128,15 +128,6 @@
                         ?>
                 </div>
                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="bg-second col-md-10 bg-opacity-10 py-5 px-5 rounded-2 mx-auto">
-                <!-- <div class="py-2">
-                    <label for="antwort" class=" text-light">Wie heist die Hauptstadt von Deutschland?  </label>
-		            <input type="text" name="antwort" placeholder=""  class="form-control" id="antwort" value="<?= $_POST['antwort'] ?? '';?>"/>
-                    <p class="text-center text-light">[Berlin, Hamburg, Bonn]</p>
-                </div>
-
-                <div class="py-2 w-50 mx-auto">
-                <input type="submit" value="senden" class="btn btn-success px-5" name="btnSend"/>
-	            </div> -->
                 <!--radioButton++++++++++++++++++++++++++++-->
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="gesch" id="inlineRadio1" value="option1">

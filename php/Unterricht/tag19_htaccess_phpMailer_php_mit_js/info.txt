@@ -1,0 +1,9 @@
+htaccess steht für hypertext access
+############################################################
+.htaccess ist eine Konfigurationsdatei auf NCSA-kompatiblen Webservern wie Apache, in der verzeichnisbezogene Regeln aufgestellt werden können. Beispielsweise kann man darüber ein Verzeichnis oder einzelne Dateien durch HTTP-Authentifizierung vor unberechtigten Zugriffen schütze
+############################################################
+Eine. htaccess-Datei ist eine einfache ASCII-Datei, die Sie mit einem Texteditor wie Notepad oder TextEdit erstellen. Die Datei gibt dem Server Auskunft darüber, welche Konfigurationsänderungen pro Verzeichnis vorgenommen werden müssen.
+############################################################
+Gute Erklärung steht hier
+
+https://www.elastic2ls.com/blog/wie-man-php-html-html-htm-erweiterungen-mit-htaccess-entfernt/ 
