@@ -1,0 +1,8 @@
+NEU:
+
+inc/captcha.php
+
+Link -> Passwort ändern in views/profil.view.php (hier ist auch Formular dafür)
+
+auth/user/pwd_update.php
+auth/user/delete.php

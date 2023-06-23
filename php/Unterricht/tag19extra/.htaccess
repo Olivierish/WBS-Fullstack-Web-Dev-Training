@@ -1,0 +1,6 @@
+#ÜbersichtsSeite verbieten
+
+Options -Indexes  
+
+ErrorDocument 404 /webfull-wbs/php/Unterricht/tag19/index.php?page=error404
+
