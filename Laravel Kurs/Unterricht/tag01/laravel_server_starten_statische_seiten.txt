@@ -1,0 +1,189 @@
+mit Hilfe von cmd oder powerShell in den Ordner gehen z.B. my_projekt_01, der vorher angelegt wurde
+
+php artisan serve 
+
+die Adresse kopieren und im Browser eingeben
+http://127.0.0.1:8000
+
+das Fenster, wo der Server gestartet wurde darf nicht geschlossen werden, solange man mit Laravel arbeitet 
+
+alle anderen Befehle mit php artisan in einem neuen Fenster (cmd oder powerShell) schreiben
+(das 2.Fenster)
+------------------------------------------
+in routes/web.php gehen und testen
+
+Route::get('/gruss', function () {
+    return  'Hallo Welt, wie geht es dir?';
+});
+
+##############
+
+wenn einer im Browser eingibt: http://127.0.0.1:8000/gruss
+dann wird angezeigt
+
+Hallo Welt, wie gehts es dir?
+------------------------------------------
+Zwischenspeicher löschen
+
+php artisan config:cache
+##########################################
+##########################################
+Statische Seite erstellen
+
+gehen zu:
+resources->views->home.blade.php
+
+home.blade.php duplizieren in:
+startseite.blade.php
+about.blade.php
+referenzen.blade.php
+kontakt.blade.php
+-----------------
+den Inhalt von about.blade.php, startseite.blade.php ändern, z.B. :
+
+unten ist die "startseite.blade.php":
+
+@extends('layouts.app')
+
+@section('title','Startseite')  //weitere Infos stehen unten
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Startseite</div>
+
+                <div class="card-body">
+                   <p>
+			Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, 
+		  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+----------------
+Navigation erstellen:
+
+gehen zu:
+resources->views->layouts->app.blade.php
+
+dann:
+app.blade.php ändern
+
+<!-- Left Side Of Navbar -->
+<ul class="navbar-nav mr-auto">
+	<li class="nav-item">
+		<a class="nav-link" href="/">Startseite</a>
+	</li>
+							 
+	<li class="nav-item">
+	   <a class="nav-link" href="/about">About</a>
+	</li>
+	
+	<li class="nav-item">
+	   <a class="nav-link" href="/portfolio">Referenzen</a>
+	</li>
+	
+	<li class="nav-item">
+	   <a class="nav-link" href="/kontakt">Kontakt</a>
+	</li>
+</ul>
+---------------
+in routes->web.php (die URL->routes) schreiben
+
+Route::get('/', function () {
+    return view('startseite');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/portfolio', function () {
+    return view('referenzen');
+});
+
+Route::get('/kontakt', function () {
+    return view('kontakt');
+});
+------------------------------
+in app.blade.php
+
+den Text Laravel ändern (Logo oder Name der Seite, 
+wenn man drauf klickt dann geht es zur Startseite)
+
+Diese Zeile suchen:
+<a class="navbar-brand" href="{{ url('/') }}">
+   {{ config('app.name', 'Laravel') }}
+</a>
+
+ändern in:
+<a class="navbar-brand" href="{{ url('/') }}">
+   myProjekt
+</a>
+------------------------------------------
+Links highlighten (in app.blade.php)
+
+<li class="nav-item">
+    <a href="/" class="nav-link {{ Request::is('/') ? 'btn bg-success': '' }}">Startseite</a>
+</li>
+						 
+<li class="nav-item">
+    <a href="/about" class="nav-link {{ Request::is('about') ? 'btn bg-success': '' }}">About</a>
+</li>
+
+<li class="nav-item">
+    <a href="/portfolio" 
+        class="nav-link {{ Request::is('portfolio') ? 'btn bg-success': '' }}" >Referenzen</a>
+</li>
+------------------------------------------
+Das title-Element (in app.blade.php) soll immer einen anderen Wert anzeigen
+Wenn die Startseite aufgerufen ist dann Startseite usw.
+
+in startseite schreiben
+@section('title','Startseite')  vor content
+
+in app.blade.php (das Element-title suchen und dort schreiben)
+
+<title>@yield('title')</title>
+
+wenn eine Seite kein section('title') hat, dann den Namen der Seite anzeigen (2.Parameter)
+<title>@yield('title','myProject')</title>
+##########################################
+Definieren von Abschnitten mit @section, @yield, @extends
+
+@extends:
+Dient dazu, eine bereits vorhandene Ansicht zu erweitern.
+Das bedeutet, dass hier nur der Inhalt verschiedener Abschnitte definiert wird, die Vorlage aber nicht stand-alone funktioniert.
+
+Jede 'Kind-Vorlage' sollte nur eine einzelne 'Eltern-Vorlage' erweitern, 
+und die @extends-Anweisung sollte jeweils in der ersten Zeile stehen.
+--------------
+@yield:
+ist eine Blade-Direktive und sagt aus, dass an dieser Stelle der Inhalt der Sektion ‚body‘ ausgegeben werden soll. 
+Diese Sektion muss aber erst einmal im ersten Template definiert werden.
+--------------
+Zwischen @section und @endsection wird der Inhalt der "body"-Sektion definiert. 
+--------------
+is()
+Gibt einen booleschen Wert zurück, der angibt, ob die aktuelle Seitenanfrage mit einer vorgegebenen Zeichenkette übereinstimmt
+##########################################
+//Falls keine Datenbank erstellt und eigenbunden ist, dann:
+xampp starten
+Datenbank erstellen z.B.  blog_laravel_webfull02 (beispiel)
+
+Die Datenbank in der Datei .env eintragen
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE= blog_laravel_webfull02       (hier eintragen)
+DB_USERNAME=root
+DB_PASSWORD=
+------------------------------
+Zwischenspeicher löschen
+
+php artisan config:cache

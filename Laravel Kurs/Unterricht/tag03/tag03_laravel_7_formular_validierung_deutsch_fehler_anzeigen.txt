@@ -1,0 +1,170 @@
+#############################################################
+Validierung + alle Felder in deutsch + Fehlermeldung ausgeben
+#############################################################
+Der Nächste Schritt ist die Validierung...
+----------
+Validierung der Felder
+
+in Feldern nichts schreiben und auf absenden klicken
+bekommt man Fehlermeldung weil Felder nicht leer sein dürfen
+----
+wenn in der migration stehen würde 
+
+$table->text('beschreibung')->nullable();
+
+dann würde das gehen.
+aber wir lassen das so, weil die dürfen nicht leer sein.
+----
+also machen wir die Validierung
+
+in PostController.php gehen und die Funktion store() ergänzen 
+
+public function store(Request $request)
+{
+	//das ist neu
+	$request->validate(
+		[
+			'name1' => 'required|min:3',
+			'kommentar1' => 'required|min:5',
+		]
+	);
+	
+  .......unten ist alt und soll stehen beliben...dazu kommt validate() von oben
+	$post = new Post(
+						[
+							//'nameDerSpalteInDB' => $request['nameDesFeldesInFormular']
+							'name' => $request['name1'],
+							'beschreibung' => $request['kommentar1']
+						]
+					);
+-----------
+ich möchte, dass meine Daten im Formular stehen und nicht verschwinden falls was fehlt
+
+resources/views/post/create.blade.php öffnen
+
+im Formlar schreiben:  (value mit old() ist neu)
+
+<input type="text"  name="name1" value="{{ old('name1') }}" />
+<textarea name="kommentar1">{{ old('kommentar1') }}</textarea>
+-----------
+Fehlermeldung ausgeben
+
+in "resources/views/layouts/app.blade.php"  gehen und schreiben
+
+ <main class="py-4">
+	@if($errors->any())
+		<div class="container">
+			<div class="alert alert-danger">
+				Bitte überprüfe deine Eingaben
+			</div>
+		</div>
+	@endif
+	
+	//unten ist alt und soll stehen bleiben
+  @yield('content')
+ </main>
+
+
+-------------------------
+app.blade.php aufmachen (resources/views/layouts/app.blade.php)
+
+1:
+
+ <main class="py-4">
+	@if($errors->any())
+		<div class="container">
+			<div class="alert alert-danger">
+				Bitte überprüfe deine Eingaben
+			</div>
+		</div>
+	@endif
+		
+     @yield('content')
+ </main>
+
+ danach testen....
+------------------------
+Fehler detailiert ausgeben 
+2:
+
+Punkt 1 ändern bzw erweitern.
+@if($errors->any())
+	<div class="container">
+	<div class="alert alert-danger">
+		Bitte überprüfe deine Eingaben
+		<ul>
+			@foreach($errors->all() as $error)
+			<li>{!! $error !!}</li>
+			@endforeach
+		</ul>
+  </div>
+	</div>
+@endif
+
+danach testen....
+-----------------------
+Meldungen in deutsch anzeigen
+damit das klappt die Applikation auf deutsch umstellen
+3:
+
+die Datei "config/app.php" öffnen
+
+dort die Werte ändern
+----
+
+'locale' => 'en',   // das ist der Standardwert
+
+ ändern in 
+
+'locale' => 'de',
+
+und auch ändern
+  'timezone' => 'Europe/Berlin',
+----
+Datei speichern und danach cache löschen
+
+php artisan config:cache
+danach testen....
+-----------------------
+jetzt brauchen wir die deutschen Meldungen
+4:
+
+-in den Ordner "resources/lang"     gehen
+-dort einen Ordner  "de"   anlegen
+-die Datei  validation.php von "en" in "de" kopieren
+-----------------------
+5:
+
+in "resources/lang/de/validation.php" stehen die ganzen Meldungen.
+die Meldung, die man braucht in Deutsch schreiben
+
+
+'min' => [
+        'numeric' => 'The :attribute must be at least :min.',
+        'file' => 'The :attribute must be at least :min kilobytes.',
+        'string' => ':attribute muss mindestens :min Zeichen haben.',
+        'array' => 'The :attribute must have at least :min items.',
+  ],
+	
+'required' => ':attribute ist ein Pflichtfeld.',
+-----------------------
+der 1.Buchstabe soll gross und das Wort fett
+6:
+
+'min' => [
+        'numeric' => 'The :attribute must be at least :min.',
+        'file' => 'The :attribute must be at least :min kilobytes.',
+        'string' => '<strong style="text-transform: capitalize;">:attribute</strong> muss mindestens :min Zeichen haben.',
+        'array' => 'The :attribute must have at least :min items.',
+  ],
+
+'required' => '<strong style="text-transform: capitalize;">:attribute</strong> ist ein Pflichtfeld.',
+-----------
+das ist der Grund, warum in "resources/views/layouts/app.blade.php"  (da, wo die Fehlermeldungen angezeigt werden)
+
+<li>{!! $error !!}</li>
+
+steht, weil wir auch eigene html-Elemente schreiben können, 
+sonst packt er das in htmlspecialchars() rein
+###############################################
+

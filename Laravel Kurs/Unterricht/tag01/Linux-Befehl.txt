@@ -1,0 +1,64 @@
+Windows PowerShell oder Eingabeaufforderung starten
+#######################################
+Ein Linux-Befehl ist ein Programm oder Dienstprogramm, das auf der Kommandozeile ausgeführt wird. 
+Eine Kommandozeile ist eine Schnittstelle, die Textzeilen entgegennimmt und sie in Anweisungen für deinen Computer umwandelt.
+
+Jede grafische Benutzeroberfläche (GUI) ist nur eine Abstraktion von Befehlszeilenprogrammen. 
+Wenn du zum Beispiel ein Fenster schließt, indem du auf das „X“ klickst, steckt dahinter ein Befehl. 
+#######################################
+Fenster aufräumen
+clear
+cls 
+--------------------------------------
+Wer bin ich
+whoami
+--------------------------------------
+erzeichnis anzeigen
+ls
+--------------------------------------
+Verzeichnis wechseln „change directory“ 
+cd
+--------------------------------------
+Gehe eine Ebene höher
+cd ..
+--------------------------------------
+Gehe zum RootOrdner
+cd \
+--------------------------------------
+Der Befehl pwd steht für „print working directory“ und gibt den absoluten Pfad des Verzeichnisses aus, in dem du dich befindest.
+pwd
+--------------------------------------
+Der echo-Befehl zeigt einen bestimmten Text im Terminal an — so einfach ist das:
+echo 'Hallo'
+--------------------------------------
+ping ist das beliebteste Netzwerk-Terminalprogramm, um die Netzwerkverbindung zu testen. ping hat viele Optionen, aber in den meisten Fällen wirst du es benutzen, um eine Domain oder IP-Adresse abzufragen:
+ping google.de
+--------------------------------------
+Dieser Befehl zeigt eine Liste mit den Befehlen an, die du in der Vergangenheit verwendet hast:
+history
+--------------------------------------
+Erzeugt Verzeichnisse "make directory"
+mkdir
+--------------------------------------
+remove directory (Verzeichnis löschen; das Verzeichnis muß leer sein!) 
+rm
+RD/RMDIR
+--------------------------------------
+Beendet die aktuelle Shell-Sitzung
+exit
+--------------------------------------
+Beendet Programme
+kill
+--------------------------------------
+informiert Sie über Ihr Netzwerk
+ipconfig
+--------------------------------------
+Datum anzeigen
+date
+--------------------------------------
+TIME (geht nur in DOS)
+  Gibt die Systemzeit aus bzw. ändert diese.
+--------------------------------------
+ver (geht nur in DOS)	
+	Anzeige der laufenden Dos-Version
+--------------------------------------

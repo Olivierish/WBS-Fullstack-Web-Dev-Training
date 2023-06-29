@@ -1,0 +1,386 @@
+------------------------------
+mit Hilfe von cmd oder powerShell in den Ordner gehen z.B. myProject, der vorher angelegt wurde
+(das 1.Fenster)
+
+php artisan serve
+oder 
+C:\xampp\php\php.exe artisan serve
+
+die Adresse kopieren und im Browser eingeben
+http://127.0.0.1:8000
+
+das Fenster, wo der Server gestartet wurde darf nicht geschlossen werden, solange man mit Laravel arbeitet
+-------------
+(das 2.Fenster)
+
+alle anderen Befehle mit php artisan in einem neuen Fenster (cmd oder powerShell) schreiben
+##############
+#paar Infos zum testen
+
+in routes/web.php gehen und testen
+
+Route::get('/gruss', function () {
+    return  'Hallo Welt, wie geht es dir?';
+});
+
+##############
+Route::get('/gruss', function () {
+   wird ausgeführt, wenn eine GET-Anfrage (GET-Methode) verwendet wird
+});
+----
+Route::post('/', function () {
+    wird ausgeführt, wenn eine POST-Anfrage (POST-Methode) verwendet wird
+});
+----
+Route::put('/', function () {
+    wird ausgeführt, wenn eine PUT-Anfrage verwendet wird
+});
+----
+Route::delete('/', function () {
+    wird ausgeführt, wenn eine DELETE-Anfrage verwendet wird
+});
+----
+Route::any('/', function () {
+    wird ausgeführt, wenn egal welche HTTP-Methode verwendet wird
+});
+----
+Route::match(['get','post'], '/' , function () {
+    wird ausgeführt, wenn eine GET- oder POST-Anfragen verwendet werden
+});
+##############
+wenn einer im Browser eingibt: http://127.0.0.1:8000/gruss
+dann wird angezeigt
+
+Hallo Welt, wie gehts es dir?
+##############
+Route::get('/name/{wert1}', function ($param1) {
+    return  'Hallo '.$param1;
+});
+##############
+Route::get('/name/{wert?}',function($param1='kein Name'){
+	return 'Moin Moin '.$param1;
+});
+##############
+Route::get('/name/{param1}/vorname/{param2}', function ($param1, $param2) {
+    return  'Hallo '.$param1.' '.$param2;
+});
+
+wenn einer im Browser eingibt: http://127.0.0.1:8000/name/Merkel/vorname/Angela
+dann wird angezeigt
+
+Hallo Merkel Angela
+------
+wenn einer im Browser eingibt: http://127.0.0.1:8000/name/Boss/vorname/Hugo
+dann wird angezeigt
+
+Hallo Boss Hugo
+##############
+Route::get('/name/{wert?}',function($param1='kein Name'){
+	return 'Moin Moin '.$param1;
+})->where('wert','[A-Za-z]+');
+##############
+Route::get('/name/{id}/{wert}',function($param1, $param2){
+	return 'Moin Moin '.$param2.'<br />Deine ID lautet: '.$param1;
+})->where(['wert'=>'[A-Za-z]+','id'=>'[0-9]+']);
+##############
+Route::get('/kdnr/{id}/name/{wert}',function($param1, $param2){
+	return 'Moin Moin '.$param2.'<br />Deine ID lautet: '.$param1;
+})->where(['wert'=>'[A-Za-z]+','id'=>'[0-9]+']);
+##########################################
+//Falls keine Datenbank erstellt und eigenbunden ist, dann:
+xampp starten
+Datenbank erstellen z.B.  blog_laravel_webfull01 (beispiel)
+
+Die Datenbank in der Datei .env eintragen
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE= blog_laravel_webfull02       (hier eintragen)
+DB_USERNAME=root
+DB_PASSWORD=
+------------------------------
+Zwischenspeicher löschen
+
+php artisan config:cache
+------------------------------
+Tabelle user migrieren und anschliessend sich registrieren lassen
+
+php artisan migrate
+---------
+durch den Befehl-> geht in den Ordner database->migrations
+und alle Dateien, die dort stehen werden eingebunden
+---------
+im Moment die user-Dateien
+---------
+wenn die Tabelle "users" schon eingebunden wurde, bekommt man:
+noting to migrate
+(nochmal die Dateien einbinden, macht er nicht)
+----------
+sich registrieren und anmelden
+----------
+Jetzt wird der User in der Tabelle "users" gespeichert
+##########################################
+Tabelle anlegen (eigene neue)
+-----------------------------------------------
+php artisan make
+
+make ist eine Kommando, mit der man leere Dateien erzeugen kann
+erstellt für uns leere dateien, die wir brauchen
+
+php artisan make:model -h
+kriegt man Hilfe zum Befehl
+------------------------------------------------
+php artisan make:model Post -a
+
+Durch -a werden Model, Controller, Migration, Seeder usw. erstellt
+-------------
+die Datei öffnen (Name kann auch anders sein...anderes Datum usw)
+database->migrations->2023_06_27_064930_create_posts_table.php
+
+Datum kann auch unterschiedlich sein....
+--------------
+dort schreiben in Funktion up...
+
+
+$table->increments('id');
+$table->string('name');
+$table->text('beschreibung');
+$table->timestamps();
+--------------
+sollte so aussehen
+
+public function up()
+    {
+					Schema::create('posts', function (Blueprint $table) {
+					$table->increments('id');
+					$table->string('name');
+					$table->text('beschreibung');
+					$table->timestamps();
+        });
+    }
+--------------
+Tabelle migrieren
+
+php artisan migrate
+--------------
+Jetzt sollte es in der Datenbank, eine Tabelle posts geben
+##########################################
+controller erstellen
+im 2. Fenster schreiben:
+
+php artisan make:controller MyController
+
+Datei liegt im Ordner app/Http/controllers->MyController.php
+
+im MyController.php eine Funktion erstellen
+-------------
+public function index() {
+	$users = [
+            [
+                'name' => 'Mustermann',
+                'vorname' => 'Tom',
+                'ort' => 'Paris'
+            ],
+            [
+                'name' => 'Musterfrau',
+                'vorname' => 'Anna',
+                'ort' => 'Sylt'
+            ],
+            [
+                'name' => 'Boss',
+                'vorname' => 'Hugo',
+                'ort' => 'Bangkok'
+            ]
+        ];
+	return view('referenzen')->with('daten', $users);	
+}
+ ------------
+im "routes/web.php" den "Controller" aufrufen
+Route::get('/portfolio', 'MyController@index');
+--------------
+in "referenzen.blade.php" schrieben
+
+ @foreach($daten AS $user) 
+  <ul class="list-group m-2">
+    <li class="list-group-item">{{ $user['name'] }}</li>
+    <li class="list-group-item">{{ $user['vorname'] }}</li>
+    <li class="list-group-item">Wohnort: {{ $user['ort'] }}</li>
+  </ul>
+ @endforeach
+##########################################
+##########################################
+Datentypen in Laravel
+https://laravel.com/docs/4.2/schema
+##########################################
+##########################################
+Jetzt sollte es in der Datenbank, eine Tabelle posts geben
+------------------------------------------
+PostController (app/http/controllers)
+und 
+web.php (routes/web.php)
+aufmachen
+------------------------------------------
+in "routes/web.php" schreiben
+
+Route::resource('post','PostController');
+--------------
+resource ist die abkürzung für diese 7 routes
+ohne ressource musste man so schreiben:
+
+Route::get('post','PostController@index');
+Route::get('post/create','PostController@create');
+Route::post('post','PostController@store');
+Route::get('post{id}','PostController@show');
+Route::get('post/{id}/edit','PostController@edit');
+Route::put('post/{id}','PostController@update');
+.......
+für jeden Schritt die Funktion aufrufen...zu viel Arbeit
+------------------------------------------
+PostController hat
+7 Funktionen
+
+index-> alle Datensätze anzeigen
+
+create-> zeigt formular für einen Datensatz
+
+store-> speichert den neuen Datensatz
+
+show-> zeigt einen einzelnen Datensatz
+
+edit-> bearbeitet einzelnen Datensatz
+
+update-> die Bearbeitung durchgeführt
+
+delete-> löscht einen Datensatz
+-----------------------------------------
+die Routes sichtbar machen (URL, die zu post gehören)
+php artisan route:list --name=post
+
+-----------------------------------------
+die Routes sichtbar machen (URL, die zu post gehören)
+php artisan route:list --name=post
+--------------
+in routes/web.php
+steht
+Route::resource('post','PostController');
+---------------
+deswegen können wir den Befehl von oben ausführen (php artisan route:list --name=post)
+hier sieht man auch, was in href stehen sollte damit die 7 Methoden
+von "PostController.php" aufgerufen werden können
+-----------------------------------------
+in resources/views   gehen und einen Ordner "post" anlegen
+
+"about.blade.php" in "post" rein tun und unter "index.blade.php" speichern bzw. umbenennen
+-----------------------------------------
+einen Link "Beiträge" einbauen
+
+resources/views->layouts->app.blade.php
+
+<li class="nav-item">
+    <a class="nav-link {{ Request::is('post') ? 'active' : '' }}" href="/post">Beiträge</a>
+</li>
+-------------
+'post*' -> beduetet -> Der Link "Beiträge" soll hervorgehoben werden
+wenn er der AdressZeile steht was mit post
+post
+post/create
+post/1
+usw.
+-----------------------------------------
+PostController (app/http/controllers) öffnen
+
+folgendes testen:
+
+public function index()
+{
+  echo 'Hallo';
+}
+
+dann:
+
+public function index()
+{
+  // echo 'Hallo';
+  return view('post.index');
+}
+
+Finalversion:
+public function index()
+{
+	$pt = Post::all();
+	return view('post.index')->with('beitraege',$pt);
+}
+
+//all() -> Alle Daten einer Tabelle anzeigen
+//with() Daten weitergeben z.B. per eine Variable(bei uns heisst die Variable beitraege)
+//beitraege übernimmt alle Daten von $pt
+//$pt holt alle Daten der Tabelle posts ( $pt = Post::all()  )
+-----------
+post.index => bedeutet => geh in den Ordner resources/views/post und nimm die Datei index.blade.php
+post.index = post/index.blade.php
+----------------------------------------
+in post->index.blade.php  schreiben:
+
+<div class="card-body">
+	<ul class="list-group">
+		@foreach($beitraege as $beitrag)
+			<li class="list-group-item">{{ $beitrag->name }}</li>
+		@endforeach
+	</ul>
+</div>
+
+//die variable beitraege kommt mit with() von der Funktion index
+----------------------------
+############################
+#create
+############################
+in "index.blade.php" (resources/views/post/index.blade.php) nach ul schreiben
+
+<div class="card-body">
+  <ul class="list-group">
+		@foreach($beitraege AS $beitrag)
+			<li class="list-group-item">
+				{{	$beitrag->name	}}
+			</li>
+		@endforeach
+</ul> 
+								
+<a href="post/create" class="btn btn-success mt-2">
+	Neuen Beitrag anlegen
+</a>
+------------------------------------------
+index.blade.php unter einem neuen Namen speichern, z.B.
+
+create.blade.php
+
+jetzt liegen im Ordner "resources/views/post" 2 Dateien
+index und create
+-----------------------------
+in 'resources->views->post->create.blade.php' schreiben
+
+<div class="card">
+ <div class="card-header">Neuen Beitrag anlegen</div>
+
+  <div class="card-body">
+		//hier komt ein Formular
+	
+    <a href="/post" class="btn btn-primary float-right">
+				zurück
+		</a>						
+  </div>
+</div>
+----------------------------
+PostController (app/http/controllers) öffnen
+
+folgendes testen:
+
+public function create()
+{
+  //echo 'ich bin create';
+	return view('post.create');
+}
+---------------------------
+wenn man auf den Link "Neuen Beitrag anlegen" klickt
+dann soll die Meldung oder die Datei 'post.create'
+angezeigt werden

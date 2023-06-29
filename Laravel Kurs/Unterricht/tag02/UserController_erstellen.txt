@@ -1,0 +1,13 @@
+#Wir wollen alle User anzeigen und einen User detaliiert
+
+#UserController ertsellen
+php artisan make:controller UserController -r --model=User
+
+#-r => dann gibt es die 7 Methoden
+#--model=User => verknüpfe den UserController mit Model User
+--------------------------------
+#in "routes/web.php" schreiben:
+Route::resource('user','UserController');
+--------------------------------
+#RouteListe sichtbar machen
+php artisan route:list --name=user

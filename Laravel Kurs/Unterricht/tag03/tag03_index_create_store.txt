@@ -1,0 +1,288 @@
+------------------------------------------
+mit Hilfe von cmd oder powerShell in den Ordner gehen z.B. myProject, der vorher angelegt wurde
+(das 1.Fenster)
+
+php artisan serve
+oder 
+C:\xampp\php\php.exe artisan serve
+
+die Adresse kopieren und im Browser eingeben
+http://127.0.0.1:8000
+
+das Fenster, wo der Server gestartet wurde darf nicht geschlossen werden, solange man mit Laravel arbeitet
+-------------
+(das 2.Fenster)
+
+alle anderen Befehle mit php artisan in einem neuen Fenster (cmd oder powerShell) schreiben
+############################
+#paar Tests
+############################
+in "routes/web.php" gehen
+
+Route::get('/wert acr?}', function (int $number=1) {
+	$erg = '';
+	if(is_int($number)) {
+		for($i = 1; $i <= $number; $i++) {
+		 $erg .= "<p>${i} x ${i} = " . $i * $i .'</p>';
+	 }
+	} 
+	
+	return $erg;
+});
+
+############################
+#create
+############################
+in "index.blade.php" (resources/views/post/index.blade.php) nach ul schreiben
+
+<div class="card-body">
+  <ul class="list-group">
+		@foreach($beitraege AS $beitrag)
+			<li class="list-group-item">
+				{{	$beitrag->name	}}
+			</li>
+		@endforeach
+</ul> 
+								
+<a href="post/create" class="btn btn-success mt-2">
+	Neuen Beitrag anlegen
+</a>
+------------------------------------------
+index.blade.php unter einem neuen Namen speichern, z.B.
+
+create.blade.php
+
+jetzt liegen im Ordner "resources/views/post" 2 Dateien
+index und create
+-----------------------------
+in 'resources->views->post->create.blade.php' schreiben
+
+<div class="card">
+ <div class="card-header">Neuen Beitrag anlegen</div>
+
+  <div class="card-body">
+		//hier komt ein Formular
+	
+    <a href="/post" class="btn btn-primary float-end">
+				zurück
+		</a>						
+  </div>
+</div>
+----------------------------
+PostController (app/http/controllers) öffnen
+
+folgendes testen:
+
+public function create()
+{
+  //echo 'ich bin create';
+	return view('post.create');
+}
+---------------------------
+wenn man auf den Link "Neuen Beitrag anlegen" klickt
+dann soll die Meldung oder die Datei 'post.create'
+angezeigt werden
+------------------------------------------
+in create.blade.php ein Formular erstellen
+
+<div class="card">
+    <div class="card-header">Neuen Beitrag anlegen</div>
+      <div class="card-body">
+                  
+			<form action="/post" method="post">
+				//siehe Hinweis unten	
+				@csrf
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name1" class="form-control" />
+				</div>
+						
+				<div class="form-group">
+					<label for="kommentar">Kommentar</label>
+					<textarea id="kommentar" name="kommentar1" class="form-control"></textarea>
+				</div>
+						
+				<input type="submit" value="neuen Beitrag anlegen" class="btn btn-success mt-2" />
+			</form>
+				  
+			<a href="/post" class="btn btn-primary mt-2 float-end">
+				zurück
+			</a>
+				  
+	</div>
+</div>
+------------------------------------------
+@csrf
+
+Eine Cross-Site-Request-Forgery (meist CSRF oder XSRF abgekürzt, deutsch etwa 
+Website-übergreifende Anfragenfälschung) ist ein Angriff auf ein Computersystem, 
+bei dem der Angreifer eine Transaktion in einer Webanwendung durchführt.
+
+csrf-token -> uns davor schützt, dass einer von außen Daten einfügt,
+wenn wenn ich selber auf der Seite bin...sollen Daten eingefügt werden
+
+Durch den Befehlt "@csrf"  verschwindet die Fehlermeldung
+419 | Page Expired
+------------------------------------------
+Falls noch nicht passiert ist:
+in PostController.php gehen (app/Http/Controllers/PostController.php)
+
+Wenn jemand, auf den Link klickt "neuen Beitrag anlegen" (von der Seite "resources/views/post/index.blade.php")
+dann wird die Seite "create.blade.php" aufgerufen und dort steht das Formular
+
+public function create()
+{
+    return view('post.create');
+}
+------------------------------------------
+Jetzt soll der insert klappen:
+in PostController.php gehen
+
+public function store(Request $request)
+{
+		
+	$post = new Post(
+		[
+			//'nameDerSpalteInDB' => $request['nameDesFeldesInFormular'],
+			'name' => $request['name1'],
+			'beschreibung' => $request['kommentar1']
+		]
+	);
+		
+	$post->save();		//alles soll gespeichert werden
+	return redirect('/post');	//nachdem Speichern, Weiterleitung zu /post (dort sieht man alle Beiträge)
+}
+------------------------------------------
+Info:
+
+'Spalte in der Tabelle posts' => 'Name des feldes im Formular'
+'name' => $request['name1'],
+------------------------------------------
+Beim Speichern der Daten, kommt die Fehlermeldung fillable
+
+Wir müssen es erlauben, welche Spalten dürfen beschrieben werden?
+------------------------------------------
+das Model "Post.php"  öffnen (app/Post.php)
+dort muss definiert werden, welchen Spalten dürfen beschrieben werden
+
+class Post extends Model
+{
+    protected $fillable = ['name','beschreibung'];
+}
+###########################################
+//kurze Wiederholung falls nicht gemacht
+wenn in URL "/post" steht, dann wird der Link "Beiträge" hervorgehoben
+
+wenn dort aber  "/post/create" steht, dann funktioniert die Hervorhebung des Links nicht
+
+----------------
+Ziel
+
+im Falle von: alles, was mit post in URL zu tun hat
+/post/create
+/post/{id}/show
+usw.
+
+dann soll der Link "Beiträge" hervorgehoben werden.
+----------------
+die Datei "resources/views/layouts/app.blade.php" öffnen
+
+dort den Eintrag:
+
+<li class="nav-item">
+  <a class="nav-link {{ Request::is('post') ? 'btn btn-primary text-light ' : '' }}" href="/post">
+		Beiträge
+	</a>
+</li>
+
+ändern in "post*":
+
+<li class="nav-item">
+  <a class="nav-link {{ Request::is('post*') ? 'btn btn-primary text-light' : '' }}" href="/post">
+		Beiträge
+	</a>
+</li>
+----------------------------
+############################
+#show
+#einen Beitrag detailiert anzeigen
+----------------------------------------
+sich die Route von Post ansehen (wenn nicht gemacht dann sichtbar machen)
+
+php artisan route:list --name=post
+############################
+#das steht in der Liste bei show 
+post/{post}
+
+{} das ist Platzhalter und steht für die ID des posts
+----------------------------
+Einen Link erstellen (Detailansicht)
+
+in index.blade.php gehen  (resources/views/post/index.blade.php)
+
+hinter dem Namen einen Link erstellen
+
+<li class="list-group-item">
+	{{ $post->name }}		//das ist alt (tage davor)
+	
+	//unten ist neu
+	<a href="/post/{{ $post->id }}" class="ml-2 btn btn-info btn-sm">
+		Detailansicht
+	</a>
+</li>
+----------------------------------------
+in den Ordner resources/views/post gehen
+
+die "index.blade.php"
+
+unter dem Namen 
+
+"show.blade.php"  speichern
+----------------------------------------
+in "PostController" schreiben  (app/Http/Controllers/PostController.php)
+
+public function show(Post $post)
+{
+  return view('post.show')->with('post',$post);  //das ist neu 
+}
+----------------------------------------
+in "show.blade.php schreiben"  (resources/views/post/show.blade.php)
+
+<div class="card">
+    <div class="card-header">Beitrag - Detailansicht</div>
+
+    <div class="card-body">
+		<p> <b>{{ $post->name }} </b></p>
+		<!-- <p> {{ $post->beschreibung }} </p> -->
+		
+		//oder 
+		
+		<p> {!! nl2br($post->beschreibung) !!} </p>
+		
+		//nl2br() erzeugt ein <br /> (falls im Text ein Zeilenumbruch vorkommt dann wird ein <br >/ erzeugt)
+		//deshalb muss man schreiben {!! weil hier html-Element erzeugt wird(<br />) !!}
+					
+		<a href="/post" class="btn btn-primary mt-2 float-end">
+			zurück 
+		</a>
+	</div>
+</div>
+----------------------------------------
+jetzt fehlt nur noch ein Link, wo man drauf klickt und 
+die Detailansicht angezeigt wird
+
+in index.blade.php gehen  (resources/views/post/index.blade.php)
+
+hinter dem Namen einen Link erstellen
+
+<li class="list-group-item">
+	{{ $post->name }}		//das ist alt (tage davor)
+	
+	//den Namen kann man auch ändern (alles soll Groß dargestellt werden, wenn gewünscht)
+	<strong class="text-uppercase">{{ $post->name }}</strong>   //neu
+	
+	//unten ist neu
+	<a href="/post/{{ $post->id }}" class="ml-2 btn btn-info btn-sm">
+		Detailansicht
+	</a>
+</li>

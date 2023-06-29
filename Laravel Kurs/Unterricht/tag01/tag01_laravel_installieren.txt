@@ -1,0 +1,80 @@
+Laravel ist ein freies PHP-Webframework, das dem MVC-Muster folgt. 
+Es wurde 2011 von Taylor Otwell initiiert. 
+Der Quelltext von Laravel kann über die Code-Hosting-Plattform GitHub abgerufen werden und steht unter der MIT-Lizenz
+############################################################
+Composer ist ein anwendungsorientierter Paketmanager für die Skriptsprache PHP. 
+Composer wird über die Kommandozeile ausgeführt und installiert Abhängigkeiten eines PHP-Programmes.
+############################################################
+npm steht für Node Package Manager.
+Es hilft bei der Installation verschiedener Pakete und beim Auflösen ihrer verschiedenen Abhängigkeiten. 
+Es hilft sehr bei Ihrer Node-Entwicklung. 
+NPM hilft Ihnen bei der Installation der verschiedenen Module, die Sie für Ihre Webentwicklung benötigen, und bietet Ihnen nicht nur eine ganze Reihe von Funktionen, die Sie möglicherweise nie benötigen.
+############################################################
+############################################################
+Laravel installieren
+############################################################
+############################################################ 
+composer create-project laravel/laravel example-app
+
+composer create-project laravel/laravel:9.5 my_projekt_01
+
+(wir nehmen den Befehl weil php 7 aufm rechner)
+composer create-project laravel/laravel:7.30.1 my_project_01
+---------------
+cd my_projekt_01
+---------------
+ls 
+---------------
+artisan 
+
+PHP Kommando-Programm bei Laravel
+Das Werkzeug, das es ermöglicht, mit Laravel-Anwendungen über die Befehlszeile zu interagieren.
+Struktur sich anzeigen lassen
+----------------
+php artisan serve
+
+jetzt ist das Projekt unter 
+http://127.0.0.1:8000/ erreichbar
+----------------
+was im Frontendbereich zu sehen ist, kommt von:
+
+routes/web.php (aufruf)
+resources/views/welcome.blade.php
+############################################################
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+wir wollen login und bootstrap benutzen (dise Schritte gehen bei euch nicht weil kein composer und npm installiert)
+bei euch ist alles fertig
+----------------
+composer require laravel/ui 2.4.0
+
+php artisan ui bootstrap --auth
+
+----------------
+Version von bootstrap ändern:
+
+package.json
+
+ "bootstrap": "^5.0.0",
+----------------
+npm install
+
+npm run dev 
+
+####################
+Font Awesome einbinden bzw. installieren
+
+npm install --save @fortawesome/fontawesome-free
+
+in node_modules gibt es einen Ordner @fontawesome
+
+in "resources/sass->app.scss"  gehen und dort schreiben
+
+//Fontawesome einbinden
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+danach:
+npm run dev 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+############################################################
+############################################################
+############################################################

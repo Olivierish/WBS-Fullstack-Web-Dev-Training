@@ -1,0 +1,21 @@
+#############################################################
+Validierung + alle Felder in deutsch + Fehlermeldung ausgeben
+#############################################################
+Einzelne Felder validieren
+Feld soll bei Fehler einen border bekommen
+und die Meldugen sollen unterhalb des Feldes angezeigt werden
+
+in "resources/views/post/create.blade.php" gehen und das Formular ändern bzw. ergänzen
+
+<input type="text" class="form-control {{ $errors->has('name1') ? 'border-danger' : '' }}" id="name" 
+			name="name1" value="{{ old('name1') }}" />
+<small class="form-text text-danger">{!! $errors->first('name1') !!}</small>
+
+------
+
+das gleiche für textarea machen
+
+<textarea id="kommentar" name="kommentar1" 
+	class="form-control {{ $errors->has('kommentar1') ? 'border-danger' : '' }}">{{ old('kommentar1') }}</
+textarea>
+<small class="text-danger">{!! $errors->first('kommentar1') !!}</small>

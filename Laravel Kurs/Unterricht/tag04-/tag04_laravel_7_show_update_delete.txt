@@ -1,0 +1,217 @@
+------------------------------
+mit Hilfe von cmd oder powerShell in den Ordner gehen z.B. myProject, der vorher angelegt wurde
+(das 1.Fenster)
+
+php artisan serve
+oder 
+C:\xampp\php\php.exe artisan serve
+
+die Adresse kopieren und im Browser eingeben
+http://127.0.0.1:8000
+
+das Fenster, wo der Server gestartet wurde darf nicht geschlossen werden, solange man mit Laravel arbeitet
+-------------
+(das 2.Fenster)
+
+alle anderen Befehle mit php artisan in einem neuen Fenster (cmd oder powerShell) schreiben
+###############################################
+die Routes sichtbar machen (URL, die zu post gehören)
+php artisan route:list --name=post
+###############################################
+edit
+
+einen Datensatz bearbeiten
+
+sich route ankucken
+
+post/{post}/edit
+
+post/{idDesDatensatzes}/edit
+----------------------------------------
+zu "index.blade.php" gehen  (resources/views/post/index.blade.php)
+
+einen neuen Link erstellen, für die Bearbeitung
+der neue Link soll nach Detailansicht stehen
+
+
+<a href="/post/{{ $post->id }}/edit" class="ml-2 btn btn-outline-primary btn-sm">
+	Bearbeiten
+</a>
+----------------------------------------
+für die Bearbeitung, brauchen wir ein view
+
+"create.blade.php" als "edit.blade.php" speichern  (resources/views/post/hier stehen die views)
+----------------------------------------
+in "PostController.php" gehen  (app/Http/Controllers/PostController.php)
+
+die befehle von show kann man in edit kopieren
+
+public function edit(Post $post)
+{
+   return view('post.edit')->with('post',$post); 
+}
+----------------------------------------
+in "edit.blade.php" gehen  (resources/views/post/edit.blade.php)
+
+alles bleibt gleich
+NUR eine Sache ändert sich
+Nimm den aktuellen Wert oder den Wert aus der Datenbank
+
+<div class="card-header">Beitrag bearbeiten</div>
+
+value="{{ old('name1') ?? $post->name }}"   //das in <input value="hier schreiben" /> 
+{{ old('kommentar1') ?? $post->beschreibung }}  //das in <textarea>hier schreiben"</textarea> 
+###############################################
+update
+php artisan route:list --name=post
+
+in "edit.blade.php" gehen  (resources/views/post/edit.blade.php)
+
+<form action="/post/{{ $post->id }}" method="post">
+@csrf
+@method('PUT')
+......
+
+@method('PUT') => dann weiss Laravel, dass das Formular für update benutzt wird
+----------------------------------------
+in "PostController.php" gehen  (app/Http/Controllers/PostController.php)
+
+die Funktion update bearbeiten
+
+#$request-> damit werden die Felder in form angesprochen
+#$post-> damit werden die Spalten in der Tabelle "posts" angesprochen
+
+public function update(Request $request, Post $post)
+{
+     $request->validate(
+			[
+				'name1' => 'required|min:3',
+				'kommentar1' => 'required|min:5',
+			]
+		);
+       
+		$post->update(
+			[
+				'name' => $request->name1,
+				'beschreibung' => $request->kommentar1
+			]
+		);
+		
+		return redirect('/post');
+}
+###############################################
+php artisan route:list --name=post
+
+delete
+Beitrag löschen
+
+in "index.blade.php" ein Formular einfügen  (resources/views/post/index.blade.php)
+z.B. nach bearbeiten
+
+<form action="/post/{{$post->id}}" method="post" class="d-inline-block ml-2">
+	@csrf
+	@method('DELETE')
+	<button type="submit" value="löschen" class="btn btn-outline-danger btn-sm">
+		löschen
+	</button>
+</form>
+
+@method('DELETE') => dann weiss Laravel, dass das Formular für delete benutzt wird
+----------------------------------------
+zu "PostController.php" gehen und dort schreiben (app/Http/Controllers/PostController.php)
+
+die Funktion destroy bearbeiten
+
+public function destroy(Post $post)
+{
+  $post->delete();
+	return redirect('/post');
+}
+----------------------------------------
+Bestättigung ob man wirklich den Datensatz löschen möchte
+
+in index.blade.php
+
+<form action="/post/{{$post->id}}" method="post" 
+				class="d-inline-block" onclick="return confirm('Wollen Sie wirklich den Datensatz löschen?');">
+----------------------------------------
+confirm() => BestätigungsFenster von JavaScript
+
+onclick ist ein bisschen veraltet aber funktioniert...dann in js addEventListener schreiben
+###############################################
+Datum formatieren
+---------------------
+in "resources/views/post/index.blade.php" gehen und nach Löschen schreiben...
+---------------------
+<button type="submit" class="btn btn-outline-danger btn-sm">
+   <i class="fa fa-trash"></i>
+   löschen
+/button>
+</form> das ist alt....
+<!--#################################-->
+#das ist neu----------
+
+<div class="float-end">
+@if( isset($beitrag->created_at)) 
+    {{$beitrag->created_at->diffForHumans() }}
+@else
+     kein Datum
+@endif  
+</div>
+
+
+#diffForHumans() ist eine Funktion von Carbon-Bibliothek
+#befindet sich unter "vendor->nesbot->carbon"
+#carbon erweitert die Date-Funktionen von PHP 
+###############################################
+###############################################
+Feld nachträglich in einer Tabelle einfügen
+##############################################
+###############################################
+Spalte "user_id" in Tabelle "posts"
+
+
+php artisan make:migration user_id_in_posts_table
+-----------------
+in "database/migration" gehen und die Datei "user_id_in_posts_table.php" aufmachen
+
+dadurch, dass wir gesagt haben "posts_table"
+weiss Laravel, irgendwas wird mit der Tabelle "posts" gemacht
+-----------------
+in "user_id_in_posts_table.php" schreiben:
+
+public function up()
+    {
+        Schema::table('posts', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->nullable()->after('id');
+						$table->foreign('user_id')
+									->references('id')->on('users')
+									->onDelete('cascade');
+        });
+    }
+
+----------------
+unsigned weil nur positive Werte erlaubt sind
+unsignedBigInteger  weil in der anderen Tabelle auch steht bigint sonst gibt es ärger
+
+onDelete('cascade')
+
+wenn ein user gelöscht wird dann soll auch sein post gelöscht werden
+----------------
+wir müssen die down Funktion auch ausfüllen
+
+public function down()
+{
+    Schema::table('posts', function (Blueprint $table) {
+        $table->dropForeign('user_id');
+				$table->dropColumn('user_id');
+    });
+}
+----------
+hier wird alles rückgängig gemacht, was im up steht
+falls wir fehler haben usw. dann kann man die migration rückgängig machen
+
+---------------
+Die migrate ausführen
+
+php artisan migrate
