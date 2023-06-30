@@ -1,0 +1,12 @@
+body #app{
+  background-color: rgb(47, 48, 10);
+  /* background-image: url("images/bg-mesh-grey-1-1.svg") !important; */
+  background-image: url("images/bg-mesh-white.svg") !important;
+  /* background-image: url("images/image.jpg") !important; */
+  background-position-y: 5%;
+  background-repeat: repeat-y;
+  background-size: contain;
+
+}
+
+

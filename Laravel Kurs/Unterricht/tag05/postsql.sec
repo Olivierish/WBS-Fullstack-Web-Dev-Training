@@ -1,0 +1,124 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 30. Jun 2023 um 10:57
+-- Server-Version: 10.4.22-MariaDB
+-- PHP-Version: 7.4.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Datenbank: `blog_laravel_webfull02`
+--
+
+--
+-- Daten für Tabelle `posts`
+--
+
+INSERT INTO `posts` (`id`, `user_id`, `name`, `beschreibung`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(2, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(3, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(4, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(5, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(6, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(7, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:54:55', '2023-06-30 08:54:55'),
+(8, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(9, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(10, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(11, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(12, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(13, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(14, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:24', '2023-06-30 08:55:24'),
+(15, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(16, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(17, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(18, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(19, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(20, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(21, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:25', '2023-06-30 08:55:25'),
+(22, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(23, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(24, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(25, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(26, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(27, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(28, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(29, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(30, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(31, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(32, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(33, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(34, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(35, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:27', '2023-06-30 08:55:27'),
+(36, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(37, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(38, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(39, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(40, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(41, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(42, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:29', '2023-06-30 08:55:29'),
+(43, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(44, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(45, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(46, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(47, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(48, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(49, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:30', '2023-06-30 08:55:30'),
+(50, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(51, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(52, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(53, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(54, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(55, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(56, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:31', '2023-06-30 08:55:31'),
+(57, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(58, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(59, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(60, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(61, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(62, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(63, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:32', '2023-06-30 08:55:32'),
+(64, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(65, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(66, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(67, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(68, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(69, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(70, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:33', '2023-06-30 08:55:33'),
+(71, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(72, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(73, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(74, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(75, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(76, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(77, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:35', '2023-06-30 08:55:35'),
+(78, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(79, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(80, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(81, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(82, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(83, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(84, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:36', '2023-06-30 08:55:36'),
+(85, NULL, 'Programmierung', 'Programmierung macht spaß', '2023-06-30 08:55:37', '2023-06-30 08:55:37'),
+(86, NULL, 'Tanzen', 'Tanzen tue ich sehr gerne', '2023-06-30 08:55:37', '2023-06-30 08:55:37'),
+(87, NULL, 'Laufen', 'Frische Luft tut gut', '2023-06-30 08:55:37', '2023-06-30 08:55:37'),
+(88, NULL, 'Laravel', 'Laravel ist einfach und sehr mächtig', '2023-06-30 08:55:37', '2023-06-30 08:55:37'),
+(89, NULL, 'PHP', 'PHP ist sehr einfach', '2023-06-30 08:55:37', '2023-06-30 08:55:37'),
+(90, NULL, 'Sonne und Strand', 'Sonne tut immer gut', '2023-06-30 08:55:37', '2023-06-30 08:55:37'),
+(91, NULL, 'JS', 'JS ist einfach', '2023-06-30 08:55:37', '2023-06-30 08:55:37');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
