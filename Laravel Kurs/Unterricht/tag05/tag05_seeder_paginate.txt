@@ -1,0 +1,119 @@
+##############################################
+#Es kann sein, dass bei den SchulRechnern, seeder nicht geht
+##############################################
+seeder ist wie eine Schablone
+um eine schnelle Löschung und neue Erstellung der Datenbank zu ermöglichen 
+die Datei befindet sich im Ordner "database/seeds"
+
+Es gibt ein seeder für Post
+database/seeds/PostSeeder.php
+
+der Grund, warum diese Datei in "database/seeds" schon exisitiert, ist:
+php artisan make:model Post -a
+
+Dadurch wurde auch seeder für Post schon erstellt   
+-------------------
+in den "database/seeds/DatabaseSeeder.php" gehen
+
+dort schreiben
+
+public function run()
+{
+   //hier den Seeder von Post aufrufen
+   $this->call(PostSeeder::class);
+}
+-------------------
+in "database/seeds/PostSeeder.php"  schreiben
+
+use Illuminate\Database\Seeder;
+//das ist neu+++++++
+use App\Post;
+//++++++++++++++++++++++++++++++
+class PostSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+	public function run()
+    {
+       $post = [
+				'Programmierung' => 'Programmieren macht spaß.',
+				'Tanzen' => 'Tanzen tue ich sehr gerne',
+				'Laufen' => 'Frische Luft tut immer gut',
+				'Laravel' => 'Laravel ist mächtig und einfach',
+				'PHP' => 'PHP ist sehr einfach',
+			];
+		
+		foreach($post AS $key=>$value) {
+			$post = new Post(
+				[
+					'name' => $key,
+					'beschreibung' => $value
+				]
+			);
+				$post->save();
+			}
+
+    }
+}
+-------------------
+danach seeder aufrufen
+
+php artisan db:seed      //hier wird in eine bestehenede DB geseeded
+
+php artisan migrate:fresh  --seed    //wird alles refresht dann geseedet
+###########################################
+User seeden (Kopien der Daten)
+
+in "database/seeds" gibt es keinen "UserSeeder.php"
+
+der Grund ist:
+Für das Post haben wir durch den Befehl:
+	php artisan make:model Post -a
+auch einen "PostSeeder.php" erstellt
+----------------------
+den Befehl schreiben und ausführen:
+
+php artisan make:seeder UserSeeder
+-----------------------
+die Datei "DatabaseSeeder.php" aufrufen und dort schreiben:
+
+public function run()
+{
+    //$this->call(PostSeeder::class);  //das könnte man kommentieren, falls nicht mehr nötig
+		$this->call(UserSeeder::class);   //das ist neu
+}
+----------------------
+php artisan migrate:fresh  --seed  
+-----------------------
+###########################################
+Bestimmte Anzahl der Datensätze pro Seite anzeigen
+Datenausgabe (paginate)
+
+in "app/Http/Controllers/PostController.php" gehen
+
+in die index-Funktion schreiben
+
+public function index()
+{
+		//echo 'Hallo ich bin index';
+		//return view('post.index');
+
+		//$pt = Post::all();
+				
+		$pt = Post::paginate(10);  //das ist neu
+		
+		return view('post.index')->with('beitraege', $pt);														
+}
+----------------------------
+danach in "resources/views/post/index.blade.php"  gehen
+
+nach den Link "Neuen Beitrag anlegen" das schreiben
+
+<div class="mt-3">
+	{{ $beitraege->links() }}
+</div>
+----------------------------
+

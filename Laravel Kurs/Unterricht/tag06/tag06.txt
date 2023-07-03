@@ -1,0 +1,312 @@
+#Wir wollen alle User anzeigen und einen User detaliiert
+
+#UserController ertsellen
+php artisan make:controller UserController -r --model=User
+
+#-r => dann gibt es die 7 Methoden
+#--model=User => verknüpfe den UserController mit Model User
+--------------------------------
+#in "routes/web.php" schreiben:
+Route::resource('user','UserController');
+--------------------------------
+#RouteListe sichtbar machen
+php artisan route:list --name=user
+--------------------------------
+#in "resources/views/layouts/app.blade.php" einen neuen Link erstellen
+<li class="nav-item">
+  <a href="/user" 
+		  class="nav-link {{Request::is('user*') ? 'btn btn-primary text-light' : ''}}" >Alle User</a>
+</li>
+--------------------------------
+#in "resources/views" einen Ordner für user erstellen
+#dort die Dateien "index.blade.php" und "show.blade.php" von "post" kopieren und anpassen
+# in "UserController.php" die Methoden index() und show() anpassen
+###############################################################
+#wenn keine Kommentare dann eine Meldung anzeigen
+-----------------------------------
+in "post/index.blade.php" gehen und paar Änderungen vornehmen 
+
+<div class="card-header blau">User-Kommentare ({{ $alle -> count() > 0 ?  $alle -> count()  : 'Kein Kommentar vorhanden' }}) </div>
+
+###############################################################
+wenn man bei "paginate" z.B. auf Seite 3 ist und einen Datensatz detailiert ansehen möchte
+und dann auf zurück-button klickt, wird man zur Seite 1 geschickt...
+NICHT GUT :-)
+wir wollen den User wieder zur Seite schicken woher er kam (z.B. 3)
+
+in "post/show.blade.php" gehen und den Link ändern 
+
+<a href="{{URL::previous()}}" class="btn btn-primary my-2 float-end">
+  zurück
+</a>
+###############################################################
+Die Daten sortieren
+PostController.php öffnen und dort in index-Funktion schreiben
+
+ public function index()
+    {
+        #echo 'Hallo ich bin index';
+        #$pt = Post::all();
+        #return view('post.index')->with('beitraege', $pt);
+				
+				$ptAll = Post::all();
+				#$pt = Post::paginate(10);
+				
+				$pt = Post::orderBy('created_at','DESC')->paginate(10); //das ist neu (sortiert absteigend)
+        return view('post.index')->with(['beitraege'=>$pt, 'alle' => $ptAll]);
+    }
+###############################################################
+#in "post/index.blade.php" gehen und den Wert ändern (hauptsache angemeldet)
+#Falls nicht gemacht dann machen
+
+@auth
+<a href="post/create" class="btn btn-success my-2">
+  <i class="fa-regular fa-plus"></i>
+  Neuen Beitrag anlegen
+</a>
+@endauth
+###############################################################
+Namen des KommentarVerfassers anzeigen und wie viele Kommentare er/sie schon geschrieben hat?
+
+{{ $beitrag->name }}
+
+<small class="text-primary">
+	von <i class="fa-solid fa-user"></i>
+	{{ $beitrag->user->name }}
+</small>
+---------------------------
+#wenn so geschrieben dann kriegen wir eine Fehlermeldung falls
+#einen Kommentar keinen Verfasser hat (user_id = NULL)
+#gibt es ja keine Verbindung zu einem user
+---------------------------
+#den code ändern und lieber in einer Abfrage schreiben 
+
+<small class="text-primary">
+	von <i class="fa-solid fa-user"></i>
+@if(isset($beitrag->user_id))
+	{{$beitrag->user->name }}
+	( {{$beitrag->user->posts->count()}} Kommentare)
+@else
+	Unbekannt
+@endif
+</small>
+---------------------------
+#das kann man auch mit einer Zeile so lösen (ternary - operator)
+<small class="text-primary">
+	von <i class="fa-solid fa-user"></i>
+	{{$beitrag->user_id ? $beitrag->user->name : 'Unbekannt'}}
+	{{$beitrag->user_id ? '('.$beitrag->user->posts->count().' Kommentare)' : ''}} 
+</small>
+---------------------------
+#wenn die Spalte user_id in der Tabelle "posts" den Wert NULL hat 
+#dann gibt es keinen Verfasser und soll 'Unbekannt' angezeigt werden
+###############################################################
+#den Verfasser von einem Kommentar als Link darstellen
+#wenn auf den Link geklickt wird dann soll die "Detailseite" des Users angezeigt werden 
+
+<a href="/user/{{$beitrag->user_id}}" class="text-primary">
+	{{ $beitrag->user->name }}
+</a>
+---------------------------
+php artisan route:list --name=user
+#wir gucken hier, was wir für die Methode show() schreiben müssen
+#UserController@show zeigt einen bestimmten Datensatz
+---------------------------
+#der ganze Bereich sieht dann so aus (könnte man auch die CSS-Klassen ändern)
+<small class="text-secondary">
+	von <i class="fa-solid fa-user"></i>
+	@if(isset($beitrag->user_id))
+		<a href="/user/{{$beitrag->user_id}}" class="text-primary">
+			{{ $beitrag->user->name }}
+		</a>
+		({{ $beitrag->user->posts->count()}} Kommentare)
+	@else
+		Unbekannt
+	@endif
+</small>
+
+---------------------------
+#falls nicht gemacht
+#in den Ordner "resources/views" gehen und einen Ordner "user" dort erstellen 
+
+#die Datei "show.blade.php" von "post" in den Ordner "user" kopieren und ändern
+---------------------------
+#in "UserController" gehen und dort in show schreiben:
+
+public function show(User $user)
+{
+  return view('user.show')->with('benutzer',$user);
+}
+---------------------------
+#in "show.blade.php" gehen und dort schreiben 
+
+<div class="card">
+  <div class="card-header">User - Detailansicht</div>
+  <div class="card-body">
+    <p> <b>{{ $benutzer->name }}</b> </p>
+		<p> <b>{{ $benutzer->motto ? strtoupper($benutzer->motto) : 'Kein Motto' }}</b> </p>
+    <p> {!! $benutzer->ueber_mich ? nl2br($benutzer->ueber_mich) : 'war zu faul um Info zu schreiben' !!} </p>
+
+    <a href="{{URL::previous()}}" class="btn btn-primary mt-2 float-end">
+      zurück
+    </a>
+  </div>
+</div>
+
+###############################################################
+#Erfolgsmeldungen ausgeben 
+
+------------------------------
+#in "PostController.php" gehen :
+#ganz oben session einbinden
+
+use Illuminate\Support\Facades\Session;
+
+# in der Methode store() schreiben:
+ public function store(Request $request)
+    {
+        #echo 'ich bin zum Speichern da';
+        $request->validate(
+            [
+                'name1' => 'required|min:3',
+                'kommentar1' => 'required|min:5'
+            ]
+        );
+
+        $post = new Post(
+				
+            [
+              'name' => $request['name1'],
+              'beschreibung' => $request['kommentar1'],
+							'user_id' => auth()->id()
+            ]
+        );
+
+        $post->save(); #alles soll gespeichert werden (in die Tabelle posts rein)
+        #return redirect('/post');  #das ist alt 
+				
+        #das ist neu (flush messages erzeugen)
+        return $this->index()->with('msg_success', 'Kommentar wurde eingefügt');
+
+        #oder sowas mit session erledigen
+				$msg = Session::get('msg', 'Kommentar <b>'.$post->name.'</b> wurde eingefügt');
+				return $this->index()->with('msg_success', $msg);
+
+        #wenn wir das so wie oben mit redirect lassen dann verschwinden die Meldungen 
+        #weil in route:list sind 2 Schritte 
+        #1. post wird ausgewertet 2. post.index wird ausgewertet 
+        #dadurch verschwinden die Meldungen unterwegs
+        #wenn die index() aufgerufen wird dann nur 1 Schritte
+        #bleibt auf der Seite und ruft die Methode index() auf
+        #  URI               | Name
+        #  post              | post.index
+    }
+------------------------------
+in "resources->views->layouts->app.blade.php" gehen und dort einen Bereich für die Meldungen definieren
+
+<main class="py-4">
+	@isset($msg_success)
+		<div class="container">
+			<div class="alert alert-success">
+				{!!$msg_success!!}
+			</div>
+		</div>
+	@endisset
+------------------------------unten ist alte Meldungen (für Form...nicht löschen, die brauchen wir)						
+@if($errors->any())
+........
+
+###############################################################
+#Wir wollen den angemeldeten User begrüßen und seine Daten anzeigen
+#in "resources/views/layouts/app.blade.php" einen neuen Link erstellen
+<li class="nav-item">
+  <a href="/home" 
+		  class="nav-link {{Request::is('home') ? 'btn btn-primary text-light' : ''}}" >MyHome</a>
+</li>
+---------------------------------------------
+#den User begrüßen 
+
+ <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+				
+        #das ist neu ----------------------------
+				@auth
+				<div class="container">
+					<div class="col-12 h4 p-2 bg-primary">
+						 Hallo <b class="text-secondary">{{ Auth::user()->name }}</b>, schön, dass Du da bist!
+						 <br />
+						 Hallo <b class="text-secondary">{{ auth()->id() }}</b>, schön, dass Du da bist! 
+						 <br />
+						 Hallo <b class="text-secondary">{{ auth()->user() }}</b>, schön, dass Du da bist!
+						 <br />
+						 Hallo <b class="text-secondary">{{ auth()->user()->name }}</b>, schön, dass Du da bist! 
+						 
+						 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline-block">
+              @csrf
+							<button class="btn btn-sm btn-warning">Logout</button>
+             </form>
+					</div>
+				</div>
+				@endauth
+        #das ist neu ----------------------------
+
+        #unten alles alt 
+        <main class="py-4">
+---------------------------------------------
+#die Datei öffnen
+"resources/views/home.blade.php"
+
+---------------------------
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-info">Hallo {{ auth()->user()->name }}</h2>
+                    <span class="text-primary float-end">( {{ __('validation.logged') }} )</span>
+                </div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+###############################################################
+##__()
+#Die Hilfsfunktion __ kann verwendet werden, um Textzeilen aus Sprachdateien abzurufen.
+
+in "resources->lang->validation.php" schreiben:
+'logged' => 'Du bist eingeloggt'
+
+in "resources->views->home.blade.php" schreiben:
+<span class="text-primary float-end">( {{ __('validation.logged') }} )</span>
+###############################################################
+

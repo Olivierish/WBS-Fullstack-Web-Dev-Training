@@ -1,0 +1,175 @@
+php artisan ###############################################
+Feld nachträglich in einer Tabelle einfügen
+##############################################
+Spalte "user_id" in Tabelle "posts"
+
+
+php artisan make:migration user_id_in_posts_table
+-----------------
+in "database/migration" gehen und die Datei "user_id_in_posts_table.php" aufmachen
+
+dadurch, dass wir gesagt haben "posts_table"
+weiss Laravel, irgendwas wird mit der Tabelle "posts" gemacht
+-----------------
+in "user_id_in_posts_table.php" schreiben:
+
+public function up()
+    {
+        Schema::table('posts', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->nullable()->after('id');
+						$table->foreign('user_id')
+									->references('id')->on('users')
+									->onDelete('cascade');
+        });
+    }
+
+----------------
+unsigned weil nur positive Werte erlaubt sind
+unsignedBigInteger  weil in der anderen Tabelle auch steht bigint sonst gibt es ärger
+
+onDelete('cascade') 
+
+wenn ein user gelöscht wird dann soll auch sein post gelöscht werden
+----------------
+die down Funktion auch ausfüllen (optional)
+
+public function down()
+{
+    Schema::table('posts', function (Blueprint $table) {
+        $table->dropForeign('user_id');
+				$table->dropColumn('user_id');
+    });
+}
+----------
+hier wird alles rückgängig gemacht, was im up steht
+falls wir fehler haben usw. dann kann man die migration rückgängig machen
+
+---------------
+Die migrate ausführen
+
+php artisan migrate
+##############################################
+----------------------------------------------
+es gibt auch eine andere Möglichkeit, direkt Daten einzufügen
+
+in "create_users_table.php"  gehen und änderungen vornehmen
+
+public function up()
+{
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+	    $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+	
+		//neu+++++++++++++++++
+			$table->string('motto')->nullable();   
+			$table->text('ueber_mich')->nullable();
+		//++++++++++++++++++++
+
+            $table->rememberToken();
+            $table->timestamps();
+        });
+}
+------------------------
+php artisan migrate
+
+kriegt man Meldung...
+
+nothing to migrate
+------------------------
+das liegt daran, dass es eine Tabelle migration 
+gibt und dort steht, wann wurde eine Datei migriert
+
+solange der Eintrag dort steht, wird die Datei nicht wieder migriert
+in der Tabelle migration die spalte batch 
+1 => alles wurde auf einmal gemacht
+2 => erst beim 2 schritt
+------------------------
+es gibt ein workaround
+
+php artisan migrate:fresh
+
+dadurch werden alle Daten gelöscht und neu migriert
+das wäre bei einer bestehender Datenbank nicht gut
+
+der Befehl ist nur geeignet wenn man allein arbeitet und am testen ist
+------------------------
+jetzt muss man alles neu eingeben
+
+dafür gibt es eine Lösung.....
+seeder (steht weiter unten)
+##############################################
+in der DB-Ebene haben die Tabellen mit einander Verbindung
+
+jetzt wollen wir in Laravel-Ebene auch eine Verbindung herstellen
+
+das macht man in den Models
+---------------------------
+in "app/User.php"  gehen
+
+ein User hat viele Beiträge (Posts)
+
+class User extends Authenticatable
+{
+    use Notifiable;
+	
+	//das ist neu++++++++++++
+	public function posts() {
+		return $this->hasMany('App\Post');
+	}
+	//++++++++++++++++++++++++
+
+die Funktion heisst posts (plural) weil zu vielen posts (beiträge)
+----------------------------
+die Funktion kopieren und in "app/Post.php" gehen
+
+class Post extends Model
+{
+		//'user_id' Spalte beschreibbar machen (hier dürfen Daten rein)
+    protected $fillable = ['name','beschreibung','user_id'];
+	
+	//++++++++++++++++++++++++
+	public function user() {
+		return $this->belongsTo('App\User');
+	}
+	//+++++++++++++++++++++++++
+}
+
+die Funktion heisst user (singular) weil zu einem User
+---------------------------
+Damit in der Spalte 'user_id' in der Tabelle 'posts' die Werte gespeichert werden können
+die Funktion store von 'PostController' ändern
+
+public function store(Request $request)
+{
+        //dd($request);
+				$request->validate(
+						[
+							'name1' => 'required|min:3',
+							'kommentar1' => 'required|min:5'
+						]
+					);
+				
+				$post = new Post(
+						[
+							//'nameDerSpalteInDB' => $request['nameDesFeldesInFormular']
+							'name' => $request['name1'],
+							'beschreibung' => $request['kommentar1'],
+							'user_id' => auth()->id()       //das ist neu+++++++++++++++++++++++++
+							
+							
+							//globaler auth() - Helfer
+							//auth() damit kann man den Status des aktuellen Benutzers ermitteln
+							//auth()->id() gib mir die id des aktuellen Users (der angemeldet ist)
+							//unten: speichere in die Spalte 'user_id', die id des aktuellen Users
+							//die id des aktuellen users kommt von der Tabelle users, von der Spalte id
+							//'user_id' => auth()->id()
+							//+++++++++++++++++++++++++++++++++++++
+						]
+					);
+					$post->save();  
+			..............
+}
+##############################################
